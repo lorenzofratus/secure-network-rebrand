@@ -6,7 +6,7 @@
 			<div class="buttons">
 				<nuxt-link
 					v-for="(button, index) in buttons"
-					:key="'main-section-button-' + index + '-button.wrapper'"
+					:key="'main-section-button-' + index + '-wrapper'"
 					:class="'button ' + button.class"
 					:to="button.path"
 				>
