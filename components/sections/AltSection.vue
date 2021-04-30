@@ -2,18 +2,25 @@
 	<section class="alt-section wave-before wave-after">
 		<div class="content">
 			<h2>{{ title }}</h2>
-			<p
-				v-for="(p, index) in paragraphs"
-				:key="'paragraph-' + index + '-' + wrapper"
-			>
-				{{ p }}
-			</p>
+			<div v-if="paragraphs" class="paragraphs">
+				<p
+					v-for="(p, index) in paragraphs"
+					:key="'paragraph-' + index + '-' + wrapper"
+				>
+					{{ p }}
+				</p>
+			</div>
+			<div v-if="button">
+				<button-component :button="button" />
+			</div>
 		</div>
 	</section>
 </template>
 
 <script>
+import ButtonComponent from '../items/ButtonComponent.vue'
 export default {
+	components: { ButtonComponent },
 	props: {
 		title: {
 			type: String,
@@ -21,10 +28,17 @@ export default {
 		},
 		paragraphs: {
 			type: Array,
-			required: true,
+			required: false,
+			default() {
+				return []
+			},
 		},
 		wrapper: {
 			type: String,
+			required: true,
+		},
+		button: {
+			type: Object,
 			required: true,
 		},
 	},
@@ -60,31 +74,6 @@ export default {
 	content: '';
 	position: absolute;
 	bottom: -1em;
-	left: 50%;
-	transform: translateX(-50%);
-	width: var(--divider-width);
-	height: var(--line-weight);
-	border-radius: var(--line-radius);
-	background-color: var(--primary-color);
-}
-
-.section {
-	padding: var(--padding);
-}
-.section .content {
-	max-width: var(--page);
-	margin: 0 auto;
-}
-.section h3 {
-	position: relative;
-	text-align: center;
-	margin-bottom: 1.8em;
-	margin-bottom: calc(1.8em + var(--line-weight));
-}
-.section h3::after {
-	content: '';
-	position: absolute;
-	bottom: -0.9em;
 	left: 50%;
 	transform: translateX(-50%);
 	width: var(--divider-width);

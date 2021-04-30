@@ -8,8 +8,7 @@
 					v-for="(button, index) in buttons"
 					:key="'main-section-button-' + index + '-' + wrapper"
 					:button="button"
-				>
-				</button-component>
+				/>
 			</div>
 		</div>
 		<img :src="img.src" :class="img.class" />

@@ -7,21 +7,28 @@
 			:subtitle="main_section.subtitle"
 			:wrapper="wrapper"
 		/>
-		<text-section
-			:title="text_section.title"
-			:paragraphs="text_section.paragraphs"
+		<alt-section
+			:title="alt_section.title"
+			:paragraphs="alt_section.paragraphs"
 			:wrapper="wrapper"
+			:button="alt_section.button"
+		/>
+		<services-section
+			:wrapper="wrapper"
+			:services="services_section.services"
 		/>
 	</div>
 </template>
 
 <script>
+import ServicesSection from '../components/sections/ServicesSection.vue'
 import MainSection from '~/components/sections/MainSection.vue'
-import TextSection from '~/components/sections/TextSection.vue'
+import AltSection from '~/components/sections/AltSection.vue'
 export default {
 	components: {
 		MainSection,
-		TextSection,
+		AltSection,
+		ServicesSection,
 	},
 	layout: 'default',
 	data() {
@@ -33,7 +40,7 @@ export default {
 				buttons: [
 					{
 						class: 'primary',
-						text: "Let's begin",
+						text: 'Tbd',
 						path: '/',
 					},
 					{
@@ -47,11 +54,59 @@ export default {
 					class: 'cover',
 				},
 			},
-			text_section: {
+			alt_section: {
 				title: 'Lorem Ipsum',
 				paragraphs: [
 					'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsam, rem obcaecati repellat accusamus at quis magnam. Repudiandae vitae sit dignissimos? Sit similique anim blanditiis neque quae consequatur, numquam explicabo commodi tempora voluptatibus impedit suscipit optio non dicta deserunt laborum ipsa debitis odit. Vero, ipsum quasi. Ipsam facere cumque dolore quibusdam.',
 					'Lorem ipsum dolor, sit amet consectetur adipisicing elit. In mollitia hic asperiores temporibus soluta esse tempora itaque possimus, quam nostrum, id ratione iusto illum aut. Accusamus, necessitatibus? Rem, odio asperiores.',
+				],
+			},
+			services_section: {
+				services: [
+					{
+						title: 'Application Security',
+						text:
+							'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam praesentium facere aliquid beatae magnam est.',
+						icon: 'smartphone',
+						button: {
+							class: 'secondary',
+							text: 'See More',
+							path: '/',
+						},
+					},
+					{
+						title: 'Network Security',
+						text:
+							'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam praesentium facere aliquid beatae magnam est.',
+						icon: 'wifi',
+						button: {
+							class: 'secondary',
+							text: 'See More',
+							path: '/',
+						},
+					},
+					{
+						title: 'Code Review',
+						text:
+							'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam praesentium facere aliquid beatae magnam est.',
+						icon: 'code',
+						button: {
+							class: 'secondary',
+							text: 'See More',
+							path: '/',
+						},
+					},
+					{
+						title: 'Automotive Security',
+						text:
+							'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam praesentium facere aliquid beatae magnam est.',
+						icon: 'precision_manufacturing',
+						button: {
+							class: 'secondary',
+							text: 'See More',
+							path: '/',
+						},
+					},
 				],
 			},
 		}

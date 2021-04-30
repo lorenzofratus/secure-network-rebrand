@@ -108,6 +108,38 @@ a:focus {
 	margin: 0;
 }
 
+.section {
+	padding: var(--padding);
+}
+.section .content {
+	max-width: var(--page);
+	margin: 0 auto;
+}
+.section h3 {
+	position: relative;
+	text-align: center;
+	margin-bottom: 1.8em;
+	margin-bottom: calc(1.8em + var(--line-weight));
+}
+.section h3::after {
+	content: '';
+	position: absolute;
+	bottom: -0.9em;
+	left: 50%;
+	transform: translateX(-50%);
+	width: var(--divider-width);
+	height: var(--line-weight);
+	border-radius: var(--line-radius);
+	background-color: var(--primary-color);
+}
+
+/***Grid***/
+.grid {
+	display: grid;
+	grid-gap: 50px;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
 /*** BACKGROUND WAVES ***/
 .wave-before {
 	margin-top: var(--wave-height);
