@@ -38,10 +38,6 @@ export default {
 .footer {
 	width: 100vw;
 	background-color: var(--dark-color);
-
-	/* Temporary Style */
-	position: absolute;
-	bottom: 0;
 }
 .footer .content {
 	display: flex;

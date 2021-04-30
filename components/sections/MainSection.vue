@@ -4,22 +4,24 @@
 			<h1>{{ title }}</h1>
 			<h3>{{ subtitle }}</h3>
 			<div class="buttons">
-				<nuxt-link
+				<button-component
 					v-for="(button, index) in buttons"
-					:key="'main-section-button-' + index + '-wrapper'"
-					:class="'button ' + button.class"
-					:to="button.path"
+					:key="'main-section-button-' + index + '-' + wrapper"
+					:button="button"
 				>
-					{{ button.text }}
-				</nuxt-link>
+				</button-component>
 			</div>
 		</div>
-		<component :is="img.src" :class="img.class" />
+		<img :src="img.src" :class="img.class" />
 	</div>
 </template>
 
 <script>
+import ButtonComponent from '~/components/items/ButtonComponent'
 export default {
+	components: {
+		ButtonComponent,
+	},
 	props: {
 		title: {
 			type: String,
@@ -37,6 +39,10 @@ export default {
 		img: {
 			required: true,
 			type: Object,
+		},
+		wrapper: {
+			type: String,
+			required: true,
 		},
 	},
 }
