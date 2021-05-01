@@ -1,5 +1,5 @@
 import express from 'express'
-import initializeDatabase from '../db-conn'
+// import initializeDatabase from '../db-conn'
 const app = express()
 
 app.use(express.json())
@@ -65,7 +65,8 @@ app.get('/test', (req, res) => {
 	})
 })
 
-app.get('/items/services', (req, res) => {
+app.get('/services', (req, res) => {
+	// To be modified with the actual access to the db
 	res.json({
 		data: services,
 	})

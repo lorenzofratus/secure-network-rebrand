@@ -2,16 +2,13 @@
 	<section class="alt-section wave-before wave-after">
 		<div class="content">
 			<h2>{{ title }}</h2>
-			<div v-if="paragraphs" class="paragraphs">
-				<p
-					v-for="(p, index) in paragraphs"
-					:key="'paragraph-' + index + '-' + wrapper"
-				>
-					{{ p }}
-				</p>
-			</div>
-			<div v-if="button.text">
-				<button-component :button="button" />
+			<div class="buttons">
+				<button-component
+					v-for="(btn, index) in buttons"
+					:key="'filter-button-' + index + '-' + wrapper"
+					:button="btn"
+					@click="btn.filter"
+				/>
 			</div>
 		</div>
 	</section>
@@ -26,23 +23,13 @@ export default {
 			type: String,
 			required: true,
 		},
-		paragraphs: {
-			type: Array,
-			required: false,
-			default() {
-				return []
-			},
-		},
 		wrapper: {
 			type: String,
 			required: true,
 		},
-		button: {
-			type: Object,
-			required: false,
-			default() {
-				return { text: '' }
-			},
+		buttons: {
+			type: Array,
+			required: true,
 		},
 	},
 }

@@ -13,24 +13,37 @@
 			:wrapper="wrapper"
 			:button="alt_section.button"
 		/>
-		<services-section
+		<services-section :wrapper="wrapper" :services="services" />
+		<filter-section
+			:title="filter_section.title"
 			:wrapper="wrapper"
-			:services="services_section.services"
+			:buttons="filter_section.buttons"
 		/>
 	</div>
 </template>
 
 <script>
 import ServicesSection from '../components/sections/ServicesSection.vue'
+import FilterSection from '../components/sections/FilterSection.vue'
 import MainSection from '~/components/sections/MainSection.vue'
 import AltSection from '~/components/sections/AltSection.vue'
+
 export default {
 	components: {
 		MainSection,
 		AltSection,
 		ServicesSection,
+		FilterSection,
 	},
 	layout: 'default',
+	async asyncData({ $axios }) {
+		// fetch data from the api server
+		const { data } = await $axios.get('/api/services')
+		const services = data.data
+		return {
+			services,
+		}
+	},
 	data() {
 		return {
 			wrapper: 'Index',
@@ -61,51 +74,23 @@ export default {
 					'Lorem ipsum dolor, sit amet consectetur adipisicing elit. In mollitia hic asperiores temporibus soluta esse tempora itaque possimus, quam nostrum, id ratione iusto illum aut. Accusamus, necessitatibus? Rem, odio asperiores.',
 				],
 			},
-			services_section: {
-				services: [
+			filter_section: {
+				title: 'Filter Showcase',
+				buttons: [
 					{
-						title: 'Application Security',
-						text:
-							'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam praesentium facere aliquid beatae magnam est.',
-						icon: 'smartphone',
-						button: {
-							class: 'secondary',
-							text: 'See More',
-							path: '/',
-						},
+						class: 'primary',
+						text: 'All types',
+						path: '/',
 					},
 					{
-						title: 'Network Security',
-						text:
-							'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam praesentium facere aliquid beatae magnam est.',
-						icon: 'wifi',
-						button: {
-							class: 'secondary',
-							text: 'See More',
-							path: '/',
-						},
+						class: 'outlined',
+						text: 'Research',
+						path: '/',
 					},
 					{
-						title: 'Code Review',
-						text:
-							'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam praesentium facere aliquid beatae magnam est.',
-						icon: 'code',
-						button: {
-							class: 'secondary',
-							text: 'See More',
-							path: '/',
-						},
-					},
-					{
-						title: 'Automotive Security',
-						text:
-							'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam praesentium facere aliquid beatae magnam est.',
-						icon: 'precision_manufacturing',
-						button: {
-							class: 'secondary',
-							text: 'See More',
-							path: '/',
-						},
+						class: 'outlined',
+						text: 'News',
+						path: '/',
 					},
 				],
 			},
