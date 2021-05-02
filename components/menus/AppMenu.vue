@@ -4,7 +4,7 @@
 		:class="{ light: lightTheme, 'align-right': alignRight }"
 	>
 		<li v-for="(option, index) in menuOptions" :key="'app-item-' + index">
-			<nuxt-link :to="option.path" class="anchor h4 focusable">
+			<nuxt-link :to="option.path" class="anchor h4">
 				{{ option.name }}
 			</nuxt-link>
 		</li>
@@ -69,7 +69,7 @@ export default {
 	position: relative;
 	float: left;
 	cursor: pointer;
-	padding: 0.5em 2px;
+	padding: 0.5em;
 	margin: 0 1.5em;
 	text-decoration: none;
 	color: #000;
@@ -95,7 +95,6 @@ export default {
 }
 .app-menu .anchor.active::after {
 	width: 100%;
-	width: calc(100% + 4px);
 }
 .app-menu .anchor:hover {
 	color: var(--primary-color);

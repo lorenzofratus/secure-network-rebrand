@@ -1,7 +1,7 @@
 <template>
 	<footer class="footer wave-before wave-concave-dark">
 		<div class="content">
-			<nuxt-link :to="home.path" class="logo focusable">
+			<nuxt-link :to="home.path" class="logo">
 				{{ home.name }}
 			</nuxt-link>
 			<app-menu :light-theme="true" />

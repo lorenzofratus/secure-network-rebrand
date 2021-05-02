@@ -4,7 +4,7 @@
 			v-for="(option, index) in menuOptions"
 			:key="'social-item-' + index"
 		>
-			<a :href="option.href" class="link focusable">
+			<a :href="option.href" class="link">
 				<component
 					:is="option.icon"
 					:title="'Follow us on ' + option.name"
@@ -66,18 +66,21 @@ export default {
 	padding: 0;
 }
 .social-menu > li {
-	display: inline;
+	display: inline-block;
 	list-style: none;
 }
 .social-menu .link {
+	display: inline-block;
 	color: var(--light-color);
 	transition: 0.35s color ease-in-out;
+	margin: 0 0.25em;
 }
 .social-menu .link:hover {
 	color: var(--primary-color);
 }
 .social-menu .icon {
+	display: block;
 	width: 2em;
-	margin: 0 0.5em;
+	padding: 0.25em;
 }
 </style>

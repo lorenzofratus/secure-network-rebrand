@@ -103,10 +103,6 @@ a:focus {
 	grid-gap: 1em;
 	grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
 }
-.buttons .button {
-	width: auto;
-	margin: 0;
-}
 
 .section {
 	padding: var(--padding);
@@ -143,9 +139,11 @@ a:focus {
 /*** BACKGROUND WAVES ***/
 .wave-before {
 	margin-top: var(--wave-height);
+	position: relative;
 }
 .wave-after {
 	margin-bottom: var(--wave-height);
+	position: relative;
 }
 .wave-before::before,
 .wave-after::after {
@@ -178,11 +176,4 @@ a:focus {
 .wave-concave-dark::before,
 .wave-concave-dark::after {
 	background-image: url('/waves/concave-dark.svg');
-}
-
-/*** MISC ***/
-
-.focusable:focus {
-	outline: none;
-	box-shadow: 0 0 3pt 2pt var(--light-color);
 }

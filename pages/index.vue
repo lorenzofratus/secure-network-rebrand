@@ -63,7 +63,7 @@ export default {
 					},
 				],
 				img: {
-					src: '/images/cover.svg',
+					src: '/images/covers/index.svg',
 					class: 'cover',
 				},
 			},

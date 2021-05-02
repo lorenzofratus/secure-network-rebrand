@@ -1,7 +1,7 @@
 <template>
 	<nav class="nav">
 		<div class="content">
-			<nuxt-link :to="home.path" class="logo focusable">
+			<nuxt-link :to="home.path" class="logo">
 				{{ home.name }}
 			</nuxt-link>
 			<app-menu :align-right="true" />

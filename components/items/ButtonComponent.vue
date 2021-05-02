@@ -21,6 +21,10 @@ export default {
 a {
 	text-decoration: none;
 }
+.buttons .button {
+	width: auto;
+	margin: 0;
+}
 .button {
 	font-size: var(--btn-font-size);
 	font-weight: var(--btn-font-weight);
@@ -28,7 +32,7 @@ a {
 	text-align: center;
 	width: fit-content;
 	margin: 0 auto;
-	padding: 1em 1.5em;
+	padding: 0.75em 1.5em;
 	border-radius: 0.5em;
 	cursor: pointer;
 	transition-duration: 0.35s;
