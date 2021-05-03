@@ -72,4 +72,7 @@ export default {
 	height: auto;
 	width: 100%;
 }
+.header .content {
+	min-width: 45%;
+}
 </style>
