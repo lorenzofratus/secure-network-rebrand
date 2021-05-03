@@ -39,7 +39,7 @@ export default {
 				},
 				{
 					name: 'Areas',
-					path: '/area',
+					path: '/areas',
 				},
 				{
 					name: 'Team',
