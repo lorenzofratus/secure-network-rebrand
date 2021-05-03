@@ -2,7 +2,7 @@
 	<div class="card service">
 		<span class="icon material-icons">{{ icon }}</span>
 		<div class="text">
-			<h3>{{ title }}</h3>
+			<h3 class="spacer">{{ title }}</h3>
 			<p>
 				{{ text }}
 			</p>

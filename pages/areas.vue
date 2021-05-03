@@ -13,9 +13,25 @@
 			:paragraphs="alt_section.paragraphs"
 			:wrapper="wrapper"
 		/>
-		<right-image-component
-			:img="main_section.img"
-			:title="main_section.title"
+		<image-component
+			:title="image_component_section1.title"
+			:description="image_component_section1.description"
+			:img="image_component_section1.img"
+			:button="image_component_section1.button"
+			:wrapper="wrapper"
+		/>
+		<image-component
+			:title="image_component_section2.title"
+			:description="image_component_section2.description"
+			:img="image_component_section2.img"
+			:button="image_component_section2.button"
+			:wrapper="wrapper"
+		/>
+		<image-component
+			:title="image_component_section3.title"
+			:description="image_component_section3.description"
+			:img="image_component_section3.img"
+			:button="image_component_section3.button"
 			:wrapper="wrapper"
 		/>
 	</div>
@@ -24,8 +40,9 @@
 <script>
 import MainSection from '~/components/sections/MainSection.vue'
 import AltSection from '~/components/sections/AltSection.vue'
+import ImageComponent from '~/components/items/ImageComponent.vue'
 export default {
-	components: { MainSection, AltSection },
+	components: { MainSection, AltSection, ImageComponent },
 	layout: 'default',
 	data() {
 		return {
@@ -56,6 +73,48 @@ export default {
 					'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsam, rem obcaecati repellat accusamus at quis magnam. Repudiandae vitae sit dignissimos? Sit similique anim blanditiis neque quae consequatur, numquam explicabo commodi tempora voluptatibus impedit suscipit optio non dicta deserunt laborum ipsa debitis odit. Vero, ipsum quasi. Ipsam facere cumque dolore quibusdam.',
 					'Lorem ipsum dolor, sit amet consectetur adipisicing elit. In mollitia hic asperiores temporibus soluta esse tempora itaque possimus, quam nostrum, id ratione iusto illum aut. Accusamus, necessitatibus? Rem, odio asperiores.',
 				],
+			},
+			image_component_section1: {
+				title: 'Name of the Area',
+				description:
+					'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsam, rem obcaecati repellat accusamus at quis magnam.',
+				img: {
+					src: '/images/covers/areas/enterprise-security.svg',
+					class: 'cover',
+				},
+				button: {
+					class: 'secondary',
+					text: 'Read More',
+					path: '/',
+				},
+			},
+			image_component_section2: {
+				title: 'Name of the Area',
+				description:
+					'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsam, rem obcaecati repellat accusamus at quis magnam.',
+				img: {
+					src: '/images/covers/areas/legal-advice.svg',
+					class: 'cover',
+				},
+				button: {
+					class: 'secondary',
+					text: 'Read More',
+					path: '/',
+				},
+			},
+			image_component_section3: {
+				title: 'Name of the Area',
+				description:
+					'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsam, rem obcaecati repellat accusamus at quis magnam.',
+				img: {
+					src: '/images/covers/areas/training.svg',
+					class: 'cover',
+				},
+				button: {
+					class: 'secondary',
+					text: 'Read More',
+					path: '/',
+				},
 			},
 		}
 	},

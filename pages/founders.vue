@@ -11,11 +11,6 @@
 			:paragraphs="alt_section.paragraphs"
 			:wrapper="wrapper"
 		/>
-		<right-image-component
-			:img="main_section.img"
-			:title="main_section.title"
-			:wrapper="wrapper"
-		/>
 	</div>
 </template>
 

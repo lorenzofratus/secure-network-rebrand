@@ -1,15 +1,9 @@
 <template>
 	<div class="header">
 		<div class="content">
-			<h1>{{ title }}</h1>
-			<h3 v-if="subtitle">{{ subtitle }}</h3>
-			<div class="buttons">
-				<button-component
-					v-for="(button, index) in buttons"
-					:key="'main-section-button-' + index + '-' + wrapper"
-					:button="button"
-				/>
-			</div>
+			<h2>{{ title }}</h2>
+			<p>{{ description }}</p>
+			<button-component :button="button" />
 		</div>
 		<img :src="img.src" :class="img.class" />
 	</div>
@@ -26,12 +20,12 @@ export default {
 			type: String,
 			required: true,
 		},
-		subtitle: {
+		description: {
 			type: String,
-			required: false,
+			required: true,
 		},
-		buttons: {
-			type: Array,
+		button: {
+			type: Object,
 			required: true,
 		},
 		img: {
@@ -56,6 +50,7 @@ export default {
 	justify-content: space-between;
 	align-items: center;
 	flex-wrap: wrap-reverse;
+	text-align: right;
 }
 .header > * {
 	flex: 0 1 auto;
@@ -74,5 +69,24 @@ export default {
 }
 .header .content {
 	min-width: 45%;
+}
+
+.header:nth-child(odd) {
+	text-align: left;
+	flex-direction: row-reverse;
+}
+
+.header:nth-child(even) /deep/ .button {
+	margin: 0 0 0 auto;
+}
+
+.header:nth-child(odd) /deep/ .button {
+	margin: 0 auto 0 0;
+}
+
+@media screen and (max-width: 785px) {
+	.header {
+		text-align: left;
+	}
 }
 </style>
