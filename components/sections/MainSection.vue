@@ -2,7 +2,7 @@
 	<div class="header">
 		<div class="content">
 			<h1>{{ title }}</h1>
-			<h3>{{ subtitle }}</h3>
+			<h3 v-if="subtitle">{{ subtitle }}</h3>
 			<div class="buttons">
 				<button-component
 					v-for="(button, index) in buttons"
@@ -29,7 +29,6 @@ export default {
 		subtitle: {
 			type: String,
 			required: false,
-			default: '',
 		},
 		buttons: {
 			type: Array,
