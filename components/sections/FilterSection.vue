@@ -7,7 +7,7 @@
 					v-for="(btn, index) in buttons"
 					:key="'filter-button-' + index + '-' + wrapper"
 					:button="btn"
-					@click="btn.filter"
+					@click="undefined"
 				/>
 			</div>
 		</div>

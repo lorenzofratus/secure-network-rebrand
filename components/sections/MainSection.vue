@@ -29,6 +29,7 @@ export default {
 		subtitle: {
 			type: String,
 			required: false,
+			default: '',
 		},
 		buttons: {
 			type: Array,
@@ -72,7 +73,8 @@ export default {
 	height: auto;
 	width: 100%;
 }
+
 .header .content {
-	min-width: 45%;
+	min-width: 50%;
 }
 </style>

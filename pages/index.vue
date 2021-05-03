@@ -19,12 +19,14 @@
 			:wrapper="wrapper"
 			:buttons="filter_section.buttons"
 		/>
+		<boxes-section :wrapper="wrapper" :boxes="boxes_section.boxes" />
 	</div>
 </template>
 
 <script>
 import ServicesSection from '../components/sections/ServicesSection.vue'
 import FilterSection from '../components/sections/FilterSection.vue'
+import BoxesSection from '../components/sections/BoxesSection.vue'
 import MainSection from '~/components/sections/MainSection.vue'
 import AltSection from '~/components/sections/AltSection.vue'
 
@@ -34,6 +36,7 @@ export default {
 		AltSection,
 		ServicesSection,
 		FilterSection,
+		BoxesSection,
 	},
 	layout: 'default',
 	async asyncData({ $axios }) {
@@ -91,6 +94,43 @@ export default {
 						class: 'outlined',
 						text: 'News',
 						path: '/',
+					},
+				],
+			},
+			boxes_section: {
+				boxes: [
+					{
+						title: 'Mobile Application',
+						text:
+							'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam praesentium facere aliquid beatae magnam est.',
+						icon: 'smartphone',
+						button: {
+							class: 'secondary',
+							text: 'Read More',
+							path: '/',
+						},
+					},
+					{
+						title: 'Wireless Network & Infrastructures',
+						text:
+							'Lorem ipsum dolor sit amet consectetur adipisicing ',
+						icon: 'wifi',
+						button: {
+							class: 'secondary',
+							text: 'Read More',
+							path: '/',
+						},
+					},
+					{
+						title: 'Middleware Infrastructures',
+						text:
+							'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam praesentium facere aliquid beatae magnam est.',
+						icon: 'code',
+						button: {
+							class: 'secondary',
+							text: 'Read More',
+							path: '/',
+						},
 					},
 				],
 			},
