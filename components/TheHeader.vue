@@ -5,6 +5,17 @@
 				{{ home.name }}
 			</nuxt-link>
 			<app-menu :align-right="true" />
+			<div class="anchor h4 hidden">
+				<div
+					class="logo"
+					:class="{ opened: isOpened }"
+					@click="toggleOpened"
+				>
+					<div class="bar1"></div>
+					<div class="bar2"></div>
+					<div class="bar3"></div>
+				</div>
+			</div>
 		</div>
 	</nav>
 </template>
@@ -22,7 +33,13 @@ export default {
 				name: 'Secure Network',
 				path: '/',
 			},
+			isOpened: false,
 		}
+	},
+	methods: {
+		toggleOpened() {
+			this.isOpened = !this.isOpened
+		},
 	},
 }
 </script>
@@ -58,5 +75,46 @@ export default {
 }
 .nav .logo:hover {
 	color: var(--primary-color);
+}
+
+.hidden {
+	display: none;
+}
+
+@media screen and (max-width: 785px) {
+	.hidden {
+		display: block;
+	}
+}
+
+.bar1,
+.bar2,
+.bar3 {
+	width: 20px;
+	height: var(--line-weight);
+	background-color: var(--dark-color);
+	margin: 3px 0;
+	cursor: pointer;
+	text-decoration: none;
+	transition: 0.35s ease-in-out;
+	transition-property: color, transform, opacity;
+	border-radius: var(--line-radius);
+	opacity: 1;
+}
+
+.opened {
+	position: relative;
+}
+
+.opened .bar1 {
+	transform: rotate(-45deg) translate(-4px, 4px);
+}
+
+.opened .bar2 {
+	opacity: 0;
+}
+
+.opened .bar3 {
+	transform: rotate(45deg) translate(-4px, -4px);
 }
 </style>

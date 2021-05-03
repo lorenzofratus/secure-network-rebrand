@@ -8,13 +8,6 @@
 				{{ option.name }}
 			</nuxt-link>
 		</li>
-		<li v-show="isShown" class="anchor h4">
-			<div class="logo" @click="toggleOpened">
-				<div class="bar1"></div>
-				<div class="bar2"></div>
-				<div class="bar3"></div>
-			</div>
-		</li>
 	</ul>
 </template>
 
@@ -58,17 +51,7 @@ export default {
 					path: '/contacts',
 				},
 			],
-			isOpened: false,
-			isShown: false,
 		}
-	},
-	methods: {
-		toggleOpened() {
-			this.isOpened = !this.isOpened
-		},
-		toggleShown() {
-			this.isShown = !this.isShown
-		},
 	},
 }
 </script>
@@ -117,19 +100,23 @@ export default {
 	color: var(--primary-color);
 }
 
-@media screen and (max-width: 749px) {
+@media screen and (max-width: 785px) {
 	.app-menu {
 		display: none;
 	}
 }
 
+.hidden {
+	display: none;
+}
+
 .bar1,
 .bar2,
 .bar3 {
-	width: 35px;
+	width: 20px;
 	height: 5px;
 	background-color: var(--dark-color);
-	margin: 6px 0;
+	margin: 2px 0;
 	transition: 0.4s;
 	cursor: pointer;
 	text-decoration: none;
