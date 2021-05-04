@@ -4,8 +4,8 @@ export default {
 	target: 'server',
 	env: {
 		// BASE_URL: 'https://securenetwork.herokuapp.com', // Production URL
-		BASE_URL: '', // Development URL,
-		// BASE_URL: 'https://secure-network.herokuapp.com', // TESTING URL
+		// BASE_URL: '', // Development URL,
+		BASE_URL: 'https://secure-network.herokuapp.com', // TESTING URL
 	},
 	serverMiddleware: [
 		{
