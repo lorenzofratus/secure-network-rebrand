@@ -44,7 +44,7 @@ export default {
 		const { data } = await $axios.get(
 			`${process.env.BASE_URL}/api/services`
 		)
-		const services = data.data
+		const services = data
 		return {
 			services,
 		}
@@ -106,33 +106,21 @@ export default {
 						text:
 							'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam praesentium facere aliquid beatae magnam est.',
 						icon: 'smartphone',
-						button: {
-							class: 'secondary',
-							text: 'Read More',
-							path: '/',
-						},
+						btn_path: '/',
 					},
 					{
 						title: 'Wireless Network & Infrastructures',
 						text:
 							'Lorem ipsum dolor sit amet consectetur adipisicing ',
 						icon: 'wifi',
-						button: {
-							class: 'secondary',
-							text: 'Read More',
-							path: '/',
-						},
+						btn_path: '/',
 					},
 					{
 						title: 'Middleware Infrastructures',
 						text:
 							'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam praesentium facere aliquid beatae magnam est.',
 						icon: 'code',
-						button: {
-							class: 'secondary',
-							text: 'Read More',
-							path: '/',
-						},
+						btn_path: '/',
 					},
 				],
 			},

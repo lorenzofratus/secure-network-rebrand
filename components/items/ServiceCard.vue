@@ -7,7 +7,11 @@
 				{{ text }}
 			</p>
 		</div>
-		<button-component :button="button" />
+		<button-component
+			:btn_path="path"
+			:btn_class="btn_class"
+			:btn_text="btn_text"
+		/>
 	</div>
 </template>
 
@@ -28,10 +32,16 @@ export default {
 			type: String,
 			required: true,
 		},
-		button: {
-			type: Object,
+		path: {
+			type: String,
 			required: true,
 		},
+	},
+	data() {
+		return {
+			btn_text: 'Read more',
+			btn_class: 'secondary',
+		}
 	},
 }
 </script>

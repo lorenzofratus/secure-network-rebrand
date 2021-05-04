@@ -6,7 +6,9 @@
 				<button-component
 					v-for="(btn, index) in buttons"
 					:key="'filter-button-' + index + '-' + wrapper"
-					:button="btn"
+					:btn_path="btn.path"
+					:btn_text="btn.text"
+					:btn_class="btn.class"
 				/>
 			</div>
 		</div>

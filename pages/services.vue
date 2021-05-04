@@ -34,7 +34,8 @@ export default {
 		const { data } = await $axios.get(
 			`${process.env.BASE_URL}/api/services`
 		)
-		const services = data.data
+		const services = data
+
 		return {
 			services,
 		}

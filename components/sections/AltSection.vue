@@ -11,7 +11,11 @@
 				</p>
 			</div>
 			<div v-if="button.text">
-				<button-component :button="button" />
+				<button-component
+					:btn_class="button.class"
+					:btn_text="btn.text"
+					:btn_path="button.path"
+				/>
 			</div>
 		</div>
 	</section>

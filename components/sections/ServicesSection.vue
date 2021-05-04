@@ -4,10 +4,10 @@
 			<service-card
 				v-for="(service, index) in services"
 				:key="'service-' + index + '-' + wrapper"
-				:button="service.button"
 				:icon="service.icon"
 				:title="service.title"
 				:text="service.text"
+				:path="service.path"
 			/>
 		</div>
 	</div>

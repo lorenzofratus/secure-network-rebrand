@@ -3,7 +3,11 @@
 		<div class="content">
 			<h2>{{ title }}</h2>
 			<p>{{ description }}</p>
-			<button-component :button="button" />
+			<button-component
+				:btn_class="button.class"
+				:btn_path="button.path"
+				:btn_text="button.text"
+			/>
 		</div>
 		<img :src="img.src" :class="img.class" />
 	</div>
