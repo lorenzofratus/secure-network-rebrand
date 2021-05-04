@@ -5,7 +5,10 @@ export default {
 	env: {
 		// BASE_URL: 'https://securenetwork.herokuapp.com', // Production URL
 		// BASE_URL: '', // Development URL,
-		BASE_URL: 'https://secure-network.herokuapp.com', // TESTING URL
+		BASE_URL:
+			process.env.NODE_ENV !== 'production'
+				? 'http://localhost:3000'
+				: 'https://secure-network.herokuapp.com/',
 	},
 	serverMiddleware: [
 		{

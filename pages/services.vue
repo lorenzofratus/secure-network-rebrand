@@ -35,7 +35,6 @@ export default {
 			`${process.env.BASE_URL}/api/services`
 		)
 		const services = data
-
 		return {
 			services,
 		}

@@ -18,7 +18,6 @@ const db = new Sequelize(
 		},
 	}
 )
-console.log(process.env)
 /*
 	Utilities functions
 */

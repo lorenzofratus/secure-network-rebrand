@@ -7,7 +7,6 @@ app.use(express.json())
 
 async function init() {
 	const db = await initializeDatabase()
-	console.log(db._tables)
 	const { Service } = db._tables
 
 	app.get('/services', async (req, res) => {
