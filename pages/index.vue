@@ -41,7 +41,9 @@ export default {
 	layout: 'default',
 	async asyncData({ $axios }) {
 		// fetch data from the api server
-		const { data } = await $axios.get('/api/services')
+		const { data } = await $axios.get(
+			`${process.env.BASE_URL}/api/services`
+		)
 		const services = data.data
 		return {
 			services,
