@@ -6,17 +6,17 @@ import { services } from './db_init/db_init.js'
 /*
 	Database initialization
 */
-const { Sequelize, DataTypes } = require('sequelize')
-const db = new Sequelize(
-	'postgres://postgres:123456@localhost:5432/secure-network'
-)
+// const { Sequelize, DataTypes } = require('sequelize')
+// const db = new Sequelize(
+// 	'postgres://postgres:123456@localhost:5432/secure-network'
+// )
 
-// const pg = require('pg')
-// pg.defaults.ssl = true
-// const db = new Sequelize(process.env.DATABASE_URL, {
-// 	ssl: true,
-// 	dialectOptions: { ssl: { require: true, rejectUnauthorized: false } },
-// })
+const pg = require('pg')
+pg.defaults.ssl = true
+const db = new Sequelize(process.env.DATABASE_URL, {
+	ssl: true,
+	dialectOptions: { ssl: { require: true, rejectUnauthorized: false } },
+})
 
 /*
 	Utilities functions
