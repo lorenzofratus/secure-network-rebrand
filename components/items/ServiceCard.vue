@@ -3,7 +3,7 @@
 		<span class="icon material-icons">{{ icon }}</span>
 		<div class="text">
 			<h3 class="spacer">{{ title }}</h3>
-			<p>
+			<p class="centered-text">
 				{{ text }}
 			</p>
 		</div>
@@ -75,5 +75,9 @@ export default {
 	text-align: left;
 	flex-grow: 1;
 	margin-bottom: 1em;
+}
+
+.centered-text {
+	text-align: center;
 }
 </style>

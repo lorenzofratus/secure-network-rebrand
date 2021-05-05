@@ -42,7 +42,7 @@ export default {
 	async asyncData({ $axios }) {
 		// fetch data from the api server
 		const { data } = await $axios.get(
-			`${process.env.BASE_URL}/api/services`
+			`${process.env.BASE_URL}/api/service_categories`
 		)
 		const services = data
 		return {
