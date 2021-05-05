@@ -28,12 +28,9 @@ export default {
 		ServicesSection,
 	},
 	layout: 'default',
-	async asyncData({ $axios }) {
+	async asyncData({ store }) {
 		// fetch data from the api server
-		const { data } = await $axios.get(
-			`${process.env.BASE_URL}/api/service-categories`
-		)
-		const services = data
+		const services = await store.dispatch('getServiceCategories')
 		return {
 			services,
 		}
@@ -89,6 +86,7 @@ export default {
 			},
 		}
 	},
+	computed: {},
 }
 </script>
 

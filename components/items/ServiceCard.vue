@@ -5,7 +5,7 @@
 		<div class="text">
 			<h3 class="spacer">{{ title }}</h3>
 			<p class="centered-text">
-				{{ text }}
+				{{ abstract }}
 			</p>
 		</div>
 		<button-component
@@ -43,6 +43,13 @@ export default {
 			btn_text: 'Read more',
 			btn_class: 'secondary',
 		}
+	},
+	computed: {
+		abstract() {
+			let words = this.text.split(/\s|\n/)
+			words = words.splice(0, 15)
+			return words.join(' ') + ' ...'
+		},
 	},
 }
 </script>
