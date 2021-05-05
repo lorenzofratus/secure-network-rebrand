@@ -1,10 +1,14 @@
 <template>
 	<nav class="nav" :class="{ opened: isOpened }">
 		<div class="content">
-			<nuxt-link :to="home.path" class="logo">
+			<nuxt-link :to="home.path" class="logo" @click.native="closeOpened">
 				{{ home.name }}
 			</nuxt-link>
-			<app-menu :align-right="true" :show-on-mobile="true" />
+			<app-menu
+				:align-right="true"
+				:show-on-mobile="true"
+				@navigation="closeOpened"
+			/>
 			<div class="nav-btn" @click="toggleOpened">
 				<div class="bar1"></div>
 				<div class="bar2"></div>
@@ -33,6 +37,9 @@ export default {
 	methods: {
 		toggleOpened() {
 			this.isOpened = !this.isOpened
+		},
+		closeOpened() {
+			this.isOpened = false
 		},
 	},
 }

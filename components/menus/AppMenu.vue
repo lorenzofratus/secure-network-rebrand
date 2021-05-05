@@ -16,6 +16,7 @@
 				:to="option.path"
 				class="anchor h4"
 				:class="{ active: option.path == $nuxt.$route.path }"
+				@click.native="closeMenu"
 			>
 				{{ option.name }}
 			</nuxt-link>
@@ -68,6 +69,11 @@ export default {
 				},
 			],
 		}
+	},
+	methods: {
+		closeMenu() {
+			this.$emit('navigation')
+		},
 	},
 }
 </script>
