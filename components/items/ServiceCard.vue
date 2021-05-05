@@ -1,6 +1,7 @@
 <template>
 	<div class="card service">
-		<span class="icon material-icons">{{ icon }}</span>
+		<img v-if="img.includes('/')" :src="img" class="image" />
+		<span v-else class="icon material-icons">{{ img }}</span>
 		<div class="text">
 			<h3 class="spacer">{{ title }}</h3>
 			<p class="centered-text">
@@ -20,10 +21,6 @@ import ButtonComponent from './ButtonComponent.vue'
 export default {
 	components: { ButtonComponent },
 	props: {
-		icon: {
-			type: String,
-			required: true,
-		},
 		title: {
 			type: String,
 			required: true,
@@ -33,6 +30,10 @@ export default {
 			required: true,
 		},
 		path: {
+			type: String,
+			required: true,
+		},
+		img: {
 			type: String,
 			required: true,
 		},
@@ -67,6 +68,10 @@ export default {
 	display: flex;
 	flex-direction: column;
 	text-align: center;
+}
+.service .image {
+	height: 8em;
+	margin: 0 auto;
 }
 .service .icon {
 	font-size: 60px;

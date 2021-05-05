@@ -1,6 +1,7 @@
 /* 
 	Initialization variables
 */
+import { util } from 'prettier'
 import { service_categories } from './db_init/db_init.js'
 import { services } from './db_init/db_init.js'
 
@@ -40,12 +41,14 @@ function defineDatabaseStructure() {
 	class ServiceCategory extends Model {}
 	ServiceCategory.init(
 		{
-			title: {
+			id: {
 				type: DataTypes.STRING,
 				primaryKey: true,
+				allowNull: false,
 			},
+			title: DataTypes.STRING,
 			text: DataTypes.TEXT,
-			icon: DataTypes.STRING,
+			img: DataTypes.STRING,
 			path: DataTypes.STRING,
 		},
 		{ sequelize: db, modelName: 'service_category' }
@@ -54,14 +57,19 @@ function defineDatabaseStructure() {
 	class Service extends Model {}
 	Service.init(
 		{
+			id: {
+				type: DataTypes.STRING,
+				primaryKey: true,
+				allowNull: false,
+			},
 			title: DataTypes.STRING,
 			text: DataTypes.TEXT,
 			img: DataTypes.STRING,
 			path: DataTypes.STRING,
 		},
-		{ sequelize: db, modelName: 'service_' }
+		{ sequelize: db, modelName: 'service' }
 	)
-	ServiceCategory.hasMany(Service, { foreignKey: 'category' })
+	ServiceCategory.hasMany(Service, { foreignKey: 'category_id' })
 	db._tables = { ServiceCategory, Service }
 }
 

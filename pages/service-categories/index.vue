@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import ServicesSection from '../components/sections/ServicesSection.vue'
+import ServicesSection from '~/components/sections/ServicesSection.vue'
 import MainSection from '~/components/sections/MainSection.vue'
 import AltSection from '~/components/sections/AltSection.vue'
 
@@ -31,7 +31,7 @@ export default {
 	async asyncData({ $axios }) {
 		// fetch data from the api server
 		const { data } = await $axios.get(
-			`${process.env.BASE_URL}/api/service_categories`
+			`${process.env.BASE_URL}/api/service-categories`
 		)
 		const services = data
 		return {

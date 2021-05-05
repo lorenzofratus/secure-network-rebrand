@@ -4,7 +4,7 @@
 			<service-card
 				v-for="(service, index) in services"
 				:key="'service-' + index + '-' + wrapper"
-				:icon="service.icon"
+				:img="service.img"
 				:title="service.title"
 				:text="service.text"
 				:path="service.path"

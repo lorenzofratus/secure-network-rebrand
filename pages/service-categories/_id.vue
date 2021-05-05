@@ -4,7 +4,6 @@
 			:buttons="main_section.buttons"
 			:img="main_section.img"
 			:title="main_section.title"
-			:subtitle="main_section.subtitle"
 			:wrapper="wrapper"
 		/>
 		<alt-section
@@ -13,18 +12,12 @@
 			:wrapper="wrapper"
 			:button="alt_section.button"
 		/>
-		<filter-section
-			:title="filter_section.title"
-			:wrapper="wrapper"
-			:buttons="filter_section.buttons"
-		/>
-		<boxes-section :wrapper="wrapper" :boxes="boxes_section.boxes" />
+		<services-section :wrapper="wrapper" :services="services" />
 	</div>
 </template>
 
 <script>
-import FilterSection from '~/components/sections/FilterSection.vue'
-import BoxesSection from '~/components/sections/BoxesSection.vue'
+import ServicesSection from '~/components/sections/ServicesSection.vue'
 import MainSection from '~/components/sections/MainSection.vue'
 import AltSection from '~/components/sections/AltSection.vue'
 
@@ -32,21 +25,28 @@ export default {
 	components: {
 		MainSection,
 		AltSection,
-		FilterSection,
-		BoxesSection,
+		ServicesSection,
 	},
 	layout: 'default',
-	async asyncData({ $axios }) {},
+	async asyncData({ $axios, route }) {
+		const { id } = route.params
+		const { data } = await $axios.get(
+			`${process.env.BASE_URL}/api/services-by-category/${id}`
+		)
+		const services = data
+		return {
+			services,
+		}
+	},
 	data() {
 		return {
 			wrapper: 'Index',
 			main_section: {
-				title: 'Secure Network',
-				subtitle: 'Your Protection, Our Mission',
+				title: 'All Service Categories',
 				buttons: [
 					{
 						class: 'primary',
-						text: 'Tbd',
+						text: 'Section',
 						path: '/',
 					},
 					{
@@ -84,31 +84,6 @@ export default {
 						class: 'outlined',
 						text: 'News',
 						path: '/',
-					},
-				],
-			},
-			boxes_section: {
-				boxes: [
-					{
-						title: 'Mobile Application',
-						text:
-							'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam praesentium facere aliquid beatae magnam est.',
-						icon: 'smartphone',
-						btn_path: '/',
-					},
-					{
-						title: 'Wireless Network & Infrastructures',
-						text:
-							'Lorem ipsum dolor sit amet consectetur adipisicing ',
-						icon: 'wifi',
-						btn_path: '/',
-					},
-					{
-						title: 'Middleware Infrastructures',
-						text:
-							'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam praesentium facere aliquid beatae magnam est.',
-						icon: 'code',
-						btn_path: '/',
 					},
 				],
 			},

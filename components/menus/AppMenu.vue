@@ -44,7 +44,7 @@ export default {
 			menuOptions: [
 				{
 					name: 'Services',
-					path: '/services',
+					path: '/service-categories',
 				},
 				{
 					name: 'Areas',
