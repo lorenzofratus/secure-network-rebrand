@@ -43,6 +43,7 @@
 
 	--nav-height: 4em;
 	--divider-width: 80px;
+	--divider-small-width: 60px;
 	--line-weight: 3px;
 	--line-radius: 1.5px;
 }
@@ -108,12 +109,21 @@ a:focus {
 	content: '';
 	position: absolute;
 	bottom: -1em;
-	left: 50%;
-	transform: translateX(-50%);
+	left: 0;
+	right: 0;
+	margin: 0 auto;
 	width: var(--divider-width);
 	height: var(--line-weight);
 	border-radius: var(--line-radius);
 	background-color: var(--primary-color);
+}
+
+.spacer.spacer-small {
+	text-align: inherit;
+}
+.spacer.spacer-small::after {
+	margin: 0;
+	width: var(--divider-small-width);
 }
 
 /***Buttons***/

@@ -1,14 +1,10 @@
 <template>
 	<div class="card service">
-		<div class="card-header">
-			<span class="icon material-icons">{{ icon }}</span>
-			<h3 class="title">{{ title }}</h3>
-		</div>
-		<div class="text">
-			<p>
-				{{ text }}
-			</p>
-		</div>
+		<span class="icon material-icons">{{ icon }}</span>
+		<h3 class="title spacer spacer-small">{{ title }}</h3>
+		<p class="text">
+			{{ text }}
+		</p>
 		<button-component
 			:btn_path="btn_path"
 			:btn_class="btn_class"
@@ -61,32 +57,13 @@ export default {
 .service {
 	display: flex;
 	flex-direction: column;
-	text-align: center;
+	text-align: left;
 }
 .service .icon {
 	font-size: 40px;
 }
-.service .title {
-	text-align: left;
-	/* margin: 0 0 0 1em; */
-	margin: 0;
-}
 .service .text {
-	text-align: left;
 	margin: 0 0 1em;
 	flex-grow: 1;
 }
-
-.card-header {
-	display: flex;
-	/* display: inline-block; */
-	/* display: grid;
-	grid-gap: 1em;
-	grid-template-columns: repeat(auto-fill, 50px); */
-	/* grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); */
-	/* align-items: center; */
-}
-/* .card-header > * {
-	float: left;
-} */
 </style>

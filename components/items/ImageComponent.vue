@@ -1,7 +1,7 @@
 <template>
-	<div class="header">
+	<div class="sub-section">
 		<div class="content">
-			<h2>{{ title }}</h2>
+			<h2 class="spacer spacer-small">{{ title }}</h2>
 			<p>{{ description }}</p>
 			<button-component
 				:btn_class="button.class"
@@ -45,51 +45,53 @@ export default {
 </script>
 
 <style scoped>
-.header {
-	min-height: 50vh;
+.sub-section {
 	max-width: var(--page);
-	margin: 4em auto;
+	margin: 10em auto;
 	padding: 0 var(--padding);
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	flex-wrap: wrap-reverse;
-	text-align: right;
 }
-.header > * {
+.sub-section > * {
 	flex: 0 1 auto;
 	max-width: var(--half-page);
 	margin: 0 auto;
 }
-.header .buttons {
+.sub-section .buttons {
 	justify-content: start;
 }
-.header .cover {
+.sub-section .cover {
 	display: block;
 	padding: 5%;
 	box-sizing: border-box;
 	height: auto;
 	width: 100%;
 }
-.header .content {
-	min-width: 45%;
+.sub-section .content {
+	min-width: 50%;
 }
 
-.header:nth-child(odd) {
+.sub-section:nth-child(even) {
+	text-align: right;
+	flex-direction: row;
+}
+.sub-section:nth-child(odd) {
 	text-align: left;
 	flex-direction: row-reverse;
 }
-
-.header:nth-child(even) /deep/ .button {
+.sub-section:nth-child(even) /deep/ .button,
+.sub-section:nth-child(even) .spacer.spacer-small::after {
 	margin: 0 0 0 auto;
 }
-
-.header:nth-child(odd) /deep/ .button {
+.sub-section:nth-child(odd) /deep/ .button,
+.sub-section:nth-child(odd) .spacer.spacer-small::after {
 	margin: 0 auto 0 0;
 }
 
 @media screen and (max-width: 785px) {
-	.header {
+	.sub-section {
 		text-align: left;
 	}
 }
