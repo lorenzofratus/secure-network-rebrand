@@ -1,20 +1,14 @@
 <template>
-	<nav class="nav">
+	<nav class="nav" :class="{ opened: isOpened }">
 		<div class="content">
 			<nuxt-link :to="home.path" class="logo">
 				{{ home.name }}
 			</nuxt-link>
-			<app-menu :align-right="true" />
-			<div class="anchor h4 hidden">
-				<div
-					class="logo"
-					:class="{ opened: isOpened }"
-					@click="toggleOpened"
-				>
-					<div class="bar1"></div>
-					<div class="bar2"></div>
-					<div class="bar3"></div>
-				</div>
+			<app-menu :align-right="true" :show-on-mobile="true" />
+			<div class="nav-btn" @click="toggleOpened">
+				<div class="bar1"></div>
+				<div class="bar2"></div>
+				<div class="bar3"></div>
 			</div>
 		</div>
 	</nav>
@@ -52,6 +46,7 @@ export default {
 	right: 0;
 	z-index: 2;
 	background-color: var(--background);
+	transform-style: preserve-3d;
 }
 .nav .content {
 	display: flex;
@@ -76,24 +71,31 @@ export default {
 .nav .logo:hover {
 	color: var(--primary-color);
 }
-
-.hidden {
-	display: none;
+.nav::after {
+	position: fixed;
+	content: '';
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background-color: #121212;
+	opacity: 0;
+	transition: 0.35s opacity ease-in-out;
+	transform: translateZ(-1px);
+	pointer-events: none;
+}
+.nav.opened::after {
+	opacity: 0.35;
+	pointer-events: all;
 }
 
-@media screen and (max-width: 785px) {
-	.hidden {
-		display: block;
-	}
-}
-
-.bar1,
-.bar2,
-.bar3 {
+.nav-btn .bar1,
+.nav-btn .bar2,
+.nav-btn .bar3 {
 	width: 20px;
 	height: var(--line-weight);
 	background-color: var(--dark-color);
-	margin: 3px 0;
+	margin: 4px 0;
 	cursor: pointer;
 	text-decoration: none;
 	transition: 0.35s ease-in-out;
@@ -101,20 +103,31 @@ export default {
 	border-radius: var(--line-radius);
 	opacity: 1;
 }
+.nav-btn .bar1 {
+	margin-top: 0;
+	transform-origin: 50% 50%;
+}
+.nav-btn .bar3 {
+	margin-bottom: 0;
+	transform-origin: 50% 50%;
+}
 
-.opened {
+.opened .nav-btn {
 	position: relative;
 }
-
-.opened .bar1 {
-	transform: rotate(-45deg) translate(-4px, 4px);
+.opened .nav-btn .bar1 {
+	transform: translateY(7px) rotate(-45deg);
 }
-
-.opened .bar2 {
+.opened .nav-btn .bar2 {
 	opacity: 0;
 }
+.opened .nav-btn .bar3 {
+	transform: translateY(-7px) rotate(45deg);
+}
 
-.opened .bar3 {
-	transform: rotate(45deg) translate(-4px, -4px);
+@media screen and (min-width: 786px) {
+	.nav-btn {
+		display: none;
+	}
 }
 </style>
