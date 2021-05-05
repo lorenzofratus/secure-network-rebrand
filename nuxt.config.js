@@ -8,7 +8,7 @@ export default {
 		BASE_URL:
 			process.env.NODE_ENV === 'dev'
 				? 'http://localhost:3000'
-				: 'https://securenetwork.herokuapp.com',
+				: 'https://secure-network.herokuapp.com',
 	},
 	serverMiddleware: [
 		{
