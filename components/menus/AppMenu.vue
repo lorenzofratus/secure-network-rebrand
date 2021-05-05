@@ -1,10 +1,22 @@
 <template>
 	<ul
 		class="app-menu"
-		:class="{ light: lightTheme, 'align-right': alignRight }"
+		:class="{
+			light: lightTheme,
+			'align-right': alignRight,
+			mobile: showOnMobile,
+		}"
 	>
-		<li v-for="(option, index) in menuOptions" :key="'app-item-' + index">
-			<nuxt-link :to="option.path" class="anchor h4">
+		<li
+			v-for="(option, index) in menuOptions"
+			:key="'app-item-' + index"
+			:style="'--delay: ' + index * 0.1 + 's'"
+		>
+			<nuxt-link
+				:to="option.path"
+				class="anchor h4"
+				:class="{ active: option.path == $nuxt.$route.path }"
+			>
 				{{ option.name }}
 			</nuxt-link>
 		</li>
@@ -19,6 +31,10 @@ export default {
 			default: false,
 		},
 		alignRight: {
+			type: Boolean,
+			default: false,
+		},
+		showOnMobile: {
 			type: Boolean,
 			default: false,
 		},
@@ -101,25 +117,42 @@ export default {
 }
 
 @media screen and (max-width: 785px) {
-	.app-menu {
+	.app-menu:not(.mobile) {
 		display: none;
 	}
-}
-
-.hidden {
-	display: none;
-}
-
-.bar1,
-.bar2,
-.bar3 {
-	width: 20px;
-	height: 5px;
-	background-color: var(--dark-color);
-	margin: 2px 0;
-	transition: 0.4s;
-	cursor: pointer;
-	text-decoration: none;
-	transition: 0.35s color ease-in-out;
+	.app-menu.mobile {
+		display: block;
+		position: fixed;
+		margin: 0;
+		top: var(--nav-height);
+		right: 0;
+		width: 100%;
+		opacity: 0;
+		background-color: var(--alt-background);
+		transition: 0.35s opacity ease-in-out;
+	}
+	.opened .app-menu.mobile {
+		opacity: 1;
+	}
+	.app-menu.mobile > li {
+		display: block;
+		text-align: center;
+		margin: 2em auto;
+		transform: translateX(120%);
+		transition: 0.35s transform cubic-bezier(0.51, 0.92, 0.24, 1.15);
+		transition-delay: var(--delay);
+	}
+	.opened .app-menu.mobile > li {
+		transform: translateX(0);
+	}
+	.app-menu.mobile .anchor {
+		float: none;
+		font-size: 1.1em;
+		opacity: 0;
+		transition: 0.5s opacity ease-in-out;
+	}
+	.opened .app-menu.mobile .anchor {
+		opacity: 1;
+	}
 }
 </style>
