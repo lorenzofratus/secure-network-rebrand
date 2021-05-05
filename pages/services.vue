@@ -4,7 +4,6 @@
 			:buttons="main_section.buttons"
 			:img="main_section.img"
 			:title="main_section.title"
-			:subtitle="main_section.subtitle"
 			:wrapper="wrapper"
 		/>
 		<alt-section
@@ -32,7 +31,7 @@ export default {
 	async asyncData({ $axios }) {
 		// fetch data from the api server
 		const { data } = await $axios.get(
-			`${process.env.BASE_URL}/api/services`
+			`${process.env.BASE_URL}/api/service_categories`
 		)
 		const services = data
 		return {
@@ -43,8 +42,7 @@ export default {
 		return {
 			wrapper: 'Index',
 			main_section: {
-				title: 'Services page',
-				subtitle: 'Your Protection, Our Mission',
+				title: 'All Service Categories',
 				buttons: [
 					{
 						class: 'primary',

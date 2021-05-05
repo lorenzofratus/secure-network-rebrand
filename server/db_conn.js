@@ -1,12 +1,13 @@
 /* 
 	Initialization variables
 */
+import { service_categories } from './db_init/db_init.js'
 import { services } from './db_init/db_init.js'
 
 /*
 	Database initialization
 */
-const { Sequelize, DataTypes } = require('sequelize')
+const { Sequelize, DataTypes, Model } = require('sequelize')
 const db = new Sequelize(
 	// process.env.DATABASE_URL
 	'postgres://psphttksubmcsp:c4ff8594adf94f8f29b16c92666692771c08986914abb899a0c8c7ca24e1c918@ec2-34-247-151-118.eu-west-1.compute.amazonaws.com:5432/d6fpg6o9bbe9rj',
@@ -36,25 +37,38 @@ async function insertItems(table, items) {
 }
 
 function defineDatabaseStructure() {
-	const Service = db.define(
-		'Service',
+	class ServiceCategory extends Model {}
+	ServiceCategory.init(
 		{
-			title: DataTypes.STRING,
+			title: {
+				type: DataTypes.STRING,
+				primaryKey: true,
+			},
 			text: DataTypes.TEXT,
 			icon: DataTypes.STRING,
 			path: DataTypes.STRING,
 		},
-		{
-			underscored: true,
-		}
+		{ sequelize: db, modelName: 'service_category' }
 	)
-	db._tables = { Service }
+
+	class Service extends Model {}
+	Service.init(
+		{
+			title: DataTypes.STRING,
+			text: DataTypes.TEXT,
+			img: DataTypes.STRING,
+			path: DataTypes.STRING,
+		},
+		{ sequelize: db, modelName: 'service_' }
+	)
+	ServiceCategory.hasMany(Service, { foreignKey: 'category' })
+	db._tables = { ServiceCategory, Service }
 }
 
 async function insertTables() {
-	const { Service } = db._tables
+	const { ServiceCategory, Service } = db._tables
+	await insertItems(ServiceCategory, service_categories)
 	await insertItems(Service, services)
-	// Add other tables to be inserted
 }
 
 async function initializeDatabase() {

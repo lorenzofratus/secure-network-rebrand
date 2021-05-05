@@ -6,11 +6,11 @@ app.use(express.json())
 
 async function init() {
 	const db = await initializeDatabase()
-	const { Service } = db._tables
+	const { ServiceCategory } = db._tables
 
-	app.get('/services', async (req, res) => {
-		const services = await Service.findAll()
-		return res.json(services)
+	app.get('/service_categories', async (req, res) => {
+		const service_categories = await ServiceCategory.findAll()
+		return res.json(service_categories)
 	})
 }
 
