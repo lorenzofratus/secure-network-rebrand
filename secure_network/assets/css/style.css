@@ -33,6 +33,7 @@
 	--page: 800px;
 	--content: 650px;
 	--half-page: 400px;
+	--half-content: 325px;
 	--padding: 3em;
 
 	--wave-width: 110vw;
@@ -148,7 +149,18 @@ a:focus {
 	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
 
-/*** BACKGROUND WAVES ***/
+/*** Sections ***/
+.alt-section {
+	position: relative;
+	background-color: var(--alt-background);
+	padding: var(--padding);
+}
+.alt-section .content {
+	max-width: var(--content);
+	margin: 0 auto;
+}
+
+/*** Background Waves ***/
 .wave-before {
 	margin-top: var(--wave-height);
 	position: relative;
@@ -177,20 +189,17 @@ a:focus {
 	top: var(--wave-displacement);
 	background-position: center top;
 }
-.wave-convex-alt::before,
 .wave-convex-alt::after {
 	background-image: url('/waves/convex-alt.svg');
 }
-.wave-concave-alt::before,
-.wave-concave-alt::after {
+.wave-concave-alt::before {
 	background-image: url('/waves/concave-alt.svg');
 }
-.wave-concave-dark::before,
-.wave-concave-dark::after {
+.wave-concave-dark::before {
 	background-image: url('/waves/concave-dark.svg');
 }
 
-/* Transition */
+/*** Page Transition ***/
 .page-enter-active,
 .page-leave-active {
 	transition: 0.35s opacity ease-in-out;

@@ -1,8 +1,8 @@
 <template>
 	<div class="header">
 		<div class="content">
-			<h1>{{ title }}</h1>
-			<h3 v-if="subtitle">{{ subtitle }}</h3>
+			<h1 class="title">{{ title }}</h1>
+			<h3 v-if="subtitle" class="subtitle">{{ subtitle }}</h3>
 			<div class="buttons">
 				<button-component
 					v-for="(button, index) in buttons"
@@ -64,6 +64,10 @@ export default {
 	flex: 0 1 auto;
 	max-width: var(--half-page);
 	margin: 0 auto;
+}
+.header .title,
+.header .subtitle {
+	white-space: pre;
 }
 .header .buttons {
 	justify-content: start;

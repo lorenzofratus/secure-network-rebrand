@@ -1,5 +1,7 @@
 <template>
-	<section class="alt-section wave-before wave-after">
+	<section
+		class="alt-section wave-before wave-after wave-concave-alt wave-convex-alt"
+	>
 		<div class="content">
 			<h2 class="spacer">{{ title }}</h2>
 			<div v-if="paragraphs" class="paragraphs">
@@ -52,23 +54,4 @@ export default {
 }
 </script>
 
-<style scoped>
-.alt-section {
-	position: relative;
-	background-color: var(--alt-background);
-	margin: var(--wave-height) 0;
-	padding: var(--padding);
-}
-
-.alt-section::before {
-	background-image: url('/waves/concave-alt.svg');
-}
-.alt-section::after {
-	background-image: url('/waves/convex-alt.svg');
-}
-
-.alt-section .content {
-	max-width: var(--content);
-	margin: 0 auto;
-}
-</style>
+<style scoped></style>
