@@ -28,7 +28,7 @@ export default {
 			required: true,
 		},
 		years: {
-			type: Object,
+			type: Array,
 			required: true,
 		},
 	},
