@@ -135,9 +135,11 @@ export default {
 		width: 100%;
 		opacity: 0;
 		background-color: var(--alt-background);
-		transition: 0.35s opacity ease-in-out;
+		visibility: hidden;
+		transition: 0.35s opacity ease-in-out, visibility 0.35s;
 	}
 	.opened .app-menu.mobile {
+		visibility: visible;
 		opacity: 1;
 	}
 	.app-menu.mobile > li {
@@ -154,6 +156,7 @@ export default {
 	.app-menu.mobile .anchor {
 		float: none;
 		font-size: 1.1em;
+		margin: 0 auto;
 		opacity: 0;
 		transition: 0.5s opacity ease-in-out;
 	}

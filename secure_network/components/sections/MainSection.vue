@@ -65,10 +65,10 @@ export default {
 	max-width: var(--half-page);
 	margin: 0 auto;
 }
-.header .title,
+/* .header .title,
 .header .subtitle {
 	white-space: pre;
-}
+} */
 .header .buttons {
 	justify-content: start;
 }

@@ -1,21 +1,28 @@
 <template>
-	<nav class="nav" :class="{ opened: isOpened }">
-		<div class="content">
-			<nuxt-link :to="home.path" class="logo" @click.native="closeOpened">
-				{{ home.name }}
-			</nuxt-link>
-			<app-menu
-				:align-right="true"
-				:show-on-mobile="true"
-				@navigation="closeOpened"
-			/>
-			<div class="nav-btn" @click="toggleOpened">
-				<div class="bar1"></div>
-				<div class="bar2"></div>
-				<div class="bar3"></div>
+	<div>
+		<nav class="nav" :class="{ opened: isOpened }">
+			<div class="content">
+				<nuxt-link
+					:to="home.path"
+					class="logo"
+					@click.native="closeOpened"
+				>
+					{{ home.name }}
+				</nuxt-link>
+				<app-menu
+					:align-right="true"
+					:show-on-mobile="true"
+					@navigation="closeOpened"
+				/>
+				<div class="nav-btn" @click="toggleOpened">
+					<div class="bar1"></div>
+					<div class="bar2"></div>
+					<div class="bar3"></div>
+				</div>
 			</div>
-		</div>
-	</nav>
+		</nav>
+		<div class="shadow"></div>
+	</div>
 </template>
 
 <script>
@@ -50,7 +57,7 @@ export default {
 	position: fixed;
 	top: 0;
 	left: 0;
-	right: 0;
+	width: 100vw;
 	z-index: 2;
 	background-color: var(--background);
 	transform-style: preserve-3d;
@@ -78,7 +85,7 @@ export default {
 .nav .logo:hover {
 	color: var(--primary-color);
 }
-.nav::after {
+.nav ~ .shadow {
 	position: fixed;
 	content: '';
 	top: 0;
@@ -88,10 +95,11 @@ export default {
 	background-color: #121212;
 	opacity: 0;
 	transition: 0.35s opacity ease-in-out;
-	transform: translateZ(-1px);
+	/* transform: translateZ(-1px); */
+	z-index: 1;
 	pointer-events: none;
 }
-.nav.opened::after {
+.nav.opened ~ .shadow {
 	opacity: 0.35;
 	pointer-events: all;
 }

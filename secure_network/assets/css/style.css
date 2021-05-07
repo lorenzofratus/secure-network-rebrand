@@ -208,3 +208,8 @@ a:focus {
 .page-leave-to {
 	opacity: 0;
 }
+
+/*** Remove Horizontal Overflow ***/
+#__layout {
+	overflow-x: hidden;
+}

@@ -36,7 +36,6 @@ export default {
 
 <style scoped>
 .footer {
-	width: 100vw;
 	background-color: var(--dark-color);
 }
 .footer .content {
