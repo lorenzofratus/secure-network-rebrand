@@ -1,64 +1,3 @@
-import { compareByTitle } from '../utils/comparator.js'
-
-function refine(items, header) {
-	items.forEach((item, index) => {
-		let id = item.title.toLowerCase()
-		const regExp = /\s/g
-		item.id = id.replace(regExp, '-')
-		item.path = item.path + item.id
-	})
-}
-
-/* Raw variables definition */
-
-let sv_categories = [
-	{
-		title: 'Application Security',
-		text:
-			'Applications process and handle most of a company’s information, including critical data. Custom applications have become an easy to reach and popular target for attackers.',
-		img: 'smartphone',
-		path: '/service-categories/',
-	},
-	{
-		title: 'Binary Exploitation Training',
-		text: 'TBD',
-		img: 'memory',
-		path: '/service-categories/',
-	},
-	{
-		title: 'Digital Forensics',
-		text:
-			'Digital Forensics is a branch of forensic science encompassing the recovery and investigation of material found in digital devices, often in relation to computer crime.',
-		img: 'search',
-		path: '/service-categories/',
-	},
-	{
-		title: 'Mobile Security Training',
-		text: 'TBD',
-		img: 'phonelink_lock',
-		path: '/service-categories/',
-	},
-	{
-		title: 'Network Security',
-		text:
-			'The security of modern companies depends on the security of their most important infrastructures, which are the bases for their systems, applications and information protection.',
-		img: 'wifi',
-		path: '/service-categories/',
-	},
-	{
-		title: 'Security Assessment',
-		text:
-			'A security risk assessment identifies, assesses, and implements key security controls in applications. It also focuses on preventing application security defects and vulnerabilities.',
-		img: 'lock',
-		path: '/service-categories/',
-	},
-	{
-		title: 'Web Exploitation Training',
-		text: 'TBD',
-		img: 'language',
-		path: '/service-categories/',
-	},
-].sort(compareByTitle)
 
 let svs = [
 	{
@@ -70,7 +9,7 @@ let svs = [
 		Using a methodology based on the Open Web Application Security Project (OWASP) Testing Guide, Secure Network analyses your web applications, detailing every discovered vulnerability and suggests how to resolve it. Furthermore, all detected vulnerabilities are classified using the OWASP Risk Scoring Methodology`,
 		img:
 			'/images/covers/services/application-security/web-applications-and-web-services.svg',
-		category_id: 'application-security',
+		category_id: 'service_category_1',
 		path: '/services/',
 	},
 	{
@@ -82,7 +21,7 @@ let svs = [
 		Through a process analysis based on the OWASP Mobile Project methodology, Secure Network’s engineers check the security of the application. Analyses are also performed on the transmission protocols to ensure that information is safety transmitted to the back-end systems. The analysis is completed by the Penetration Test of back-end system with a methodology similar to that used for Penetration Test of Web Application and Web Services.`,
 		img:
 			'/images/covers/services/application-security/mobile-applications.svg',
-		category_id: 'application-security',
+		category_id: 'service_category_1',
 		path: '/services/',
 	},
 	{
@@ -91,7 +30,7 @@ let svs = [
 
 	The security analysis of these kinds of applications, however, presents different problems than their web and mobile counterparts, and that must be addressed with particular care. For this reason, Secure Network developed a custom methodology, based on the indications of OWASP, to ensure that even the analysis of these applications are extensive and complete.`,
 		img: '/images/covers/services/application-security/thin-fat-client.svg',
-		category_id: 'application-security',
+		category_id: 'service_category_1',
 		path: '/services/',
 	},
 	{
@@ -103,7 +42,7 @@ let svs = [
 	In addition, to make sure that the application is safe at other levels, Secure Network analyzes the obfuscation and anti-debugging techniques used to protect the application source code from reverse engineering.`,
 		img:
 			'images/covers/services/application-security/software-licensing-and-code-protection.svg',
-		category_id: 'application-security',
+		category_id: 'service_category_1',
 		path: '/services/',
 	},
 	{
@@ -113,7 +52,7 @@ let svs = [
 	Using professional tools and a specific methodology based on the Open Source Security Testing Methodology Manual (OSSTMM), Secure Network is able to perform a thorough analysis that can assess the individual issues based on their direct impact on your business.`,
 		img:
 			'/images/covers/services/network-and-infrastructure-security/external-and-internal-network.svg',
-		category_id: 'network-security',
+		category_id: 'service_category_5',
 		path: '/services/',
 	},
 	{
@@ -123,7 +62,7 @@ let svs = [
 	Using a tested methodology, which includes an analysis of the network’s infrastructure, targeted attack scenarios are designed to identify the existing vulnerabilities and their possible exploitation in order to compromise the network integrity. For this purpose, specialised tools are employed to get a detailed insight of the issues, which are then sorted according to their impact in order to help you fix the critical problems first.`,
 		img:
 			'/images/covers/services/network-and-infrastructure-security/wireless-network-and-infrastructure.svg',
-		category_id: 'network-security',
+		category_id: 'service_category_5',
 		path: '/services/',
 	},
 	{
@@ -133,7 +72,7 @@ let svs = [
 	The workstations analysis is performed on standard systems configured for your employees, in order to determine whether it is possible to carry out real attacks on these systems or to exploit them as a bridge to more critical systems. Furthermore, the threats often do not come exclusively from the outside, but also arise within company, which must therefore protect against rogue employees who intend to steal critical information or, more generally, cause economic damage. To check the security of the company against possible internal attacks, we place ourselves in the same conditions of your employees and we use the standard workstations to perform the analysis.`,
 		img:
 			'/images/covers/services/network-and-infrastructure-security/corporate-workstation-penetration-test.svg',
-		category_id: 'network-security',
+		category_id: 'service_category_5',
 		path: '/services/',
 	},
 	{
@@ -145,7 +84,7 @@ let svs = [
 	With a wide experience in this field, Secure Network challenges your virtual infrastructure through targeted attacks aimed at its compromise. Tests may also include the review of the infrastructure management process and of network configuration in order to identifiy further vulnerabilities.`,
 		img:
 			'/images/covers/services/network-and-infrastructure-security/virtual-infrastructure.svg',
-		category_id: 'network-security',
+		category_id: 'service_category_5',
 		path: '/services/',
 	},
 	{
@@ -155,7 +94,7 @@ let svs = [
 	“bit for bit” copy technique and hash calculation of acquired evidence must be implemented by the acquisition process in order to be considered reliable, repeatable and to guarantee the completeness of duplicattion process. Only with proper procedures and a bit for bit copy it is possible to ensure data integrity and maintaining the Chain of Custody (CoC) throughout the whole process.`,
 		img:
 			'/images/covers/services/digital-forensics/forensics-acquisition.svg',
-		category_id: 'digital-forensics',
+		category_id: 'service_category_3',
 		path: '/services/',
 	},
 	{
@@ -163,14 +102,14 @@ let svs = [
 		text: `The experience gained through the years contributed building the needed know-how to successfully manage digital investigation activity on the most common device. We are specialized on mobile forensics, a branch of digital forensics encompassing acquisition and analysis of mobile devices.`,
 		img:
 			'/images/covers/services/digital-forensics/forensics-acquisition.svg',
-		category_id: 'digital-forensics',
+		category_id: 'service_category_3',
 		path: '/services/',
 	},
 	{
 		title: 'Device Analysis',
 		text: `Malware analysis is performed by highly skilled analysts and it is aimed to understand the malicious software logic. Acquired knowledge is then used to develop effective counter-measures, proper risk management strategies and to enhance effectiveness of IPS and antivirus software.`,
 		img: '/images/covers/services/digital-forensics/malware-analysis.svg',
-		category_id: 'digital-forensics',
+		category_id: 'service_category_3',
 		path: '/services/',
 	},
 	{
@@ -178,7 +117,7 @@ let svs = [
 		text: `A Vulnerability Assessment (VA) is a non-intrusive approach used to produce a prioritized list of security vulnerabilities, based on the risk associated to their potential exploitation.`,
 		img:
 			'/images/covers/services/security-assessments/vulnerability-assessment.svg',
-		category_id: 'security-assessment',
+		category_id: 'service_category_6',
 		path: '/services/',
 	},
 	{
@@ -186,7 +125,7 @@ let svs = [
 		text: `A Penetration Test (PT) uses an intrusive and vertical approach to demonstrate how damaging security vulnerabilities could be in a real attack. It is an intensive service, as opposed to the vulnerability assessment that is an extensive one.`,
 		img:
 			'/images/covers/services/security-assessments/penetration-test.svg',
-		category_id: 'security-assessment',
+		category_id: 'service_category_6',
 		path: '/services/',
 	},
 	{
@@ -194,7 +133,7 @@ let svs = [
 		text: `Mobile Application Security Crash Course is the ideal course for people with coding experience in the mobile applications field (developers and designers) that want to explore the security features of such world. The course is designed in a way that no prior knowledge of ICT Security is required, addressing each topic in clear and very comprehensible way.`,
 		img:
 			'/images/covers/services/application-security/web-applications-and-web-services.svg',
-		category_id: 'mobile-security-training',
+		category_id: 'service_category_4',
 		path: '/services/',
 	},
 	{
@@ -202,56 +141,49 @@ let svs = [
 		text: `The course will address the security issues related to mobile apps development and mobile devices environment. Starting from an overview of the security features currently implemented by Android and iOS platforms to guarantee the security of data, applications and device, the course will discuss in details such topics from both the point of view of attacker and developer. The course will follow the guidelines provided by OWASP (OWASP Top 10 Mobile Risks and OWASP Mobile Testing Guide) to discuss the most critical points likely to introduce vulnerabilities and current techniques to avoid them. Mobile malware topic is then addressed to explain its impact on device environment, applications and the device itself.`,
 		img:
 			'/images/covers/services/application-security/web-applications-and-web-services.svg',
-		category_id: 'mobile-security-training',
+		category_id: 'service_category_4',
 		path: '/services/',
 	},
 	{
 		title: 'Reverse Engineering',
 		text: `The course builds a strong foundation for reverse-engineering software using a variety of system and network monitoring utilities, a disassembler, a debugger and other tools for turning software inside-out. You also learn how to understand key characteristics of malware discovered during the examination.`,
 		img: '/images/covers/services/',
-		category_id: 'binary-exploitation-training',
+		category_id: 'service_category_2',
 		path: '/services/',
 	},
 	{
 		title: 'Vulnerability Detection & Exploitation',
 		text: `The course will teach you how to apply the theory and practice of code auditing, how to dissect an application, how to discover security vulnerabilities and assess the danger each vulnerability presents. You will run vulnerability scans and observe exploits to better secure networks, servers and workstations. This course is valuable for those involved in securing enterprise systems: network and system administrators, computer security personnel, officers with direct involvement in security and those involved in cyber security measures and implementation.`,
 		img: '/images/covers/services/',
-		category_id: 'binary-exploitation-training',
+		category_id: 'service_category_2',
 		path: '/services/',
 	},
 	{
 		title: 'Application Vulnerability Assessment',
 		text: `This course is designed to train participants to perform threat and vulnerability assessment, understanding the fundamental technical skills required to identify and prevent application vulnerabilities. You will also discuss about methods to support secure software development. This course is useful for security personnel and others who may be responsible for assessing and managing the risk of threats to process facilities.`,
 		img: '/images/covers/services/',
-		category_id: 'binary-exploitation-training',
+		category_id: 'service_category_2',
 		path: '/services/',
 	},
 	{
 		title: 'Network Vulnerability Assessment',
 		text: `The course will teach you how to apply the theory and practice of code auditing, how to dissect an application, how to discover security vulnerabilities and assess the danger each vulnerability presents. You will run vulnerability scans and observe exploits to better secure networks, servers and workstations. This course is valuable for those involved in securing enterprise systems: network and system administrators, computer security personnel, officers with direct involvement in security and those involved in cyber security measures and implementation.`,
 		img: '/images/covers/services/',
-		category_id: 'web-exploitation-training',
+		category_id: 'service_category_7',
 		path: '/services/',
 	},
 	{
 		title: 'Network Penetration Testing',
 		text: `The course will teach you proper planning, scoping and recon, and then dive deep into scanning, target exploitation, password attacks, and wireless with detailed hands-on exercises and practical tips for doing the job safely and effectively. You will finish up with an intensive, hands-on exercise in which you will conduct a penetration test against a sample target organization, demonstrating the knowledge you mastered in this course.`,
 		img: '/images/covers/services/',
-		category_id: 'web-exploitation-training',
+		category_id: 'service_category_7',
 		path: '/services/',
 	},
 	{
 		title: 'Web Application Testion',
 		text: `The course is designed as a full hands-on challenge, in which attendees should play a real-world scenario, attacking real-world targets and breach the security of a series of web applications. Participants will learn proper practice-oriented method to attack web applications, how to define and organize a targeted mission and learn how to solve pentesters’ issues during the hack of computer systems.`,
 		img: '/images/covers/services/',
-		category_id: 'web-exploitation-training',
+		category_id: 'service_category_7',
 		path: '/services/',
 	},
 ].sort(compareByTitle)
-
-/*Refined definition */
-refine(sv_categories, 'service_category_')
-export const service_categories = sv_categories
-
-refine(svs, 'service_')
-export const services = svs

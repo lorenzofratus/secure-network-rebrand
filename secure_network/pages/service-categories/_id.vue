@@ -3,7 +3,7 @@
 		<main-section
 			:buttons="main_section.buttons"
 			:img="main_section.img"
-			:title="main_section.title"
+			:title="id.replaceAll('-', ' ')"
 			:wrapper="wrapper"
 		/>
 		<alt-section
@@ -36,13 +36,14 @@ export default {
 		const services = data
 		return {
 			services,
+			id,
 		}
 	},
 	data() {
 		return {
 			wrapper: 'Index',
 			main_section: {
-				title: 'All Service Categories',
+				title: 'All Services of category:',
 				buttons: [
 					{
 						class: 'primary',

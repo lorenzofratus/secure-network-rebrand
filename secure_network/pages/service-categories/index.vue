@@ -10,7 +10,6 @@
 			:title="alt_section.title"
 			:paragraphs="alt_section.paragraphs"
 			:wrapper="wrapper"
-			:button="alt_section.button"
 		/>
 		<services-section :wrapper="wrapper" :services="services" />
 	</div>

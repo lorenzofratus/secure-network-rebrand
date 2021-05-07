@@ -17,7 +17,8 @@ async function init() {
 	})
 
 	app.get('/services-by-category/:category', async (req, res) => {
-		const { category } = req.params
+		let { category } = req.params
+		//category = category.replace('-', ' ')
 		return res.json(
 			await Service.findAll({
 				where: { category_id: category },
