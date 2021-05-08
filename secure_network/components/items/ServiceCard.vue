@@ -9,9 +9,9 @@
 			</p>
 		</div>
 		<button-component
-			:btn_path="path"
-			:btn_class="btn_class"
-			:btn_text="btn_text"
+			:btn-path="path"
+			:btn-class="btnClass"
+			:btn-text="btnText"
 		/>
 	</div>
 </template>
@@ -40,14 +40,16 @@ export default {
 	},
 	data() {
 		return {
-			btn_text: 'Read more',
-			btn_class: 'secondary',
+			btnText: 'Read more',
+			btnClass: 'secondary',
 		}
 	},
 	computed: {
 		abstract() {
+			const count = 15
 			let words = this.text.split(/\s|\n/)
-			words = words.splice(0, 15)
+			if (words.length <= count) return words.join(' ')
+			words = words.splice(0, count)
 			return words.join(' ') + ' ...'
 		},
 	},
@@ -55,22 +57,6 @@ export default {
 </script>
 
 <style scoped>
-.card {
-	padding: 2em;
-	border-radius: 1em;
-	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
-}
-.card .icon {
-	color: var(--primary-color);
-}
-.card.interactive {
-	transition: 0.35s box-shadow ease-in-out;
-}
-.card.interactive:hover,
-.card.interactive:focus {
-	box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
-}
-
 .service {
 	display: flex;
 	flex-direction: column;

@@ -94,21 +94,21 @@ export default {
 						text:
 							'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam praesentium facere aliquid beatae magnam est.',
 						icon: 'smartphone',
-						btn_path: '/',
+						btnPath: '/',
 					},
 					{
 						title: 'Wireless Network & Infrastructures',
 						text:
 							'Lorem ipsum dolor sit amet consectetur adipisicing ',
 						icon: 'wifi',
-						btn_path: '/',
+						btnPath: '/',
 					},
 					{
 						title: 'Middleware Infrastructures',
 						text:
 							'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam praesentium facere aliquid beatae magnam est.',
 						icon: 'code',
-						btn_path: '/',
+						btnPath: '/',
 					},
 				],
 			},

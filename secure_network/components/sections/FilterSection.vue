@@ -8,9 +8,9 @@
 				<button-component
 					v-for="(btn, index) in buttons"
 					:key="'filter-button-' + index + '-' + wrapper"
-					:btn_path="btn.path"
-					:btn_text="btn.text"
-					:btn_class="btn.class"
+					:btn-path="btn.path"
+					:btn-text="btn.text"
+					:btn-class="btn.class"
 				/>
 			</div>
 		</div>

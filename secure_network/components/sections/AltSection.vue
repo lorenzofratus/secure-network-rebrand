@@ -15,9 +15,9 @@
 			</div>
 			<div v-if="button.text">
 				<button-component
-					:btn_class="button.class"
-					:btn_text="button.text"
-					:btn_path="button.path"
+					:btn-class="button.class"
+					:btn-text="button.text"
+					:btn-path="button.path"
 				/>
 			</div>
 		</div>

@@ -9,9 +9,9 @@
 				<b>{{ newsCount }}</b> Research
 			</div>
 			<button-component
-				:btn_class="'secondary'"
-				:btn_path="path"
-				:btn_text="'Explore'"
+				:btn-class="'secondary'"
+				:btn-ath="path"
+				:btn-text="'Explore'"
 			/>
 		</div>
 	</div>

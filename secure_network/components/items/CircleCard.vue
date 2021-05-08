@@ -26,21 +26,6 @@ export default {
 </script>
 
 <style>
-.card {
-	padding: 2em;
-	border-radius: 1em;
-	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
-}
-.card .icon {
-	color: var(--primary-color);
-}
-.card.interactive {
-	transition: 0.35s box-shadow ease-in-out;
-}
-.card.interactive:hover,
-.card.interactive:focus {
-	box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
-}
 .circle {
 	position: relative;
 	text-align: center;
