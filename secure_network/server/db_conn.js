@@ -1,7 +1,6 @@
 /* 
 	Initialization variables
 */
-import { util } from 'prettier'
 import { service_categories } from './db_init/db_init.js'
 import { services } from './db_init/db_init.js'
 
@@ -12,16 +11,13 @@ require('dotenv').config()
 */
 
 const { Sequelize, DataTypes, Model } = require('sequelize')
-const db = new Sequelize(
-	process.env.DATABASE_URL,
-	{
-		ssl: true,
-		dialectOptions: { ssl: { require: true, rejectUnauthorized: false } },
-		define: {
-			freezeTableName: true,
-		},
-	}
-)
+const db = new Sequelize(process.env.DATABASE_URL, {
+	ssl: true,
+	dialectOptions: { ssl: { require: true, rejectUnauthorized: false } },
+	define: {
+		freezeTableName: true,
+	},
+})
 /*
 	Utilities functions
 */
