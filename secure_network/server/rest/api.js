@@ -30,6 +30,10 @@ async function init() {
 		const { id } = req.params
 		return res.json(await Service.findByPk(id))
 	})
+
+	app.get('/services-test', async (req, res) => {
+		return res.json(await Service.findAll())
+	})
 }
 init()
 

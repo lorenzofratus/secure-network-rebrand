@@ -29,7 +29,11 @@ export default {
 	layout: 'default',
 	async asyncData({ store }) {
 		// fetch data from the api server
-		const services = await store.dispatch('getServices')
+		// const services = await store.dispatch('getServices')
+		const { data } = await this.$axios.get(
+			`${process.env.BASE_URL}/api/services-test`
+		)
+		const services = data
 		return {
 			services,
 		}
