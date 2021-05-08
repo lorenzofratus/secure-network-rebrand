@@ -4,19 +4,17 @@
 			:buttons="main_section.buttons"
 			:img="service.img"
 			:title="service.title"
-			:wrapper="wrapper"
+			:wrapper="service.id"
 		/>
 		<alt-section
-			:title="alt_section.title"
-			:paragraphs="alt_section.paragraphs"
-			:wrapper="wrapper"
-			:button="alt_section.button"
+			:title="'Service Overview'"
+			:paragraphs="paragraphs"
+			:wrapper="service.id"
 		/>
 	</div>
 </template>
 
 <script>
-import ItemsSection from '~/components/sections/ItemsSection.vue'
 import MainSection from '~/components/sections/MainSection.vue'
 import AltSection from '~/components/sections/AltSection.vue'
 
@@ -24,7 +22,6 @@ export default {
 	components: {
 		MainSection,
 		AltSection,
-		ItemsSection,
 	},
 	layout: 'default',
 	async asyncData({ $axios, route }) {
@@ -33,58 +30,28 @@ export default {
 			`${process.env.BASE_URL}/api/services/${id}`
 		)
 		const service = data
-		const title = id.replace(/-/g, ' ')
+		const paragraphs = service.text.split('\n')
 		return {
 			service,
-			title,
+			paragraphs,
 		}
 	},
 	data() {
 		return {
-			wrapper: 'Index',
 			main_section: {
-				title: 'All Services of category:',
 				buttons: [
 					{
 						class: 'primary',
-						text: 'Section',
+						text: 'TBD',
 						path: '/',
 					},
 					{
 						class: 'secondary',
-						text: 'Contact us',
+						text: 'TBD',
 						path: '/contacts',
 					},
 				],
 				img: '/images/covers/index.svg',
-
-			},
-			alt_section: {
-				title: 'Lorem Ipsum',
-				paragraphs: [
-					'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsam, rem obcaecati repellat accusamus at quis magnam. Repudiandae vitae sit dignissimos? Sit similique anim blanditiis neque quae consequatur, numquam explicabo commodi tempora voluptatibus impedit suscipit optio non dicta deserunt laborum ipsa debitis odit. Vero, ipsum quasi. Ipsam facere cumque dolore quibusdam.',
-					'Lorem ipsum dolor, sit amet consectetur adipisicing elit. In mollitia hic asperiores temporibus soluta esse tempora itaque possimus, quam nostrum, id ratione iusto illum aut. Accusamus, necessitatibus? Rem, odio asperiores.',
-				],
-			},
-			filter_section: {
-				title: 'Filter Showcase',
-				buttons: [
-					{
-						class: 'primary',
-						text: 'All types',
-						path: '/',
-					},
-					{
-						class: 'outlined',
-						text: 'Research',
-						path: '/',
-					},
-					{
-						class: 'outlined',
-						text: 'News',
-						path: '/',
-					},
-				],
 			},
 		}
 	},

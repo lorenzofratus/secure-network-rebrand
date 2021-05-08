@@ -9,7 +9,7 @@
 				:btn-text="button.text"
 			/>
 		</div>
-		<img :src="img.src" :class="img.class" />
+		<img :src="img" class="cover" />
 	</div>
 </template>
 
@@ -34,7 +34,7 @@ export default {
 		},
 		img: {
 			required: true,
-			type: Object,
+			type: String,
 		},
 		wrapper: {
 			type: String,
