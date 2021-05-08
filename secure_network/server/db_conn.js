@@ -11,7 +11,7 @@ import { services } from './db_init/db_init.js'
 const { Sequelize, DataTypes, Model } = require('sequelize')
 const db = new Sequelize(
 	// process.env.DATABASE_URL
-	'postgres://psphttksubmcsp:c4ff8594adf94f8f29b16c92666692771c08986914abb899a0c8c7ca24e1c918@ec2-34-247-151-118.eu-west-1.compute.amazonaws.com:5432/d6fpg6o9bbe9rj',
+	'postgres://udidolumrpyple:dc84cc957f8d856621998635d0056c661cbbd920829f7532a81e40b359bc5939@ec2-63-34-97-163.eu-west-1.compute.amazonaws.com:5432/dcrecta6bvu65v',
 	{
 		ssl: true,
 		dialectOptions: { ssl: { require: true, rejectUnauthorized: false } },
