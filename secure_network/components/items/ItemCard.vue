@@ -1,5 +1,5 @@
 <template>
-	<div class="card service">
+	<div class="card item">
 		<img v-if="img.includes('/')" :src="img" class="image" />
 		<span v-else class="icon material-icons">{{ img }}</span>
 		<div class="text">
@@ -57,19 +57,19 @@ export default {
 </script>
 
 <style scoped>
-.service {
+.item {
 	display: flex;
 	flex-direction: column;
 	text-align: center;
 }
-.service .image {
+.item .image {
 	height: 8em;
 	margin: 0 auto;
 }
-.service .icon {
+.item .icon {
 	font-size: 60px;
 }
-.service .text {
+.item .text {
 	text-align: left;
 	flex-grow: 1;
 	margin-bottom: 1em;

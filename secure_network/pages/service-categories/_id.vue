@@ -12,12 +12,12 @@
 			:wrapper="wrapper"
 			:button="alt_section.button"
 		/>
-		<services-section :wrapper="wrapper" :services="services" />
+		<items-section :wrapper="wrapper" :items="services" />
 	</div>
 </template>
 
 <script>
-import ServicesSection from '~/components/sections/ServicesSection.vue'
+import ItemsSection from '~/components/sections/ItemsSection.vue'
 import MainSection from '~/components/sections/MainSection.vue'
 import AltSection from '~/components/sections/AltSection.vue'
 
@@ -25,7 +25,7 @@ export default {
 	components: {
 		MainSection,
 		AltSection,
-		ServicesSection,
+		ItemsSection,
 	},
 	layout: 'default',
 	async asyncData({ $axios, route }) {

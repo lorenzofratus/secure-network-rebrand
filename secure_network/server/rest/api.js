@@ -26,7 +26,7 @@ async function init() {
 		)
 	})
 
-	app.get('/services-by-id/:id', async (req, res) => {
+	app.get('/services/:id', async (req, res) => {
 		const { id } = req.params
 		return res.json(await Service.findByPk(id))
 	})

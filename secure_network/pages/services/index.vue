@@ -11,7 +11,7 @@
 			:paragraphs="alt_section.paragraphs"
 			:wrapper="wrapper"
 		/>
-		<items-section :wrapper="wrapper" :items="serviceCategories" />
+		<items-section :wrapper="wrapper" :items="services" />
 	</div>
 </template>
 
@@ -29,9 +29,9 @@ export default {
 	layout: 'default',
 	async asyncData({ store }) {
 		// fetch data from the api server
-		const serviceCategories = await store.dispatch('getServiceCategories')
+		const services = await store.dispatch('getServiceCategories')
 		return {
-			serviceCategories,
+			services,
 		}
 	},
 	data() {

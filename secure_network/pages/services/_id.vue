@@ -3,15 +3,16 @@
 		<main-section
 			:buttons="main_section.buttons"
 			:img="main_section.img"
-			:title="main_section.title"
+			:title="id.replaceAll('-', ' ')"
 			:wrapper="wrapper"
 		/>
 		<alt-section
 			:title="alt_section.title"
 			:paragraphs="alt_section.paragraphs"
 			:wrapper="wrapper"
+			:button="alt_section.button"
 		/>
-		<items-section :wrapper="wrapper" :items="serviceCategories" />
+		<items-section :wrapper="wrapper" :items="services" />
 	</div>
 </template>
 
@@ -27,18 +28,22 @@ export default {
 		ItemsSection,
 	},
 	layout: 'default',
-	async asyncData({ store }) {
-		// fetch data from the api server
-		const serviceCategories = await store.dispatch('getServiceCategories')
+	async asyncData({ $axios, route }) {
+		const { id } = route.params
+		const { data } = await $axios.get(
+			`${process.env.BASE_URL}/api/services/${id}`
+		)
+		const service = data
 		return {
-			serviceCategories,
+			service,
+			id,
 		}
 	},
 	data() {
 		return {
 			wrapper: 'Index',
 			main_section: {
-				title: 'All Service Categories',
+				title: 'All Services of category:',
 				buttons: [
 					{
 						class: 'primary',
@@ -85,7 +90,6 @@ export default {
 			},
 		}
 	},
-	computed: {},
 }
 </script>
 

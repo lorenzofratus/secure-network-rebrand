@@ -6,7 +6,7 @@
 			<button-component
 				:btn-class="button.class"
 				:btn-path="button.path"
-				:btn-ext="button.text"
+				:btn-text="button.text"
 			/>
 		</div>
 		<img :src="img.src" :class="img.class" />
