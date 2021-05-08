@@ -27,10 +27,7 @@ export default {
 			main_section: {
 				title: 'Founders',
 				subtitle: '',
-				img: {
-					src: '/images/covers/about.svg',
-					class: 'cover',
-				},
+				img: '/images/covers/about.svg',
 			},
 			alt_section: {
 				title: 'Lorem Ipsum',

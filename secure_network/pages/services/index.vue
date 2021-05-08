@@ -29,16 +29,16 @@ export default {
 	layout: 'default',
 	async asyncData({ store }) {
 		// fetch data from the api server
-		const services = await store.dispatch('getServiceCategories')
+		const services = await store.dispatch('getServices')
 		return {
 			services,
 		}
 	},
 	data() {
 		return {
-			wrapper: 'Index',
+			wrapper: 'Services',
 			main_section: {
-				title: 'All Service Categories',
+				title: 'All Available Services',
 				buttons: [
 					{
 						class: 'primary',
@@ -51,36 +51,13 @@ export default {
 						path: '/contacts',
 					},
 				],
-				img: {
-					src: '/images/covers/index.svg',
-					class: 'cover',
-				},
+				img: '/images/covers/services.svg',
 			},
 			alt_section: {
 				title: 'Lorem Ipsum',
 				paragraphs: [
 					'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsam, rem obcaecati repellat accusamus at quis magnam. Repudiandae vitae sit dignissimos? Sit similique anim blanditiis neque quae consequatur, numquam explicabo commodi tempora voluptatibus impedit suscipit optio non dicta deserunt laborum ipsa debitis odit. Vero, ipsum quasi. Ipsam facere cumque dolore quibusdam.',
 					'Lorem ipsum dolor, sit amet consectetur adipisicing elit. In mollitia hic asperiores temporibus soluta esse tempora itaque possimus, quam nostrum, id ratione iusto illum aut. Accusamus, necessitatibus? Rem, odio asperiores.',
-				],
-			},
-			filter_section: {
-				title: 'Filter Showcase',
-				buttons: [
-					{
-						class: 'primary',
-						text: 'All types',
-						path: '/',
-					},
-					{
-						class: 'outlined',
-						text: 'Research',
-						path: '/',
-					},
-					{
-						class: 'outlined',
-						text: 'News',
-						path: '/',
-					},
 				],
 			},
 		}

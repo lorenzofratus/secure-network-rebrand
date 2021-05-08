@@ -39,10 +39,8 @@ export default {
 						path: '/',
 					},
 				],
-				img: {
-					src: '/images/covers/resources.svg',
-					class: 'cover',
-				},
+				img: '/images/covers/resources.svg',
+
 			},
 			years: [
 				{

@@ -2,8 +2,8 @@
 	<div class="container">
 		<main-section
 			:buttons="main_section.buttons"
-			:img="main_section.img"
-			:title="id.replaceAll('-', ' ')"
+			:img="service.img"
+			:title="service.title"
 			:wrapper="wrapper"
 		/>
 		<alt-section
@@ -12,7 +12,6 @@
 			:wrapper="wrapper"
 			:button="alt_section.button"
 		/>
-		<items-section :wrapper="wrapper" :items="services" />
 	</div>
 </template>
 
@@ -34,9 +33,10 @@ export default {
 			`${process.env.BASE_URL}/api/services/${id}`
 		)
 		const service = data
+		const title = id.replace(/-/g, ' ')
 		return {
 			service,
-			id,
+			title,
 		}
 	},
 	data() {
@@ -56,10 +56,8 @@ export default {
 						path: '/contacts',
 					},
 				],
-				img: {
-					src: '/images/covers/index.svg',
-					class: 'cover',
-				},
+				img: '/images/covers/index.svg',
+
 			},
 			alt_section: {
 				title: 'Lorem Ipsum',

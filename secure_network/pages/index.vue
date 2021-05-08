@@ -55,10 +55,7 @@ export default {
 						path: '/contacts',
 					},
 				],
-				img: {
-					src: '/images/covers/index.svg',
-					class: 'cover',
-				},
+				img: '/images/covers/index.svg',
 			},
 			alt_section: {
 				title: 'Lorem Ipsum',

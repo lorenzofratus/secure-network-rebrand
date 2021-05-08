@@ -3,7 +3,7 @@
 		<main-section
 			:buttons="main_section.buttons"
 			:img="main_section.img"
-			:title="id.replaceAll('-', ' ')"
+			:title="title"
 			:wrapper="wrapper"
 		/>
 		<alt-section
@@ -12,7 +12,7 @@
 			:wrapper="wrapper"
 			:button="alt_section.button"
 		/>
-		<items-section :wrapper="wrapper" :items="services" />
+		<items-section :wrapper="wrapper" :items="servicesCategory" />
 	</div>
 </template>
 
@@ -33,10 +33,11 @@ export default {
 		const { data } = await $axios.get(
 			`${process.env.BASE_URL}/api/services-by-category/${id}`
 		)
-		const services = data
+		const servicesCategory = data
+		const title = id.replace(/-/g, ' ')
 		return {
-			services,
-			id,
+			servicesCategory,
+			title,
 		}
 	},
 	data() {
@@ -56,10 +57,7 @@ export default {
 						path: '/contacts',
 					},
 				],
-				img: {
-					src: '/images/covers/index.svg',
-					class: 'cover',
-				},
+				img: '/images/covers/index.svg',
 			},
 			alt_section: {
 				title: 'Lorem Ipsum',

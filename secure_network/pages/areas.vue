@@ -62,10 +62,7 @@ export default {
 						path: '/contacts',
 					},
 				],
-				img: {
-					src: '/images/covers/areas.svg',
-					class: 'cover',
-				},
+				img: '/images/covers/areas.svg',
 			},
 			alt_section: {
 				title: 'Lorem Ipsum',
@@ -78,10 +75,7 @@ export default {
 				title: 'Name of the Area',
 				description:
 					'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsam, rem obcaecati repellat accusamus at quis magnam.',
-				img: {
-					src: '/images/covers/areas/enterprise-security.svg',
-					class: 'cover',
-				},
+				img: '/images/covers/areas/enterprise-security.svg',
 				button: {
 					class: 'secondary',
 					text: 'Read More',
@@ -92,10 +86,7 @@ export default {
 				title: 'Name of the Area',
 				description:
 					'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsam, rem obcaecati repellat accusamus at quis magnam.',
-				img: {
-					src: '/images/covers/areas/legal-advice.svg',
-					class: 'cover',
-				},
+				img: '/images/covers/areas/legal-advice.svg',
 				button: {
 					class: 'secondary',
 					text: 'Read More',
@@ -106,10 +97,7 @@ export default {
 				title: 'Name of the Area',
 				description:
 					'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsam, rem obcaecati repellat accusamus at quis magnam.',
-				img: {
-					src: '/images/covers/areas/training.svg',
-					class: 'cover',
-				},
+				img: '/images/covers/areas/training.svg',
 				button: {
 					class: 'secondary',
 					text: 'Read More',

@@ -6,6 +6,9 @@ export const mutations = {
 	setServiceCategories(state, data) {
 		state.serviceCategories = data
 	},
+	setServices(state, data) {
+		state.services = data
+	},
 }
 
 export const actions = {
@@ -17,5 +20,14 @@ export const actions = {
 			commit('setServiceCategories', data)
 		}
 		return state.serviceCategories
+	},
+	async getServices({ commit, state }) {
+		if (state.services.length === 0) {
+			const { data } = await this.$axios.get(
+				`${process.env.BASE_URL}/api/services`
+			)
+			commit('setServices', data)
+		}
+		return state.services
 	},
 }

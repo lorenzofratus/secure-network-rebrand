@@ -59,10 +59,7 @@ export default {
 						path: '/',
 					},
 				],
-				img: {
-					src: '/images/covers/team.svg',
-					class: 'cover',
-				},
+				img: '/images/covers/team.svg',
 			},
 			alt_section: {
 				title: 'Who we are',

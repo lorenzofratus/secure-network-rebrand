@@ -75,10 +75,8 @@ export default {
 						path: '/contacts',
 					},
 				],
-				img: {
-					src: '/images/covers/contacts.svg',
-					class: 'cover',
-				},
+				img: '/images/covers/contacts.svg',
+
 			},
 			activeMap: 1,
 		}

@@ -13,7 +13,7 @@
 				/>
 			</div>
 		</div>
-		<img :src="img.src" :class="img.class" />
+		<img :src="img" class="cover" />
 	</div>
 </template>
 
@@ -39,7 +39,7 @@ export default {
 		},
 		img: {
 			required: true,
-			type: Object,
+			type: String,
 		},
 		wrapper: {
 			type: String,
@@ -67,8 +67,12 @@ export default {
 }
 /* .header .title,
 .header .subtitle {
-	white-space: pre;
+	
 } */
+
+.header .title {
+	text-transform: capitalize;
+}
 .header .buttons {
 	justify-content: start;
 }
