@@ -167,7 +167,7 @@ let svs = [
 		path: '/services/',
 	},
 	{
-		title: 'Device Analysis',
+		title: 'Malware Analysis',
 		text: `Malware analysis is performed by highly skilled analysts and it is aimed to understand the malicious software logic. Acquired knowledge is then used to develop effective counter-measures, proper risk management strategies and to enhance effectiveness of IPS and antivirus software.`,
 		img: '/images/covers/services/digital-forensics/malware-analysis.svg',
 		category_id: 'digital-forensics',
