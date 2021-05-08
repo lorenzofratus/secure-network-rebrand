@@ -4,7 +4,7 @@
 			<box-card
 				v-for="(box, index) in boxes"
 				:key="'box-' + index + '-' + wrapper"
-				:btn_path="box.btn_path"
+				:btn-path="box.btnPath"
 				:icon="box.icon"
 				:title="box.title"
 				:text="box.text"

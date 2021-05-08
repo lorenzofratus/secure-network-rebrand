@@ -6,9 +6,9 @@
 			{{ text }}
 		</p>
 		<button-component
-			:btn_path="btn_path"
-			:btn_class="btn_class"
-			:btn_text="btn_text"
+			:btn-path="btnPath"
+			:btn-class="btnClass"
+			:btn-text="btnText"
 		/>
 	</div>
 </template>
@@ -30,30 +30,21 @@ export default {
 			type: String,
 			required: true,
 		},
-		btn_path: {
+		btnPath: {
 			type: String,
 			required: true,
 		},
 	},
 	data() {
 		return {
-			btn_text: 'Read more',
-			btn_class: 'secondary',
+			btnText: 'Read more',
+			btnClass: 'secondary',
 		}
 	},
 }
 </script>
 
 <style scoped>
-.card {
-	padding: 2em;
-	border-radius: 1em;
-	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
-}
-.card .icon {
-	color: var(--primary-color);
-}
-
 .service {
 	display: flex;
 	flex-direction: column;
