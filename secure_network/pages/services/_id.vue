@@ -27,7 +27,7 @@ export default {
 	async asyncData({ $axios, route }) {
 		const { id } = route.params
 		const { data } = await $axios.get(
-			`${process.env.BASE_URL}/api/services/${id}`
+			`/api/services/${id}`
 		)
 		const service = data
 		const paragraphs = service.text.split('\n')

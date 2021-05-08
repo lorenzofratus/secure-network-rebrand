@@ -27,12 +27,13 @@ export default {
 		ItemsSection,
 	},
 	layout: 'default',
-	async asyncData({ store }) {
+	async asyncData({ store, $axios }) {
 		// fetch data from the api server
 		// const services = await store.dispatch('getServices')
-		const { data } = await this.$axios.get(
+		const { data } = await $axios.get(
 			`${process.env.BASE_URL}/api/services-test`
 		)
+		console.log(`${process.env.BASE_URL}`)
 		const services = data
 		return {
 			services,

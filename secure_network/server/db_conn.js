@@ -5,13 +5,15 @@ import { util } from 'prettier'
 import { service_categories } from './db_init/db_init.js'
 import { services } from './db_init/db_init.js'
 
+require('dotenv').config()
+
 /*
 	Database initialization
 */
+
 const { Sequelize, DataTypes, Model } = require('sequelize')
 const db = new Sequelize(
-	// process.env.DATABASE_URL
-	'postgres://udidolumrpyple:dc84cc957f8d856621998635d0056c661cbbd920829f7532a81e40b359bc5939@ec2-63-34-97-163.eu-west-1.compute.amazonaws.com:5432/dcrecta6bvu65v',
+	process.env.DATABASE_URL,
 	{
 		ssl: true,
 		dialectOptions: { ssl: { require: true, rejectUnauthorized: false } },
