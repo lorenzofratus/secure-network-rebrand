@@ -4,9 +4,9 @@
 			<h2 class="spacer spacer-small">{{ title }}</h2>
 			<p>{{ description }}</p>
 			<button-component
-				:btn_class="button.class"
-				:btn_path="button.path"
-				:btn_text="button.text"
+				:btn-class="button.class"
+				:btn-path="button.path"
+				:btn-ext="button.text"
 			/>
 		</div>
 		<img :src="img.src" :class="img.class" />

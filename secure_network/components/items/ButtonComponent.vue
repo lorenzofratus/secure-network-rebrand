@@ -1,8 +1,8 @@
 /* eslint-disable vue/prop-name-casing */
 <template>
-	<nuxt-link :to="btn_path">
-		<div :class="'button ' + btn_class">
-			{{ btn_text }}
+	<nuxt-link :to="btnPath" @click.native="emitClick">
+		<div :class="'button ' + btnClass">
+			{{ btnText }}
 		</div>
 	</nuxt-link>
 </template>
@@ -10,17 +10,23 @@
 <script>
 export default {
 	props: {
-		btn_path: {
+		btnPath: {
+			type: String,
+			required: false,
+			default: '',
+		},
+		btnClass: {
 			type: String,
 			required: true,
 		},
-		btn_class: {
+		btnText: {
 			type: String,
 			required: true,
 		},
-		btn_text: {
-			type: String,
-			required: true,
+	},
+	methods: {
+		emitClick() {
+			if (this.btnPath === '') this.$emit('click', '')
 		},
 	},
 }

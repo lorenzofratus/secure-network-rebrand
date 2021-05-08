@@ -8,15 +8,16 @@
 				<p
 					v-for="(p, index) in paragraphs"
 					:key="'paragraph-' + index + '-' + wrapper"
+					:class="{ centered: centered }"
 				>
 					{{ p }}
 				</p>
 			</div>
 			<div v-if="button.text">
 				<button-component
-					:btn_class="button.class"
-					:btn_text="btn.text"
-					:btn_path="button.path"
+					:btn-class="button.class"
+					:btn-text="button.text"
+					:btn-path="button.path"
 				/>
 			</div>
 		</div>
@@ -50,8 +51,17 @@ export default {
 				return { text: '' }
 			},
 		},
+		centered: {
+			type: Boolean,
+			required: false,
+			default: false,
+		},
 	},
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+p.centered {
+	text-align: center;
+}
+</style>

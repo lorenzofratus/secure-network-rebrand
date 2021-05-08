@@ -7,9 +7,9 @@
 				<button-component
 					v-for="(button, index) in buttons"
 					:key="'main-section-button-' + index + '-' + wrapper"
-					:btn_path="button.path"
-					:btn_class="button.class"
-					:btn_text="button.text"
+					:btn-path="button.path"
+					:btn-class="button.class"
+					:btn-text="button.text"
 				/>
 			</div>
 		</div>
