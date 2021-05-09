@@ -295,6 +295,23 @@ let ppl = [
 	},
 ].sort(compareByName)
 
+let ars = [
+	{
+		name: 'Training',
+		text: `The wide range of courses, delivered anywhere in the world, provides multiple paths that can meet the needs of all our customers, including developers and system administrators, commercial agents, security consultant, manager, law enforcement and military.\n
+		Tailored to your specific technical level, the main courses will prepare you in the field of Application Security, Infrastructure Security and Secure Coding. The more advanced courses are also able to set you up to perform Penetration Test Professional.\n
+		In addition to the various courses offered and already defined, Secure Network is able to understand the specific needs of its customers and develop courses that meet every need.`,
+		path: 'areas/',
+		img: '/images/covers/areas/training.svg',
+	},
+	{
+		name: 'Enterprise Security',
+		text: `TBD`,
+		path: 'areas/',
+		img: '/images/covers/areas/enterprise-security.svg',
+	},
+].sort(compareByName)
+
 /*Refined definition */
 refine(sv_categories)
 export const service_categories = sv_categories
@@ -304,3 +321,6 @@ export const services = svs
 
 refinePeople(ppl)
 export const people = ppl
+
+refine(ars)
+export const areas = ars
