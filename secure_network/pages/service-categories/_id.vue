@@ -3,7 +3,7 @@
 		<main-section
 			:buttons="main_section.buttons"
 			:img="main_section.img"
-			:title="title"
+			:title="category.title"
 			:wrapper="wrapper"
 		/>
 		<alt-section
@@ -41,10 +41,8 @@ export default {
 		const category = payload.data
 		category.paragraphs = category.text.split('\n')
 
-		const title = id.replace(/-/g, ' ')
 		return {
 			services,
-			title,
 			category,
 		}
 	},
