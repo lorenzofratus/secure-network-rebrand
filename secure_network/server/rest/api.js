@@ -6,7 +6,7 @@ app.use(express.json())
 
 async function init() {
 	const db = await initializeDatabase()
-	const { ServiceCategory, Service } = db._tables
+	const { ServiceCategory, Service, Person } = db._tables
 
 	app.get('/service-categories', async (req, res) => {
 		return res.json(await ServiceCategory.findAll())
@@ -14,6 +14,10 @@ async function init() {
 
 	app.get('/services', async (req, res) => {
 		return res.json(await Service.findAll())
+	})
+
+	app.get('/people', async (req, res) => {
+		return res.json(await Person.findAll())
 	})
 
 	app.get('/services-by-category/:category', async (req, res) => {
@@ -33,6 +37,23 @@ async function init() {
 	app.get('/service-category/:category', async (req, res) => {
 		const { category } = req.params
 		return res.json(await ServiceCategory.findByPk(category))
+	})
+
+	app.get('/people/:person', async (req, res) => {
+		const { person } = req.params
+		return res.json(await People.findByPk(category))
+	})
+
+	app.get('/people-founders', async (req, res) => {
+		return res.json(await Person.findAll({ where: { role: 'founder' } }))
+	})
+
+	app.get('/people-managers', async (req, res) => {
+		return res.json(await Person.findAll({ where: { role: 'manager' } }))
+	})
+
+	app.get('/people-employees', async (req, res) => {
+		return res.json(await Person.findAll({ where: { role: 'employee' } }))
 	})
 }
 init()

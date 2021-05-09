@@ -13,7 +13,7 @@
 			:wrapper="wrapper"
 			:button="alt_section.button"
 		/>
-		<people-section :people="people_section.people" :wrapper="wrapper" />
+		<people-section :people="people" :wrapper="wrapper" />
 		<alt-section
 			:title="alt_section2.title"
 			:paragraphs="alt_section2.paragraphs"
@@ -32,6 +32,21 @@ import PeopleSection from '~/components/sections/PeopleSection.vue'
 export default {
 	components: { MainSection, AltSection, PeopleSection },
 	layout: 'default',
+	// async asyncData({ store }) {
+	// 	// fetch data from the api server
+	// 	const people = await store.dispatch('getPeople')
+	// 	return {
+	// 		people,
+	// 	}
+	// },
+	async asyncData({ $axios }) {
+		// fetch data from the api server
+		const { data } = await $axios.get(`${process.env.BASE_URL}/api/people`)
+		const people = data
+		return {
+			people,
+		}
+	},
 	data() {
 		return {
 			wrapper: 'Team',

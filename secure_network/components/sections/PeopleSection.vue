@@ -7,6 +7,7 @@
 				:img="item.img"
 				:name="item.name"
 				:surname="item.surname"
+				:path="item.path"
 			/>
 		</div>
 	</section>

@@ -27,9 +27,19 @@ export default {
 		ItemsSection,
 	},
 	layout: 'default',
-	async asyncData({ store }) {
+	// async asyncData({ store }) {
+	// 	// fetch data the store
+	// 	const serviceCategories = await store.dispatch('getServiceCategories')
+	// 	return {
+	// 		serviceCategories,
+	// 	}
+	// },
+	async asyncData({ $axios }) {
 		// fetch data from the api server
-		const serviceCategories = await store.dispatch('getServiceCategories')
+		const { data } = await $axios.get(
+			`${process.env.BASE_URL}/api/service-categories`
+		)
+		const serviceCategories = data
 		return {
 			serviceCategories,
 		}

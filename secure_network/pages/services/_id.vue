@@ -8,7 +8,7 @@
 		/>
 		<alt-section
 			:title="'Service Overview'"
-			:paragraphs="paragraphs"
+			:paragraphs="service.paragraphs"
 			:wrapper="service.id"
 		/>
 	</div>
@@ -27,13 +27,12 @@ export default {
 	async asyncData({ $axios, route }) {
 		const { id } = route.params
 		const { data } = await $axios.get(
-			`/api/services/${id}`
+			`${process.env.BASE_URL}/api/services/${id}`
 		)
 		const service = data
-		const paragraphs = service.text.split('\n')
+		service.paragraphs = service.text.split('\n')
 		return {
 			service,
-			paragraphs,
 		}
 	},
 	data() {

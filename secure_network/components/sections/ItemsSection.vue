@@ -5,7 +5,7 @@
 				v-for="(item, index) in items"
 				:key="'item-' + index + '-' + wrapper"
 				:img="item.img"
-				:title="item.title"
+				:title="item.name"
 				:text="item.text"
 				:path="item.path"
 			/>

@@ -1,9 +1,11 @@
 <template>
-	<div class="card circle interactive">
-		<img class="image" :src="img" />
-		<h3>{{ name }}</h3>
-		<h3>{{ surname }}</h3>
-	</div>
+	<nuxt-link :to="path">
+		<div class="card circle interactive">
+			<img class="image" :src="img" />
+			<h3 class="h3">{{ name }}</h3>
+			<h3 class="h3">{{ surname }}</h3>
+		</div>
+	</nuxt-link>
 </template>
 
 <script>
@@ -18,6 +20,10 @@ export default {
 			required: true,
 		},
 		surname: {
+			type: String,
+			required: true,
+		},
+		path: {
 			type: String,
 			required: true,
 		},

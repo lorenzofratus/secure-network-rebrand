@@ -27,13 +27,18 @@ export default {
 		ItemsSection,
 	},
 	layout: 'default',
-	async asyncData({ store, $axios }) {
-		// fetch data from the api server
-		// const services = await store.dispatch('getServices')
+	// async asyncData({ store }) {
+	// 	// fetch data from store
+	// 	const services = await store.dispatch('getServices')
+	// 	return {
+	// 		services,
+	// 	}
+	// },
+	async asyncData({ $axios }) {
+		// fetch data from api server
 		const { data } = await $axios.get(
-			`${process.env.BASE_URL}/api/services-test`
+			`${process.env.BASE_URL}/api/services`
 		)
-		console.log(`${process.env.BASE_URL}`)
 		const services = data
 		return {
 			services,
