@@ -6,7 +6,7 @@
 			:title="item.name"
 			:description="item.description"
 			:img="item.img"
-			:btn-Path="item.path"
+			:btn-path="item.path"
 			:wrapper="wrapper"
 		/>
 	</div>
