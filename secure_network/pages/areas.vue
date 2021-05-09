@@ -1,4 +1,3 @@
-.
 <template>
 	<div class="container">
 		<main-section
@@ -13,36 +12,16 @@
 			:paragraphs="alt_section.paragraphs"
 			:wrapper="wrapper"
 		/>
-		<image-component
-			:title="image_component_section1.title"
-			:description="image_component_section1.description"
-			:img="image_component_section1.img"
-			:button="image_component_section1.button"
-			:wrapper="wrapper"
-		/>
-		<image-component
-			:title="image_component_section2.title"
-			:description="image_component_section2.description"
-			:img="image_component_section2.img"
-			:button="image_component_section2.button"
-			:wrapper="wrapper"
-		/>
-		<image-component
-			:title="image_component_section3.title"
-			:description="image_component_section3.description"
-			:img="image_component_section3.img"
-			:button="image_component_section3.button"
-			:wrapper="wrapper"
-		/>
+		<areas-section :areas="area_section.areas" />
 	</div>
 </template>
 
 <script>
 import MainSection from '~/components/sections/MainSection.vue'
 import AltSection from '~/components/sections/AltSection.vue'
-import ImageComponent from '~/components/items/ImageComponent.vue'
+import AreasSection from '~/components/sections/AreasSection.vue'
 export default {
-	components: { MainSection, AltSection, ImageComponent },
+	components: { MainSection, AltSection, AreasSection },
 	layout: 'default',
 	data() {
 		return {
@@ -71,38 +50,42 @@ export default {
 					'Lorem ipsum dolor, sit amet consectetur adipisicing elit. In mollitia hic asperiores temporibus soluta esse tempora itaque possimus, quam nostrum, id ratione iusto illum aut. Accusamus, necessitatibus? Rem, odio asperiores.',
 				],
 			},
-			image_component_section1: {
-				title: 'Name of the Area',
-				description:
-					'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsam, rem obcaecati repellat accusamus at quis magnam.',
-				img: '/images/covers/areas/enterprise-security.svg',
-				button: {
-					class: 'secondary',
-					text: 'Read More',
-					path: '/',
-				},
-			},
-			image_component_section2: {
-				title: 'Name of the Area',
-				description:
-					'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsam, rem obcaecati repellat accusamus at quis magnam.',
-				img: '/images/covers/areas/legal-advice.svg',
-				button: {
-					class: 'secondary',
-					text: 'Read More',
-					path: '/',
-				},
-			},
-			image_component_section3: {
-				title: 'Name of the Area',
-				description:
-					'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsam, rem obcaecati repellat accusamus at quis magnam.',
-				img: '/images/covers/areas/training.svg',
-				button: {
-					class: 'secondary',
-					text: 'Read More',
-					path: '/',
-				},
+			area_section: {
+				areas: [
+					{
+						title: 'Name of the Area',
+						description:
+							'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsam, rem obcaecati repellat accusamus at quis magnam.',
+						img: '/images/covers/areas/enterprise-security.svg',
+						button: {
+							class: 'secondary',
+							text: 'Read More',
+							path: '/',
+						},
+					},
+					{
+						title: 'Name of the Area',
+						description:
+							'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsam, rem obcaecati repellat accusamus at quis magnam.',
+						img: '/images/covers/areas/legal-advice.svg',
+						button: {
+							class: 'secondary',
+							text: 'Read More',
+							path: '/',
+						},
+					},
+					{
+						title: 'Name of the Area',
+						description:
+							'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsam, rem obcaecati repellat accusamus at quis magnam.',
+						img: '/images/covers/areas/training.svg',
+						button: {
+							class: 'secondary',
+							text: 'Read More',
+							path: '/',
+						},
+					},
+				],
 			},
 		}
 	},
