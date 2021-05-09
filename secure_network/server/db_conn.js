@@ -105,6 +105,7 @@ function defineDatabaseStructure() {
 	)
 
 	ServiceCategory.hasMany(Service, { foreignKey: 'category_id' })
+	Area.hasMany(Person, { foreignKey: 'area_id' })
 	db._tables = { ServiceCategory, Service, Person, Area }
 }
 
