@@ -163,6 +163,15 @@ a:focus {
 	margin: 0 auto;
 }
 
+.text-section {
+	position: relative;
+	padding: var(--padding);
+}
+.text-section .content {
+	max-width: var(--content);
+	margin: 0 auto;
+}
+
 /*** Background Waves ***/
 .wave-before {
 	margin-top: var(--wave-height);
