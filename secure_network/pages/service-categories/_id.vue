@@ -8,11 +8,11 @@
 		/>
 		<alt-section
 			:title="alt_section.title"
-			:paragraphs="alt_section.paragraphs"
+			:paragraphs="category.paragraphs"
 			:wrapper="wrapper"
 			:button="alt_section.button"
 		/>
-		<items-section :wrapper="wrapper" :items="servicesCategory" />
+		<items-section :wrapper="wrapper" :items="services" />
 	</div>
 </template>
 
@@ -30,14 +30,22 @@ export default {
 	layout: 'default',
 	async asyncData({ $axios, route }) {
 		const { id } = route.params
-		const { data } = await $axios.get(
+		let payload = await $axios.get(
 			`${process.env.BASE_URL}/api/services-by-category/${id}`
 		)
-		const servicesCategory = data
+		const services = payload.data
+
+		payload = await $axios.get(
+			`${process.env.BASE_URL}/api/service-category/${id}`
+		)
+		const category = payload.data
+		category.paragraphs = category.text.split('\n')
+
 		const title = id.replace(/-/g, ' ')
 		return {
-			servicesCategory,
+			services,
 			title,
+			category,
 		}
 	},
 	data() {

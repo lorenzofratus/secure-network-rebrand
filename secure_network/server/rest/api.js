@@ -18,7 +18,6 @@ async function init() {
 
 	app.get('/services-by-category/:category', async (req, res) => {
 		let { category } = req.params
-		//category = category.replace('-', ' ')
 		return res.json(
 			await Service.findAll({
 				where: { category_id: category },
@@ -26,13 +25,14 @@ async function init() {
 		)
 	})
 
-	app.get('/services/:id', async (req, res) => {
-		const { id } = req.params
-		return res.json(await Service.findByPk(id))
+	app.get('/services/:service', async (req, res) => {
+		const { service } = req.params
+		return res.json(await Service.findByPk(service))
 	})
 
-	app.get('/services-test', async (req, res) => {
-		return res.json(await Service.findAll())
+	app.get('/service-category/:category', async (req, res) => {
+		const { category } = req.params
+		return res.json(await ServiceCategory.findByPk(category))
 	})
 }
 init()
