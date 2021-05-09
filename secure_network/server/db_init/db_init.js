@@ -73,99 +73,95 @@ let svs = [
 	{
 		name: 'Web Applications & Web Services',
 		text: `Web applications store our personal information, manage our finances, share our documents and are an integral part of our everyday life, even during work activities.\n
-
 		Ensuring the security of these applications is essential to keep your information and services secure, minimizing the risk of cyber attacks. Security analysis is necessary even when end-users cannot directly operate on the application, like when dealing with APIs and web services.\n
-		
 		Using a methodology based on the Open Web Application Security Project (OWASP) Testing Guide, Secure Network analyses your web applications, detailing every discovered vulnerability and suggests how to resolve it. Furthermore, all detected vulnerabilities are classified using the OWASP Risk Scoring Methodology`,
 		img:
 			'/images/covers/services/application-security/web-applications-and-web-services.svg',
 		category_id: 'application-security',
 		path: '/services/',
+		area_id: 'enterprise-security',
 	},
 	{
 		name: 'Mobile Application',
 		text: `Smartphones and tablets are now ubiquitous, inside they bring with them our personal information and our business documents. The extended use of these devices, in both private and business activities, has attracted the attention of attackers, lured by new opportunities for data theft.\n
-
 		Secure Network provides professional Penetration Tests of the major mobile platforms: Android and iOS.\n
-		
 		Through a process analysis based on the OWASP Mobile Project methodology, Secure Network’s engineers check the security of the application. Analyses are also performed on the transmission protocols to ensure that information is safety transmitted to the back-end systems. The analysis is completed by the Penetration Test of back-end system with a methodology similar to that used for Penetration Test of Web Application and Web Services.`,
 		img:
 			'/images/covers/services/application-security/mobile-applications.svg',
 		category_id: 'application-security',
 		path: '/services/',
+		area_id: 'enterprise-security',
 	},
 	{
 		name: 'Thin & Fat Clients',
 		text: `Although the current trend is moving applications to the web, desktop applications (thin and fat clients) are still widespread, especially in business environments. For this reason, analysing the security of such software is an important task for any company that relies on them for its critical processes.\n
-
-	The security analysis of these kinds of applications, however, presents different problems than their web and mobile counterparts, and that must be addressed with particular care. For this reason, Secure Network developed a custom methodology, based on the indications of OWASP, to ensure that even the analysis of these applications are extensive and complete.\n`,
+		The security analysis of these kinds of applications, however, presents different problems than their web and mobile counterparts, and that must be addressed with particular care. For this reason, Secure Network developed a custom methodology, based on the indications of OWASP, to ensure that even the analysis of these applications are extensive and complete.\n`,
 		img: '/images/covers/services/application-security/thin-fat-client.svg',
 		category_id: 'application-security',
 		path: '/services/',
+		area_id: 'enterprise-security',
 	},
 	{
 		name: 'Software Licensing & Code Protection',
 		text: `Although comprehensive protection against the cracking and reverse engineering of applications is impossible, the addition of a solid layer of security cen help delay the attackers and make the malicious activity economically disadvantageous.\n
-
-	Secure Network verifies the robustness of licensing systems implemented in your applications to ensure that they are accessed only by users holding a regular license.\n
-	
-	In addition, to make sure that the application is safe at other levels, Secure Network analyzes the obfuscation and anti-debugging techniques used to protect the application source code from reverse engineering.`,
+		Secure Network verifies the robustness of licensing systems implemented in your applications to ensure that they are accessed only by users holding a regular license.\n
+		In addition, to make sure that the application is safe at other levels, Secure Network analyzes the obfuscation and anti-debugging techniques used to protect the application source code from reverse engineering.`,
 		img:
 			'images/covers/services/application-security/software-licensing-and-code-protection.svg',
 		category_id: 'application-security',
 		path: '/services/',
+		area_id: 'enterprise-security',
 	},
 	{
 		name: 'External and Internal Network',
 		text: `The analysis of corporate infrastructures allows to verify the effectiveness of the implemented security controls and to identify ways that a real attacker could exploit to compromise the target systems. These analyses can be performed either from inside the corporate internal network or directly from the Internet (external network)\n.
-
-	Using professional tools and a specific methodology based on the Open Source Security Testing Methodology Manual (OSSTMM), Secure Network is able to perform a thorough analysis that can assess the individual issues based on their direct impact on your business.`,
+		Using professional tools and a specific methodology based on the Open Source Security Testing Methodology Manual (OSSTMM), Secure Network is able to perform a thorough analysis that can assess the individual issues based on their direct impact on your business.`,
 		img:
 			'/images/covers/services/network-and-infrastructure-security/external-and-internal-network.svg',
 		category_id: 'network-security',
 		path: '/services/',
+		area_id: 'enterprise-security',
 	},
 	{
 		name: 'Wireless Network & Infrastructres',
 		text: `Wireless networks are widely used both in personal and in corporate environments, providing a convenient alternative to traditional wired networks, but also creating new opportunities for attackers to gain access to your internal networks. To prevent wireless networks from becoming uncontrolled entry points to internal networks and critical business systems, it’s necessary to identify and fix the security issues that can lead to their compromise.\n
-
-	Using a tested methodology, which includes an analysis of the network’s infrastructure, targeted attack scenarios are designed to identify the existing vulnerabilities and their possible exploitation in order to compromise the network integrity. For this purpose, specialised tools are employed to get a detailed insight of the issues, which are then sorted according to their impact in order to help you fix the critical problems first.`,
+		Using a tested methodology, which includes an analysis of the network’s infrastructure, targeted attack scenarios are designed to identify the existing vulnerabilities and their possible exploitation in order to compromise the network integrity. For this purpose, specialised tools are employed to get a detailed insight of the issues, which are then sorted according to their impact in order to help you fix the critical problems first.`,
 		img:
 			'/images/covers/services/network-and-infrastructure-security/wireless-network-and-infrastructure.svg',
 		category_id: 'network-security',
 		path: '/services/',
+		area_id: 'enterprise-security',
 	},
 	{
 		name: 'Corporate Workstation Penetration Test',
 		text: `The security of a company must not only take into account the applications and the critical infrastructures, but also the tools used by its employees to handle the daily business activities: the corporate workstations. Workstations and their users are indeed one of the favourite targets for attackers who exploit people’s lack of attention the reduced security measures implemented to gain access to internal networks and steal confidential information.\n
-
-	The workstations analysis is performed on standard systems configured for your employees, in order to determine whether it is possible to carry out real attacks on these systems or to exploit them as a bridge to more critical systems. Furthermore, the threats often do not come exclusively from the outside, but also arise within company, which must therefore protect against rogue employees who intend to steal critical information or, more generally, cause economic damage. To check the security of the company against possible internal attacks, we place ourselves in the same conditions of your employees and we use the standard workstations to perform the analysis.`,
+		The workstations analysis is performed on standard systems configured for your employees, in order to determine whether it is possible to carry out real attacks on these systems or to exploit them as a bridge to more critical systems. Furthermore, the threats often do not come exclusively from the outside, but also arise within company, which must therefore protect against rogue employees who intend to steal critical information or, more generally, cause economic damage. To check the security of the company against possible internal attacks, we place ourselves in the same conditions of your employees and we use the standard workstations to perform the analysis.`,
 		img:
 			'/images/covers/services/network-and-infrastructure-security/corporate-workstation-penetration-test.svg',
 		category_id: 'network-security',
 		path: '/services/',
+		area_id: 'enterprise-security',
 	},
 	{
 		name: 'Virtual Infrastructres',
 		text: `Thanks to their many advantages, virtual infrastructures are now widely employed in corporate environments to manage large amounts of systems, including those most critical to the business. The security of these infrastructures and their administrative networks and interfaces becomes a key element to ensure the security of corporate information and services.\n
-
-	Secure Network was one of the first companies to develop in 2009 a methodology and several tools to analyse the security of virtual networks. Among these was VASTO (Virtualization Assessment Toolkit), the first toolkit for penetration testing of virtual networks, including solutions by VMware, Xen and Oracle.\n
-	
-	With a wide experience in this field, Secure Network challenges your virtual infrastructure through targeted attacks aimed at its compromise. Tests may also include the review of the infrastructure management process and of network configuration in order to identifiy further vulnerabilities.`,
+		Secure Network was one of the first companies to develop in 2009 a methodology and several tools to analyse the security of virtual networks. Among these was VASTO (Virtualization Assessment Toolkit), the first toolkit for penetration testing of virtual networks, including solutions by VMware, Xen and Oracle.\n
+		With a wide experience in this field, Secure Network challenges your virtual infrastructure through targeted attacks aimed at its compromise. Tests may also include the review of the infrastructure management process and of network configuration in order to identifiy further vulnerabilities.`,
 		img:
 			'/images/covers/services/network-and-infrastructure-security/virtual-infrastructure.svg',
 		category_id: 'network-security',
 		path: '/services/',
+		area_id: 'enterprise-security',
 	},
 	{
 		name: 'Forensics Acquisition',
 		text: `According to the international best practices and current standards, the only way to analyse an evidence when the original one is not available is performing a forensic copy of sequestered storage device, which means duplicating it in a way able to preserve its integrity.\n
-
-	“bit for bit” copy technique and hash calculation of acquired evidence must be implemented by the acquisition process in order to be considered reliable, repeatable and to guarantee the completeness of duplicattion process. Only with proper procedures and a bit for bit copy it is possible to ensure data integrity and maintaining the Chain of Custody (CoC) throughout the whole process.`,
+	“Bit for bit” copy technique and hash calculation of acquired evidence must be implemented by the acquisition process in order to be considered reliable, repeatable and to guarantee the completeness of duplicattion process. Only with proper procedures and a bit for bit copy it is possible to ensure data integrity and maintaining the Chain of Custody (CoC) throughout the whole process.`,
 		img:
 			'/images/covers/services/digital-forensics/forensics-acquisition.svg',
 		category_id: 'digital-forensics',
 		path: '/services/',
+		area_id: 'enterprise-security',
 	},
 	{
 		name: 'Device Analysis',
@@ -174,6 +170,7 @@ let svs = [
 			'/images/covers/services/digital-forensics/forensics-acquisition.svg',
 		category_id: 'digital-forensics',
 		path: '/services/',
+		area_id: 'enterprise-security',
 	},
 	{
 		name: 'Malware Analysis',
@@ -181,6 +178,7 @@ let svs = [
 		img: '/images/covers/services/digital-forensics/malware-analysis.svg',
 		category_id: 'digital-forensics',
 		path: '/services/',
+		area_id: 'enterprise-security',
 	},
 	{
 		name: 'Vulnerability Assessment',
@@ -189,6 +187,7 @@ let svs = [
 			'/images/covers/services/security-assessments/vulnerability-assessment.svg',
 		category_id: 'security-assessment',
 		path: '/services/',
+		area_id: 'enterprise-security',
 	},
 	{
 		name: 'Penetration Test',
@@ -197,6 +196,7 @@ let svs = [
 			'/images/covers/services/security-assessments/penetration-test.svg',
 		category_id: 'security-assessment',
 		path: '/services/',
+		area_id: 'enterprise-security',
 	},
 	{
 		name: 'Mobile Application Security Crash Course',
@@ -205,6 +205,7 @@ let svs = [
 			'/images/covers/services/application-security/web-applications-and-web-services.svg',
 		category_id: 'mobile-security-training',
 		path: '/services/',
+		area_id: 'training',
 	},
 	{
 		name: 'Mobile Security & Mobile Device Management',
@@ -214,6 +215,7 @@ let svs = [
 			'/images/covers/services/application-security/web-applications-and-web-services.svg',
 		category_id: 'mobile-security-training',
 		path: '/services/',
+		area_id: 'training',
 	},
 	{
 		name: 'Reverse Engineering',
@@ -221,6 +223,7 @@ let svs = [
 		img: '/images/covers/services/',
 		category_id: 'binary-exploitation-training',
 		path: '/services/',
+		area_id: 'training',
 	},
 	{
 		name: 'Vulnerability Detection & Exploitation',
@@ -229,6 +232,7 @@ let svs = [
 		img: '/images/covers/services/',
 		category_id: 'binary-exploitation-training',
 		path: '/services/',
+		area_id: 'training',
 	},
 	{
 		name: 'Application Vulnerability Assessment',
@@ -237,6 +241,7 @@ let svs = [
 		img: '/images/covers/services/',
 		category_id: 'binary-exploitation-training',
 		path: '/services/',
+		area_id: 'training',
 	},
 	{
 		name: 'Network Vulnerability Assessment',
@@ -245,6 +250,7 @@ let svs = [
 		img: '/images/covers/services/',
 		category_id: 'web-exploitation-training',
 		path: '/services/',
+		area_id: 'training',
 	},
 	{
 		name: 'Network Penetration Testing',
@@ -253,6 +259,7 @@ let svs = [
 		img: '/images/covers/services/',
 		category_id: 'web-exploitation-training',
 		path: '/services/',
+		area_id: 'training',
 	},
 	{
 		name: 'Web Application Testion',
@@ -261,6 +268,7 @@ let svs = [
 		img: '/images/covers/services/',
 		category_id: 'web-exploitation-training',
 		path: '/services/',
+		area_id: 'training',
 	},
 ].sort(compareByName)
 

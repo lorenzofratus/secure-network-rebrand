@@ -11,8 +11,9 @@
 			:paragraphs="area.paragraphs"
 			:wrapper="area.id"
 		/>
+		<title-component title="Available Services" />
+		<items-section :wrapper="area.id" :items="serviceCategories" />
 		<title-component title="Manager" />
-		<!-- <items-section :wrapper="wrapper" :items="services" /> -->
 		<circle-card-description
 			:person="manager"
 			title="Manager of the Area"
@@ -23,8 +24,8 @@
 </template>
 
 <script>
-// import ItemsSection from '~/components/sections/ItemsSection.vue'
 import TitleComponent from '../../components/items/TitleComponent.vue'
+import ItemsSection from '~/components/sections/ItemsSection.vue'
 import MainSection from '~/components/sections/MainSection.vue'
 import AltSection from '~/components/sections/AltSection.vue'
 import PeopleSection from '~/components/sections/PeopleSection.vue'
@@ -34,7 +35,7 @@ export default {
 	components: {
 		MainSection,
 		AltSection,
-		// ItemsSection,
+		ItemsSection,
 		PeopleSection,
 		TitleComponent,
 		CircleCardDescription,
@@ -42,26 +43,36 @@ export default {
 	layout: 'default',
 	async asyncData({ $axios, route }) {
 		const { id } = route.params
+		// Retrieving the area
 		let payload = await $axios.get(
 			`${process.env.BASE_URL}/api/areas/${id}`
 		)
 		const area = payload.data
 		area.paragraphs = area.text.split('\n')
 
+		// Retrieving employees
 		payload = await $axios.get(
 			`${process.env.BASE_URL}/api/people-by-area-and-role/${id}/employee/`
 		)
 		const people = payload.data
 
+		// Retrieving the manager
 		payload = await $axios.get(
 			`${process.env.BASE_URL}/api/people-by-area-and-role/${id}/manager/`
 		)
 		const manager = payload.data[0]
 
+		// Retrieving the categories of services offered by the area
+		payload = await $axios.get(
+			`${process.env.BASE_URL}/api/service-categories-by-area/${id}`
+		)
+		const serviceCategories = payload.data
+
 		return {
 			area,
 			people,
 			manager,
+			serviceCategories,
 		}
 	},
 	data() {
