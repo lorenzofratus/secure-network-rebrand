@@ -41,7 +41,7 @@ async function init() {
 
 	app.get('/people/:person', async (req, res) => {
 		const { person } = req.params
-		return res.json(await People.findByPk(category))
+		return res.json(await Person.findByPk(person))
 	})
 
 	app.get('/people-founders', async (req, res) => {
