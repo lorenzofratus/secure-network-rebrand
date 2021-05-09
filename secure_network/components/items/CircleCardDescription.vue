@@ -1,0 +1,108 @@
+<template>
+	<div class="sub-section">
+		<div class="content">
+			<h2 class="spacer spacer-small">{{ title }}</h2>
+			<p>{{ description }}</p>
+			<button-component
+				:btn-class="button.class"
+				:btn-path="button.path"
+				:btn-text="button.text"
+			/>
+		</div>
+		<circle-card
+			:img="person.img"
+			:name="person.name"
+			:surname="person.surname"
+		/>
+	</div>
+</template>
+
+<script>
+import ButtonComponent from '~/components/items/ButtonComponent'
+import CircleCard from '~/components/items/CircleCard.vue'
+export default {
+	components: {
+		ButtonComponent,
+		CircleCard,
+	},
+	props: {
+		title: {
+			type: String,
+			required: true,
+		},
+		description: {
+			type: String,
+			required: true,
+		},
+		button: {
+			type: Object,
+			required: true,
+		},
+		img: {
+			required: true,
+			type: String,
+		},
+		wrapper: {
+			type: String,
+			required: true,
+		},
+		person: {
+			type: Object,
+			required: true,
+		},
+	},
+}
+</script>
+
+<style scoped>
+.sub-section {
+	max-width: var(--page);
+	margin: 10em auto;
+	padding: 0 var(--padding);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap-reverse;
+}
+.sub-section > * {
+	flex: 0 1 auto;
+	max-width: var(--half-page);
+	margin: 0 auto;
+}
+.sub-section .buttons {
+	justify-content: start;
+}
+.sub-section .cover {
+	display: block;
+	padding: 5%;
+	box-sizing: border-box;
+	height: auto;
+	width: 100%;
+}
+.sub-section .content {
+	min-width: 50%;
+}
+
+.sub-section:nth-child(even) {
+	text-align: right;
+	flex-direction: row;
+}
+.sub-section:nth-child(odd) {
+	text-align: left;
+	flex-direction: row-reverse;
+}
+.sub-section:nth-child(even) /deep/ .button,
+.sub-section:nth-child(even) .spacer.spacer-small::after {
+	margin: 0 0 0 auto;
+}
+.sub-section:nth-child(odd) /deep/ .button,
+.sub-section:nth-child(odd) .spacer.spacer-small::after {
+	margin: 0 auto 0 0;
+}
+
+@media screen and (max-width: 785px) {
+	.sub-section {
+		text-align: left;
+	}
+}
+</style>
