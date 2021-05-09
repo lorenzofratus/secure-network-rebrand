@@ -271,10 +271,10 @@ let ppl = [
 		img: '/images/team/alberto-volpatto.jpeg',
 		path: '/team/',
 		role: 'manager',
+		area_id: 'enterprise-security',
 		text: `Alberto Volpatto holds a M.Sc. in Computer Engineering from Politecnico di Milano, from where he graduated with a master thesis focused on the application of artificial intelligence and multiagent systems techniques to Intrusion Detection Systems (IDS).\n		
 		After graduation, he started working at the ICT Department of Politecnico di Milano as a computer security researcher, where he worked on the security of mobile touchscreen devices, malware analysis, source code reviewing and development of secure software.\n
 		Alberto is a Secure Network’s CTO and daily performs penetration testing on critical banking systems.`,
-		area_id: 'enterprise-security',
 	},
 	{
 		name: 'Alex',
@@ -282,9 +282,9 @@ let ppl = [
 		img: '/images/team/alex-conti-stock.jpg',
 		path: '/team/',
 		role: 'employee',
+		area_id: 'enterprise-security',
 		text: `Alex is about to graduate in Physics at Università degli Studi di Milano. Thanks to courses he attended during his career he learned more about new programming languages. He experienced computer security for the first time by attending for pleasure professor Zanero’s course “Computer Security”.\n
 		Enthusiast of robotics and Artificial Intelligence he stepped in Computer Science by building and programming robots. Among the platforms used are BasicStamp BS2 (upgraded by himself to BS2sx), Arduino Uno and Lego Mindstorm NXT.`,
-		area_id: 'enterprise-security',
 	},
 	{
 		name: 'Eros',
@@ -292,9 +292,9 @@ let ppl = [
 		img: '/images/team/eros-lever.jpeg',
 		path: '/team/',
 		role: 'employee',
+		area_id: 'training',
 		text: `Eros holds a M.Sc. degree from the Politecnico di Milano university. He graduated with a thesis on the realisation of a novel automated analysis framework for mobile applications targeting the Android platform, exploiting techniques such as bytecode analysis and manipulation and automated instrumentation.\n
 		Among his tasks, he performs penetration testing and code review targeting both mobile devices and web application security. Eros has a strong interest in analysing new platforms and developing automated tools to optimise the analysis process.`,
-		area_id: 'training',
 	},
 ].sort(compareByName)
 

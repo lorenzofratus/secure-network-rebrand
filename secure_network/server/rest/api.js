@@ -64,16 +64,14 @@ async function init() {
 		)
 	})
 
-	app.get('/people-founders', async (req, res) => {
-		return res.json(await Person.findAll({ where: { role: 'founder' } }))
+	app.get('/people-by-area/:area', async (req, res) => {
+		let { area } = req.params
+		return res.json(await Person.findAll({ where: { area_id: area } }))
 	})
 
-	app.get('/people-managers', async (req, res) => {
-		return res.json(await Person.findAll({ where: { role: 'manager' } }))
-	})
-
-	app.get('/people-employees', async (req, res) => {
-		return res.json(await Person.findAll({ where: { role: 'employee' } }))
+	app.get('/people-by-role/:role', async (req, res) => {
+		let { role } = req.params
+		return res.json(await Person.findAll({ where: { role: role } }))
 	})
 }
 init()
