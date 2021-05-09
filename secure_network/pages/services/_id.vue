@@ -3,7 +3,7 @@
 		<main-section
 			:buttons="main_section.buttons"
 			:img="service.img"
-			:title="service.title"
+			:title="service.name"
 			:wrapper="service.id"
 		/>
 		<alt-section

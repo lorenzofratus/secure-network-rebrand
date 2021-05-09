@@ -52,7 +52,6 @@ export default {
 					},
 				],
 				img: '/images/covers/index.svg',
-
 			},
 			alt_section: {
 				title: 'Lorem Ipsum',
