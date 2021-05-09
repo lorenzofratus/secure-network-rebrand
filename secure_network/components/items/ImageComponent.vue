@@ -4,9 +4,9 @@
 			<h2 class="spacer spacer-small">{{ title }}</h2>
 			<p>{{ description }}</p>
 			<button-component
-				:btn-class="button.class"
-				:btn-path="button.path"
-				:btn-text="button.text"
+				:btn-class="btnClass"
+				:btn-path="btnPath"
+				:btn-text="btnText"
 			/>
 		</div>
 		<img :src="img" class="cover" />
@@ -28,9 +28,10 @@ export default {
 			type: String,
 			required: true,
 		},
-		button: {
-			type: Object,
-			required: true,
+		btnPath: {
+			type: String,
+			required: false,
+			default: '',
 		},
 		img: {
 			required: true,
@@ -40,6 +41,12 @@ export default {
 			type: String,
 			required: true,
 		},
+	},
+	data() {
+		return {
+			btnClass: 'secondary',
+			btnText: 'Read More',
+		}
 	},
 }
 </script>

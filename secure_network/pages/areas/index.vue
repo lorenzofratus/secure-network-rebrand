@@ -12,7 +12,7 @@
 			:paragraphs="alt_section.paragraphs"
 			:wrapper="wrapper"
 		/>
-		<areas-section :areas="area_section.areas" />
+		<areas-section :areas="areas" :wrapper="wrapper" />
 	</div>
 </template>
 
@@ -23,6 +23,14 @@ import AreasSection from '~/components/sections/AreasSection.vue'
 export default {
 	components: { MainSection, AltSection, AreasSection },
 	layout: 'default',
+	async asyncData({ $axios }) {
+		// fetch data from the api server
+		const { data } = await $axios.get(`${process.env.BASE_URL}/api/areas`)
+		const areas = data
+		return {
+			areas,
+		}
+	},
 	data() {
 		return {
 			wrapper: 'Areas',

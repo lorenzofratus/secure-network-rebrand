@@ -4,6 +4,7 @@
 import { service_categories } from './db_init/db_init.js'
 import { services } from './db_init/db_init.js'
 import { people } from './db_init/db_init.js'
+import { areas } from './db_init/db_init.js'
 
 require('dotenv').config()
 
@@ -87,15 +88,32 @@ function defineDatabaseStructure() {
 		{ sequelize: db, modelName: 'person' }
 	)
 
+	class Area extends Model {}
+	Area.init(
+		{
+			id: {
+				type: DataTypes.STRING,
+				primaryKey: true,
+				allowNull: false,
+			},
+			name: DataTypes.STRING,
+			text: DataTypes.TEXT,
+			img: DataTypes.STRING,
+			path: DataTypes.STRING,
+		},
+		{ sequelize: db, modelName: 'area' }
+	)
+
 	ServiceCategory.hasMany(Service, { foreignKey: 'category_id' })
-	db._tables = { ServiceCategory, Service, Person }
+	db._tables = { ServiceCategory, Service, Person, Area }
 }
 
 async function insertTables() {
-	const { ServiceCategory, Service, Person } = db._tables
+	const { ServiceCategory, Service, Person, Area } = db._tables
 	await insertItems(ServiceCategory, service_categories)
 	await insertItems(Service, services)
 	await insertItems(Person, people)
+	await insertItems(Area, areas)
 }
 
 async function initializeDatabase() {

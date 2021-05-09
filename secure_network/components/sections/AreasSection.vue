@@ -3,10 +3,10 @@
 		<image-component
 			v-for="(item, index) in areas"
 			:key="'area-card-' + index + '-' + wrapper"
-			:title="item.title"
+			:title="item.name"
 			:description="item.description"
 			:img="item.img"
-			:button="item.button"
+			:btn-Path="item.path"
 			:wrapper="wrapper"
 		/>
 	</div>

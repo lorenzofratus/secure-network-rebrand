@@ -6,8 +6,11 @@ app.use(express.json())
 
 async function init() {
 	const db = await initializeDatabase()
-	const { ServiceCategory, Service, Person } = db._tables
+	const { ServiceCategory, Service, Person, Area } = db._tables
 
+	/**
+	 * Find all queries
+	 */
 	app.get('/service-categories', async (req, res) => {
 		return res.json(await ServiceCategory.findAll())
 	})
@@ -20,14 +23,13 @@ async function init() {
 		return res.json(await Person.findAll())
 	})
 
-	app.get('/services-by-category/:category', async (req, res) => {
-		let { category } = req.params
-		return res.json(
-			await Service.findAll({
-				where: { category_id: category },
-			})
-		)
+	app.get('/areas', async (req, res) => {
+		return res.json(await Area.findAll())
 	})
+
+	/**
+	 * Find by id queries
+	 */
 
 	app.get('/services/:service', async (req, res) => {
 		const { service } = req.params
@@ -42,6 +44,24 @@ async function init() {
 	app.get('/people/:person', async (req, res) => {
 		const { person } = req.params
 		return res.json(await Person.findByPk(person))
+	})
+
+	app.get('/areas/:area', async (req, res) => {
+		const { area } = req.params
+		return res.json(await Area.findByPk(area))
+	})
+
+	/**
+	 * Specific queries
+	 */
+
+	app.get('/services-by-category/:category', async (req, res) => {
+		let { category } = req.params
+		return res.json(
+			await Service.findAll({
+				where: { category_id: category },
+			})
+		)
 	})
 
 	app.get('/people-founders', async (req, res) => {
