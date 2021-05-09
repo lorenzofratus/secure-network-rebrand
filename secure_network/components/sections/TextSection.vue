@@ -22,6 +22,11 @@ export default {
 				return []
 			},
 		},
+		centered: {
+			type: Boolean,
+			required: false,
+			default: false,
+		},
 	},
 }
 </script>
