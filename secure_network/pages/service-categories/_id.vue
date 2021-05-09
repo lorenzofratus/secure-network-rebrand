@@ -3,7 +3,7 @@
 		<main-section
 			:buttons="main_section.buttons"
 			:img="main_section.img"
-			:title="category.title"
+			:title="category.name"
 			:wrapper="wrapper"
 		/>
 		<alt-section
