@@ -13,16 +13,7 @@
 			:wrapper="wrapper"
 			:button="alt_section.button"
 		/>
-		<section class="section">
-			<div class="grid small content">
-				<circle-card :img="ciao" name="Alberto" surname="Volpatto" />
-				<circle-card :img="ciao" name="Alberto" surname="Volpatto" />
-				<circle-card :img="ciao" name="Alberto" surname="Volpatto" />
-				<circle-card :img="ciao" name="Alberto" surname="Volpatto" />
-				<circle-card :img="ciao" name="Alberto" surname="Volpatto" />
-				<circle-card :img="ciao" name="Alberto" surname="Volpatto" />
-			</div>
-		</section>
+		<people-section :people="people_section.people" :wrapper="wrapper" />
 		<alt-section
 			:title="alt_section2.title"
 			:paragraphs="alt_section2.paragraphs"
@@ -36,10 +27,10 @@
 <script>
 import MainSection from '~/components/sections/MainSection.vue'
 import AltSection from '~/components/sections/AltSection.vue'
-import CircleCard from '~/components/items/CircleCard.vue'
+import PeopleSection from '~/components/sections/PeopleSection.vue'
 
 export default {
-	components: { MainSection, AltSection, CircleCard },
+	components: { MainSection, AltSection, PeopleSection },
 	layout: 'default',
 	data() {
 		return {
@@ -68,7 +59,6 @@ export default {
 					'Lorem ipsum dolor, sit amet consectetur adipisicing elit. In mollitia hic asperiores temporibus soluta esse tempora itaque possimus, quam nostrum, id ratione iusto illum aut. Accusamus, necessitatibus? Rem, odio asperiores.',
 				],
 			},
-			ciao: '/images/team/alberto-volpatto.jpeg',
 			alt_section2: {
 				title: 'We are hiring!',
 				paragraphs: ['Come hack with us!'],
@@ -78,6 +68,40 @@ export default {
 					path: '/contact',
 				},
 				centered: true,
+			},
+			people_section: {
+				people: [
+					{
+						img: '/images/team/alberto-volpatto.jpeg',
+						name: 'Alberto',
+						surname: 'Volpatto',
+					},
+					{
+						img: '/images/team/diego-zaffaroni-stock.jpg',
+						name: 'Diego',
+						surname: 'Zaffaroni',
+					},
+					{
+						img: '/images/team/federico-zambito-stock.jpg',
+						name: 'Federico',
+						surname: 'Zambito',
+					},
+					{
+						img: '/images/team/alberto-volpatto.jpeg',
+						name: 'Alberto',
+						surname: 'Volpatto',
+					},
+					{
+						img: '/images/team/alberto-volpatto.jpeg',
+						name: 'Alberto',
+						surname: 'Volpatto',
+					},
+					{
+						img: '/images/team/alberto-volpatto.jpeg',
+						name: 'Alberto',
+						surname: 'Volpatto',
+					},
+				],
 			},
 		}
 	},
