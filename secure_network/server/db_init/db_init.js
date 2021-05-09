@@ -281,7 +281,7 @@ let people = [
 		text: `Eros holds a M.Sc. degree from the Politecnico di Milano university. He graduated with a thesis on the realisation of a novel automated analysis framework for mobile applications targeting the Android platform, exploiting techniques such as bytecode analysis and manipulation and automated instrumentation.\n
 		Among his tasks, he performs penetration testing and code review targeting both mobile devices and web application security. Eros has a strong interest in analysing new platforms and developing automated tools to optimise the analysis process.`,
 	},
-].sort(compareByTitle)
+].sort(compareByName)
 
 /*Refined definition */
 refine(sv_categories, 'service_category_')
