@@ -296,6 +296,76 @@ let ppl = [
 		text: `Eros holds a M.Sc. degree from the Politecnico di Milano university. He graduated with a thesis on the realisation of a novel automated analysis framework for mobile applications targeting the Android platform, exploiting techniques such as bytecode analysis and manipulation and automated instrumentation.\n
 		Among his tasks, he performs penetration testing and code review targeting both mobile devices and web application security. Eros has a strong interest in analysing new platforms and developing automated tools to optimise the analysis process.`,
 	},
+	{
+		name: 'Jacopo',
+		surname: 'Ferrigno',
+		img: '/images/team/jacopo-ferrigno-stock.jpg',
+		path: '/team/',
+		role: 'employee',
+		area_id: 'enterprise-security',
+		text: `Jacopo holds a M.Sc. degree from Politecnico di Milano. He graduated with a thesis on binary analysis techniques based on the callgraphs. He is member of the “Tower of Hanoi” team from the Politecnico di Milano with which he participates to CTF competitions.\n
+		He performs penetration test activities and reverse engineering. His interests include the security analysis of embedded devices, covering techniques for the retrieval and analysis of embedded firmwares.`,
+	},
+	{
+		name: 'Riccardo',
+		surname: 'Cospite',
+		img: '/images/team/riccardo-cospite-stock.jpg',
+		path: '/team/',
+		role: 'manager',
+		area_id: 'training',
+		text: `Riccardo graduated in System and Network Information Security at the University of Milan. His thesis concerned the design and development of a command line tool that determines if specific Github software/library versions are affected by security issues.\n
+		He is primarily focused on penetration tests of web and mobile applications, and his main interests are related to the automotive field of information security and latest web platforms analysis.`,
+	},
+	{
+		name: 'Michiele',
+		surname: 'Roviello',
+		img: '/images/team/michele-roviello.jpeg',
+		path: '/team/',
+		role: 'employee',
+		area_id: 'enterprise-security',
+		text: `Michele received a M.Sc. in Information Security from the University of Salerno. His thesis concerned the design of new techniques for Network anomaly detection based on non-linear analysis and machine learning.\n
+		He performs Penetration Testing and Digital Forensics activities. Furthermore, he had previous work experience as a member of Incident response teams. His interests include Malware Analysis, Threat Intelligence, Social Engineering and online privacy, being a supporter of the Tor Project.`,
+	},
+	{
+		name: 'Giorgio',
+		surname: 'Campiotti',
+		img: '/images/team/giorgio-campiotti.jpeg',
+		path: '/team/',
+		role: 'employee',
+		area_id: 'training',
+		text: `Specialized in embedded hardware platform development, integrated systems and IOT, Giorgio has had many professional experiences in the field of industrial electronic design, networking, system integration and system administration. He mainly executes in-depth analysis and penetration test of hardware systems and IOT devices, also in the context of Industry 4.0.\n
+		His interests include hardware and IOT devices, embedded systems, RF devices for SIGINT activities, and electronic microcontrollers such as Arduino and Raspberry.`,
+	},
+	{
+		name: 'Tommaso',
+		surname: 'Pescanoce',
+		img: '/images/team/tommaso-pescanoce-stock.jpg',
+		path: '/team/',
+		role: 'employee',
+		area_id: 'enterprise-security',
+		text: `Tommaso received a M.Sc. in Computer Engineering cum laude from the “Seconda Università degli Studi” of Naples. His thesis concerned the design and implementation of an open-source modular platform for cybersecurity training.\n
+		He is primaly focused on penetration tests of web applications. Over the years he has worked on web applications design and development, system administration and design of virtualized infrastructures. His main interests are related to ethical hacking, electronics and high performance computing.`,
+	},
+	{
+		name: 'Diego',
+		surname: 'Zaffaroni',
+		img: '/images/team/tommaso-pescanoce-stock.jpg',
+		path: '/team/',
+		role: 'employee',
+		area_id: 'training',
+		text: `Diego holds a B.Sc. in computer engineering from Politecnico di Milano. He is currently a member of the italian ethical hacking team “Mhackeroni” with whom he competed in the DEFCON CTF 26 and 27 finals in Las Vegas.\n
+		The main activities he deals with are mobile and application penetration tests. Reverse engineering and malware analysis are his main interests in the cybersecurity field, in particular he enjoys trying to reverse serial validation algorithms in old computer games and software.`,
+	},
+	{
+		name: 'Ilaria',
+		surname: 'Buonagurio',
+		img: '/images/team/ilaria-buonagurio-stock.jpg',
+		path: '/team/',
+		role: 'employee',
+		area_id: 'training',
+		text: `Ilaria holds a Master of Science degree from Politecnico di Milano. Her thesis analyzed the correlation of genetic mutation in types of different cancers.\n
+		She has a focus on web and mobile applications penetration tests. Her interests revolve around data analysis, the security of industrial networks as well as automobiles.`,
+	},
 ].sort(compareByName)
 
 let ars = [

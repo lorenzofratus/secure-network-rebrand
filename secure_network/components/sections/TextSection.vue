@@ -1,6 +1,6 @@
 <template>
-	<section class="text-section">
-		<div v-if="paragraphs" class="paragraphs content">
+	<section class="text-section content">
+		<div v-if="paragraphs" class="paragraphs">
 			<p
 				v-for="(p, index) in paragraphs"
 				:key="'paragraph-' + index + '-' + wrapper"
@@ -31,8 +31,4 @@ export default {
 }
 </script>
 
-<style>
-p.centered {
-	text-align: center;
-}
-</style>
+<style></style>

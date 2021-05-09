@@ -10,14 +10,13 @@
 			title="We Can Guarantee Your Security Together"
 			:wrapper="wrapper"
 		/>
+
 		<section class="section address-section wave-after wave-convex-bg">
-			<div class="content">
-				<h2 class="spacer">Come And See Us</h2>
-				<p class="centered">
-					Our operational headquarter is in <strong>Milan</strong>,
-					near the "Turro" metro station.
-				</p>
-			</div>
+			<title-component
+				:title="title_component.title"
+				:text="title_component.text"
+			/>
+
 			<div class="grid content">
 				<div class="card interactive" @click="showMap(1)">
 					<h3 class="spacer">Italy</h3>
@@ -53,10 +52,12 @@
 <script>
 import FormSection from '~/components/sections/FormSection.vue'
 import MainSection from '~/components/sections/MainSection.vue'
+import TitleComponent from '~/components/items/TitleComponent.vue'
 export default {
 	components: {
 		MainSection,
 		FormSection,
+		TitleComponent,
 	},
 	data() {
 		return {
@@ -76,7 +77,11 @@ export default {
 					},
 				],
 				img: '/images/covers/contacts.svg',
-
+			},
+			title_component: {
+				title: 'Come And See Us',
+				text:
+					'Our operational headquarter is in Milan, near the "Turro" metro station.',
 			},
 			activeMap: 1,
 		}

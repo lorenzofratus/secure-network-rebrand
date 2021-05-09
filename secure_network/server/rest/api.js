@@ -73,6 +73,18 @@ async function init() {
 		let { role } = req.params
 		return res.json(await Person.findAll({ where: { role: role } }))
 	})
+
+	app.get('/people-by-area-and-role/:area/:role', async (req, res) => {
+		let { area, role } = req.params
+		return res.json(
+			await Person.findAll({
+				where: {
+					area_id: area,
+					role: role,
+				},
+			})
+		)
+	})
 }
 init()
 

@@ -2,7 +2,7 @@
 	<div class="sub-section">
 		<div class="content">
 			<h2 class="spacer spacer-small">{{ title }}</h2>
-			<p>{{ description }}</p>
+			<p>{{ abstract }}</p>
 			<button-component
 				:btn-class="btnClass"
 				:btn-path="btnPath"
@@ -24,7 +24,7 @@ export default {
 			type: String,
 			required: true,
 		},
-		description: {
+		text: {
 			type: String,
 			required: true,
 		},
@@ -47,6 +47,15 @@ export default {
 			btnClass: 'secondary',
 			btnText: 'Read More',
 		}
+	},
+	computed: {
+		abstract() {
+			const count = 25
+			let words = this.text.split(/\s|\n/)
+			if (words.length <= count) return words.join(' ')
+			words = words.splice(0, count)
+			return words.join(' ') + ' ...'
+		},
 	},
 }
 </script>

@@ -4,7 +4,7 @@
 			v-for="(item, index) in areas"
 			:key="'area-card-' + index + '-' + wrapper"
 			:title="item.name"
-			:description="item.description"
+			:text="item.text"
 			:img="item.img"
 			:btn-path="item.path"
 			:wrapper="wrapper"

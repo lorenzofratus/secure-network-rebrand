@@ -13,7 +13,7 @@
 				/>
 			</div>
 		</div>
-		<img :src="img" class="cover" />
+		<img :src="img" class="cover" :class="{ rounded: isRounded }" />
 	</div>
 </template>
 
@@ -44,6 +44,13 @@ export default {
 		wrapper: {
 			type: String,
 			required: true,
+		},
+		isRounded: {
+			type: Boolean,
+			required: false,
+			default() {
+				return false
+			},
 		},
 	},
 }
@@ -86,5 +93,9 @@ export default {
 
 .header .content {
 	min-width: 50%;
+}
+
+.header .rounded {
+	border-radius: 50%;
 }
 </style>

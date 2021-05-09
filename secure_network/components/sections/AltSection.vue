@@ -60,8 +60,4 @@ export default {
 }
 </script>
 
-<style scoped>
-p.centered {
-	text-align: center;
-}
-</style>
+<style scoped></style>

@@ -5,9 +5,10 @@
 			:img="person.img"
 			:title="person.name + ' ' + person.surname"
 			:wrapper="person.id"
+			:is-rounded="main_section.isRounded"
 		/>
 		<alt-section
-			:title="alt_section.title"
+			:title="'About ' + person.name + '...'"
 			:paragraphs="person.paragraphs"
 			:wrapper="person.id"
 		/>
@@ -54,9 +55,9 @@ export default {
 						path: '/contacts',
 					},
 				],
+				isRounded: true,
 			},
 			alt_section: {
-				title: 'Lorem Ipsum',
 				paragraphs: [
 					'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsam, rem obcaecati repellat accusamus at quis magnam. Repudiandae vitae sit dignissimos? Sit similique anim blanditiis neque quae consequatur, numquam explicabo commodi tempora voluptatibus impedit suscipit optio non dicta deserunt laborum ipsa debitis odit. Vero, ipsum quasi. Ipsam facere cumque dolore quibusdam.',
 					'Lorem ipsum dolor, sit amet consectetur adipisicing elit. In mollitia hic asperiores temporibus soluta esse tempora itaque possimus, quam nostrum, id ratione iusto illum aut. Accusamus, necessitatibus? Rem, odio asperiores.',

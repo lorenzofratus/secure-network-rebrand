@@ -90,6 +90,10 @@ p ~ p {
 	margin-top: var(--p-spacing);
 }
 
+p.centered {
+	text-align: center;
+}
+
 a,
 a:visited {
 	color: var(--primary-color);
