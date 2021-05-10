@@ -96,6 +96,12 @@ async function init() {
 		)
 	})
 
+	app.get('/team', async (req, res) => {
+		return res.json(
+			await Person.findAll({ where: { [Op.not]: { role: 'founder' } } })
+		)
+	})
+
 	/**
 	 * Nested queries
 	 */

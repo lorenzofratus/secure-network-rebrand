@@ -9,7 +9,7 @@
 				:btn-text="btnText"
 			/>
 		</div>
-		<img :src="img" class="cover" />
+		<img :src="img" class="cover" :class="{ rounded: isRounded }" />
 	</div>
 </template>
 
@@ -42,6 +42,11 @@ export default {
 			required: true,
 		},
 		noMargin: {
+			type: Boolean,
+			required: false,
+			default: false,
+		},
+		isRounded: {
 			type: Boolean,
 			required: false,
 			default: false,
@@ -120,5 +125,9 @@ export default {
 
 .no-margin {
 	margin: 0;
+}
+
+.sub-section .rounded {
+	border-radius: 50%;
 }
 </style>

@@ -12,16 +12,16 @@
 			:paragraphs="alt_section.paragraphs"
 			:wrapper="wrapper"
 		/>
-		<areas-section :areas="areas" :wrapper="wrapper" />
+		<image-components-section :components="areas" :wrapper="wrapper" />
 	</div>
 </template>
 
 <script>
 import MainSection from '~/components/sections/MainSection.vue'
 import AltSection from '~/components/sections/AltSection.vue'
-import AreasSection from '~/components/sections/AreasSection.vue'
+import ImageComponentsSection from '~/components/sections/ImageComponentsSection.vue'
 export default {
-	components: { MainSection, AltSection, AreasSection },
+	components: { MainSection, AltSection, ImageComponentsSection },
 	layout: 'default',
 	async asyncData({ $axios }) {
 		// fetch data from the api server

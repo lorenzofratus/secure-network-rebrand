@@ -1,7 +1,7 @@
 <template>
 	<div class="container">
 		<main-section
-			:buttons="main_section.buttons"
+			:buttons="buttons"
 			:img="service.img"
 			:title="service.name"
 			:wrapper="service.id"
@@ -31,27 +31,22 @@ export default {
 		)
 		const service = data
 		service.paragraphs = service.text.split('\n')
+
+		const buttons = [
+			{
+				class: 'primary',
+				text: 'Area',
+				path: '/areas/' + service.area_id,
+			},
+			{
+				class: 'secondary',
+				text: 'TBD',
+				path: '/contacts',
+			},
+		]
 		return {
 			service,
-		}
-	},
-	data() {
-		return {
-			main_section: {
-				buttons: [
-					{
-						class: 'primary',
-						text: 'TBD',
-						path: '/',
-					},
-					{
-						class: 'secondary',
-						text: 'TBD',
-						path: '/contacts',
-					},
-				],
-				img: '/images/covers/index.svg',
-			},
+			buttons,
 		}
 	},
 }

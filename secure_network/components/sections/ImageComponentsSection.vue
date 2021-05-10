@@ -1,13 +1,14 @@
 <template>
 	<div>
 		<image-component
-			v-for="(item, index) in areas"
+			v-for="(item, index) in components"
 			:key="'area-card-' + index + '-' + wrapper"
-			:title="item.name"
+			:title="item.surname ? item.name + ' ' + item.surname : item.name"
 			:text="item.text"
 			:img="item.img"
 			:btn-path="item.path"
 			:wrapper="wrapper"
+			:is-rounded="isRounded"
 		/>
 	</div>
 </template>
@@ -21,9 +22,14 @@ export default {
 			type: String,
 			required: true,
 		},
-		areas: {
+		components: {
 			type: Array,
 			required: true,
+		},
+		isRounded: {
+			type: Boolean,
+			required: false,
+			default: false,
 		},
 	},
 }

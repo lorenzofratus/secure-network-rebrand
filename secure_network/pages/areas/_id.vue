@@ -14,9 +14,10 @@
 		<title-component title="Available Services" />
 		<items-section :wrapper="area.id" :items="serviceCategories" />
 		<title-component title="Manager" />
-		<circle-card-description
-			:person="manager"
-			title="Manager of the Area"
+		<image-components-section
+			:components="managers"
+			:wrapper="area.id"
+			:is-rounded="true"
 		/>
 		<title-component title="Employees" />
 		<people-section :people="people" :wrapper="area.id" />
@@ -29,7 +30,7 @@ import ItemsSection from '~/components/sections/ItemsSection.vue'
 import MainSection from '~/components/sections/MainSection.vue'
 import AltSection from '~/components/sections/AltSection.vue'
 import PeopleSection from '~/components/sections/PeopleSection.vue'
-import CircleCardDescription from '~/components/items/CircleCardDescription.vue'
+import ImageComponentsSection from '~/components/sections/ImageComponentsSection.vue'
 
 export default {
 	components: {
@@ -38,7 +39,7 @@ export default {
 		ItemsSection,
 		PeopleSection,
 		TitleComponent,
-		CircleCardDescription,
+		ImageComponentsSection,
 	},
 	layout: 'default',
 	async asyncData({ $axios, route }) {
@@ -60,7 +61,7 @@ export default {
 		payload = await $axios.get(
 			`${process.env.BASE_URL}/api/people-by-area-and-role/${id}/manager/`
 		)
-		const manager = payload.data[0]
+		const managers = payload.data
 
 		// Retrieving the categories of services offered by the area
 		payload = await $axios.get(
@@ -71,7 +72,7 @@ export default {
 		return {
 			area,
 			people,
-			manager,
+			managers,
 			serviceCategories,
 		}
 	},

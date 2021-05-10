@@ -357,7 +357,7 @@ let ppl = [
 	{
 		name: 'Diego',
 		surname: 'Zaffaroni',
-		img: '/images/team/tommaso-pescanoce-stock.jpg',
+		img: '/images/team/diego-zaffaroni-stock.jpg',
 		path: '/team/',
 		role: 'employee',
 		area_id: 'training',
@@ -434,6 +434,25 @@ let ppl = [
 		area_id: 'training',
 		text: `Andrea ha conseguito la laurea magistrale in Computer Science and Engineering presso il Politecnico di Milano, dove per la sua tesi ha progettato e sviluppato un sistema distribuito per l’identificazione di malware all’interno di pagine web. Durante l’università ha partecipato a competizioni CTF con i team “Tower of Hanoi” e “mHACKeroni”.\n
 		Come Security Engineer svolge principalmente attività di penetration testing e di security assessment. I suoi interessi principali sono l’analisi delle piattaforme web e lo sviluppo di software.`,
+	},
+	{
+		name: 'Stefano',
+		surname: 'Zanero',
+		img: '/images/fake-resource.png',
+		path: '/team/',
+		role: 'founder',
+		text: `Presidente di Secure Network, Stefano ha ricevuto, cum laude, un dottorato di ricerca in Ingegneria dell’Informazione presso il Dipartimento di Elettronica, Informazione e Bioingegneria del Politecnico di Milano, dove è attualmente professore associato. Tra i suoi interessi di ricerca figurano la virologia informatica, la sicurezza mobile, e la sicurezza dei sistemi. È professore aggregato di “Computer Security” e “Informatica Forense”. Oltre all’attività didattica presso varie strutture universitarie italiane ed estere, ha partecipato come relatore a numerosi convegni nazionali ed internazionali, ed è autore di oltre 50 articoli scientifici pubblicati su riviste e conferenze.\n
+		È Associate Editor del “Journal in Computer Virology and hacking techniques”. È Senior Member dello IEEE (Institute of Electrical and Electronics Engineers), socio della IEEE Computer Society (per cui siede nella Board of Governors internazionale), e della ACM (Association for Computing Machinery), oltre ad essere socio fondatore di AIPSI (Associazione Italiana Professionisti della Sicurezza Informatica), capitolo italiano di ISSA (Information System Security Association), di cui siede nel board of directors internazionale. Giornalista pubblicista, ha ricevuto un premio per la sua attività divulgativa, in particolare per la rubrica “Diario di un Security Manager”.`,
+	},
+	{
+		name: 'Alvise',
+		surname: 'Biffi',
+		img: '/images/fake-resource.png',
+		path: '/team/',
+		role: 'founder',
+		text: `Alvise Biffi ricopre la carica di Chief Executive Officer di Secure Network, da lui fondata insieme a Stefano Zanero nel 2004. Nel suo ruolo, Biffi si occupa del business development e della gestione organizzativa.\n
+		Laureato in Economia Aziendale presso l’Università Bocconi, Biffi opera nell’ambito della consulenza strategica per il settore IT dal 1999. Prima di fondare Secure Network, Biffi è stato Presidente di JEME Bocconi ed ha lavorato come Marketing Manager per SoftPeople.\n
+		Dal 2005, inoltre, Alvise Biffi è entrato a fare parte in modo attivo di Assolombarda, l’associazione delle imprese industriali e del terziario dell’area milanese, ricoprendo nel corso degli anni ruoli di elevato prestigio tra cui Presidente del Gruppo Giovani Imprenditori. Oggi Biffi è Presidente della Piccola e Media Impresa di Assolombarda, Vice Presidente di Assolombarda e Vice Presidente di Piccola Industria Confindustria e dal 2012 è consigliere della Camera di Commercio di Milano`,
 	},
 ].sort(compareByName)
 

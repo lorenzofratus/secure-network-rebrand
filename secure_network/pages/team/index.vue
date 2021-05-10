@@ -13,7 +13,12 @@
 			:wrapper="wrapper"
 			:button="alt_section.button"
 		/>
-		<people-section :people="people" :wrapper="wrapper" />
+		<image-components-section
+			:components="founders"
+			:wrapper="wrapper"
+			:is-rounded="true"
+		/>
+		<people-section :people="team" :wrapper="wrapper" />
 		<alt-section
 			:title="alt_section2.title"
 			:paragraphs="alt_section2.paragraphs"
@@ -25,12 +30,18 @@
 </template>
 
 <script>
+import ImageComponentsSection from '~/components/sections/ImageComponentsSection.vue'
 import MainSection from '~/components/sections/MainSection.vue'
 import AltSection from '~/components/sections/AltSection.vue'
 import PeopleSection from '~/components/sections/PeopleSection.vue'
 
 export default {
-	components: { MainSection, AltSection, PeopleSection },
+	components: {
+		MainSection,
+		AltSection,
+		PeopleSection,
+		ImageComponentsSection,
+	},
 	layout: 'default',
 	// async asyncData({ store }) {
 	// 	// fetch data from the api server
@@ -41,10 +52,17 @@ export default {
 	// },
 	async asyncData({ $axios }) {
 		// fetch data from the api server
-		const { data } = await $axios.get(`${process.env.BASE_URL}/api/people`)
-		const people = data
+		let payload = await $axios.get(`${process.env.BASE_URL}/api/team`)
+		const team = payload.data
+
+		payload = await $axios.get(
+			`${process.env.BASE_URL}/api/people-by-role/founder`
+		)
+		const founders = payload.data
+
 		return {
-			people,
+			team,
+			founders,
 		}
 	},
 	data() {
