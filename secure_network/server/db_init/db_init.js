@@ -1,8 +1,9 @@
+/* eslint-disable camelcase */
 import { compareByName } from '../utils/comparator.js'
 
 function refine(items) {
 	items.forEach((item) => {
-		let id = item.name.toLowerCase()
+		const id = item.name.toLowerCase()
 		const regExp = /\s/g
 		item.id = id.replace(regExp, '-')
 		item.path = item.path + item.id
@@ -11,7 +12,7 @@ function refine(items) {
 
 function refinePeople(items) {
 	items.forEach((item) => {
-		let id = item.name.toLowerCase() + '-' + item.surname.toLowerCase()
+		const id = item.name.toLowerCase() + '-' + item.surname.toLowerCase()
 		const regExp = /\s/g
 		item.id = id.replace(regExp, '-')
 		item.path = item.path + item.id
@@ -20,7 +21,7 @@ function refinePeople(items) {
 
 /* Raw variables definition */
 
-let sv_categories = [
+const sv_categories = [
 	{
 		name: 'Application Security',
 		text:
@@ -69,7 +70,7 @@ let sv_categories = [
 	},
 ].sort(compareByName)
 
-let svs = [
+const svs = [
 	{
 		name: 'Web Applications & Web Services',
 		text: `Web applications store our personal information, manage our finances, share our documents and are an integral part of our everyday life, even during work activities.\n
@@ -272,7 +273,7 @@ let svs = [
 	},
 ].sort(compareByName)
 
-let ppl = [
+const ppl = [
 	{
 		name: 'Alberto',
 		surname: 'Volpatto',
@@ -438,7 +439,7 @@ let ppl = [
 	{
 		name: 'Stefano',
 		surname: 'Zanero',
-		img: '/images/fake-resource.png',
+		img: '/images/team/stefano-zanero.jpeg',
 		path: '/team/',
 		role: 'founder',
 		text: `Presidente di Secure Network, Stefano ha ricevuto, cum laude, un dottorato di ricerca in Ingegneria dell’Informazione presso il Dipartimento di Elettronica, Informazione e Bioingegneria del Politecnico di Milano, dove è attualmente professore associato. Tra i suoi interessi di ricerca figurano la virologia informatica, la sicurezza mobile, e la sicurezza dei sistemi. È professore aggregato di “Computer Security” e “Informatica Forense”. Oltre all’attività didattica presso varie strutture universitarie italiane ed estere, ha partecipato come relatore a numerosi convegni nazionali ed internazionali, ed è autore di oltre 50 articoli scientifici pubblicati su riviste e conferenze.\n
@@ -447,7 +448,7 @@ let ppl = [
 	{
 		name: 'Alvise',
 		surname: 'Biffi',
-		img: '/images/fake-resource.png',
+		img: '/images/team/alvise-biffi.jpeg',
 		path: '/team/',
 		role: 'founder',
 		text: `Alvise Biffi ricopre la carica di Chief Executive Officer di Secure Network, da lui fondata insieme a Stefano Zanero nel 2004. Nel suo ruolo, Biffi si occupa del business development e della gestione organizzativa.\n
@@ -456,7 +457,7 @@ let ppl = [
 	},
 ].sort(compareByName)
 
-let ars = [
+const ars = [
 	{
 		name: 'Training',
 		text: `The wide range of courses, delivered anywhere in the world, provides multiple paths that can meet the needs of all our customers, including developers and system administrators, commercial agents, security consultant, manager, law enforcement and military.\n
@@ -473,7 +474,7 @@ let ars = [
 	},
 ].sort(compareByName)
 
-let p_s = [
+const p_s = [
 	{
 		person_id: 'andrea-jegher',
 		service_id: 'application-vulnerability-assessment',
@@ -708,7 +709,7 @@ let p_s = [
 	},
 ].sort(compareByName)
 
-/*Refined definition */
+/* Refined definition */
 refine(sv_categories)
 export const service_categories = sv_categories
 

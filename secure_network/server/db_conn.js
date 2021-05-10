@@ -1,11 +1,14 @@
+/* eslint-disable camelcase */
 /* 
 	Initialization variables
 */
-import { service_categories } from './db_init/db_init.js'
-import { services } from './db_init/db_init.js'
-import { people } from './db_init/db_init.js'
-import { areas } from './db_init/db_init.js'
-import { person_service } from './db_init/db_init.js'
+import {
+	service_categories,
+	services,
+	people,
+	areas,
+	person_service,
+} from './db_init/db_init.js'
 
 require('dotenv').config()
 
@@ -29,13 +32,15 @@ async function insertItem(table, item) {
 	return object
 }
 
-async function insertItems(table, items) {
-	let objects = []
-	items.forEach((item) => {
-		let object = insertItem(table, item)
-		objects.push(object)
+function insertItems(table, items) {
+	return new Promise((resolve, reject) => {
+		const objects = []
+		items.forEach((item) => {
+			const object = insertItem(table, item)
+			objects.push(object)
+		})
+		resolve(objects)
 	})
-	return objects
 }
 
 function defineDatabaseStructure() {
