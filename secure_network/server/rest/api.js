@@ -134,6 +134,26 @@ async function init() {
 			})
 		)
 	})
+
+	app.get('/people_ids/:area', async (req, res) => {
+		const { area } = req.params
+		return res.json(
+			await Person.findAll({
+				attributes: [['id', 'person_id']],
+				where: { area_id: area, [Op.not]: { role: 'founder' } },
+			})
+		)
+	})
+
+	app.get('/service_ids/:area', async (req, res) => {
+		const { area } = req.params
+		return res.json(
+			await Service.findAll({
+				attributes: [['id', 'service_id']],
+				where: { area_id: area },
+			})
+		)
+	})
 }
 init()
 

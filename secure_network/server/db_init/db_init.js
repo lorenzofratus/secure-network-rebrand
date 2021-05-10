@@ -262,7 +262,7 @@ let svs = [
 		area_id: 'training',
 	},
 	{
-		name: 'Web Application Testion',
+		name: 'Web Application Testing',
 		text: `The course is designed as a full hands-on challenge, in which attendees should play a real-world scenario, attacking real-world targets and breach the security of a series of web applications.\n 
 		Participants will learn proper practice-oriented method to attack web applications, how to define and organize a targeted mission and learn how to solve pentesters’ issues during the hack of computer systems.`,
 		img: '/images/covers/services/',
@@ -473,6 +473,241 @@ let ars = [
 	},
 ].sort(compareByName)
 
+let p_s = [
+	{
+		person_id: 'andrea-jegher',
+		service_id: 'application-vulnerability-assessment',
+		isReference: true,
+	},
+	{
+		person_id: 'andrea-jegher',
+		service_id: 'mobile-security-&-mobile-device-management',
+	},
+	{
+		person_id: 'andrea-jegher',
+		service_id: 'web-application-testing',
+	},
+	{
+		person_id: 'diego-zaffaroni',
+		service_id: 'mobile-application-security-crash-course',
+	},
+	{
+		person_id: 'diego-zaffaroni',
+		service_id: 'network-penetration-testing',
+		isReference: true,
+	},
+	{
+		person_id: 'enrico-coronese',
+		service_id: 'network-vulnerability-assessment',
+		isReference: true,
+	},
+	{
+		person_id: 'enrico-coronese',
+		service_id: 'reverse-engineering',
+		isReference: true,
+	},
+	{
+		person_id: 'ilaria-buonagurio',
+		service_id: 'reverse-engineering',
+	},
+	{
+		person_id: 'ilaria-buonagurio',
+		service_id: 'vulnerability-detection-&-exploitation',
+		isReference: true,
+	},
+	{
+		person_id: 'ilaria-buonagurio',
+		service_id: 'web-application-testing',
+		isReference: true,
+	},
+	{
+		person_id: 'riccardo-cospite',
+		service_id: 'application-vulnerability-assessment',
+	},
+	{
+		person_id: 'riccardo-cospite',
+		service_id: 'mobile-application-security-crash-course',
+		isReference: true,
+	},
+	{
+		person_id: 'marcello-pogliani',
+		service_id: 'application-vulnerability-assessment',
+	},
+	{
+		person_id: 'marcello-pogliani',
+		service_id: 'mobile-application-security-crash-course',
+	},
+	{
+		person_id: 'marcello-pogliani',
+		service_id: 'mobile-security-&-mobile-device-management',
+		isReference: true,
+	},
+	{
+		person_id: 'marcello-pogliani',
+		service_id: 'vulnerability-detection-&-exploitation',
+		isReference: true,
+	},
+	{
+		person_id: 'alberto-volpatto',
+		service_id: 'corporate-workstation-penetration-test',
+		isReference: true,
+	},
+	{
+		person_id: 'alberto-volpatto',
+		service_id: 'device-analysis',
+	},
+	{
+		person_id: 'alberto-volpatto',
+		service_id: 'vulnerability-assessment',
+	},
+	{
+		person_id: 'alberto-volpatto',
+		service_id: 'external-and-internal-network',
+	},
+	{
+		person_id: 'alex-conti',
+		service_id: 'device-analysis',
+		isReference: true,
+	},
+	{
+		person_id: 'alex-conti',
+		service_id: 'external-and-internal-network',
+	},
+	{
+		person_id: 'alex-conti',
+		service_id: 'forensics-acquisition',
+	},
+	{
+		person_id: 'eros-lever',
+		service_id: 'external-and-internal-network',
+		isReference: true,
+	},
+	{
+		person_id: 'eros-lever',
+		service_id: 'vulnerability-assessment',
+	},
+	{
+		person_id: 'eros-lever',
+		service_id: 'forensics-acquisition',
+	},
+	{
+		person_id: 'eros-lever',
+		service_id: 'malware-analysis',
+	},
+	{
+		person_id: 'federico-zambito',
+		service_id: 'forensics-acquisition',
+		isReference: true,
+	},
+	{
+		person_id: 'federico-zambito',
+		service_id: 'malware-analysis',
+	},
+	{
+		person_id: 'federico-zambito',
+		service_id: 'mobile-application',
+	},
+	{
+		person_id: 'francesco-carbone',
+		service_id: 'malware-analysis',
+		isReference: true,
+	},
+	{
+		person_id: 'francesco-carbone',
+		service_id: 'mobile-application',
+	},
+	{
+		person_id: 'francesco-carbone',
+		service_id: 'penetration-test',
+	},
+	{
+		person_id: 'giancarlo-cappucci',
+		service_id: 'mobile-application',
+		isReference: true,
+	},
+	{
+		person_id: 'giancarlo-cappucci',
+		service_id: 'penetration-test',
+	},
+	{
+		person_id: 'giancarlo-cappucci',
+		service_id: 'thin-&-fat-clients',
+	},
+	{
+		person_id: 'giorgio-campiotti',
+		service_id: 'penetration-test',
+		isReference: true,
+	},
+	{
+		person_id: 'giorgio-campiotti',
+		service_id: 'thin-&-fat-clients',
+	},
+	{
+		person_id: 'giorgio-campiotti',
+		service_id: 'web-applications-&-web-services',
+	},
+	{
+		person_id: 'jacopo-ferrigno',
+		service_id: 'thin-&-fat-clients',
+		isReference: true,
+	},
+	{
+		person_id: 'jacopo-ferrigno',
+		service_id: 'corporate-workstation-penetration-test',
+	},
+	{
+		person_id: 'jacopo-ferrigno',
+		service_id: 'web-applications-&-web-services',
+	},
+	{
+		person_id: 'jacopo-ferrigno',
+		service_id: 'software-licensing-&-code-protection',
+	},
+	{
+		person_id: 'jacopo-ferrigno',
+		service_id: 'virtual-infrastructres',
+	},
+	{
+		person_id: 'tommaso-pescanoce',
+		service_id: 'web-applications-&-web-services',
+		isReference: true,
+	},
+	{
+		person_id: 'tommaso-pescanoce',
+		service_id: 'virtual-infrastructres',
+		isReference: true,
+	},
+	{
+		person_id: 'tommaso-pescanoce',
+		service_id: 'device-analysis',
+		isReference: true,
+	},
+	{
+		person_id: 'tommaso-pescanoce',
+		service_id: 'corporate-workstation-penetration-test',
+		isReference: true,
+	},
+	{
+		person_id: 'tommaso-pescanoce',
+		service_id: 'wireless-network-&-infrastructres',
+	},
+	{
+		person_id: 'michiele-roviello',
+		service_id: 'wireless-network-&-infrastructres',
+		isReference: true,
+	},
+	{
+		person_id: 'michiele-roviello',
+		service_id: 'software-licensing-&-code-protection',
+		isReference: true,
+	},
+	{
+		person_id: 'michiele-roviello',
+		service_id: 'vulnerability-assessment',
+		isReference: true,
+	},
+].sort(compareByName)
+
 /*Refined definition */
 refine(sv_categories)
 export const service_categories = sv_categories
@@ -485,3 +720,5 @@ export const people = ppl
 
 refine(ars)
 export const areas = ars
+
+export const person_service = p_s
