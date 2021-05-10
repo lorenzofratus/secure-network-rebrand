@@ -300,7 +300,7 @@ let ppl = [
 		img: '/images/team/eros-lever.jpeg',
 		path: '/team/',
 		role: 'employee',
-		area_id: 'training',
+		area_id: 'enterprise-security',
 		text: `Eros holds a M.Sc. degree from the Politecnico di Milano university. He graduated with a thesis on the realisation of a novel automated analysis framework for mobile applications targeting the Android platform, exploiting techniques such as bytecode analysis and manipulation and automated instrumentation.\n
 		Among his tasks, he performs penetration testing and code review targeting both mobile devices and web application security. Eros has a strong interest in analysing new platforms and developing automated tools to optimise the analysis process.`,
 	},
@@ -340,7 +340,7 @@ let ppl = [
 		img: '/images/team/giorgio-campiotti.jpeg',
 		path: '/team/',
 		role: 'employee',
-		area_id: 'training',
+		area_id: 'enterprise-security',
 		text: `Specialized in embedded hardware platform development, integrated systems and IOT, Giorgio has had many professional experiences in the field of industrial electronic design, networking, system integration and system administration. He mainly executes in-depth analysis and penetration test of hardware systems and IOT devices, also in the context of Industry 4.0.\n
 		His interests include hardware and IOT devices, embedded systems, RF devices for SIGINT activities, and electronic microcontrollers such as Arduino and Raspberry.`,
 	},
@@ -374,6 +374,67 @@ let ppl = [
 		text: `Ilaria holds a Master of Science degree from Politecnico di Milano. Her thesis analyzed the correlation of genetic mutation in types of different cancers.\n
 		She has a focus on web and mobile applications penetration tests. Her interests revolve around data analysis, the security of industrial networks as well as automobiles.`,
 	},
+	{
+		name: 'Francesco',
+		surname: 'Carbone',
+		img: '/images/team/francesco-carbone.jpeg',
+		path: '/team/',
+		role: 'employee',
+		area_id: 'enterprise-security',
+		text: `Francesco è il Sales Manager di Secure Network: è responsabile dell’attività commerciale e segue in collaborazione con il CEO Alvise Biffi le relazioni con i Partner.\n
+		Francesco ha conseguito una laurea vecchio ordinamento in Lingue e Letterature Straniere all’Università di Verona e ha un’esperienza di molti anni in ambito commerciale, sia nel mercato Corporate (è stato Global Account di Cerved) che nel mercato software per banche (pagamenti e cybersecurity), utilizzando le sue capacità linguistiche anche per lo sviluppo commerciale all’estero.`,
+	},
+	{
+		name: 'Giancarlo',
+		surname: 'Cappucci',
+		img: '/images/team/giancarlo-cappucci-stock.jpg',
+		path: '/team/',
+		role: 'employee',
+		area_id: 'enterprise-security',
+		text: `Specialista ISO, Giancarlo ha partecipato a importanti progetti in ambito compliance (D.lgs 231/2001) e Certificazioni di Sistemi di Gestione quali ISO 9001 (qualità), ISO 14001 (ambiente) e ISO 27001 (sicurezza dati e informazioni) in società di servizi e sviluppo software operanti nel settore tributi e sanità.\n
+		Attualmente è membro del direttivo dell’ AICQ “Associazione Italiana Cultura della Qualità” per il settore della Pubblica Amministrazione, è iscritto nei registri AICQ SINCEV come auditor qualificato nei sistemi ISO 9001 e ISO 27001. È promotore di numerose iniziative di convegni e workshop sulle tematiche relative alle certificazioni dei Sistemi di Gestione, quali strumenti utili al management per il miglioramento delle prestazioni aziendali, Privacy nuovo Codice Europeo e Cyber Security nei progetti di Smart City.`,
+	},
+	{
+		name: 'Marcello',
+		surname: 'Pogliani',
+		img: '/images/team/marcello-pogliani.jpeg',
+		path: '/team/',
+		role: 'employee',
+		area_id: 'training',
+		text: `Marcello ha ottenuto il dottorato di ricerca e una laurea magistrale in ingegneria informatica presso il Politecnico di Milano, presso cui ha svolto attività di ricerca nel campo della sicurezza dei sistemi di controllo industriale in ambiente manifatturiero. E’ co-autore di 8 articoli scientifici e ha presentato la propria ricerca presso importanti eventi internazionali, inclusa la prestigiosa conferenza “Black Hat USA” nel 2017 e nel 2020.\n
+		Nel tempo libero, Marcello partecipa e organizza competizioni di “capture the flag”: dal 2014 è membro del team del Politecnico, Tower of Hanoi, e ha partecipato alle finali del DEF CON CTF 26 con il team italiano mHACKeroni.\n
+		Come Security Engineer, Marcello svolge principalmente attività di penetration testing e di security assessment.`,
+	},
+	{
+		name: 'Federico',
+		surname: 'Zambito',
+		img: '/images/team/federico-zambito-stock.jpg',
+		path: '/team/',
+		role: 'employee',
+		area_id: 'enterprise-security',
+		text: `Federico ha svolto attività di analisi dei livelli di sicurezza delle infrastrutture e applicazioni per realtà pubbliche e private. Attualmente, come Security Engineer, si occupa principalmente di attività di Penetration testing e Vulnerability Assessment.\n		
+		Inoltre, Federico partecipa a programmi di “Bug Bounty”, con particolare focus sulla ricerca di vulnerabilità in applicazioni web. Tra le sue principali aree di interesse professionale rientrano anche le tecniche di ingegneria sociale e l’Adversary Simulation.`,
+	},
+	{
+		name: 'Enrico',
+		surname: 'Coronese',
+		img: '/images/team/enrico-coronese.jpeg',
+		path: '/team/',
+		role: 'employee',
+		area_id: 'training',
+		text: `Enrico ha svolto attività di Incident Response e Incident Handling per importanti clienti nell’ambito aerospaziale e finanziario, a livello nazionale e internazionale.\n
+		Attualmente, come Security Engineer si occupa principalmente di Penetration Testing e Vulnerability Assessment. Tra le sue aree di interesse professionale rientrano anche lo sviluppo di applicazioni per il mondo cyber security, Code Review, Binary Analysis e Binary Exploitation.`,
+	},
+	{
+		name: 'Andrea',
+		surname: 'Jegher',
+		img: '/images/team/andrea-jegher.jpeg',
+		path: '/team/',
+		role: 'employee',
+		area_id: 'training',
+		text: `Andrea ha conseguito la laurea magistrale in Computer Science and Engineering presso il Politecnico di Milano, dove per la sua tesi ha progettato e sviluppato un sistema distribuito per l’identificazione di malware all’interno di pagine web. Durante l’università ha partecipato a competizioni CTF con i team “Tower of Hanoi” e “mHACKeroni”.\n
+		Come Security Engineer svolge principalmente attività di penetration testing e di security assessment. I suoi interessi principali sono l’analisi delle piattaforme web e lo sviluppo di software.`,
+	},
 ].sort(compareByName)
 
 let ars = [
@@ -382,13 +443,13 @@ let ars = [
 		text: `The wide range of courses, delivered anywhere in the world, provides multiple paths that can meet the needs of all our customers, including developers and system administrators, commercial agents, security consultant, manager, law enforcement and military.\n
 		Tailored to your specific technical level, the main courses will prepare you in the field of Application Security, Infrastructure Security and Secure Coding. The more advanced courses are also able to set you up to perform Penetration Test Professional.\n
 		In addition to the various courses offered and already defined, Secure Network is able to understand the specific needs of its customers and develop courses that meet every need.`,
-		path: 'areas/',
+		path: '/areas/',
 		img: '/images/covers/areas/training.svg',
 	},
 	{
 		name: 'Enterprise Security',
 		text: `TBD`,
-		path: 'areas/',
+		path: '/areas/',
 		img: '/images/covers/areas/enterprise-security.svg',
 	},
 ].sort(compareByName)

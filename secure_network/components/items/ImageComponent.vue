@@ -1,5 +1,5 @@
 <template>
-	<div class="sub-section">
+	<div class="sub-section" :class="{ noMargin: noMargin }">
 		<div class="content">
 			<h2 class="spacer spacer-small">{{ title }}</h2>
 			<p>{{ abstract }}</p>
@@ -41,6 +41,11 @@ export default {
 			type: String,
 			required: true,
 		},
+		noMargin: {
+			type: Boolean,
+			required: false,
+			default: false,
+		},
 	},
 	data() {
 		return {
@@ -75,6 +80,7 @@ export default {
 	max-width: var(--half-page);
 	margin: 0 auto;
 }
+
 .sub-section .buttons {
 	justify-content: start;
 }
@@ -110,5 +116,9 @@ export default {
 	.sub-section {
 		text-align: left;
 	}
+}
+
+.no-margin {
+	margin: 0;
 }
 </style>

@@ -12,12 +12,31 @@
 			:paragraphs="person.paragraphs"
 			:wrapper="person.id"
 		/>
+		<title-component :title="person.role + ' of the area:'" />
+		<image-component
+			:title="area.name"
+			:text="area.text"
+			:img="area.img"
+			:btn-path="area.path"
+			:wrapper="person.id"
+			:no-margin="true"
+		/>
+
 		<!-- <items-section :wrapper="wrapper" :items="services" /> -->
+		<alt-section
+			:title="alt_section2.title"
+			:paragraphs="alt_section2.paragraphs"
+			:wrapper="person.id"
+			:button="alt_section2.button"
+			:centered="alt_section2.centered"
+		/>
 	</div>
 </template>
 
 <script>
 // import ItemsSection from '~/components/sections/ItemsSection.vue'
+import TitleComponent from '../../components/items/TitleComponent.vue'
+import ImageComponent from '~/components/items/ImageComponent.vue'
 import MainSection from '~/components/sections/MainSection.vue'
 import AltSection from '~/components/sections/AltSection.vue'
 
@@ -26,18 +45,26 @@ export default {
 		MainSection,
 		AltSection,
 		// ItemsSection,
+		ImageComponent,
+		TitleComponent,
 	},
 	layout: 'default',
 	async asyncData({ $axios, route }) {
 		const { id } = route.params
-		const payload = await $axios.get(
+		let payload = await $axios.get(
 			`${process.env.BASE_URL}/api/people/${id}`
 		)
 		const person = payload.data
 		person.paragraphs = person.text.split('\n')
 
+		payload = await $axios.get(
+			`${process.env.BASE_URL}/api/areas/${person.area_id}`
+		)
+
+		const area = payload.data
 		return {
 			person,
+			area,
 		}
 	},
 	data() {
@@ -63,25 +90,15 @@ export default {
 					'Lorem ipsum dolor, sit amet consectetur adipisicing elit. In mollitia hic asperiores temporibus soluta esse tempora itaque possimus, quam nostrum, id ratione iusto illum aut. Accusamus, necessitatibus? Rem, odio asperiores.',
 				],
 			},
-			filter_section: {
-				title: 'Filter Showcase',
-				buttons: [
-					{
-						class: 'primary',
-						text: 'All types',
-						path: '/',
-					},
-					{
-						class: 'outlined',
-						text: 'Research',
-						path: '/',
-					},
-					{
-						class: 'outlined',
-						text: 'News',
-						path: '/',
-					},
-				],
+			alt_section2: {
+				title: 'We are hiring!',
+				paragraphs: ['Come hack with us!'],
+				button: {
+					class: 'primary',
+					text: 'Contact Us',
+					path: '/contact',
+				},
+				centered: true,
 			},
 		}
 	},
