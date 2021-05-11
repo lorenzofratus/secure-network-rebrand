@@ -12,7 +12,7 @@
 			:wrapper="area.id"
 		/>
 		<items-section
-			title="Available Services"
+			title="Categories Of Services"
 			:wrapper="area.id"
 			:items="serviceCategories"
 		/>

@@ -7,13 +7,7 @@ const { Op } = require('sequelize')
 
 async function init() {
 	const db = await initializeDatabase()
-	const {
-		ServiceCategory,
-		Service,
-		Person,
-		Area,
-		Person_Service,
-	} = db._tables
+	const { ServiceCategory, Service, Person, Area, PersonService } = db._tables
 
 	/**
 	 * Find all queries
@@ -141,18 +135,40 @@ async function init() {
 		)
 	})
 
-	app.get('/people-by-service/:service', async (req, res) => {
-		const { service } = req.params
+	app.get('/people-by-service/:service/:isReference', async (req, res) => {
+		const { service, isReference } = req.params
 
-		// Actual query
-		return res.json(
-			await Person_Service.findAll({
-				where: {
-					service_id: service,
-				},
-				include: [Person],
-			})
-		)
+		const payload = await PersonService.findAll({
+			where: {
+				service_id: service,
+				isReference: isReference,
+			},
+			include: [Person],
+		})
+		const people = []
+		payload.forEach((item) => {
+			people.push(item.dataValues.person)
+		})
+
+		return res.json(people)
+	})
+
+	app.get('/services-by-person/:person', async (req, res) => {
+		const { person } = req.params
+
+		const payload = await PersonService.findAll({
+			where: {
+				person_id: person,
+			},
+			include: [Service],
+		})
+		console.log(payload)
+		const services = []
+		payload.forEach((item) => {
+			services.push(item.dataValues.service)
+		})
+
+		return res.json(services)
 	})
 
 	/**

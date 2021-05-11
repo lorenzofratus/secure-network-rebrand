@@ -110,7 +110,7 @@ function defineDatabaseStructure() {
 		{ sequelize: db, modelName: 'area' }
 	)
 
-	const Person_Service = db.define(
+	const PersonService = db.define(
 		'person_service',
 		{
 			isReference: {
@@ -122,17 +122,21 @@ function defineDatabaseStructure() {
 	)
 
 	ServiceCategory.hasMany(Service, { foreignKey: 'category_id' })
-	Area.hasMany(Person, { foreignKey: 'area_id' })
-	Area.hasMany(Service, { foreignKey: 'area_id' })
-	
-	Person.belongsToMany(Service, {
-		through: Person_Service,
-	})
-	Service.belongsToMany(Person, {
-		through: Person_Service,
-	})
+	Service.belongsTo(ServiceCategory, { foreignKey: 'category_id' })
 
-	db._tables = { ServiceCategory, Service, Person, Area, Person_Service }
+	Area.hasMany(Person, { foreignKey: 'area_id' })
+	Person.belongsTo(Area, { foreignKey: 'area_id' })
+
+	Area.hasMany(Service, { foreignKey: 'area_id' })
+	Service.belongsTo(Area, { foreignKey: 'area_id' })
+
+	Person.hasMany(PersonService, { foreignKey: 'person_id' })
+	PersonService.belongsTo(Person, { foreignKey: 'person_id' })
+
+	Service.hasMany(PersonService, { foreignKey: 'service_id' })
+	PersonService.belongsTo(Service, { foreignKey: 'service_id' })
+
+	db._tables = { ServiceCategory, Service, Person, Area, PersonService }
 }
 
 async function insertTables() {
@@ -141,13 +145,13 @@ async function insertTables() {
 		Service,
 		Person,
 		Area,
-		Person_Service,
+		PersonService,
 	} = db._tables
 	await insertItems(Area, areas)
 	await insertItems(ServiceCategory, service_categories)
 	await insertItems(Service, services)
 	await insertItems(Person, people)
-	await insertItems(Person_Service, person_service)
+	await insertItems(PersonService, person_service)
 }
 
 async function initializeDatabase() {

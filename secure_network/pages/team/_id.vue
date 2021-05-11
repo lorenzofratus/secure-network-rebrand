@@ -20,7 +20,12 @@
 			:wrapper="person.id"
 		/>
 
-		<!-- <items-section :wrapper="wrapper" :items="services" /> -->
+		<items-section
+			v-if="services.length"
+			:wrapper="person.id"
+			:items="services"
+			title="Provided Services"
+		/>
 		<alt-section
 			:title="alt_section2.title"
 			:paragraphs="alt_section2.paragraphs"
@@ -32,7 +37,7 @@
 </template>
 
 <script>
-// import ItemsSection from '~/components/sections/ItemsSection.vue'
+import ItemsSection from '~/components/sections/ItemsSection.vue'
 import MainSection from '~/components/sections/MainSection.vue'
 import AltSection from '~/components/sections/AltSection.vue'
 import ImageComponentsSection from '~/components/sections/ImageComponentsSection.vue'
@@ -42,7 +47,7 @@ export default {
 		MainSection,
 		AltSection,
 		ImageComponentsSection,
-		// ItemsSection,
+		ItemsSection,
 	},
 	layout: 'default',
 	async asyncData({ $axios, route }) {
@@ -60,9 +65,15 @@ export default {
 		const area = payload.data
 		if (area && person.role) area.tag = person.role + ' at'
 
+		payload = await $axios.get(
+			`${process.env.BASE_URL}/api/services-by-person/${id}`
+		)
+		const services = payload.data
+
 		return {
 			person,
 			area,
+			services,
 		}
 	},
 	data() {
