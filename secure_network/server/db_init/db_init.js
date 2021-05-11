@@ -108,7 +108,7 @@ const svs = [
 		Secure Network verifies the robustness of licensing systems implemented in your applications to ensure that they are accessed only by users holding a regular license.\n
 		In addition, to make sure that the application is safe at other levels, Secure Network analyzes the obfuscation and anti-debugging techniques used to protect the application source code from reverse engineering.`,
 		img:
-			'images/covers/services/application-security/software-licensing-and-code-protection.svg',
+			'/images/covers/services/application-security/software-licensing-and-code-protection.svg',
 		category_id: 'application-security',
 		path: '/services/',
 		area_id: 'enterprise-security',
