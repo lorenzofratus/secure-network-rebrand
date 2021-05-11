@@ -1,6 +1,7 @@
 <template>
-	<div class="sub-section" :class="{ noMargin: noMargin }">
+	<span class="sub-section">
 		<div class="content">
+			<h4 v-if="tag != ''" class="tag">{{ tag }}</h4>
 			<h2 class="spacer spacer-small">{{ title }}</h2>
 			<p>{{ abstract }}</p>
 			<button-component
@@ -10,7 +11,7 @@
 			/>
 		</div>
 		<img :src="img" class="cover" :class="{ rounded: isRounded }" />
-	</div>
+	</span>
 </template>
 
 <script>
@@ -23,6 +24,11 @@ export default {
 		title: {
 			type: String,
 			required: true,
+		},
+		tag: {
+			type: String,
+			required: false,
+			default: '',
 		},
 		text: {
 			type: String,
@@ -40,11 +46,6 @@ export default {
 		wrapper: {
 			type: String,
 			required: true,
-		},
-		noMargin: {
-			type: Boolean,
-			required: false,
-			default: false,
 		},
 		isRounded: {
 			type: Boolean,
@@ -72,13 +73,17 @@ export default {
 
 <style scoped>
 .sub-section {
+	display: block;
 	max-width: var(--page);
-	margin: 10em auto;
+	margin: 0 auto 5em;
 	padding: 0 var(--padding);
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	flex-wrap: wrap-reverse;
+}
+.sub-section:last-child {
+	margin-bottom: 0;
 }
 .sub-section > * {
 	flex: 0 1 auto;
@@ -86,12 +91,22 @@ export default {
 	margin: 0 auto;
 }
 
+.sub-section .tag {
+	text-transform: uppercase;
+	margin: 0;
+	color: var(--primary-color);
+	font-weight: var(--btn-font-weight);
+}
+.sub-section .tag ~ .spacer {
+	margin-top: 0.25em;
+}
+
 .sub-section .buttons {
 	justify-content: start;
 }
 .sub-section .cover {
 	display: block;
-	padding: 5%;
+	padding: 0 5%;
 	box-sizing: border-box;
 	height: auto;
 	width: 100%;
@@ -100,31 +115,31 @@ export default {
 	min-width: 50%;
 }
 
-.sub-section:nth-child(even) {
+.sub-section:nth-of-type(even) {
 	text-align: right;
 	flex-direction: row;
 }
-.sub-section:nth-child(odd) {
+.sub-section:nth-of-type(odd) {
 	text-align: left;
 	flex-direction: row-reverse;
 }
-.sub-section:nth-child(even) /deep/ .button,
-.sub-section:nth-child(even) .spacer.spacer-small::after {
+.sub-section:nth-of-type(even) /deep/ .button,
+.sub-section:nth-of-type(even) .spacer.spacer-small::after {
 	margin: 0 0 0 auto;
 }
-.sub-section:nth-child(odd) /deep/ .button,
-.sub-section:nth-child(odd) .spacer.spacer-small::after {
+.sub-section:nth-of-type(odd) /deep/ .button,
+.sub-section:nth-of-type(odd) .spacer.spacer-small::after {
 	margin: 0 auto 0 0;
 }
 
 @media screen and (max-width: 785px) {
-	.sub-section {
+	.sub-section:nth-of-type(even) {
 		text-align: left;
 	}
-}
-
-.no-margin {
-	margin: 0;
+	.sub-section:nth-of-type(even) /deep/ .button,
+	.sub-section:nth-of-type(even) .spacer.spacer-small::after {
+		margin: 0 auto 0 0;
+	}
 }
 
 .sub-section .rounded {

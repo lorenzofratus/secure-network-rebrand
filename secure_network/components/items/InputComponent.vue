@@ -55,7 +55,7 @@ export default {
 	padding: 0.75em 1em 0.5em;
 	background-color: var(--background);
 	border: none;
-	border-bottom: var(--line-weight) solid var(--dark-color);
+	border-bottom: var(--line-weight) solid var(--disabled-color);
 	border-radius: 0.5em 0.5em 0 0;
 	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14),
 		0 2px 1px -1px rgba(0, 0, 0, 0.12), 0 1px 3px 0 rgba(0, 0, 0, 0.2);
@@ -91,7 +91,7 @@ export default {
 	z-index: 1;
 	top: 0.75em;
 	left: 1em;
-	color: var(--dark-color);
+	color: var(--disabled-color);
 	transform-origin: bottom left;
 	transform: translate(0, 0) scale(1);
 	transition: 0.35s ease-in-out;

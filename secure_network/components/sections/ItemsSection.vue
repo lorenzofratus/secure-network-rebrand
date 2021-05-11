@@ -1,5 +1,6 @@
 <template>
-	<div class="section">
+	<section>
+		<title-component v-if="title != ''" :title="title" />
 		<div class="content grid">
 			<item-card
 				v-for="(item, index) in items"
@@ -10,18 +11,24 @@
 				:path="item.path"
 			/>
 		</div>
-	</div>
+	</section>
 </template>
 
 <script>
-import ItemCard from '../items/ItemCard.vue'
+import ItemCard from '~/components/items/ItemCard.vue'
+import TitleComponent from '~/components/items/TitleComponent.vue'
 
 export default {
-	components: { ItemCard },
+	components: { ItemCard, TitleComponent },
 	props: {
 		wrapper: {
 			type: String,
 			required: true,
+		},
+		title: {
+			type: String,
+			required: false,
+			default: '',
 		},
 		items: {
 			type: Array,

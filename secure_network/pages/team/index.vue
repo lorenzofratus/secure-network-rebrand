@@ -14,11 +14,18 @@
 			:button="alt_section.button"
 		/>
 		<image-components-section
+			id="founders"
+			title="Our Founders"
 			:components="founders"
 			:wrapper="wrapper"
 			:is-rounded="true"
 		/>
-		<people-section :people="team" :wrapper="wrapper" />
+		<people-section
+			id="employees"
+			title="Our Employees"
+			:people="team"
+			:wrapper="wrapper"
+		/>
 		<alt-section
 			:title="alt_section2.title"
 			:paragraphs="alt_section2.paragraphs"
@@ -74,13 +81,13 @@ export default {
 				buttons: [
 					{
 						class: 'primary',
-						text: 'The Founders',
-						path: '/founders',
+						text: 'Founders',
+						path: '/team/#founders',
 					},
 					{
 						class: 'secondary',
-						text: 'The Team',
-						path: '/',
+						text: 'Employees',
+						path: '/team/#employees',
 					},
 				],
 				img: '/images/covers/team.svg',
@@ -94,47 +101,13 @@ export default {
 			},
 			alt_section2: {
 				title: 'We are hiring!',
-				paragraphs: ['Come hack with us!'],
+				paragraphs: ['What are you waiting? Come hack with us!'],
 				button: {
 					class: 'primary',
 					text: 'Contact Us',
 					path: '/contact',
 				},
 				centered: true,
-			},
-			people_section: {
-				people: [
-					{
-						img: '/images/team/alberto-volpatto.jpeg',
-						name: 'Alberto',
-						surname: 'Volpatto',
-					},
-					{
-						img: '/images/team/diego-zaffaroni-stock.jpg',
-						name: 'Diego',
-						surname: 'Zaffaroni',
-					},
-					{
-						img: '/images/team/federico-zambito-stock.jpg',
-						name: 'Federico',
-						surname: 'Zambito',
-					},
-					{
-						img: '/images/team/alberto-volpatto.jpeg',
-						name: 'Alberto',
-						surname: 'Volpatto',
-					},
-					{
-						img: '/images/team/alberto-volpatto.jpeg',
-						name: 'Alberto',
-						surname: 'Volpatto',
-					},
-					{
-						img: '/images/team/alberto-volpatto.jpeg',
-						name: 'Alberto',
-						surname: 'Volpatto',
-					},
-				],
 			},
 		}
 	},

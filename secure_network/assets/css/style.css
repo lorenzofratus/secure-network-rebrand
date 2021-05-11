@@ -7,6 +7,7 @@
 	--background: #ffffff;
 	--alt-background: #f0faff;
 	--error-color: #b00020;
+	--disabled-color: #00000047;
 
 	--font-family: 'Epilogue', sans-serif;
 	--base-font-size: 16px;
@@ -43,8 +44,8 @@
 	--wave-displacement: calc(100% - 0.5vw);
 
 	--nav-height: 4em;
-	--divider-width: 80px;
-	--divider-small-width: 60px;
+	--divider-width: 120px;
+	--divider-small-width: 40px;
 	--line-weight: 3px;
 	--line-radius: 1.5px;
 }
@@ -108,6 +109,11 @@ a:focus {
 	text-align: center;
 	margin-bottom: 2em;
 	margin-bottom: calc(2em + var(--line-weight));
+	text-transform: capitalize;
+}
+.spacer.big-margin {
+	margin-bottom: 3em;
+	margin-bottom: calc(4em + var(--line-weight));
 }
 
 .spacer::after {
@@ -138,29 +144,31 @@ a:focus {
 	grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
 }
 
-.section {
-	padding: var(--padding);
-}
-.section .content {
-	max-width: var(--page);
-	margin: 0 auto;
-}
-
 /***Grid***/
 .grid {
 	display: grid;
 	grid-gap: 50px;
-	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
 }
 .grid.small {
-	grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+	grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
 }
 
 /*** Sections ***/
+section {
+	padding: var(--padding);
+}
+section .content {
+	max-width: var(--page);
+	margin: 0 auto;
+}
+section:not(.alt-section) ~ section:not(.alt-section) {
+	margin-top: 3em;
+}
+
 .alt-section {
 	position: relative;
 	background-color: var(--alt-background);
-	padding: var(--padding);
 }
 .alt-section .content {
 	max-width: var(--content);
@@ -169,7 +177,6 @@ a:focus {
 
 .text-section {
 	position: relative;
-	padding: var(--padding);
 }
 .text-section .content {
 	max-width: var(--content);
@@ -225,6 +232,9 @@ a:focus {
 	border-radius: 1em;
 	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 }
+.card .spacer {
+	margin-top: 0;
+}
 .card .icon {
 	color: var(--primary-color);
 }
@@ -235,6 +245,10 @@ a:focus {
 .card.interactive:hover,
 .card.interactive:focus {
 	box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+}
+a.card {
+	color: initial;
+	text-decoration: none;
 }
 
 /*** Page Transition ***/

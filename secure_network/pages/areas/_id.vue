@@ -11,21 +11,22 @@
 			:paragraphs="area.paragraphs"
 			:wrapper="area.id"
 		/>
-		<title-component title="Available Services" />
-		<items-section :wrapper="area.id" :items="serviceCategories" />
-		<title-component title="Manager" />
+		<items-section
+			title="Available Services"
+			:wrapper="area.id"
+			:items="serviceCategories"
+		/>
 		<image-components-section
+			title="Currently Employing"
 			:components="managers"
 			:wrapper="area.id"
 			:is-rounded="true"
 		/>
-		<title-component title="Employees" />
 		<people-section :people="people" :wrapper="area.id" />
 	</div>
 </template>
 
 <script>
-import TitleComponent from '../../components/items/TitleComponent.vue'
 import ItemsSection from '~/components/sections/ItemsSection.vue'
 import MainSection from '~/components/sections/MainSection.vue'
 import AltSection from '~/components/sections/AltSection.vue'
@@ -38,7 +39,6 @@ export default {
 		AltSection,
 		ItemsSection,
 		PeopleSection,
-		TitleComponent,
 		ImageComponentsSection,
 	},
 	layout: 'default',
@@ -62,6 +62,7 @@ export default {
 			`${process.env.BASE_URL}/api/people-by-area-and-role/${id}/manager/`
 		)
 		const managers = payload.data
+		managers.forEach((manager) => (manager.tag = manager.role))
 
 		// Retrieving the categories of services offered by the area
 		payload = await $axios.get(

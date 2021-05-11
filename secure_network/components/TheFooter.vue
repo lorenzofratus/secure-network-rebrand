@@ -1,6 +1,9 @@
 <template>
 	<footer class="footer wave-before wave-concave-dark">
 		<div class="content">
+			<nuxt-link to="" class="logo arrow"
+				><span class="left-bar"></span><span class="right-bar"></span
+			></nuxt-link>
 			<nuxt-link :to="home.path" class="logo">
 				{{ home.name }}
 			</nuxt-link>
@@ -65,5 +68,48 @@ export default {
 .footer .copy-info {
 	color: var(--light-color);
 	text-align: center;
+}
+
+.footer .arrow {
+	margin-top: 1.5em;
+	height: 1em;
+	width: 4em;
+	padding: 0;
+	position: relative;
+}
+.footer .arrow .left-bar,
+.footer .arrow .right-bar {
+	position: absolute;
+	top: 0;
+	width: 1em;
+	height: var(--line-weight);
+	border-radius: var(--line-radius);
+	transition: 0.5s cubic-bezier(0.25, 0.75, 0.5, 1.25);
+	transition-property: transform, background-color;
+	background-color: var(--light-color);
+}
+.footer .arrow:hover .left-bar,
+.footer .arrow:focus .left-bar,
+.footer .arrow:hover .right-bar,
+.footer .arrow:focus .right-bar {
+	background-color: var(--primary-color);
+}
+.footer .arrow .left-bar {
+	right: 50%;
+	transform-origin: top right;
+	transform: rotate(-30deg);
+}
+.footer .arrow:hover .left-bar,
+.footer .arrow:focus .left-bar {
+	transform: translateY(-0.35em) rotate(-40deg);
+}
+.footer .arrow .right-bar {
+	left: 50%;
+	transform-origin: top left;
+	transform: rotate(30deg);
+}
+.footer .arrow:hover .right-bar,
+.footer .arrow:focus .right-bar {
+	transform: translateY(-0.35em) rotate(40deg);
 }
 </style>

@@ -11,27 +11,28 @@
 			:wrapper="wrapper"
 		/>
 
-		<section class="section address-section wave-after wave-convex-bg">
+		<section class="address-section wave-after wave-convex-bg">
 			<title-component
 				:title="title_component.title"
 				:text="title_component.text"
 			/>
 
 			<div class="grid content">
+				<a class="card interactive contact" href="tel:+390283994606">
+					<span class="icon material-icons">phone</span>
+					<p class="info">+39 02 83994606</p>
+				</a>
+				<a
+					class="card interactive contact"
+					href="mailto:info@securenetwork.it"
+				>
+					<span class="icon material-icons">email</span>
+					<p class="info">info@securenetwork.it</p>
+				</a>
 				<div class="card interactive" @click="showMap(1)">
 					<h3 class="spacer">Italy</h3>
 					<p class="info centered">
 						Via Valtorta, 48<br />20127, Milano
-					</p>
-					<p class="info centered">
-						<a href="tel:+390283994606"
-							><b>Tel:</b> +39 02 83994606</a
-						>
-					</p>
-					<p class="info centered">
-						<a href="mailto:info@securenetwork.it"
-							><b>Email:</b> info@securenetwork.it</a
-						>
 					</p>
 				</div>
 				<div class="card interactive" @click="showMap(2)">
@@ -42,10 +43,10 @@
 				</div>
 			</div>
 		</section>
-		<section class="map-section">
+		<div class="map-section">
 			<span class="map map-1" :class="{ active: activeMap == 1 }"></span>
 			<span class="map map-2" :class="{ active: activeMap == 2 }"></span>
-		</section>
+		</div>
 	</div>
 </template>
 
@@ -99,6 +100,18 @@ p.centered {
 	text-align: center;
 }
 
+.contact {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+	padding: 1em 2em;
+}
+.contact .icon {
+	font-size: 2em;
+	margin-bottom: 0.1em;
+}
+
 .info {
 	margin: 0.75em 0;
 }
@@ -111,7 +124,7 @@ p.centered {
 	color: var(--primary-color);
 }
 
-.address-section .grid {
+.address-section .content {
 	margin-top: var(--padding);
 }
 

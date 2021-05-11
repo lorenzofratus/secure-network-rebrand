@@ -1,6 +1,8 @@
 <template>
 	<div class="content">
-		<h2 class="spacer">{{ title }}</h2>
+		<h2 class="spacer" :class="{ 'big-margin': text == '' }">
+			{{ title }}
+		</h2>
 		<p v-if="text" class="centered">
 			{{ text }}
 		</p>
@@ -25,8 +27,4 @@ export default {
 }
 </script>
 
-<style scoped>
-.spacer {
-	text-transform: capitalize;
-}
-</style>
+<style></style>

@@ -1,5 +1,5 @@
 <template>
-	<div class="section">
+	<section>
 		<div class="content grid">
 			<box-card
 				v-for="(box, index) in boxes"
@@ -10,7 +10,7 @@
 				:text="box.text"
 			/>
 		</div>
-	</div>
+	</section>
 </template>
 
 <script>

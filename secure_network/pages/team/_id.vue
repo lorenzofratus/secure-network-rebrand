@@ -12,14 +12,12 @@
 			:paragraphs="person.paragraphs"
 			:wrapper="person.id"
 		/>
-		<title-component :title="person.role + ' of the area:'" />
-		<image-component
-			:title="area.name"
-			:text="area.text"
-			:img="area.img"
-			:btn-path="area.path"
+
+		<image-components-section
+			v-if="area != null"
+			title="Current occupation"
+			:components="[area]"
 			:wrapper="person.id"
-			:no-margin="true"
 		/>
 
 		<!-- <items-section :wrapper="wrapper" :items="services" /> -->
@@ -35,18 +33,16 @@
 
 <script>
 // import ItemsSection from '~/components/sections/ItemsSection.vue'
-import TitleComponent from '../../components/items/TitleComponent.vue'
-import ImageComponent from '~/components/items/ImageComponent.vue'
 import MainSection from '~/components/sections/MainSection.vue'
 import AltSection from '~/components/sections/AltSection.vue'
+import ImageComponentsSection from '~/components/sections/ImageComponentsSection.vue'
 
 export default {
 	components: {
 		MainSection,
 		AltSection,
+		ImageComponentsSection,
 		// ItemsSection,
-		ImageComponent,
-		TitleComponent,
 	},
 	layout: 'default',
 	async asyncData({ $axios, route }) {
@@ -62,6 +58,8 @@ export default {
 		)
 
 		const area = payload.data
+		if (area && person.role) area.tag = person.role + ' at'
+
 		return {
 			person,
 			area,

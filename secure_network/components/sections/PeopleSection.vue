@@ -1,5 +1,6 @@
 <template>
-	<section class="section">
+	<section>
+		<title-component v-if="title != ''" :title="title" />
 		<div class="grid small content">
 			<circle-card
 				v-for="(item, index) in people"
@@ -15,9 +16,15 @@
 
 <script>
 import CircleCard from '~/components/items/CircleCard.vue'
+import TitleComponent from '~/components/items/TitleComponent.vue'
 export default {
-	components: { CircleCard },
+	components: { CircleCard, TitleComponent },
 	props: {
+		title: {
+			type: String,
+			required: false,
+			default: '',
+		},
 		wrapper: {
 			type: String,
 			required: true,

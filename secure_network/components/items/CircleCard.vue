@@ -1,10 +1,8 @@
 <template>
-	<nuxt-link :to="path">
-		<div class="card circle interactive">
-			<img class="image" :src="img" />
-			<h3 class="h3">{{ name }}</h3>
-			<h3 class="h3">{{ surname }}</h3>
-		</div>
+	<nuxt-link :to="path" class="card circle interactive">
+		<img class="image" :src="img" />
+		<h3>{{ name }}</h3>
+		<h3>{{ surname }}</h3>
 	</nuxt-link>
 </template>
 
@@ -35,9 +33,9 @@ export default {
 .circle {
 	position: relative;
 	text-align: center;
-	padding-top: 7em;
+	padding-top: 45%;
 	padding-bottom: 3em;
-	margin-top: 5em;
+	margin: 30% 0 2em;
 }
 
 .circle .image {

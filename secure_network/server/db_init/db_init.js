@@ -108,7 +108,7 @@ const svs = [
 		Secure Network verifies the robustness of licensing systems implemented in your applications to ensure that they are accessed only by users holding a regular license.\n
 		In addition, to make sure that the application is safe at other levels, Secure Network analyzes the obfuscation and anti-debugging techniques used to protect the application source code from reverse engineering.`,
 		img:
-			'images/covers/services/application-security/software-licensing-and-code-protection.svg',
+			'/images/covers/services/application-security/software-licensing-and-code-protection.svg',
 		category_id: 'application-security',
 		path: '/services/',
 		area_id: 'enterprise-security',
@@ -203,7 +203,7 @@ const svs = [
 		name: 'Mobile Application Security Crash Course',
 		text: `Mobile Application Security Crash Course is the ideal course for people with coding experience in the mobile applications field (developers and designers) that want to explore the security features of such world. The course is designed in a way that no prior knowledge of ICT Security is required, addressing each topic in clear and very comprehensible way.`,
 		img:
-			'/images/covers/services/application-security/web-applications-and-web-services.svg',
+			'/images/covers/services/mobile-security-training/mobile-application-security-crash-course.svg',
 		category_id: 'mobile-security-training',
 		path: '/services/',
 		area_id: 'training',
@@ -213,7 +213,7 @@ const svs = [
 		text: `The course will address the security issues related to mobile apps development and mobile devices environment. Starting from an overview of the security features currently implemented by Android and iOS platforms to guarantee the security of data, applications and device, the course will discuss in details such topics from both the point of view of attacker and developer.\n
 		The course will follow the guidelines provided by OWASP (OWASP Top 10 Mobile Risks and OWASP Mobile Testing Guide) to discuss the most critical points likely to introduce vulnerabilities and current techniques to avoid them. Mobile malware topic is then addressed to explain its impact on device environment, applications and the device itself.`,
 		img:
-			'/images/covers/services/application-security/web-applications-and-web-services.svg',
+			'/images/covers/services/mobile-security-training/mobile-security-and-mobile-device-management.svg',
 		category_id: 'mobile-security-training',
 		path: '/services/',
 		area_id: 'training',
@@ -221,7 +221,8 @@ const svs = [
 	{
 		name: 'Reverse Engineering',
 		text: `The course builds a strong foundation for reverse-engineering software using a variety of system and network monitoring utilities, a disassembler, a debugger and other tools for turning software inside-out. You also learn how to understand key characteristics of malware discovered during the examination.`,
-		img: '/images/covers/services/',
+		img:
+			'/images/covers/services/binary-exploitation-training/reverse-engineering.svg',
 		category_id: 'binary-exploitation-training',
 		path: '/services/',
 		area_id: 'training',
@@ -230,7 +231,8 @@ const svs = [
 		name: 'Vulnerability Detection & Exploitation',
 		text: `The course will teach you how to apply the theory and practice of code auditing, how to dissect an application, how to discover security vulnerabilities and assess the danger each vulnerability presents. You will run vulnerability scans and observe exploits to better secure networks, servers and workstations.\n 
 		This course is valuable for those involved in securing enterprise systems: network and system administrators, computer security personnel, officers with direct involvement in security and those involved in cyber security measures and implementation.`,
-		img: '/images/covers/services/',
+		img:
+			'/images/covers/services/binary-exploitation-training/vulnerability-detection-and-exploitation.svg',
 		category_id: 'binary-exploitation-training',
 		path: '/services/',
 		area_id: 'training',
@@ -239,7 +241,8 @@ const svs = [
 		name: 'Application Vulnerability Assessment',
 		text: `This course is designed to train participants to perform threat and vulnerability assessment, understanding the fundamental technical skills required to identify and prevent application vulnerabilities.\n 
 		You will also discuss about methods to support secure software development. This course is useful for security personnel and others who may be responsible for assessing and managing the risk of threats to process facilities.`,
-		img: '/images/covers/services/',
+		img:
+			'/images/covers/services/binary-exploitation-training/application-vulnerability-assessment.svg',
 		category_id: 'binary-exploitation-training',
 		path: '/services/',
 		area_id: 'training',
@@ -248,7 +251,8 @@ const svs = [
 		name: 'Network Vulnerability Assessment',
 		text: `The course will teach you how to apply the theory and practice of code auditing, how to dissect an application, how to discover security vulnerabilities and assess the danger each vulnerability presents.\n 
 		You will run vulnerability scans and observe exploits to better secure networks, servers and workstations. This course is valuable for those involved in securing enterprise systems: network and system administrators, computer security personnel, officers with direct involvement in security and those involved in cyber security measures and implementation.`,
-		img: '/images/covers/services/',
+		img:
+			'/images/covers/services/web-exploitation-training/network-vulnerability-assessment.svg',
 		category_id: 'web-exploitation-training',
 		path: '/services/',
 		area_id: 'training',
@@ -257,7 +261,8 @@ const svs = [
 		name: 'Network Penetration Testing',
 		text: `The course will teach you proper planning, scoping and recon, and then dive deep into scanning, target exploitation, password attacks, and wireless with detailed hands-on exercises and practical tips for doing the job safely and effectively.\n 
 		You will finish up with an intensive, hands-on exercise in which you will conduct a penetration test against a sample target organization, demonstrating the knowledge you mastered in this course.`,
-		img: '/images/covers/services/',
+		img:
+			'/images/covers/services/web-exploitation-training/network-penetration-testing.svg',
 		category_id: 'web-exploitation-training',
 		path: '/services/',
 		area_id: 'training',
@@ -266,7 +271,8 @@ const svs = [
 		name: 'Web Application Testing',
 		text: `The course is designed as a full hands-on challenge, in which attendees should play a real-world scenario, attacking real-world targets and breach the security of a series of web applications.\n 
 		Participants will learn proper practice-oriented method to attack web applications, how to define and organize a targeted mission and learn how to solve pentesters’ issues during the hack of computer systems.`,
-		img: '/images/covers/services/',
+		img:
+			'/images/covers/services/web-exploitation-training/web-application-testing.svg',
 		category_id: 'web-exploitation-training',
 		path: '/services/',
 		area_id: 'training',
@@ -382,8 +388,8 @@ const ppl = [
 		path: '/team/',
 		role: 'employee',
 		area_id: 'enterprise-security',
-		text: `Francesco è il Sales Manager di Secure Network: è responsabile dell’attività commerciale e segue in collaborazione con il CEO Alvise Biffi le relazioni con i Partner.\n
-		Francesco ha conseguito una laurea vecchio ordinamento in Lingue e Letterature Straniere all’Università di Verona e ha un’esperienza di molti anni in ambito commerciale, sia nel mercato Corporate (è stato Global Account di Cerved) che nel mercato software per banche (pagamenti e cybersecurity), utilizzando le sue capacità linguistiche anche per lo sviluppo commerciale all’estero.`,
+		text: `Francesco is the Sales Manager of Secure Network: he is responsible for commercial activities and maintains partnerships in collaboration with the CEO, Alvise Biffi.\n
+		Francesco holds a degree in Foreign Languages and Literature from the University of Verona and has several years of experience in the commercial field, he has experience in corporate markets (he worked the Global Account for Cerved) as well as the financial and cybersecurity software market where he used his linguistic skill to expand commercial development.`,
 	},
 	{
 		name: 'Giancarlo',
@@ -392,8 +398,8 @@ const ppl = [
 		path: '/team/',
 		role: 'employee',
 		area_id: 'enterprise-security',
-		text: `Specialista ISO, Giancarlo ha partecipato a importanti progetti in ambito compliance (D.lgs 231/2001) e Certificazioni di Sistemi di Gestione quali ISO 9001 (qualità), ISO 14001 (ambiente) e ISO 27001 (sicurezza dati e informazioni) in società di servizi e sviluppo software operanti nel settore tributi e sanità.\n
-		Attualmente è membro del direttivo dell’ AICQ “Associazione Italiana Cultura della Qualità” per il settore della Pubblica Amministrazione, è iscritto nei registri AICQ SINCEV come auditor qualificato nei sistemi ISO 9001 e ISO 27001. È promotore di numerose iniziative di convegni e workshop sulle tematiche relative alle certificazioni dei Sistemi di Gestione, quali strumenti utili al management per il miglioramento delle prestazioni aziendali, Privacy nuovo Codice Europeo e Cyber Security nei progetti di Smart City.`,
+		text: `ISO specialist, Giancarlo took part as a develpment team leader or member in important compliance projects (D.lgs 231/2001) and certification of management’s systems as ISO 9001 (quality), ISO 14001 (environment) and ISO 27001 (information and data security).\n
+		Member of the board of directors of AICQ (Associazione Italiana Cultura della Qualità) in the public administration field, he is enrolled in AICQ SINCEV registers as a qualified auditor in ISO 9001 and ISO 27001 systems. Giancarlo promotes multiple conferences and workshops on certifications of Management Systems as useful tools to improve business performance, GDPR (General Data Protection Regulation) and Cyber Security in Smart City.`,
 	},
 	{
 		name: 'Marcello',
@@ -402,9 +408,9 @@ const ppl = [
 		path: '/team/',
 		role: 'employee',
 		area_id: 'training',
-		text: `Marcello ha ottenuto il dottorato di ricerca e una laurea magistrale in ingegneria informatica presso il Politecnico di Milano, presso cui ha svolto attività di ricerca nel campo della sicurezza dei sistemi di controllo industriale in ambiente manifatturiero. E’ co-autore di 8 articoli scientifici e ha presentato la propria ricerca presso importanti eventi internazionali, inclusa la prestigiosa conferenza “Black Hat USA” nel 2017 e nel 2020.\n
-		Nel tempo libero, Marcello partecipa e organizza competizioni di “capture the flag”: dal 2014 è membro del team del Politecnico, Tower of Hanoi, e ha partecipato alle finali del DEF CON CTF 26 con il team italiano mHACKeroni.\n
-		Come Security Engineer, Marcello svolge principalmente attività di penetration testing e di security assessment.`,
+		text: `Marcello holds a M.Sc. and a Ph.D. in Computer Engineering from Politecnico di Milano, where he graduated with a doctoral dissertation focused on the security of industrial control systems for manufacturing. He co-authored 8 scientific papers and presented his research at multiple international venues, including the prestigious conference Black Hat USA twice, in 2017 and 2020.\n
+		In his spare time, Marcello enjoys playing and organizing Capture the Flag competitions: since 2014, he has been a member of Politecnico’s team, Tower of Hanoi, and he took part to the DEF CON CTF 26 finals with the Italian team mHACKeroni.\n
+		As a Security Engineer, Marcello routinely performs penetration testing and security assessments.`,
 	},
 	{
 		name: 'Federico',
@@ -413,8 +419,8 @@ const ppl = [
 		path: '/team/',
 		role: 'employee',
 		area_id: 'enterprise-security',
-		text: `Federico ha svolto attività di analisi dei livelli di sicurezza delle infrastrutture e applicazioni per realtà pubbliche e private. Attualmente, come Security Engineer, si occupa principalmente di attività di Penetration testing e Vulnerability Assessment.\n		
-		Inoltre, Federico partecipa a programmi di “Bug Bounty”, con particolare focus sulla ricerca di vulnerabilità in applicazioni web. Tra le sue principali aree di interesse professionale rientrano anche le tecniche di ingegneria sociale e l’Adversary Simulation.`,
+		text: `Federico has performed security analyses for many public and private entities. As a Security Engineer, he now primarily performs Penetration Tests and Vulnerability Assessments.\n		
+		In addition, he participates in Bug Bounty programs focusing on finding vulnerabilities in web applications. Social Engineering techniques and Adversarial Simulation fall within his principal technical interests.`,
 	},
 	{
 		name: 'Enrico',
@@ -423,8 +429,8 @@ const ppl = [
 		path: '/team/',
 		role: 'employee',
 		area_id: 'training',
-		text: `Enrico ha svolto attività di Incident Response e Incident Handling per importanti clienti nell’ambito aerospaziale e finanziario, a livello nazionale e internazionale.\n
-		Attualmente, come Security Engineer si occupa principalmente di Penetration Testing e Vulnerability Assessment. Tra le sue aree di interesse professionale rientrano anche lo sviluppo di applicazioni per il mondo cyber security, Code Review, Binary Analysis e Binary Exploitation.`,
+		text: `Enrico has performed Incident Response and Incident Handling activities for important clients in the financial and space sector, both nationally and internationally.\n
+		Currently, as a Security Engineer, Enrico routinely performs Penetrations Tests and Vulnerability Assessments. Code Review, Binary Analysis, Binary Exploitation and development of applications for cyber security fall among his professional and techical interests.`,
 	},
 	{
 		name: 'Andrea',
@@ -433,8 +439,8 @@ const ppl = [
 		path: '/team/',
 		role: 'employee',
 		area_id: 'training',
-		text: `Andrea ha conseguito la laurea magistrale in Computer Science and Engineering presso il Politecnico di Milano, dove per la sua tesi ha progettato e sviluppato un sistema distribuito per l’identificazione di malware all’interno di pagine web. Durante l’università ha partecipato a competizioni CTF con i team “Tower of Hanoi” e “mHACKeroni”.\n
-		Come Security Engineer svolge principalmente attività di penetration testing e di security assessment. I suoi interessi principali sono l’analisi delle piattaforme web e lo sviluppo di software.`,
+		text: `Andrea holds a Master’s Degree in Computer Science and Engineering from Politecnico di Milano, where for his thesis he designed and developed a distributed system for identifying malware within web pages. During university, he participated in CTF competitions with the “Tower of Hanoi” and “mHACKeroni” teams.\n
+		As a Security Engineer, he mainly carries out penetration testing and security assessment activities. His main interests are the analysis of web platforms and software development.`,
 	},
 	{
 		name: 'Stefano',
@@ -442,8 +448,8 @@ const ppl = [
 		img: '/images/team/stefano-zanero.jpeg',
 		path: '/team/',
 		role: 'founder',
-		text: `Presidente di Secure Network, Stefano ha ricevuto, cum laude, un dottorato di ricerca in Ingegneria dell’Informazione presso il Dipartimento di Elettronica, Informazione e Bioingegneria del Politecnico di Milano, dove è attualmente professore associato. Tra i suoi interessi di ricerca figurano la virologia informatica, la sicurezza mobile, e la sicurezza dei sistemi. È professore aggregato di “Computer Security” e “Informatica Forense”. Oltre all’attività didattica presso varie strutture universitarie italiane ed estere, ha partecipato come relatore a numerosi convegni nazionali ed internazionali, ed è autore di oltre 50 articoli scientifici pubblicati su riviste e conferenze.\n
-		È Associate Editor del “Journal in Computer Virology and hacking techniques”. È Senior Member dello IEEE (Institute of Electrical and Electronics Engineers), socio della IEEE Computer Society (per cui siede nella Board of Governors internazionale), e della ACM (Association for Computing Machinery), oltre ad essere socio fondatore di AIPSI (Associazione Italiana Professionisti della Sicurezza Informatica), capitolo italiano di ISSA (Information System Security Association), di cui siede nel board of directors internazionale. Giornalista pubblicista, ha ricevuto un premio per la sua attività divulgativa, in particolare per la rubrica “Diario di un Security Manager”.`,
+		text: `Stefano Zanero is Chairman of Secure Network. Stefano received a PhD in Computer Engineering from Politecnico di Milano, where he is currently an associate professor with the Dipartimento di Elettronica, Informazione e Bioingegneria. His research focuses on mobile malware, malware analysis, and systems security. Besides teaching “Computer Security” and “Computer Forensics” at Politecnico, he has an extensive speaking and training experience in Italy and abroad. He co-authored over 50 scientific papers and books.\n
+		He is an associate editor for the “Journal in computer virology and hacking techniques”. He’s a Senior Member of the IEEE (covering volunteer positions at national and regional level), the IEEE Computer Society (for which he is a member of the Board of Governors), and a lifetime senior member of the ACM. Stefano co-founded the Italian chapter of ISSA (Information System Security Association), of which he is a senior member. He sits in the International Board of Directors of the same association.`,
 	},
 	{
 		name: 'Alvise',
@@ -451,9 +457,9 @@ const ppl = [
 		img: '/images/team/alvise-biffi.jpeg',
 		path: '/team/',
 		role: 'founder',
-		text: `Alvise Biffi ricopre la carica di Chief Executive Officer di Secure Network, da lui fondata insieme a Stefano Zanero nel 2004. Nel suo ruolo, Biffi si occupa del business development e della gestione organizzativa.\n
-		Laureato in Economia Aziendale presso l’Università Bocconi, Biffi opera nell’ambito della consulenza strategica per il settore IT dal 1999. Prima di fondare Secure Network, Biffi è stato Presidente di JEME Bocconi ed ha lavorato come Marketing Manager per SoftPeople.\n
-		Dal 2005, inoltre, Alvise Biffi è entrato a fare parte in modo attivo di Assolombarda, l’associazione delle imprese industriali e del terziario dell’area milanese, ricoprendo nel corso degli anni ruoli di elevato prestigio tra cui Presidente del Gruppo Giovani Imprenditori. Oggi Biffi è Presidente della Piccola e Media Impresa di Assolombarda, Vice Presidente di Assolombarda e Vice Presidente di Piccola Industria Confindustria e dal 2012 è consigliere della Camera di Commercio di Milano`,
+		text: `Alvise Biffi is Chief Executive Officer of Secure Network, which he founded together with Stefano Zanero in 2004. Alvise is actively in charge of business development and management.\n
+		Graduated in Businees Economics from the Bocconi University of Milan, Alvise works in the IT strategic management sector since 1999. Before founding Secure Network, Alvise has been the President of JEME Bocconi and worked as Marketing Manager for SoftPeople.\n
+		Since 2005, Alvise has been an active member of Assolombarda, the association of tertiary and industrial companies based in the Milan area. During the following years, he fulfilled several relevant positions. He is now the President of Piccola e Media Impresa of Assolombarda, Vice President of both Assolombarda and Piccola Industria Confindustria and council member of the Chamber of Commerce of Milan.`,
 	},
 ].sort(compareByName)
 

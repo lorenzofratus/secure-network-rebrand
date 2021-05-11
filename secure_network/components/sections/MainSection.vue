@@ -72,10 +72,6 @@ export default {
 	max-width: var(--half-page);
 	margin: 0 auto;
 }
-/* .header .title,
-.header .subtitle {
-	
-} */
 
 .header .title {
 	text-transform: capitalize;

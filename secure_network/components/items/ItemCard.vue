@@ -64,7 +64,7 @@ export default {
 }
 .item .image {
 	height: 8em;
-	margin: 0 auto;
+	margin: 0 auto 1em;
 }
 .item .icon {
 	font-size: 60px;
