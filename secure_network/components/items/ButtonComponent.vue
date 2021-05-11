@@ -1,10 +1,14 @@
 /* eslint-disable vue/prop-name-casing */
 <template>
-	<nuxt-link :to="btnPath" @click.native="emitClick">
-		<div :class="'button ' + btnClass">
+	<component
+		:is="btnPath.includes('#') ? 'a' : 'nuxt-link'"
+		:to="btnPath"
+		:href="btnPath"
+	>
+		<div :class="'button ' + btnClass" @click="emitClick">
 			{{ btnText }}
 		</div>
-	</nuxt-link>
+	</component>
 </template>
 
 <script>

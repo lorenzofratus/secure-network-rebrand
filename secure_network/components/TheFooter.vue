@@ -1,9 +1,9 @@
 <template>
 	<footer class="footer wave-before wave-concave-dark">
 		<div class="content">
-			<nuxt-link to="" class="logo arrow"
+			<a href="/team#__layout" class="logo arrow"
 				><span class="left-bar"></span><span class="right-bar"></span
-			></nuxt-link>
+			></a>
 			<nuxt-link :to="home.path" class="logo">
 				{{ home.name }}
 			</nuxt-link>

@@ -252,6 +252,9 @@ a.card {
 }
 
 /*** Page Transition ***/
+html {
+	scroll-behavior: smooth;
+}
 .page-enter-active,
 .page-leave-active {
 	transition: 0.35s opacity ease-in-out;

@@ -82,12 +82,12 @@ export default {
 					{
 						class: 'primary',
 						text: 'Founders',
-						path: '/team/#founders',
+						path: '#founders',
 					},
 					{
 						class: 'secondary',
 						text: 'Employees',
-						path: '/team/#employees',
+						path: '#employees',
 					},
 				],
 				img: '/images/covers/team.svg',
