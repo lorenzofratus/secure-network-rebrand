@@ -7,7 +7,13 @@ const { Op } = require('sequelize')
 
 async function init() {
 	const db = await initializeDatabase()
-	const { ServiceCategory, Service, Person, Area } = db._tables
+	const {
+		ServiceCategory,
+		Service,
+		Person,
+		Area,
+		Person_Service,
+	} = db._tables
 
 	/**
 	 * Find all queries
@@ -103,7 +109,7 @@ async function init() {
 	})
 
 	/**
-	 * Nested queries
+	 * Joined queries
 	 */
 
 	app.get('/service-categories-by-area/:area', async (req, res) => {
@@ -135,6 +141,23 @@ async function init() {
 		)
 	})
 
+	app.get('/people-by-service/:service', async (req, res) => {
+		const { service } = req.params
+
+		// Actual query
+		return res.json(
+			await Person_Service.findAll({
+				where: {
+					service_id: service,
+				},
+				include: [Person],
+			})
+		)
+	})
+
+	/**
+	 * Utility queries
+	 */
 	app.get('/people_ids/:area', async (req, res) => {
 		const { area } = req.params
 		return res.json(

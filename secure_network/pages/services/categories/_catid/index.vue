@@ -29,14 +29,14 @@ export default {
 	},
 	layout: 'default',
 	async asyncData({ $axios, route }) {
-		const { id } = route.params
+		const { catid } = route.params
 		let payload = await $axios.get(
-			`${process.env.BASE_URL}/api/services-by-category/${id}`
+			`${process.env.BASE_URL}/api/services-by-category/${catid}`
 		)
 		const services = payload.data
 
 		payload = await $axios.get(
-			`${process.env.BASE_URL}/api/service-category/${id}`
+			`${process.env.BASE_URL}/api/service-category/${catid}`
 		)
 		const category = payload.data
 		category.paragraphs = category.text.split('\n')

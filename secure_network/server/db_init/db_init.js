@@ -10,6 +10,15 @@ function refine(items) {
 	})
 }
 
+function refineServices(items) {
+	items.forEach((item) => {
+		const id = item.name.toLowerCase()
+		const regExp = /\s/g
+		item.id = id.replace(regExp, '-')
+		item.path = item.path + item.category_id + '/' + item.id
+	})
+}
+
 function refinePeople(items) {
 	items.forEach((item) => {
 		const id = item.name.toLowerCase() + '-' + item.surname.toLowerCase()
@@ -27,46 +36,46 @@ const sv_categories = [
 		text:
 			'Applications process and handle most of a company’s information, including critical data. Custom applications have become an easy to reach and popular target for attackers.',
 		img: 'smartphone',
-		path: '/service-categories/',
+		path: '/services/categories/',
 	},
 	{
 		name: 'Binary Exploitation Training',
 		text: 'TBD',
 		img: 'memory',
-		path: '/service-categories/',
+		path: '/services/categories/',
 	},
 	{
 		name: 'Digital Forensics',
 		text:
 			'Digital Forensics is a branch of forensic science encompassing the recovery and investigation of material found in digital devices, often in relation to computer crime.',
 		img: 'search',
-		path: '/service-categories/',
+		path: '/services/categories/',
 	},
 	{
 		name: 'Mobile Security Training',
 		text: 'TBD',
 		img: 'phonelink_lock',
-		path: '/service-categories/',
+		path: '/services/categories/',
 	},
 	{
 		name: 'Network Security',
 		text:
 			'The security of modern companies depends on the security of their most important infrastructures, which are the bases for their systems, applications and information protection.',
 		img: 'wifi',
-		path: '/service-categories/',
+		path: '/services/categories/',
 	},
 	{
 		name: 'Security Assessment',
 		text:
 			'A security risk assessment identifies, assesses, and implements key security controls in applications. It also focuses on preventing application security defects and vulnerabilities.',
 		img: 'lock',
-		path: '/service-categories/',
+		path: '/services/categories/',
 	},
 	{
 		name: 'Web Exploitation Training',
 		text: 'TBD',
 		img: 'language',
-		path: '/service-categories/',
+		path: '/services/categories/',
 	},
 ].sort(compareByName)
 
@@ -79,7 +88,7 @@ const svs = [
 		img:
 			'/images/covers/services/application-security/web-applications-and-web-services.svg',
 		category_id: 'application-security',
-		path: '/services/',
+		path: '/services/categories/',
 		area_id: 'enterprise-security',
 	},
 	{
@@ -90,7 +99,7 @@ const svs = [
 		img:
 			'/images/covers/services/application-security/mobile-applications.svg',
 		category_id: 'application-security',
-		path: '/services/',
+		path: '/services/categories/',
 		area_id: 'enterprise-security',
 	},
 	{
@@ -99,7 +108,7 @@ const svs = [
 		The security analysis of these kinds of applications, however, presents different problems than their web and mobile counterparts, and that must be addressed with particular care. For this reason, Secure Network developed a custom methodology, based on the indications of OWASP, to ensure that even the analysis of these applications are extensive and complete.\n`,
 		img: '/images/covers/services/application-security/thin-fat-client.svg',
 		category_id: 'application-security',
-		path: '/services/',
+		path: '/services/categories/',
 		area_id: 'enterprise-security',
 	},
 	{
@@ -110,7 +119,7 @@ const svs = [
 		img:
 			'/images/covers/services/application-security/software-licensing-and-code-protection.svg',
 		category_id: 'application-security',
-		path: '/services/',
+		path: '/services/categories/',
 		area_id: 'enterprise-security',
 	},
 	{
@@ -120,7 +129,7 @@ const svs = [
 		img:
 			'/images/covers/services/network-and-infrastructure-security/external-and-internal-network.svg',
 		category_id: 'network-security',
-		path: '/services/',
+		path: '/services/categories/',
 		area_id: 'enterprise-security',
 	},
 	{
@@ -130,7 +139,7 @@ const svs = [
 		img:
 			'/images/covers/services/network-and-infrastructure-security/wireless-network-and-infrastructure.svg',
 		category_id: 'network-security',
-		path: '/services/',
+		path: '/services/categories/',
 		area_id: 'enterprise-security',
 	},
 	{
@@ -140,7 +149,7 @@ const svs = [
 		img:
 			'/images/covers/services/network-and-infrastructure-security/corporate-workstation-penetration-test.svg',
 		category_id: 'network-security',
-		path: '/services/',
+		path: '/services/categories/',
 		area_id: 'enterprise-security',
 	},
 	{
@@ -151,7 +160,7 @@ const svs = [
 		img:
 			'/images/covers/services/network-and-infrastructure-security/virtual-infrastructure.svg',
 		category_id: 'network-security',
-		path: '/services/',
+		path: '/services/categories/',
 		area_id: 'enterprise-security',
 	},
 	{
@@ -161,7 +170,7 @@ const svs = [
 		img:
 			'/images/covers/services/digital-forensics/forensics-acquisition.svg',
 		category_id: 'digital-forensics',
-		path: '/services/',
+		path: '/services/categories/',
 		area_id: 'enterprise-security',
 	},
 	{
@@ -170,7 +179,7 @@ const svs = [
 		img:
 			'/images/covers/services/digital-forensics/forensics-acquisition.svg',
 		category_id: 'digital-forensics',
-		path: '/services/',
+		path: '/services/categories/',
 		area_id: 'enterprise-security',
 	},
 	{
@@ -178,7 +187,7 @@ const svs = [
 		text: `Malware analysis is performed by highly skilled analysts and it is aimed to understand the malicious software logic. Acquired knowledge is then used to develop effective counter-measures, proper risk management strategies and to enhance effectiveness of IPS and antivirus software.`,
 		img: '/images/covers/services/digital-forensics/malware-analysis.svg',
 		category_id: 'digital-forensics',
-		path: '/services/',
+		path: '/services/categories/',
 		area_id: 'enterprise-security',
 	},
 	{
@@ -187,7 +196,7 @@ const svs = [
 		img:
 			'/images/covers/services/security-assessments/vulnerability-assessment.svg',
 		category_id: 'security-assessment',
-		path: '/services/',
+		path: '/services/categories/',
 		area_id: 'enterprise-security',
 	},
 	{
@@ -196,7 +205,7 @@ const svs = [
 		img:
 			'/images/covers/services/security-assessments/penetration-test.svg',
 		category_id: 'security-assessment',
-		path: '/services/',
+		path: '/services/categories/',
 		area_id: 'enterprise-security',
 	},
 	{
@@ -205,7 +214,7 @@ const svs = [
 		img:
 			'/images/covers/services/mobile-security-training/mobile-application-security-crash-course.svg',
 		category_id: 'mobile-security-training',
-		path: '/services/',
+		path: '/services/categories/',
 		area_id: 'training',
 	},
 	{
@@ -215,7 +224,7 @@ const svs = [
 		img:
 			'/images/covers/services/mobile-security-training/mobile-security-and-mobile-device-management.svg',
 		category_id: 'mobile-security-training',
-		path: '/services/',
+		path: '/services/categories/',
 		area_id: 'training',
 	},
 	{
@@ -224,7 +233,7 @@ const svs = [
 		img:
 			'/images/covers/services/binary-exploitation-training/reverse-engineering.svg',
 		category_id: 'binary-exploitation-training',
-		path: '/services/',
+		path: '/services/categories/',
 		area_id: 'training',
 	},
 	{
@@ -234,7 +243,7 @@ const svs = [
 		img:
 			'/images/covers/services/binary-exploitation-training/vulnerability-detection-and-exploitation.svg',
 		category_id: 'binary-exploitation-training',
-		path: '/services/',
+		path: '/services/categories/',
 		area_id: 'training',
 	},
 	{
@@ -244,7 +253,7 @@ const svs = [
 		img:
 			'/images/covers/services/binary-exploitation-training/application-vulnerability-assessment.svg',
 		category_id: 'binary-exploitation-training',
-		path: '/services/',
+		path: '/services/categories/',
 		area_id: 'training',
 	},
 	{
@@ -254,7 +263,7 @@ const svs = [
 		img:
 			'/images/covers/services/web-exploitation-training/network-vulnerability-assessment.svg',
 		category_id: 'web-exploitation-training',
-		path: '/services/',
+		path: '/services/categories/',
 		area_id: 'training',
 	},
 	{
@@ -264,7 +273,7 @@ const svs = [
 		img:
 			'/images/covers/services/web-exploitation-training/network-penetration-testing.svg',
 		category_id: 'web-exploitation-training',
-		path: '/services/',
+		path: '/services/categories/',
 		area_id: 'training',
 	},
 	{
@@ -274,7 +283,7 @@ const svs = [
 		img:
 			'/images/covers/services/web-exploitation-training/web-application-testing.svg',
 		category_id: 'web-exploitation-training',
-		path: '/services/',
+		path: '/services/categories/',
 		area_id: 'training',
 	},
 ].sort(compareByName)
@@ -482,235 +491,235 @@ const ars = [
 
 const p_s = [
 	{
-		person_id: 'andrea-jegher',
-		service_id: 'application-vulnerability-assessment',
+		personId: 'andrea-jegher',
+		serviceId: 'application-vulnerability-assessment',
 		isReference: true,
 	},
 	{
-		person_id: 'andrea-jegher',
-		service_id: 'mobile-security-&-mobile-device-management',
+		personId: 'andrea-jegher',
+		serviceId: 'mobile-security-&-mobile-device-management',
 	},
 	{
-		person_id: 'andrea-jegher',
-		service_id: 'web-application-testing',
+		personId: 'andrea-jegher',
+		serviceId: 'web-application-testing',
 	},
 	{
-		person_id: 'diego-zaffaroni',
-		service_id: 'mobile-application-security-crash-course',
+		personId: 'diego-zaffaroni',
+		serviceId: 'mobile-application-security-crash-course',
 	},
 	{
-		person_id: 'diego-zaffaroni',
-		service_id: 'network-penetration-testing',
+		personId: 'diego-zaffaroni',
+		serviceId: 'network-penetration-testing',
 		isReference: true,
 	},
 	{
-		person_id: 'enrico-coronese',
-		service_id: 'network-vulnerability-assessment',
+		personId: 'enrico-coronese',
+		serviceId: 'network-vulnerability-assessment',
 		isReference: true,
 	},
 	{
-		person_id: 'enrico-coronese',
-		service_id: 'reverse-engineering',
+		personId: 'enrico-coronese',
+		serviceId: 'reverse-engineering',
 		isReference: true,
 	},
 	{
-		person_id: 'ilaria-buonagurio',
-		service_id: 'reverse-engineering',
+		personId: 'ilaria-buonagurio',
+		serviceId: 'reverse-engineering',
 	},
 	{
-		person_id: 'ilaria-buonagurio',
-		service_id: 'vulnerability-detection-&-exploitation',
+		personId: 'ilaria-buonagurio',
+		serviceId: 'vulnerability-detection-&-exploitation',
 		isReference: true,
 	},
 	{
-		person_id: 'ilaria-buonagurio',
-		service_id: 'web-application-testing',
+		personId: 'ilaria-buonagurio',
+		serviceId: 'web-application-testing',
 		isReference: true,
 	},
 	{
-		person_id: 'riccardo-cospite',
-		service_id: 'application-vulnerability-assessment',
+		personId: 'riccardo-cospite',
+		serviceId: 'application-vulnerability-assessment',
 	},
 	{
-		person_id: 'riccardo-cospite',
-		service_id: 'mobile-application-security-crash-course',
+		personId: 'riccardo-cospite',
+		serviceId: 'mobile-application-security-crash-course',
 		isReference: true,
 	},
 	{
-		person_id: 'marcello-pogliani',
-		service_id: 'application-vulnerability-assessment',
+		personId: 'marcello-pogliani',
+		serviceId: 'application-vulnerability-assessment',
 	},
 	{
-		person_id: 'marcello-pogliani',
-		service_id: 'mobile-application-security-crash-course',
+		personId: 'marcello-pogliani',
+		serviceId: 'mobile-application-security-crash-course',
 	},
 	{
-		person_id: 'marcello-pogliani',
-		service_id: 'mobile-security-&-mobile-device-management',
+		personId: 'marcello-pogliani',
+		serviceId: 'mobile-security-&-mobile-device-management',
 		isReference: true,
 	},
 	{
-		person_id: 'marcello-pogliani',
-		service_id: 'vulnerability-detection-&-exploitation',
+		personId: 'marcello-pogliani',
+		serviceId: 'vulnerability-detection-&-exploitation',
 		isReference: true,
 	},
 	{
-		person_id: 'alberto-volpatto',
-		service_id: 'corporate-workstation-penetration-test',
+		personId: 'alberto-volpatto',
+		serviceId: 'corporate-workstation-penetration-test',
 		isReference: true,
 	},
 	{
-		person_id: 'alberto-volpatto',
-		service_id: 'device-analysis',
+		personId: 'alberto-volpatto',
+		serviceId: 'device-analysis',
 	},
 	{
-		person_id: 'alberto-volpatto',
-		service_id: 'vulnerability-assessment',
+		personId: 'alberto-volpatto',
+		serviceId: 'vulnerability-assessment',
 	},
 	{
-		person_id: 'alberto-volpatto',
-		service_id: 'external-and-internal-network',
+		personId: 'alberto-volpatto',
+		serviceId: 'external-and-internal-network',
 	},
 	{
-		person_id: 'alex-conti',
-		service_id: 'device-analysis',
+		personId: 'alex-conti',
+		serviceId: 'device-analysis',
 		isReference: true,
 	},
 	{
-		person_id: 'alex-conti',
-		service_id: 'external-and-internal-network',
+		personId: 'alex-conti',
+		serviceId: 'external-and-internal-network',
 	},
 	{
-		person_id: 'alex-conti',
-		service_id: 'forensics-acquisition',
+		personId: 'alex-conti',
+		serviceId: 'forensics-acquisition',
 	},
 	{
-		person_id: 'eros-lever',
-		service_id: 'external-and-internal-network',
+		personId: 'eros-lever',
+		serviceId: 'external-and-internal-network',
 		isReference: true,
 	},
 	{
-		person_id: 'eros-lever',
-		service_id: 'vulnerability-assessment',
+		personId: 'eros-lever',
+		serviceId: 'vulnerability-assessment',
 	},
 	{
-		person_id: 'eros-lever',
-		service_id: 'forensics-acquisition',
+		personId: 'eros-lever',
+		serviceId: 'forensics-acquisition',
 	},
 	{
-		person_id: 'eros-lever',
-		service_id: 'malware-analysis',
+		personId: 'eros-lever',
+		serviceId: 'malware-analysis',
 	},
 	{
-		person_id: 'federico-zambito',
-		service_id: 'forensics-acquisition',
+		personId: 'federico-zambito',
+		serviceId: 'forensics-acquisition',
 		isReference: true,
 	},
 	{
-		person_id: 'federico-zambito',
-		service_id: 'malware-analysis',
+		personId: 'federico-zambito',
+		serviceId: 'malware-analysis',
 	},
 	{
-		person_id: 'federico-zambito',
-		service_id: 'mobile-application',
+		personId: 'federico-zambito',
+		serviceId: 'mobile-application',
 	},
 	{
-		person_id: 'francesco-carbone',
-		service_id: 'malware-analysis',
+		personId: 'francesco-carbone',
+		serviceId: 'malware-analysis',
 		isReference: true,
 	},
 	{
-		person_id: 'francesco-carbone',
-		service_id: 'mobile-application',
+		personId: 'francesco-carbone',
+		serviceId: 'mobile-application',
 	},
 	{
-		person_id: 'francesco-carbone',
-		service_id: 'penetration-test',
+		personId: 'francesco-carbone',
+		serviceId: 'penetration-test',
 	},
 	{
-		person_id: 'giancarlo-cappucci',
-		service_id: 'mobile-application',
+		personId: 'giancarlo-cappucci',
+		serviceId: 'mobile-application',
 		isReference: true,
 	},
 	{
-		person_id: 'giancarlo-cappucci',
-		service_id: 'penetration-test',
+		personId: 'giancarlo-cappucci',
+		serviceId: 'penetration-test',
 	},
 	{
-		person_id: 'giancarlo-cappucci',
-		service_id: 'thin-&-fat-clients',
+		personId: 'giancarlo-cappucci',
+		serviceId: 'thin-&-fat-clients',
 	},
 	{
-		person_id: 'giorgio-campiotti',
-		service_id: 'penetration-test',
+		personId: 'giorgio-campiotti',
+		serviceId: 'penetration-test',
 		isReference: true,
 	},
 	{
-		person_id: 'giorgio-campiotti',
-		service_id: 'thin-&-fat-clients',
+		personId: 'giorgio-campiotti',
+		serviceId: 'thin-&-fat-clients',
 	},
 	{
-		person_id: 'giorgio-campiotti',
-		service_id: 'web-applications-&-web-services',
+		personId: 'giorgio-campiotti',
+		serviceId: 'web-applications-&-web-services',
 	},
 	{
-		person_id: 'jacopo-ferrigno',
-		service_id: 'thin-&-fat-clients',
+		personId: 'jacopo-ferrigno',
+		serviceId: 'thin-&-fat-clients',
 		isReference: true,
 	},
 	{
-		person_id: 'jacopo-ferrigno',
-		service_id: 'corporate-workstation-penetration-test',
+		personId: 'jacopo-ferrigno',
+		serviceId: 'corporate-workstation-penetration-test',
 	},
 	{
-		person_id: 'jacopo-ferrigno',
-		service_id: 'web-applications-&-web-services',
+		personId: 'jacopo-ferrigno',
+		serviceId: 'web-applications-&-web-services',
 	},
 	{
-		person_id: 'jacopo-ferrigno',
-		service_id: 'software-licensing-&-code-protection',
+		personId: 'jacopo-ferrigno',
+		serviceId: 'software-licensing-&-code-protection',
 	},
 	{
-		person_id: 'jacopo-ferrigno',
-		service_id: 'virtual-infrastructres',
+		personId: 'jacopo-ferrigno',
+		serviceId: 'virtual-infrastructres',
 	},
 	{
-		person_id: 'tommaso-pescanoce',
-		service_id: 'web-applications-&-web-services',
+		personId: 'tommaso-pescanoce',
+		serviceId: 'web-applications-&-web-services',
 		isReference: true,
 	},
 	{
-		person_id: 'tommaso-pescanoce',
-		service_id: 'virtual-infrastructres',
+		personId: 'tommaso-pescanoce',
+		serviceId: 'virtual-infrastructres',
 		isReference: true,
 	},
 	{
-		person_id: 'tommaso-pescanoce',
-		service_id: 'device-analysis',
+		personId: 'tommaso-pescanoce',
+		serviceId: 'device-analysis',
 		isReference: true,
 	},
 	{
-		person_id: 'tommaso-pescanoce',
-		service_id: 'corporate-workstation-penetration-test',
+		personId: 'tommaso-pescanoce',
+		serviceId: 'corporate-workstation-penetration-test',
 		isReference: true,
 	},
 	{
-		person_id: 'tommaso-pescanoce',
-		service_id: 'wireless-network-&-infrastructres',
+		personId: 'tommaso-pescanoce',
+		serviceId: 'wireless-network-&-infrastructres',
 	},
 	{
-		person_id: 'michiele-roviello',
-		service_id: 'wireless-network-&-infrastructres',
+		personId: 'michiele-roviello',
+		serviceId: 'wireless-network-&-infrastructres',
 		isReference: true,
 	},
 	{
-		person_id: 'michiele-roviello',
-		service_id: 'software-licensing-&-code-protection',
+		personId: 'michiele-roviello',
+		serviceId: 'software-licensing-&-code-protection',
 		isReference: true,
 	},
 	{
-		person_id: 'michiele-roviello',
-		service_id: 'vulnerability-assessment',
+		personId: 'michiele-roviello',
+		serviceId: 'vulnerability-assessment',
 		isReference: true,
 	},
 ].sort(compareByName)
@@ -719,7 +728,7 @@ const p_s = [
 refine(sv_categories)
 export const service_categories = sv_categories
 
-refine(svs)
+refineServices(svs)
 export const services = svs
 
 refinePeople(ppl)
