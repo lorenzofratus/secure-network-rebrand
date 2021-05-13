@@ -68,6 +68,7 @@ export default {
 }
 .item .icon {
 	font-size: 60px;
+	margin: 0 0 0.25em;
 }
 .item .text {
 	text-align: left;

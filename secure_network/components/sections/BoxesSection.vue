@@ -8,6 +8,7 @@
 				:icon="box.icon"
 				:title="box.title"
 				:text="box.text"
+				:card-class="box.class"
 			/>
 		</div>
 	</section>

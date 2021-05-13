@@ -1,7 +1,9 @@
 <template>
-	<div class="card service">
-		<span class="icon material-icons">{{ icon }}</span>
-		<h3 class="title spacer spacer-small">{{ title }}</h3>
+	<div class="card box" :class="cardClass">
+		<span class="heading">
+			<span class="icon material-icons">{{ icon }}</span>
+			<h3 class="title">{{ title }}</h3>
+		</span>
 		<p class="text">
 			{{ text }}
 		</p>
@@ -34,6 +36,11 @@ export default {
 			type: String,
 			required: true,
 		},
+		cardClass: {
+			type: String,
+			required: false,
+			default: '',
+		},
 	},
 	data() {
 		return {
@@ -45,16 +52,25 @@ export default {
 </script>
 
 <style scoped>
-.service {
+.box {
 	display: flex;
 	flex-direction: column;
 	text-align: left;
 }
-.service .icon {
-	font-size: 40px;
-}
-.service .text {
+.box .heading {
+	display: flex;
+	align-items: center;
 	margin: 0 0 1em;
+}
+.box .icon {
+	font-size: 40px;
+	margin: 0 0.35em 0.1em 0;
+}
+.box .title {
+	margin: 0;
+}
+.box .text {
+	margin: 0 0 1.5em;
 	flex-grow: 1;
 }
 </style>

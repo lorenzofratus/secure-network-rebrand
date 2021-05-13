@@ -10,7 +10,7 @@
 			</div>
 			<button-component
 				:btn-class="'secondary'"
-				:btn-ath="path"
+				:btn-path="path"
 				:btn-text="'Explore'"
 			/>
 		</div>

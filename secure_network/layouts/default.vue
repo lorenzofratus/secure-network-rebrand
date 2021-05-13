@@ -30,13 +30,7 @@ export default {
 			if (!target) return
 			event.preventDefault()
 
-			const offset = target.offsetTop
-			window.scrollTo({ top: offset, behavior: 'smooth' })
-			target.focus()
-			if (!target.matches(':focus')) {
-				target.setAttribute('tabindex', '-1')
-				target.focus()
-			}
+			this.$scrollTo(target)
 		},
 	},
 }

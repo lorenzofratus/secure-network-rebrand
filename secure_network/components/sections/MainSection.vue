@@ -3,7 +3,7 @@
 		<div class="content">
 			<h1 class="title">{{ title }}</h1>
 			<h3 v-if="subtitle" class="subtitle">{{ subtitle }}</h3>
-			<div class="buttons">
+			<div v-if="buttons.length > 0" class="buttons">
 				<button-component
 					v-for="(button, index) in buttons"
 					:key="'main-section-button-' + index + '-' + wrapper"
@@ -35,7 +35,10 @@ export default {
 		},
 		buttons: {
 			type: Array,
-			required: true,
+			required: false,
+			default() {
+				return []
+			},
 		},
 		img: {
 			required: true,

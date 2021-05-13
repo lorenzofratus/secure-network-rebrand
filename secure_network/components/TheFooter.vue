@@ -77,6 +77,9 @@ export default {
 	padding: 0;
 	position: relative;
 }
+.footer .arrow:focus {
+	outline: none;
+}
 .footer .arrow .left-bar,
 .footer .arrow .right-bar {
 	position: absolute;
@@ -87,6 +90,10 @@ export default {
 	transition: 0.5s cubic-bezier(0.25, 0.75, 0.5, 1.25);
 	transition-property: transform, background-color;
 	background-color: var(--light-color);
+}
+.footer .arrow:focus .left-bar,
+.footer .arrow:focus .right-bar {
+	outline: auto;
 }
 .footer .arrow:hover .left-bar,
 .footer .arrow:focus .left-bar,

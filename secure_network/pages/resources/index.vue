@@ -40,38 +40,37 @@ export default {
 					},
 				],
 				img: '/images/covers/resources.svg',
-
 			},
 			years: [
 				{
 					year: '2020',
 					newsCount: 3,
 					researchCount: 1,
-					path: '/',
+					path: '/resources/2020',
 				},
 				{
 					year: '2019',
 					newsCount: 2,
 					researchCount: 2,
-					path: '/',
+					path: '/resources/2019',
 				},
 				{
 					year: '2018',
 					newsCount: 0,
 					researchCount: 3,
-					path: '/',
+					path: '/resources/2018',
 				},
 				{
 					year: '2017',
 					newsCount: 3,
 					researchCount: 4,
-					path: '/',
+					path: '/resources/2017',
 				},
 				{
 					year: '2016',
 					newsCount: 3,
 					researchCount: 4,
-					path: '/',
+					path: '/resources/2016',
 				},
 			],
 		}

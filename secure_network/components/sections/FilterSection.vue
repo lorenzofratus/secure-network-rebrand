@@ -10,7 +10,11 @@
 					:key="'filter-button-' + index + '-' + wrapper"
 					:btn-path="btn.path"
 					:btn-text="btn.text"
-					:btn-class="btn.class"
+					:btn-class="
+						'outlined' + (index == activeFilter ? ' primary' : '')
+					"
+					:data-index="index"
+					@click="checkFilter"
 				/>
 			</div>
 		</div>
@@ -33,6 +37,20 @@ export default {
 		buttons: {
 			type: Array,
 			required: true,
+		},
+	},
+	data() {
+		return {
+			activeFilter: 0,
+		}
+	},
+	methods: {
+		checkFilter(e) {
+			const index = e.target.closest('a').getAttribute('data-index')
+			if (this.activeFilter !== index) {
+				this.activeFilter = index
+				this.$emit('filter', index)
+			}
 		},
 	},
 }

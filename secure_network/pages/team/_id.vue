@@ -105,7 +105,7 @@ export default {
 				button: {
 					class: 'primary',
 					text: 'Contact Us',
-					path: '/contact',
+					path: '/contacts',
 				},
 				centered: true,
 			},

@@ -1,14 +1,20 @@
 /* eslint-disable vue/prop-name-casing */
 <template>
-	<component
-		:is="btnPath.includes('#') ? 'a' : 'nuxt-link'"
-		:to="btnPath"
+	<a
+		v-if="btnPath.includes('#')"
 		:href="btnPath"
+		class="button"
+		:class="btnClass"
+		>{{ btnText }}</a
 	>
-		<div :class="'button ' + btnClass" @click="emitClick">
-			{{ btnText }}
-		</div>
-	</component>
+	<nuxt-link
+		v-else
+		:to="btnPath"
+		class="button"
+		:class="btnClass"
+		@click.native="emitClick"
+		>{{ btnText }}</nuxt-link
+	>
 </template>
 
 <script>
@@ -29,8 +35,8 @@ export default {
 		},
 	},
 	methods: {
-		emitClick() {
-			if (this.btnPath === '') this.$emit('click', '')
+		emitClick(e) {
+			if (this.btnPath === '') this.$emit('click', e)
 		},
 	},
 }
@@ -45,6 +51,7 @@ a {
 	margin: 0;
 }
 .button {
+	display: block;
 	font-size: var(--btn-font-size);
 	font-weight: var(--btn-font-weight);
 	color: var(--background);
@@ -58,9 +65,6 @@ a {
 	transition-timing-function: ease-in-out;
 	transition-property: box-shadow, color, background-color;
 	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-}
-.button.primary {
-	background-color: var(--primary-color);
 }
 .button.secondary {
 	background-color: var(--dark-color);
@@ -78,6 +82,10 @@ a {
 	left: 0;
 	border: var(--line-weight) solid var(--primary-color);
 	border-radius: 0.5em;
+}
+.button.primary {
+	color: var(--background);
+	background-color: var(--primary-color);
 }
 .button:hover,
 .button:focus {

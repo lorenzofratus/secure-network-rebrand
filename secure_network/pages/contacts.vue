@@ -29,21 +29,21 @@
 					<span class="icon material-icons">email</span>
 					<p class="info">info@securenetwork.it</p>
 				</a>
-				<div class="card interactive" @click="showMap(1)">
+				<a class="card interactive" tabindex="0" @click="showMap(1)">
 					<h3 class="spacer">Italy</h3>
 					<p class="info centered">
 						Via Valtorta, 48<br />20127, Milano
 					</p>
-				</div>
-				<div class="card interactive" @click="showMap(2)">
+				</a>
+				<a class="card interactive" tabindex="0" @click="showMap(2)">
 					<h3 class="spacer">Italy</h3>
 					<p class="info centered">
 						Piazza A. Diaz, 6<br />20123, Milano
 					</p>
-				</div>
+				</a>
 			</div>
 		</section>
-		<div class="map-section">
+		<div id="map" class="map-section">
 			<span class="map map-1" :class="{ active: activeMap == 1 }"></span>
 			<span class="map map-2" :class="{ active: activeMap == 2 }"></span>
 		</div>
@@ -87,9 +87,13 @@ export default {
 			activeMap: 1,
 		}
 	},
+	mounted() {
+		this.map = document.getElementById('map')
+	},
 	methods: {
 		showMap(index) {
 			this.activeMap = index
+			this.$scrollTo(this.map, -100)
 		},
 	},
 }
@@ -133,6 +137,9 @@ p.centered {
 	height: 70vh;
 	min-height: 500px;
 	margin: var(--wave-height-neg) 0;
+}
+.map-section:focus {
+	outline: none;
 }
 .map {
 	position: absolute;
