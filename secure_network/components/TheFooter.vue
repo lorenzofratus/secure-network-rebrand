@@ -1,7 +1,7 @@
 <template>
 	<footer class="footer wave-before wave-concave-dark">
 		<div class="content">
-			<a href="/team#__layout" class="logo arrow"
+			<a href="#__layout" class="logo arrow"
 				><span class="left-bar"></span><span class="right-bar"></span
 			></a>
 			<nuxt-link :to="home.path" class="logo">

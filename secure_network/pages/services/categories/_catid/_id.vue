@@ -40,7 +40,6 @@ export default {
 		ImageComponentsSection,
 		PeopleSection,
 	},
-	layout: 'default',
 	async asyncData({ $axios, route }) {
 		const { id } = route.params
 		let payload = await $axios.get(
