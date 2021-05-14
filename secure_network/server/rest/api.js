@@ -209,15 +209,30 @@ async function init() {
 			],
 			group: ['year', 'resource.type'],
 		})
-		// const r = {}
-		// payload.forEach(([year, type, count]) => {
-		// 	if (r[year] == null) {
-		// 		r[year] = {}
-		// 	}
-		// 	r[year][type] = count
-		// })
-		// console.log(r)
-		return res.json(payload)
+
+		const r = {}
+		let year, type, count
+		payload.forEach((item) => {
+			year = item.dataValues.year
+			type = item.dataValues.type
+			count = item.dataValues.count
+			if (r[year] == null) {
+				r[year] = {}
+			}
+			r[year][type] = count
+			r[year].year = year
+		})
+		const resources = []
+		for (const prop in r) {
+			if(r[prop].news == null) {
+				r[prop].news = 0
+			}
+			if(r[prop].research == null) {
+				r[prop].research = 0
+			}
+			resources.push(r[prop])
+		}
+		return res.json(resources)
 	})
 }
 init()
