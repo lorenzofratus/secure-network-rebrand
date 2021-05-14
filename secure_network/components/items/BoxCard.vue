@@ -2,10 +2,10 @@
 	<div class="card box" :class="cardClass">
 		<span class="heading">
 			<span class="icon material-icons">{{ icon }}</span>
-			<h3 class="title">{{ title }}</h3>
+			<h3 class="title">{{ formatTitle }}</h3>
 		</span>
 		<p class="text">
-			{{ text }}
+			{{ abstract }}
 		</p>
 		<button-component
 			:btn-path="btnPath"
@@ -48,6 +48,18 @@ export default {
 			btnClass: 'secondary',
 		}
 	},
+	computed: {
+		abstract() {
+			const count = 15
+			let words = this.text.split(/\s|\n/)
+			if (words.length <= count) return words.join(' ')
+			words = words.splice(0, count)
+			return words.join(' ') + ' ...'
+		},
+		formatTitle() {
+			return this.title.replace(/-/g, ' ')
+		},
+	},
 }
 </script>
 
@@ -68,6 +80,7 @@ export default {
 }
 .box .title {
 	margin: 0;
+	text-transform: capitalize;
 }
 .box .text {
 	margin: 0 0 1.5em;

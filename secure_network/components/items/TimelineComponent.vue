@@ -6,7 +6,7 @@
 				<b>{{ newsCount }}</b> News
 			</div>
 			<div class="count h3">
-				<b>{{ newsCount }}</b> Research
+				<b>{{ researchCount }}</b> Research
 			</div>
 			<button-component
 				:btn-class="'secondary'"
@@ -25,7 +25,7 @@ export default {
 	},
 	props: {
 		year: {
-			type: String,
+			type: Number,
 			required: true,
 		},
 		newsCount: {

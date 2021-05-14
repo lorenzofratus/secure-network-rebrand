@@ -121,9 +121,10 @@ function defineDatabaseStructure() {
 			},
 			type: DataTypes.ENUM('news', 'research'),
 			date: DataTypes.DATEONLY,
-			name: DataTypes.STRING,
+			title: DataTypes.STRING,
 			text: DataTypes.TEXT,
 			path: DataTypes.STRING,
+			icon: DataTypes.STRING,
 		},
 		{ sequelize: db, modelName: 'resource' }
 	)

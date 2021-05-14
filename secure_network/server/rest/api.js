@@ -59,6 +59,15 @@ async function init() {
 		return res.json(await Area.findByPk(area))
 	})
 
+	app.get('/resources/:year', async (req, res) => {
+		const { year } = req.params
+		const literal_str = 'extract(YEAR FROM date) = ' + year
+		return res.json(
+			await Resource.findAll({
+				where: sequelize.literal(literal_str),
+			})
+		)
+	})
 	/**
 	 * Specific queries
 	 */
@@ -178,27 +187,8 @@ async function init() {
 	})
 
 	/**
-	 * Utility queries
+	 * Aggregate queries
 	 */
-	app.get('/people_ids/:area', async (req, res) => {
-		const { area } = req.params
-		return res.json(
-			await Person.findAll({
-				attributes: [['id', 'person_id']],
-				where: { area_id: area, [Op.not]: { role: 'founder' } },
-			})
-		)
-	})
-
-	app.get('/service_ids/:area', async (req, res) => {
-		const { area } = req.params
-		return res.json(
-			await Service.findAll({
-				attributes: [['id', 'service_id']],
-				where: { area_id: area },
-			})
-		)
-	})
 
 	app.get('/resources/', async (req, res) => {
 		const payload = await Resource.findAll({
@@ -219,20 +209,44 @@ async function init() {
 			if (r[year] == null) {
 				r[year] = {}
 			}
-			r[year][type] = count
-			r[year].year = year
+			r[year][type] = +count
+			r[year].year = +year
 		})
 		const resources = []
 		for (const prop in r) {
-			if(r[prop].news == null) {
+			if (r[prop].news == null) {
 				r[prop].news = 0
 			}
-			if(r[prop].research == null) {
+			if (r[prop].research == null) {
 				r[prop].research = 0
 			}
-			resources.push(r[prop])
+			r[prop].path = '/resources/' + r[prop].year
+			resources.unshift(r[prop])
 		}
 		return res.json(resources)
+	})
+
+	/**
+	 * Utility queries
+	 */
+	app.get('/people_ids/:area', async (req, res) => {
+		const { area } = req.params
+		return res.json(
+			await Person.findAll({
+				attributes: [['id', 'person_id']],
+				where: { area_id: area, [Op.not]: { role: 'founder' } },
+			})
+		)
+	})
+
+	app.get('/service_ids/:area', async (req, res) => {
+		const { area } = req.params
+		return res.json(
+			await Service.findAll({
+				attributes: [['id', 'service_id']],
+				where: { area_id: area },
+			})
+		)
 	})
 }
 init()

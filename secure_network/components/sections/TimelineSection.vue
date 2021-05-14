@@ -8,8 +8,8 @@
 				v-for="(year, index) in years"
 				:key="'timeline-section-item-' + index + '-' + wrapper"
 				:year="year.year"
-				:news-count="year.newsCount"
-				:research-count="year.researchCount"
+				:news-count="year.news"
+				:research-count="year.research"
 				:path="year.path"
 			/>
 		</div>

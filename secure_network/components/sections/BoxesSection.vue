@@ -4,11 +4,13 @@
 			<box-card
 				v-for="(box, index) in boxes"
 				:key="'box-' + index + '-' + wrapper"
-				:btn-path="box.btnPath"
+				:btn-path="box.path"
 				:icon="box.icon"
-				:title="box.title"
+				:title="box.id"
 				:text="box.text"
-				:card-class="box.class"
+				:card-class="
+					box.type == 'research' ? 'research-box' : 'news-box'
+				"
 			/>
 		</div>
 	</section>
