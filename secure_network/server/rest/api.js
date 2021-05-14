@@ -162,7 +162,6 @@ async function init() {
 			},
 			include: [Service],
 		})
-		console.log(payload)
 		const services = []
 		payload.forEach((item) => {
 			services.push(item.dataValues.service)
