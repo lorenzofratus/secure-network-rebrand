@@ -3,7 +3,6 @@ import initializeDatabase from '../db_conn'
 
 const app = express()
 app.use(express.json())
-app.use(requireHTTPS)
 
 async function init() {
 	const db = await initializeDatabase()
