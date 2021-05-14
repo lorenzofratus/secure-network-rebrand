@@ -8,6 +8,7 @@ import {
 	people,
 	areas,
 	person_service,
+	resources,
 } from './db_init/db_init.js'
 
 require('dotenv').config()
@@ -110,6 +111,23 @@ function defineDatabaseStructure() {
 		{ sequelize: db, modelName: 'area' }
 	)
 
+	class Resource extends Model {}
+	Resource.init(
+		{
+			id: {
+				type: DataTypes.STRING,
+				primaryKey: true,
+				allowNull: false,
+			},
+			type: DataTypes.ENUM('news', 'research'),
+			date: DataTypes.DATEONLY,
+			name: DataTypes.STRING,
+			text: DataTypes.TEXT,
+			path: DataTypes.STRING,
+		},
+		{ sequelize: db, modelName: 'resource' }
+	)
+
 	const PersonService = db.define(
 		'person_service',
 		{
@@ -121,7 +139,6 @@ function defineDatabaseStructure() {
 		{ timestamps: false }
 	)
 
-	ServiceCategory.hasMany(Service, { foreignKey: 'category_id' })
 	Service.belongsTo(ServiceCategory, { foreignKey: 'category_id' })
 
 	Area.hasMany(Person, { foreignKey: 'area_id' })
@@ -136,7 +153,14 @@ function defineDatabaseStructure() {
 	Service.hasMany(PersonService, { foreignKey: 'service_id' })
 	PersonService.belongsTo(Service, { foreignKey: 'service_id' })
 
-	db._tables = { ServiceCategory, Service, Person, Area, PersonService }
+	db._tables = {
+		ServiceCategory,
+		Service,
+		Person,
+		Area,
+		PersonService,
+		Resource,
+	}
 }
 
 async function insertTables() {
@@ -146,12 +170,14 @@ async function insertTables() {
 		Person,
 		Area,
 		PersonService,
+		Resource,
 	} = db._tables
 	await insertItems(Area, areas)
 	await insertItems(ServiceCategory, service_categories)
 	await insertItems(Service, services)
 	await insertItems(Person, people)
 	await insertItems(PersonService, person_service)
+	await insertItems(Resource, resources)
 }
 
 async function initializeDatabase() {

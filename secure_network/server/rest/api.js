@@ -6,8 +6,16 @@ app.use(express.json())
 
 async function init() {
 	const db = await initializeDatabase()
-	const { ServiceCategory, Service, Person, Area, PersonService } = db._tables
+	const {
+		ServiceCategory,
+		Service,
+		Person,
+		Area,
+		PersonService,
+		Resource,
+	} = db._tables
 	const { Op } = require('sequelize')
+	const sequelize = require('sequelize')
 	/**
 	 * Find all queries
 	 */
@@ -190,6 +198,26 @@ async function init() {
 				where: { area_id: area },
 			})
 		)
+	})
+
+	app.get('/resources/', async (req, res) => {
+		const payload = await Resource.findAll({
+			attributes: [
+				[sequelize.literal('extract(YEAR FROM date)'), 'year'],
+				'type',
+				[sequelize.fn('COUNT', sequelize.col('*')), 'count'],
+			],
+			group: ['year', 'resource.type'],
+		})
+		// const r = {}
+		// payload.forEach(([year, type, count]) => {
+		// 	if (r[year] == null) {
+		// 		r[year] = {}
+		// 	}
+		// 	r[year][type] = count
+		// })
+		// console.log(r)
+		return res.json(payload)
 	})
 }
 init()
