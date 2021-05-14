@@ -3,12 +3,12 @@ import initializeDatabase from '../db_conn'
 
 const app = express()
 app.use(express.json())
-const { Op } = require('sequelize')
+app.use(requireHTTPS)
 
 async function init() {
 	const db = await initializeDatabase()
 	const { ServiceCategory, Service, Person, Area, PersonService } = db._tables
-
+	const { Op } = require('sequelize')
 	/**
 	 * Find all queries
 	 */
