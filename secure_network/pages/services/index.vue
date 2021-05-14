@@ -27,14 +27,6 @@ export default {
 		AltSection,
 		ItemsSection,
 	},
-	layout: 'default',
-	// async asyncData({ store }) {
-	// 	// fetch data from store
-	// 	const services = await store.dispatch('getServices')
-	// 	return {
-	// 		services,
-	// 	}
-	// },
 	async asyncData({ $axios }) {
 		// fetch data from api server
 		const { data } = await $axios.get(
@@ -65,14 +57,15 @@ export default {
 				img: '/images/covers/services.svg',
 			},
 			alt_section: {
-				title: 'Lorem Ipsum',
+				title: 'Full coverage to meet specific demands',
 				paragraphs: [
-					'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsam, rem obcaecati repellat accusamus at quis magnam. Repudiandae vitae sit dignissimos? Sit similique anim blanditiis neque quae consequatur, numquam explicabo commodi tempora voluptatibus impedit suscipit optio non dicta deserunt laborum ipsa debitis odit. Vero, ipsum quasi. Ipsam facere cumque dolore quibusdam.',
-					'Lorem ipsum dolor, sit amet consectetur adipisicing elit. In mollitia hic asperiores temporibus soluta esse tempora itaque possimus, quam nostrum, id ratione iusto illum aut. Accusamus, necessitatibus? Rem, odio asperiores.',
+					'Secure Network’s Red Team is highly specialized and competent in most fields of security, guaranteeing protection that is dependable.',
+					'The wide range of courses, delivered anywhere in the world, provides multiple paths that can meet the needs of all our customers, including developers and system administrators, commercial agents, security consultant, manager, law enforcement and military.',
+					'In addition to the various courses offered and already defined, Secure Network is able to understand the specific needs of its customers and develop courses that meet every need.',
 				],
 				button: {
 					class: 'secondary',
-					text: 'Filter By Category',
+					text: 'Group By Category',
 					path: '/services/categories',
 				},
 			},

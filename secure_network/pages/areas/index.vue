@@ -58,43 +58,6 @@ export default {
 					'Lorem ipsum dolor, sit amet consectetur adipisicing elit. In mollitia hic asperiores temporibus soluta esse tempora itaque possimus, quam nostrum, id ratione iusto illum aut. Accusamus, necessitatibus? Rem, odio asperiores.',
 				],
 			},
-			area_section: {
-				areas: [
-					{
-						title: 'Name of the Area',
-						description:
-							'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsam, rem obcaecati repellat accusamus at quis magnam.',
-						img: '/images/covers/areas/enterprise-security.svg',
-						button: {
-							class: 'secondary',
-							text: 'Read More',
-							path: '/',
-						},
-					},
-					{
-						title: 'Name of the Area',
-						description:
-							'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsam, rem obcaecati repellat accusamus at quis magnam.',
-						img: '/images/covers/areas/legal-advice.svg',
-						button: {
-							class: 'secondary',
-							text: 'Read More',
-							path: '/',
-						},
-					},
-					{
-						title: 'Name of the Area',
-						description:
-							'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsam, rem obcaecati repellat accusamus at quis magnam.',
-						img: '/images/covers/areas/training.svg',
-						button: {
-							class: 'secondary',
-							text: 'Read More',
-							path: '/',
-						},
-					},
-				],
-			},
 		}
 	},
 }

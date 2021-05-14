@@ -12,19 +12,12 @@
 			:paragraphs="alt_section.paragraphs"
 			:wrapper="wrapper"
 			:button="alt_section.button"
+			:centered="alt_section.centered"
 		/>
-		<filter-section
-			:title="filter_section.title"
-			:wrapper="wrapper"
-			:buttons="filter_section.buttons"
-		/>
-		<boxes-section :wrapper="wrapper" :boxes="boxes_section.boxes" />
 	</div>
 </template>
 
 <script>
-import FilterSection from '~/components/sections/FilterSection.vue'
-import BoxesSection from '~/components/sections/BoxesSection.vue'
 import MainSection from '~/components/sections/MainSection.vue'
 import AltSection from '~/components/sections/AltSection.vue'
 
@@ -32,8 +25,6 @@ export default {
 	components: {
 		MainSection,
 		AltSection,
-		FilterSection,
-		BoxesSection,
 	},
 	layout: 'default',
 	async asyncData({ $axios }) {},
@@ -58,56 +49,12 @@ export default {
 				img: '/images/covers/index.svg',
 			},
 			alt_section: {
-				title: 'Lorem Ipsum',
+				title: 'Work In Progress',
 				paragraphs: [
-					'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsam, rem obcaecati repellat accusamus at quis magnam. Repudiandae vitae sit dignissimos? Sit similique anim blanditiis neque quae consequatur, numquam explicabo commodi tempora voluptatibus impedit suscipit optio non dicta deserunt laborum ipsa debitis odit. Vero, ipsum quasi. Ipsam facere cumque dolore quibusdam.',
-					'Lorem ipsum dolor, sit amet consectetur adipisicing elit. In mollitia hic asperiores temporibus soluta esse tempora itaque possimus, quam nostrum, id ratione iusto illum aut. Accusamus, necessitatibus? Rem, odio asperiores.',
+					'We are currently working on this page.',
+					'Stay tuned!',
 				],
-			},
-			filter_section: {
-				title: 'Filter Showcase',
-				buttons: [
-					{
-						class: 'primary',
-						text: 'All types',
-						path: '/',
-					},
-					{
-						class: 'outlined',
-						text: 'Research',
-						path: '/',
-					},
-					{
-						class: 'outlined',
-						text: 'News',
-						path: '/',
-					},
-				],
-			},
-			boxes_section: {
-				boxes: [
-					{
-						title: 'Mobile Application',
-						text:
-							'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam praesentium facere aliquid beatae magnam est.',
-						icon: 'smartphone',
-						btnPath: '/',
-					},
-					{
-						title: 'Wireless Network & Infrastructures',
-						text:
-							'Lorem ipsum dolor sit amet consectetur adipisicing ',
-						icon: 'wifi',
-						btnPath: '/',
-					},
-					{
-						title: 'Middleware Infrastructures',
-						text:
-							'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam praesentium facere aliquid beatae magnam est.',
-						icon: 'code',
-						btnPath: '/',
-					},
-				],
+				centered: true,
 			},
 		}
 	},

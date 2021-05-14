@@ -11,7 +11,6 @@
 			:title="alt_section.title"
 			:paragraphs="alt_section.paragraphs"
 			:wrapper="wrapper"
-			:button="alt_section.button"
 		/>
 		<image-components-section
 			id="founders"
@@ -26,13 +25,7 @@
 			:people="team"
 			:wrapper="wrapper"
 		/>
-		<alt-section
-			:title="alt_section2.title"
-			:paragraphs="alt_section2.paragraphs"
-			:wrapper="wrapper"
-			:button="alt_section2.button"
-			:centered="alt_section2.centered"
-		/>
+		<hiring-section :wrapper="wrapper" />
 	</div>
 </template>
 
@@ -41,6 +34,7 @@ import ImageComponentsSection from '~/components/sections/ImageComponentsSection
 import MainSection from '~/components/sections/MainSection.vue'
 import AltSection from '~/components/sections/AltSection.vue'
 import PeopleSection from '~/components/sections/PeopleSection.vue'
+import HiringSection from '~/components/sections/HiringSection.vue'
 
 export default {
 	components: {
@@ -48,15 +42,8 @@ export default {
 		AltSection,
 		PeopleSection,
 		ImageComponentsSection,
+		HiringSection,
 	},
-	layout: 'default',
-	// async asyncData({ store }) {
-	// 	// fetch data from the api server
-	// 	const people = await store.dispatch('getPeople')
-	// 	return {
-	// 		people,
-	// 	}
-	// },
 	async asyncData({ $axios }) {
 		// fetch data from the api server
 		let payload = await $axios.get(`${process.env.BASE_URL}/api/team`)
@@ -76,7 +63,7 @@ export default {
 		return {
 			wrapper: 'Team',
 			main_section: {
-				title: 'Our Fantastic Team',
+				title: 'Your Protection, Our Mission',
 				subtitle: '',
 				buttons: [
 					{
@@ -95,19 +82,10 @@ export default {
 			alt_section: {
 				title: 'Who we are',
 				paragraphs: [
-					'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsam, rem obcaecati repellat accusamus at quis magnam. Repudiandae vitae sit dignissimos? Sit similique anim blanditiis neque quae consequatur, numquam explicabo commodi tempora voluptatibus impedit suscipit optio non dicta deserunt laborum ipsa debitis odit. Vero, ipsum quasi. Ipsam facere cumque dolore quibusdam.',
-					'Lorem ipsum dolor, sit amet consectetur adipisicing elit. In mollitia hic asperiores temporibus soluta esse tempora itaque possimus, quam nostrum, id ratione iusto illum aut. Accusamus, necessitatibus? Rem, odio asperiores.',
+					'Secure Network acts like your most determined attackers and performs realistic and in-depth analysis of your most critical systems.',
+					'Formed by a young and cutting-edge Red Team of engineers and always up to date thanks to the close collaboration with Politecnico di Milano.',
+					'The stable research and development studies and the active participation to international conferences, lectures and workshops, make Secure Network one of the most effective security companies.',
 				],
-			},
-			alt_section2: {
-				title: 'We are hiring!',
-				paragraphs: ['What are you waiting? Come hack with us!'],
-				button: {
-					class: 'primary',
-					text: 'Contact Us',
-					path: '/contacts',
-				},
-				centered: true,
 			},
 		}
 	},
