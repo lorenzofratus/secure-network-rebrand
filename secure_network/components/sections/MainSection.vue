@@ -1,19 +1,35 @@
 <template>
-	<div class="header">
-		<div class="content">
-			<h1 class="title">{{ title }}</h1>
-			<h3 v-if="subtitle" class="subtitle">{{ subtitle }}</h3>
-			<div v-if="buttons.length > 0" class="buttons">
-				<button-component
-					v-for="(button, index) in buttons"
-					:key="'main-section-button-' + index + '-' + wrapper"
-					:btn-path="button.path"
-					:btn-class="button.class"
-					:btn-text="button.text"
-				/>
+	<div class="wrapper">
+		<div class="header">
+			<div class="content">
+				<h4 v-if="breadcrumbs.length" class="breadcrumbs">
+					<span
+						v-for="(link, index) in breadcrumbs"
+						:key="wrapper + '-' + index"
+					>
+						<span v-if="index != 0"> &gt; </span>
+						<nuxt-link
+							:to="link.path"
+							class="link"
+							:class="{ last: index == breadcrumbs.length - 1 }"
+							>{{ link.text }}</nuxt-link
+						>
+					</span>
+				</h4>
+				<h1 class="title">{{ title }}</h1>
+				<h3 v-if="subtitle" class="subtitle">{{ subtitle }}</h3>
+				<div v-if="buttons.length > 0" class="buttons">
+					<button-component
+						v-for="(button, index) in buttons"
+						:key="'main-section-button-' + index + '-' + wrapper"
+						:btn-path="button.path"
+						:btn-class="button.class"
+						:btn-text="button.text"
+					/>
+				</div>
 			</div>
+			<img :src="img" class="cover" :class="{ rounded: isRounded }" />
 		</div>
-		<img :src="img" class="cover" :class="{ rounded: isRounded }" />
 	</div>
 </template>
 
@@ -22,6 +38,24 @@ import ButtonComponent from '~/components/items/ButtonComponent'
 export default {
 	components: {
 		ButtonComponent,
+	},
+	computed: {
+		breadcrumbs() {
+			const steps = this.$route.fullPath.split('/')
+			steps.shift()
+			steps.pop()
+			console.log(steps)
+
+			const breadcrumbs = []
+			steps.forEach((step, index) => {
+				breadcrumbs.push({
+					text: step.replace(/-/g, ' '),
+					path: '/' + steps.slice(0, index + 1).join('/'),
+				})
+			})
+
+			return breadcrumbs
+		},
 	},
 	props: {
 		title: {
@@ -55,11 +89,28 @@ export default {
 				return false
 			},
 		},
+		/* breadcrumbs: {
+			type: Array,
+			required: false,
+			default() {
+				return []
+			},
+		}, */
 	},
 }
 </script>
 
 <style scoped>
+.breadcrumbs .link {
+	text-transform: capitalize;
+	margin: 0;
+	color: var(--dark-color);
+	text-decoration: none;
+}
+.breadcrumbs .link.last {
+	color: var(--primary-color);
+}
+
 .header {
 	min-height: 50vh;
 	max-width: var(--page);

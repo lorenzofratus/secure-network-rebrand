@@ -73,20 +73,14 @@ export default {
 		payload = await $axios.get(
 			`${process.env.BASE_URL}/api/people-by-service/${id}/false`
 		)
-		const people = payload.data
 
-		const breadcrumbs = [
-			{ text: 'Services', path: '/services' },
-			{ text: 'Categories', path: '/services/categories' },
-			{ text: area.name, path: '/services/categories/' + area.id },
-		]
+		const people = payload.data
 
 		return {
 			service,
 			referents,
 			people,
 			area,
-			breadcrumbs,
 		}
 	},
 	data() {

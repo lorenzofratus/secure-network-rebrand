@@ -41,12 +41,8 @@ export default {
 			year
 		resource.paragraphs = resource.text.split('\n')
 		resource.img = '/images/covers/' + resource.type + '.svg'
-		const breadcrumbs = [
-			{ text: 'Resources', path: '/resources' },
-			{ text: year, path: '/resources/' + year },
-		]
 
-		return { resource, breadcrumbs }
+		return { resource }
 	},
 	data() {
 		return {

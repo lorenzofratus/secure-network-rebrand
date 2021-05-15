@@ -68,7 +68,6 @@ export default {
 					path: '/services',
 				},
 			},
-			breadcrumbs: [{ text: 'Services', path: '/services' }],
 		}
 	},
 	computed: {},

@@ -67,7 +67,6 @@ export default {
 				],
 			},
 			animating: false,
-			breadcrumbs: [{ text: 'Resources', path: '/resources' }],
 		}
 	},
 	computed: {

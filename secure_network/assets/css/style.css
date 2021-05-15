@@ -257,9 +257,6 @@ a .card {
 }
 
 /*** Page Transition ***/
-html {
-	scroll-behavior: smooth;
-}
 .page-enter-active,
 .page-leave-active {
 	transition: 0.35s opacity ease-in-out;
@@ -272,4 +269,7 @@ html {
 /*** Remove Horizontal Overflow ***/
 #__layout {
 	overflow-x: hidden;
+}
+#__layout:focus {
+	outline: none;
 }

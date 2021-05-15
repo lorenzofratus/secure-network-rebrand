@@ -58,10 +58,6 @@ export default {
 				],
 				img: '/images/covers/index.svg',
 			},
-			breadcrumbs: [
-				{ text: 'Services', path: '/services' },
-				{ text: 'Categories', path: '/services/categories' },
-			],
 		}
 	},
 }
