@@ -1,11 +1,11 @@
 <template>
 	<div class="container">
 		<main-section
-			:buttons="main_section.buttons"
+			:buttons="buttons"
 			:img="person.img"
 			:title="person.name + ' ' + person.surname"
 			:wrapper="person.id"
-			:is-rounded="main_section.isRounded"
+			:is-rounded="true"
 		/>
 		<alt-section
 			:title="'About ' + person.name + '...'"
@@ -89,9 +89,16 @@ export default {
 						path: '#services',
 					},
 				],
-				isRounded: true,
 			},
 		}
+	},
+	computed: {
+		buttons() {
+			const buttons = []
+			if (this.area != null) buttons.push(this.main_section.buttons[0])
+			if (this.services.length) buttons.push(this.main_section.buttons[1])
+			return buttons
+		},
 	},
 }
 </script>

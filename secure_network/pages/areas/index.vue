@@ -44,7 +44,7 @@ export default {
 				buttons: [
 					{
 						class: 'primary',
-						text: 'All Areas',
+						text: 'See Areas',
 						path: '#areas',
 					},
 					{

@@ -85,12 +85,12 @@ export default {
 				buttons: [
 					{
 						class: 'primary',
-						text: 'Categories',
+						text: 'See Categories',
 						path: '#categories',
 					},
 					{
 						class: 'secondary',
-						text: 'Team',
+						text: 'See Team',
 						path: '#team',
 					},
 				],

@@ -45,7 +45,7 @@ export default {
 				buttons: [
 					{
 						class: 'primary',
-						text: 'Our Services',
+						text: 'See Services',
 						path: '#services',
 					},
 					{

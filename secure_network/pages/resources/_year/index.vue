@@ -4,15 +4,17 @@
 			:img="main_section.img"
 			:title="main_section.title + year"
 			:subtitle="main_section.subtitle"
+			:buttons="main_section.buttons"
 			:wrapper="wrapper + year"
 		/>
 		<filter-section
-			:title="filter_section.title"
-			:buttons="filter_section.buttons"
+			title="Filter Resources By"
+			:buttons="types"
 			:wrapper="wrapper + year"
 			@filter="changeFilter"
 		/>
 		<boxes-section
+			id="resources"
 			:boxes="resources"
 			:wrapper="wrapper + year"
 			class="resources"
@@ -47,40 +49,45 @@ export default {
 			main_section: {
 				title: 'All Resources of ',
 				img: '/images/covers/resources.svg',
-			},
-			filter_section: {
-				title: 'Filter Resources By',
-				activeFilter: 0,
 				buttons: [
 					{
-						text: 'All Types',
-						filter: '',
-					},
-					{
-						text: 'Research',
-						filter: 'research',
-					},
-					{
-						text: 'News',
-						filter: 'news',
+						text: 'See Resources',
+						class: 'primary',
+						path: '#resources',
 					},
 				],
 			},
+			activeFilter: 0,
 			animating: false,
 		}
 	},
 	computed: {
+		types() {
+			const types = [{ text: 'All Types', filter: '' }]
+			let fetched = this.resources.map((resource) => resource.type)
+			fetched = [...new Set(fetched)].sort()
+			fetched.forEach((type) =>
+				types.push({
+					text: type,
+					filter: type,
+				})
+			)
+			return types
+		},
 		filterClass() {
-			const { buttons, activeFilter } = this.filter_section
-			return buttons[activeFilter].filter
+			return this.types[this.activeFilter].filter
 		},
 	},
+	// mounted() {
+	// 	this.section = document.getElementById('resources')
+	// },
 	methods: {
 		changeFilter(index) {
 			this.animating = true
+			// this.$scrollTo(this.section, -200)
 			setTimeout(() => {
 				this.animating = false
-				this.filter_section.activeFilter = index
+				this.activeFilter = index
 			}, 500)
 		},
 	},

@@ -26,6 +26,7 @@
 						:btn-class="button.class"
 						:btn-text="button.text"
 					/>
+					<div v-if="buttons.length == 1"></div>
 				</div>
 			</div>
 			<img :src="img" class="cover" :class="{ rounded: isRounded }" />
@@ -38,24 +39,6 @@ import ButtonComponent from '~/components/items/ButtonComponent'
 export default {
 	components: {
 		ButtonComponent,
-	},
-	computed: {
-		breadcrumbs() {
-			const steps = this.$route.fullPath.split('/')
-			steps.shift()
-			steps.pop()
-			console.log(steps)
-
-			const breadcrumbs = []
-			steps.forEach((step, index) => {
-				breadcrumbs.push({
-					text: step.replace(/-/g, ' '),
-					path: '/' + steps.slice(0, index + 1).join('/'),
-				})
-			})
-
-			return breadcrumbs
-		},
 	},
 	props: {
 		title: {
@@ -89,13 +72,23 @@ export default {
 				return false
 			},
 		},
-		/* breadcrumbs: {
-			type: Array,
-			required: false,
-			default() {
-				return []
-			},
-		}, */
+	},
+	computed: {
+		breadcrumbs() {
+			const steps = this.$route.fullPath.split('/')
+			steps.shift()
+			steps.pop()
+
+			const breadcrumbs = []
+			steps.forEach((step, index) => {
+				breadcrumbs.push({
+					text: step.replace(/-/g, ' '),
+					path: '/' + steps.slice(0, index + 1).join('/'),
+				})
+			})
+
+			return breadcrumbs
+		},
 	},
 }
 </script>
