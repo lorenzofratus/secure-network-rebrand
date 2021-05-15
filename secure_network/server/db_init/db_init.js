@@ -52,7 +52,8 @@ const sv_categories = [
 	},
 	{
 		name: 'Binary Exploitation Training',
-		text: 'TBD',
+		text:
+			'Binary exploitation is the process of subverting a compiled application such that it violates some trust boundary in a way that is advantageous to you, the attacker.\n In this category we are going to focus on memory corruption. By abusing vulnerabilities that corrupt memory in software we can often rewrite critical application state information in a way that allows us to elevate privileges inside the context of a particular application (like a remote desktop server) or perform arbitrary computation by hijacking control flow and running code of our choosing.',
 		img: 'memory',
 		path: '/services/categories/',
 	},
@@ -65,7 +66,8 @@ const sv_categories = [
 	},
 	{
 		name: 'Mobile Security Training',
-		text: 'TBD',
+		text:
+			'Mobile security skills are in high demand among organizations that are looking to maintain and secure their organization’s mobile devices. The pandemic and subsequent remote work are furthering demands for these skills. Many are turning to online learning platforms to up their game and acquire the mobile security skills most likely to help them stand out.\n Whether you are looking to acquire those skills for work or for play, this collection of mobile security courses will help you learn the ropes so you can pilot some of the most widely used tools.',
 		img: 'phonelink_lock',
 		path: '/services/categories/',
 	},
@@ -85,7 +87,8 @@ const sv_categories = [
 	},
 	{
 		name: 'Web Exploitation Training',
-		text: 'TBD',
+		text:
+			'Websites and web application coding may be vulnerable, allowing attackers to gain some level of control of the site, and possibly the hosting server itself.\n Most vulnerabilities are exploited through automated methods, such as vulnerability scanners and botnets. Hackers then exploit vulnerabilities to steal data, distribute malicious content, or steal customer information. Understanding how weaknesses help hackers is the first step to defending websites.',
 		img: 'language',
 		path: '/services/categories/',
 	},
@@ -495,7 +498,8 @@ const ars = [
 	},
 	{
 		name: 'Enterprise Security',
-		text: `TBD`,
+		text: `An accurate and complete risk analysis allows to identify the exact vulnerabilities and threats that can compromise your systems and critical information, providing, at the end of the analysis, an appropriate plan for their resolution.\n
+		The first step is defining the scope of analysis, which can be composed by single assets or complex infrastructures, and then identifying current threats on those targets. By analyzing implemented security policies we can estimate actual risks, categorize them and define proper mitigation processes.`,
 		path: '/areas/',
 		img: '/images/covers/areas/enterprise-security.svg',
 	},

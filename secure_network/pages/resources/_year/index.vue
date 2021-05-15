@@ -1,7 +1,6 @@
 <template>
 	<div class="container">
 		<main-section
-			:buttons="main_section.buttons"
 			:img="main_section.img"
 			:title="main_section.title + year"
 			:subtitle="main_section.subtitle"
@@ -46,19 +45,7 @@ export default {
 		return {
 			wrapper: 'resources-of-',
 			main_section: {
-				title: 'All Updates of The Year ',
-				buttons: [
-					{
-						class: 'primary',
-						text: 'Tbd',
-						path: '/',
-					},
-					{
-						class: 'secondary',
-						text: 'Tbd',
-						path: '/',
-					},
-				],
+				title: 'All Resources of ',
 				img: '/images/covers/resources.svg',
 			},
 			filter_section: {
@@ -80,6 +67,7 @@ export default {
 				],
 			},
 			animating: false,
+			breadcrumbs: [{ text: 'Resources', path: '/resources' }],
 		}
 	},
 	computed: {

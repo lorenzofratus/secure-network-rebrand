@@ -11,7 +11,7 @@
 			:wrapper="wrapper"
 		/>
 
-		<section class="address-section wave-after wave-convex-bg">
+		<section id="info" class="address-section wave-after wave-convex-bg">
 			<title-component
 				:title="title_component.title"
 				:text="title_component.text"
@@ -68,13 +68,8 @@ export default {
 				buttons: [
 					{
 						class: 'primary',
-						text: 'Section',
-						path: '/',
-					},
-					{
-						class: 'secondary',
-						text: 'Contact us',
-						path: '/contacts',
+						text: 'Reach Us',
+						path: '#info',
 					},
 				],
 				img: '/images/covers/contacts.svg',

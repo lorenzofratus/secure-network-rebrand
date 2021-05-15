@@ -1,7 +1,6 @@
 <template>
 	<div class="container">
 		<main-section
-			:buttons="main_section.buttons"
 			:img="main_section.img"
 			:title="main_section.title"
 			:subtitle="main_section.subtitle"
@@ -26,7 +25,6 @@ export default {
 			`${process.env.BASE_URL}/api/resources-aggregation`
 		)
 		const years = data
-		console.log(years)
 		return {
 			years,
 		}
@@ -35,19 +33,7 @@ export default {
 		return {
 			wrapper: 'resources',
 			main_section: {
-				title: 'All Updates\nYear By Year',
-				buttons: [
-					{
-						class: 'primary',
-						text: 'Tbd',
-						path: '/',
-					},
-					{
-						class: 'secondary',
-						text: 'Tbd',
-						path: '/',
-					},
-				],
+				title: 'All Our Resources Year By Year',
 				img: '/images/covers/resources.svg',
 			},
 		}

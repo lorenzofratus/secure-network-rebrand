@@ -15,6 +15,7 @@
 			:centered="alt_section.centered"
 		/>
 		<boxes-section
+			id="news"
 			:title="'Last News'"
 			:boxes="resources"
 			:wrapper="wrapper"
@@ -53,8 +54,8 @@ export default {
 				buttons: [
 					{
 						class: 'primary',
-						text: 'Tbd',
-						path: '/',
+						text: 'Last News',
+						path: '#news',
 					},
 					{
 						class: 'secondary',
@@ -65,10 +66,11 @@ export default {
 				img: '/images/covers/index.svg',
 			},
 			alt_section: {
-				title: 'Work In Progress',
+				title: 'A truly connected world needs security',
 				paragraphs: [
-					'We are currently working on this page.',
-					'Stay tuned!',
+					'Secure Network performs comprehensive security assessments, securing your applications and infrastructures thoroughly and extensively.',
+					'Our Team acts like determined attackers, simulating real-world attacks and in-depth analysis of your platform, so that no part of it can lead to service disruption, data breach or financial damage.',
+					'We can train your staff and raise your overall security awareness, so that future developments stay reliably and predictably secure.',
 				],
 				centered: true,
 			},

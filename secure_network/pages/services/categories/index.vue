@@ -12,7 +12,11 @@
 			:button="alt_section.button"
 			:wrapper="wrapper"
 		/>
-		<items-section :wrapper="wrapper" :items="serviceCategories" />
+		<items-section
+			id="categories"
+			:wrapper="wrapper"
+			:items="serviceCategories"
+		/>
 	</div>
 </template>
 
@@ -45,13 +49,8 @@ export default {
 				buttons: [
 					{
 						class: 'primary',
-						text: 'Section',
-						path: '/',
-					},
-					{
-						class: 'secondary',
-						text: 'Contact us',
-						path: '/contacts',
+						text: 'Categories',
+						path: '#categories',
 					},
 				],
 				img: '/images/covers/index.svg',
@@ -69,6 +68,7 @@ export default {
 					path: '/services',
 				},
 			},
+			breadcrumbs: [{ text: 'Services', path: '/services' }],
 		}
 	},
 	computed: {},

@@ -88,6 +88,7 @@ export default {
 					},
 				],
 				isRounded: true,
+				breadcrumbs: [{ text: 'Team', path: '/team' }],
 			},
 		}
 	},

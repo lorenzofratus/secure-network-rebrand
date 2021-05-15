@@ -31,22 +31,25 @@ export default {
 				buttons: [
 					{
 						class: 'primary',
-						text: 'Founders',
-						path: '/founders',
+						text: 'Our Team',
+						path: '/team',
 					},
 					{
 						class: 'secondary',
-						text: 'TBD',
-						path: '/',
+						text: 'Contact Us',
+						path: '/contacts',
 					},
 				],
 				img: '/images/covers/about.svg',
 			},
 			alt_section: {
-				title: 'Lorem Ipsum',
+				title: 'Your Protection, Our Mission',
 				paragraphs: [
-					'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsam, rem obcaecati repellat accusamus at quis magnam. Repudiandae vitae sit dignissimos? Sit similique anim blanditiis neque quae consequatur, numquam explicabo commodi tempora voluptatibus impedit suscipit optio non dicta deserunt laborum ipsa debitis odit. Vero, ipsum quasi. Ipsam facere cumque dolore quibusdam.',
-					'Lorem ipsum dolor, sit amet consectetur adipisicing elit. In mollitia hic asperiores temporibus soluta esse tempora itaque possimus, quam nostrum, id ratione iusto illum aut. Accusamus, necessitatibus? Rem, odio asperiores.',
+					`Founded in 2004, Secure Network offers specialized services to guarantee the security of your systems.
+				   In 2018 Secure Network entered into a joint venture with BV Tech S.p.a, further expanding the company’s international opportunities.`,
+					`Secure Network acts like your most determined attackers and performs realistic and in-depth analysis of your most critical systems.
+					Formed by a young and cutting-edge Red Team of engineers and always up to date thanks to the close collaboration with Politecnico di Milano.`,
+					`The stable research and development studies and the active participation to international conferences, lectures and workshops, make Secure Network one of the most effective security companies.`,
 				],
 			},
 		}

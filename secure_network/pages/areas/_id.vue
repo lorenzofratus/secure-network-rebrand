@@ -12,11 +12,13 @@
 			:wrapper="area.id"
 		/>
 		<items-section
+			id="categories"
 			title="Categories Of Services"
 			:wrapper="area.id"
 			:items="serviceCategories"
 		/>
 		<image-components-section
+			id="team"
 			title="Currently Employing"
 			:components="managers"
 			:wrapper="area.id"
@@ -83,16 +85,17 @@ export default {
 				buttons: [
 					{
 						class: 'primary',
-						text: 'Section',
-						path: '/',
+						text: 'Categories',
+						path: '#categories',
 					},
 					{
 						class: 'secondary',
-						text: 'Contact us',
-						path: '/contacts',
+						text: 'Team',
+						path: '#team',
 					},
 				],
 			},
+			breadcrumbs: [{ text: 'Areas', path: '/areas' }],
 		}
 	},
 }

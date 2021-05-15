@@ -11,7 +11,7 @@
 			:paragraphs="category.paragraphs"
 			:wrapper="wrapper"
 		/>
-		<items-section :wrapper="wrapper" :items="services" />
+		<items-section id="services" :wrapper="wrapper" :items="services" />
 	</div>
 </template>
 
@@ -52,17 +52,16 @@ export default {
 				buttons: [
 					{
 						class: 'primary',
-						text: 'Section',
-						path: '/',
-					},
-					{
-						class: 'secondary',
-						text: 'Contact us',
-						path: '/contacts',
+						text: 'Services',
+						path: '#services',
 					},
 				],
 				img: '/images/covers/index.svg',
 			},
+			breadcrumbs: [
+				{ text: 'Services', path: '/services' },
+				{ text: 'Categories', path: '/services/categories' },
+			],
 		}
 	},
 }

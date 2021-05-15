@@ -12,7 +12,7 @@
 			:wrapper="wrapper"
 			:button="alt_section.button"
 		/>
-		<items-section :wrapper="wrapper" :items="services" />
+		<items-section id="services" :wrapper="wrapper" :items="services" />
 	</div>
 </template>
 
@@ -45,12 +45,12 @@ export default {
 				buttons: [
 					{
 						class: 'primary',
-						text: 'Section',
-						path: '/',
+						text: 'Our Services',
+						path: '#services',
 					},
 					{
 						class: 'secondary',
-						text: 'Contact us',
+						text: 'Contact Us',
 						path: '/contacts',
 					},
 				],

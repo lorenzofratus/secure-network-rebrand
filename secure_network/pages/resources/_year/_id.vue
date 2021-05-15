@@ -32,16 +32,21 @@ export default {
 		)
 		const resource = data
 		const date = new Date(resource.date)
+		const year = date.getFullYear()
 		resource.title =
 			('0' + date.getDate()).slice(-2) +
 			' ' +
 			date.toLocaleString('EN', { month: 'long' }) +
 			' ' +
-			date.getFullYear()
+			year
 		resource.paragraphs = resource.text.split('\n')
 		resource.img = '/images/covers/' + resource.type + '.svg'
+		const breadcrumbs = [
+			{ text: 'Resources', path: '/resources' },
+			{ text: year, path: '/resources/' + year },
+		]
 
-		return { resource }
+		return { resource, breadcrumbs }
 	},
 	data() {
 		return {

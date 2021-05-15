@@ -12,7 +12,11 @@
 			:paragraphs="alt_section.paragraphs"
 			:wrapper="wrapper"
 		/>
-		<image-components-section :components="areas" :wrapper="wrapper" />
+		<image-components-section
+			id="areas"
+			:components="areas"
+			:wrapper="wrapper"
+		/>
 	</div>
 </template>
 
@@ -40,8 +44,8 @@ export default {
 				buttons: [
 					{
 						class: 'primary',
-						text: 'Discover',
-						path: '/',
+						text: 'All Areas',
+						path: '#areas',
 					},
 					{
 						class: 'secondary',
@@ -52,10 +56,10 @@ export default {
 				img: '/images/covers/areas.svg',
 			},
 			alt_section: {
-				title: 'Lorem Ipsum',
+				title: 'Overview',
 				paragraphs: [
-					'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsam, rem obcaecati repellat accusamus at quis magnam. Repudiandae vitae sit dignissimos? Sit similique anim blanditiis neque quae consequatur, numquam explicabo commodi tempora voluptatibus impedit suscipit optio non dicta deserunt laborum ipsa debitis odit. Vero, ipsum quasi. Ipsam facere cumque dolore quibusdam.',
-					'Lorem ipsum dolor, sit amet consectetur adipisicing elit. In mollitia hic asperiores temporibus soluta esse tempora itaque possimus, quam nostrum, id ratione iusto illum aut. Accusamus, necessitatibus? Rem, odio asperiores.',
+					'Secure Network’s years of experience in information security are at your service to provide our knowledge and specialised courses.',
+					'The policies form the basis of any security plan and define the requirements to be followed and rules that must be adhered to in different business areas. These documents provide, together with the implementation of appropriate technological tools, which all entities involved realize security measures in the form prescribed respecting the mandatory regulations and contributing to the security company.',
 				],
 			},
 		}
