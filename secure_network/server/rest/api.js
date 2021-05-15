@@ -20,19 +20,19 @@ async function init() {
 	 * Find all queries
 	 */
 	app.get('/service-categories', async (req, res) => {
-		return res.json(await ServiceCategory.findAll())
+		return res.json(await ServiceCategory.findAll({ order: ['id'] }))
 	})
 
 	app.get('/services', async (req, res) => {
-		return res.json(await Service.findAll())
+		return res.json(await Service.findAll({ order: ['id'] }))
 	})
 
 	app.get('/people', async (req, res) => {
-		return res.json(await Person.findAll())
+		return res.json(await Person.findAll({ order: ['id'] }))
 	})
 
 	app.get('/areas', async (req, res) => {
-		return res.json(await Area.findAll())
+		return res.json(await Area.findAll({ order: ['id'] }))
 	})
 
 	/**
@@ -88,6 +88,7 @@ async function init() {
 		return res.json(
 			await Service.findAll({
 				where: { category_id: category },
+				order: ['id'],
 			})
 		)
 	})
@@ -97,18 +98,23 @@ async function init() {
 		return res.json(
 			await Service.findAll({
 				where: { area_id: area },
+				order: ['id'],
 			})
 		)
 	})
 
 	app.get('/people-by-area/:area', async (req, res) => {
 		const { area } = req.params
-		return res.json(await Person.findAll({ where: { area_id: area } }))
+		return res.json(
+			await Person.findAll({ where: { area_id: area }, order: ['id'] })
+		)
 	})
 
 	app.get('/people-by-role/:role', async (req, res) => {
 		const { role } = req.params
-		return res.json(await Person.findAll({ where: { role: role } }))
+		return res.json(
+			await Person.findAll({ where: { role: role }, order: ['id'] })
+		)
 	})
 
 	app.get('/people-by-area-and-role/:area/:role', async (req, res) => {
@@ -119,13 +125,17 @@ async function init() {
 					area_id: area,
 					role: role,
 				},
+				order: ['id'],
 			})
 		)
 	})
 
 	app.get('/team', async (req, res) => {
 		return res.json(
-			await Person.findAll({ where: { [Op.not]: { role: 'founder' } } })
+			await Person.findAll({
+				where: { [Op.not]: { role: 'founder' } },
+				order: ['id'],
+			})
 		)
 	})
 
@@ -181,6 +191,7 @@ async function init() {
 						[Op.in]: category_ids,
 					},
 				},
+				order: ['id'],
 			})
 		)
 	})
@@ -193,6 +204,7 @@ async function init() {
 				service_id: service,
 				isReference: isReference,
 			},
+			order: ['person_id'],
 			include: [Person],
 		})
 		const people = []
@@ -210,6 +222,7 @@ async function init() {
 			where: {
 				person_id: person,
 			},
+			order: ['service_id'],
 			include: [Service],
 		})
 		const services = []
@@ -268,19 +281,7 @@ async function init() {
 			await Person.findAll({
 				attributes: [['id', 'person_id']],
 				where: { area_id: area, [Op.not]: { role: 'founder' } },
-			})
-		)
-	})
-
-	/**
-	 * Utility queries
-	 */
-	app.get('/people_ids/:area', async (req, res) => {
-		const { area } = req.params
-		return res.json(
-			await Person.findAll({
-				attributes: [['id', 'person_id']],
-				where: { area_id: area, [Op.not]: { role: 'founder' } },
+				order: ['person_id'],
 			})
 		)
 	})
@@ -291,6 +292,7 @@ async function init() {
 			await Service.findAll({
 				attributes: [['id', 'service_id']],
 				where: { area_id: area },
+				order: ['id'],
 			})
 		)
 	})
