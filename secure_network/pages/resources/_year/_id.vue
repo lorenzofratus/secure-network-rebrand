@@ -1,14 +1,15 @@
 <template>
 	<div class="container">
 		<main-section
-			:img="main_section.img"
-			:title="main_section.title"
-			:subtitle="main_section.subtitle"
-			:wrapper="wrapper"
+			:img="resource.img"
+			:title="resource.title"
+			:subtitle="'!------SHOULD BE REMOVED------! ' + resource.name"
+			:wrapper="resource.id"
 		/>
 		<alt-section
-			:title="main_section.subtitle"
-			:paragraphs="alt_section.paragraphs"
+			:title="resource.name"
+			:paragraphs="resource.paragraphs"
+			:wrapper="resource.id"
 		/>
 	</div>
 </template>
@@ -23,23 +24,28 @@ export default {
 		AltSection,
 	},
 	layout: 'default',
-	// eslint-disable-next-line require-await
-	async asyncData({ $axios, route }) {},
+	async asyncData({ $axios, route }) {
+		const { id } = route.params
+		const { data } = await $axios.get(
+			`${process.env.BASE_URL}/api/resources/${id}`
+		)
+		const resource = data
+		const date = new Date(resource.date)
+		resource.title =
+			('0' + date.getDate()).slice(-2) +
+			' ' +
+			date.toLocaleString('EN', { month: 'long' }) +
+			' ' +
+			date.getFullYear()
+		resource.paragraphs = resource.text.split('\n')
+		resource.img = '/images/covers/' + resource.type + '.svg'
+
+		return { resource }
+	},
 	data() {
 		return {
-			wrapper: 'resource',
 			main_section: {
-				title: '05 August 2020',
-				subtitle: 'Marcello Pogliani presents at Black Hat USA',
-				img: '/images/covers/research.svg',
-			},
-			alt_section: {
-				paragraphs: [
-					'Marcello Pogliani, Security Engineer at Secure Network, presents a research talk at Black Hat US 2020 together with Dr. Federico Maggi from Trend Micro Research.',
-					'The conference talk, “OTRazor: Static Code Analysis for Vulnerability Discovery in Industrial Automation Scripts“, describes the authors’ findings about security aspects of the proprietary and domain-specific programming languages used to program the movement of industrial robots.',
-					'Marcello worked on the research presented during the talk while being a Ph.D. student and collaborator of Politecnico di Milano, as part of a collaboration with Trend Micro Research.',
-					'The PDF slides of the presentation can be downloaded here.',
-				],
+				img: '/images/covers/',
 			},
 		}
 	},

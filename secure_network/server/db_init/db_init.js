@@ -741,9 +741,9 @@ const res = [
 		date: '2020-05-19',
 		path: '/resources/',
 		icon: 'science',
-		title: 'Marcello Pogliani Presents At Black Hat USA',
+		name: 'Marcello Pogliani Presents At Black Hat USA',
 		text: `Marcello Pogliani, Security Engineer at Secure Network, presents a research talk at Black Hat US 2020 together with Dr. Federico Maggi from Trend Micro Research.\n
-		The conference talk, “OTRazor: Static Code Analysis for Vulnerability Discovery in Industrial Automation Scripts“, describes the authors’ findings about security aspects of the proprietary and domain-specific programming languages used to program the movement of industrial robots.\n
+		The conference talk, “<a href="https://www.blackhat.com/us-20/briefings/schedule/index.html#otrazor-static-code-analysis-for-vulnerability-discovery-in-industrial-automation-scripts-19523">OTRazor: Static Code Analysis for Vulnerability Discovery in Industrial Automation Scripts</a>“, describes the authors’ findings about security aspects of the proprietary and domain-specific programming languages used to program the movement of industrial robots.\n
 		Marcello worked on the research presented during the talk while being a Ph.D. student and collaborator of Politecnico di Milano, as part of a collaboration with Trend Micro Research.\n
 		The PDF slides of the presentation can be downloaded here.`,
 	},
@@ -752,7 +752,7 @@ const res = [
 		date: '2020-05-18',
 		path: '/resources/',
 		icon: 'science',
-		title: 'Marcello Pogliani Presents At Black Hat USA',
+		name: 'Marcello Pogliani Presents At Black Hat USA',
 		text: `Marcello Pogliani, Security Engineer at Secure Network, presents a research talk at Black Hat US 2020 together with Dr. Federico Maggi from Trend Micro Research.\n
 		The conference talk, “OTRazor: Static Code Analysis for Vulnerability Discovery in Industrial Automation Scripts“, describes the authors’ findings about security aspects of the proprietary and domain-specific programming languages used to program the movement of industrial robots.\n
 		Marcello worked on the research presented during the talk while being a Ph.D. student and collaborator of Politecnico di Milano, as part of a collaboration with Trend Micro Research.\n
@@ -763,7 +763,7 @@ const res = [
 		date: '2019-05-11',
 		path: '/resources/',
 		icon: 'science',
-		title: 'Marcello Pogliani Presents At Black Hat USA',
+		name: 'Marcello Pogliani Presents At Black Hat USA',
 		text: `Marcello Pogliani, Security Engineer at Secure Network, presents a research talk at Black Hat US 2020 together with Dr. Federico Maggi from Trend Micro Research.\n
 		The conference talk, “OTRazor: Static Code Analysis for Vulnerability Discovery in Industrial Automation Scripts“, describes the authors’ findings about security aspects of the proprietary and domain-specific programming languages used to program the movement of industrial robots.\n
 		Marcello worked on the research presented during the talk while being a Ph.D. student and collaborator of Politecnico di Milano, as part of a collaboration with Trend Micro Research.\n
@@ -774,7 +774,7 @@ const res = [
 		date: '2019-05-12',
 		path: '/resources/',
 		icon: 'science',
-		title: 'Marcello Pogliani Presents At Black Hat USA',
+		name: 'Marcello Pogliani Presents At Black Hat USA',
 		text: `Marcello Pogliani, Security Engineer at Secure Network, presents a research talk at Black Hat US 2020 together with Dr. Federico Maggi from Trend Micro Research.\n
 		The conference talk, “OTRazor: Static Code Analysis for Vulnerability Discovery in Industrial Automation Scripts“, describes the authors’ findings about security aspects of the proprietary and domain-specific programming languages used to program the movement of industrial robots.\n
 		Marcello worked on the research presented during the talk while being a Ph.D. student and collaborator of Politecnico di Milano, as part of a collaboration with Trend Micro Research.\n
@@ -785,7 +785,7 @@ const res = [
 		date: '2019-05-01',
 		path: '/resources/',
 		icon: 'feed',
-		title: 'Marcello Pogliani Presents At Black Hat USA',
+		name: 'Marcello Pogliani Presents At Black Hat USA',
 		text: `Marcello Pogliani, Security Engineer at Secure Network, presents a research talk at Black Hat US 2020 together with Dr. Federico Maggi from Trend Micro Research.\n
 		The conference talk, “OTRazor: Static Code Analysis for Vulnerability Discovery in Industrial Automation Scripts“, describes the authors’ findings about security aspects of the proprietary and domain-specific programming languages used to program the movement of industrial robots.\n
 		Marcello worked on the research presented during the talk while being a Ph.D. student and collaborator of Politecnico di Milano, as part of a collaboration with Trend Micro Research.\n

@@ -59,14 +59,25 @@ async function init() {
 		return res.json(await Area.findByPk(area))
 	})
 
-	app.get('/resources/:year', async (req, res) => {
+	app.get('/resources/:id', async (req, res) => {
+		const { id } = req.params
+		return res.json(await Resource.findByPk(id))
+	})
+
+	app.get('/resources-by-year/:year', async (req, res) => {
 		const { year } = req.params
 		const literal_str = 'extract(YEAR FROM date) = ' + year
-		return res.json(
-			await Resource.findAll({
-				where: sequelize.literal(literal_str),
-			})
-		)
+		const payload = await Resource.findAll({
+			where: sequelize.literal(literal_str),
+		})
+		const resources = []
+		payload.forEach((item) => {
+			const id_arr = item.dataValues.id.split('-')
+			const title = ('0' + id_arr[1]).slice(-2) + ' ' + id_arr[0]
+			item.dataValues.title = title
+			resources.push(item.dataValues)
+		})
+		return res.json(resources)
 	})
 	/**
 	 * Specific queries
@@ -190,7 +201,7 @@ async function init() {
 	 * Aggregate queries
 	 */
 
-	app.get('/resources/', async (req, res) => {
+	app.get('/resources-aggregation/', async (req, res) => {
 		const payload = await Resource.findAll({
 			attributes: [
 				[sequelize.literal('extract(YEAR FROM date)'), 'year'],

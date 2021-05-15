@@ -6,11 +6,9 @@
 				:key="'box-' + index + '-' + wrapper"
 				:btn-path="box.path"
 				:icon="box.icon"
-				:title="box.id"
+				:title="box.title"
 				:text="box.text"
-				:card-class="
-					box.type == 'research' ? 'research-box' : 'news-box'
-				"
+				:card-class="box.type + '-box'"
 			/>
 		</div>
 	</section>

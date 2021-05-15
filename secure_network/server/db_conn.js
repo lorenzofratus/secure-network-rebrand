@@ -121,7 +121,7 @@ function defineDatabaseStructure() {
 			},
 			type: DataTypes.ENUM('news', 'research'),
 			date: DataTypes.DATEONLY,
-			title: DataTypes.STRING,
+			name: DataTypes.STRING,
 			text: DataTypes.TEXT,
 			path: DataTypes.STRING,
 			icon: DataTypes.STRING,

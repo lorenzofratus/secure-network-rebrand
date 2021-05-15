@@ -34,11 +34,10 @@ export default {
 		BoxesSection,
 	},
 	layout: 'default',
-	// eslint-disable-next-line require-await
 	async asyncData({ $axios, route }) {
 		const { year } = route.params
 		const { data } = await $axios.get(
-			`${process.env.BASE_URL}/api/resources/${year}`
+			`${process.env.BASE_URL}/api/resources-by-year/${year}`
 		)
 		const resources = data
 		return { resources, year }
@@ -81,37 +80,6 @@ export default {
 				],
 			},
 			animating: false,
-			items_section: [
-				{
-					icon: 'science',
-					title: '05 August',
-					text: 'Marcello Pogliani presents at Black Hat USA',
-					path: '/resources/2020/05-August',
-					class: 'research-box',
-				},
-				{
-					icon: 'feed',
-					title: '08 July',
-					text: 'Alvise discusses Industry 4.0 During the Recovery',
-					path: '/',
-					class: 'news-box',
-				},
-				{
-					icon: 'science',
-					title: '24 June',
-					text:
-						'European Commission appoints Stefano Zanero to the SCCG',
-					path: '/',
-					class: 'research-box',
-				},
-				{
-					icon: 'feed',
-					title: '30 December',
-					text: 'Alvise Biffi at the Silver Economy Forum',
-					path: '/',
-					class: 'news-box',
-				},
-			],
 		}
 	},
 	computed: {

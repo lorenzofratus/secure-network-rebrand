@@ -2,7 +2,7 @@
 	<div class="card box" :class="cardClass">
 		<span class="heading">
 			<span class="icon material-icons">{{ icon }}</span>
-			<h3 class="title">{{ formatTitle }}</h3>
+			<h3 class="title">{{ title }}</h3>
 		</span>
 		<p class="text">
 			{{ abstract }}
@@ -55,9 +55,6 @@ export default {
 			if (words.length <= count) return words.join(' ')
 			words = words.splice(0, count)
 			return words.join(' ') + ' ...'
-		},
-		formatTitle() {
-			return this.title.replace(/-/g, ' ')
 		},
 	},
 }

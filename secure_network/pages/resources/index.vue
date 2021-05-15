@@ -23,7 +23,7 @@ export default {
 	layout: 'default',
 	async asyncData({ $axios }) {
 		const { data } = await $axios.get(
-			`${process.env.BASE_URL}/api/resources`
+			`${process.env.BASE_URL}/api/resources-aggregation`
 		)
 		const years = data
 		console.log(years)
