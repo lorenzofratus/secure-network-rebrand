@@ -129,6 +129,29 @@ async function init() {
 		)
 	})
 
+	app.get('/last-news/:n', async (req, res) => {
+		const { n } = req.params
+		const payload = await Resource.findAll({
+			limit: n,
+			where: { type: 'news' },
+			order: [['date', 'DESC']],
+		})
+		const resources = []
+		let date
+		payload.forEach((item) => {
+			const id_arr = item.dataValues.id.split('-')
+			date = new Date(item.dataValues.date)
+			item.dataValues.title =
+				('0' + date.getDate()).slice(-2) +
+				' ' +
+				date.toLocaleString('EN', { month: 'long' }) +
+				' ' +
+				date.getFullYear()
+			resources.push(item.dataValues)
+		})
+		return res.json(resources)
+	})
+
 	/**
 	 * Joined queries
 	 */
@@ -218,10 +241,9 @@ async function init() {
 			type = item.dataValues.type
 			count = item.dataValues.count
 			if (r[year] == null) {
-				r[year] = {}
+				r[year] = { year: +year }
 			}
 			r[year][type] = +count
-			r[year].year = +year
 		})
 		const resources = []
 		for (const prop in r) {
@@ -235,6 +257,19 @@ async function init() {
 			resources.unshift(r[prop])
 		}
 		return res.json(resources)
+	})
+
+	/**
+	 * Utility queries
+	 */
+	app.get('/people_ids/:area', async (req, res) => {
+		const { area } = req.params
+		return res.json(
+			await Person.findAll({
+				attributes: [['id', 'person_id']],
+				where: { area_id: area, [Op.not]: { role: 'founder' } },
+			})
+		)
 	})
 
 	/**

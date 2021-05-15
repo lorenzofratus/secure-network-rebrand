@@ -98,10 +98,11 @@ p.centered {
 a,
 a:visited {
 	color: var(--primary-color);
+	transition: 0.35s color ease-in-out;
 }
 a:hover,
 a:focus {
-	color: var(--light-color);
+	color: var(--dark-color);
 }
 
 .spacer {

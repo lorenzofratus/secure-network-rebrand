@@ -3,12 +3,13 @@
 		<main-section
 			:img="resource.img"
 			:title="resource.title"
-			:subtitle="'!------SHOULD BE REMOVED------! ' + resource.name"
+			:subtitle="resource.subtitle"
 			:wrapper="resource.id"
 		/>
 		<alt-section
 			:title="resource.name"
 			:paragraphs="resource.paragraphs"
+			:contains-link="true"
 			:wrapper="resource.id"
 		/>
 	</div>

@@ -14,20 +14,36 @@
 			:button="alt_section.button"
 			:centered="alt_section.centered"
 		/>
+		<boxes-section
+			:title="'Last News'"
+			:boxes="resources"
+			:wrapper="wrapper"
+			class="resources"
+		/>
 	</div>
 </template>
 
 <script>
 import MainSection from '~/components/sections/MainSection.vue'
 import AltSection from '~/components/sections/AltSection.vue'
+import BoxesSection from '~/components/sections/BoxesSection.vue'
 
 export default {
 	components: {
 		MainSection,
 		AltSection,
+		BoxesSection,
 	},
 	layout: 'default',
-	async asyncData({ $axios }) {},
+	async asyncData({ $axios }) {
+		// Choose the number of news you want to get
+		const n = 4
+		const { data } = await $axios.get(
+			`${process.env.BASE_URL}/api/last-news/${n}`
+		)
+		const resources = data
+		return { resources }
+	},
 	data() {
 		return {
 			wrapper: 'Index',

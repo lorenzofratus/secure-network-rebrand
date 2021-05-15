@@ -31,11 +31,10 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 a {
 	text-decoration: none;
 }
-
 .circle {
 	position: relative;
 	margin: 30% 0 2em;

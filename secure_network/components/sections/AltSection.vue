@@ -4,7 +4,7 @@
 	>
 		<div class="content">
 			<h2 class="spacer">{{ title }}</h2>
-			<div v-if="paragraphs" class="paragraphs">
+			<div v-if="paragraphs && !containsLink" class="paragraphs">
 				<p
 					v-for="(p, index) in paragraphs"
 					:key="'paragraph-' + index + '-' + wrapper"
@@ -12,6 +12,14 @@
 				>
 					{{ p }}
 				</p>
+			</div>
+			<div v-if="paragraphs && containsLink" class="paragraphs">
+				<p
+					v-for="(p, index) in paragraphs"
+					:key="'paragraph-' + index + '-' + wrapper"
+					:class="{ centered: centered }"
+					v-html="p"
+				></p>
 			</div>
 			<div v-if="button.text">
 				<button-component
@@ -43,6 +51,11 @@ export default {
 		wrapper: {
 			type: String,
 			required: true,
+		},
+		containsLink: {
+			type: Boolean,
+			required: false,
+			default: false,
 		},
 		button: {
 			type: Object,

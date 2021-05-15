@@ -35,7 +35,8 @@ function refineRes(items) {
 		const day = d.getDate()
 		const year = d.getFullYear()
 		item.id = month + '-' + day
-		item.path = item.path + year + '/' + item.id
+		item.path = '/resources/' + year + '/' + item.id
+		item.icon = item.type == 'research' ? 'science' : 'feed'
 	})
 }
 
@@ -738,58 +739,225 @@ const p_s = [
 const res = [
 	{
 		type: 'research',
-		date: '2020-05-19',
-		path: '/resources/',
-		icon: 'science',
+		date: '2020-08-05',
 		name: 'Marcello Pogliani Presents At Black Hat USA',
-		text: `Marcello Pogliani, Security Engineer at Secure Network, presents a research talk at Black Hat US 2020 together with Dr. Federico Maggi from Trend Micro Research.\n
-		The conference talk, “<a href="https://www.blackhat.com/us-20/briefings/schedule/index.html#otrazor-static-code-analysis-for-vulnerability-discovery-in-industrial-automation-scripts-19523">OTRazor: Static Code Analysis for Vulnerability Discovery in Industrial Automation Scripts</a>“, describes the authors’ findings about security aspects of the proprietary and domain-specific programming languages used to program the movement of industrial robots.\n
-		Marcello worked on the research presented during the talk while being a Ph.D. student and collaborator of Politecnico di Milano, as part of a collaboration with Trend Micro Research.\n
-		The PDF slides of the presentation can be downloaded here.`,
+		subtitle: 'Marcello presents his research',
+		text: `Nick Skelsey, Security Engineer, presents <a target="_blank" href="https://github.com/nskelsey/monopticon">his work</a> visualizing network traffic along with an introduction to Zeek at <a target="_blank" href="https://infosek.net/en/lectures#299">Infosek 2019</a> in Nova Gorica, Solvenia.\n
+		His focus is to provide a simple interface to quickly visualize the networks a penetration tester is operating in.
+		The PDF slides of the presentation can be downloaded <a target="_blank" href="https://www.securenetwork.it/docs/talks/2020-08_BlackHatUS_OTRazor.pdf">here</a>.
+		`,
 	},
 	{
 		type: 'research',
-		date: '2020-05-18',
-		path: '/resources/',
-		icon: 'science',
-		name: 'Marcello Pogliani Presents At Black Hat USA',
-		text: `Marcello Pogliani, Security Engineer at Secure Network, presents a research talk at Black Hat US 2020 together with Dr. Federico Maggi from Trend Micro Research.\n
-		The conference talk, “OTRazor: Static Code Analysis for Vulnerability Discovery in Industrial Automation Scripts“, describes the authors’ findings about security aspects of the proprietary and domain-specific programming languages used to program the movement of industrial robots.\n
-		Marcello worked on the research presented during the talk while being a Ph.D. student and collaborator of Politecnico di Milano, as part of a collaboration with Trend Micro Research.\n
-		The PDF slides of the presentation can be downloaded here.`,
+		date: '2019-11-27',
+		name: 'Nick Shelsey at Infosek',
+		subtitle: 'Nick presents new methods to graph IP networks',
+		text: `Nick Skelsey, Security Engineer, presents <a target="_blank" href="https://github.com/nskelsey/monopticon">his work</a> visualizing network traffic along with an introduction to Zeek at <a target="_blank" href="https://infosek.net/en/lectures#299">Infosek 2019</a> in Nova Gorica, Solvenia.\n
+		His focus is to provide a simple interface to quickly visualize the networks a penetration tester is operating in.\n
+		The PDF slides of the presentation can be downloaded <a target="_blank" href="https://www.securenetwork.it/docs/talks/2019-11_Net-Analysis-with-Zeek.pdf">here</a>.`,
 	},
 	{
 		type: 'research',
-		date: '2019-05-11',
-		path: '/resources/',
-		icon: 'science',
-		name: 'Marcello Pogliani Presents At Black Hat USA',
-		text: `Marcello Pogliani, Security Engineer at Secure Network, presents a research talk at Black Hat US 2020 together with Dr. Federico Maggi from Trend Micro Research.\n
-		The conference talk, “OTRazor: Static Code Analysis for Vulnerability Discovery in Industrial Automation Scripts“, describes the authors’ findings about security aspects of the proprietary and domain-specific programming languages used to program the movement of industrial robots.\n
-		Marcello worked on the research presented during the talk while being a Ph.D. student and collaborator of Politecnico di Milano, as part of a collaboration with Trend Micro Research.\n
-		The PDF slides of the presentation can be downloaded here.`,
+		date: '2019-10-11',
+		name: 'Nick Shelsey at Zeek Week',
+		subtitle: 'Nick presents M0onopticon and aaalm',
+		text: `Nick Skelsey, security engineer at Secure Network, presents <a target="_blank" href="https://github.com/nskelsey/monopticon">Monopticon</a> a tool to analyze attacks inside of local networks at <a target="_blank" href="https://www.zeekweek.com">Zeek Week 2019</a> in Seattle, Washington.\n
+		The project provides a simple interface to quickly visualize the networks a penetration tester is operating in.\n
+		The PDF slides of the presentation can be downloaded <a target="_blank" href="https://www.securenetwork.it/docs/talks/2019-10_Traffic-Analysis-Monopticon.pdf">here</a>.`,
 	},
 	{
 		type: 'research',
-		date: '2019-05-12',
-		path: '/resources/',
-		icon: 'science',
-		name: 'Marcello Pogliani Presents At Black Hat USA',
-		text: `Marcello Pogliani, Security Engineer at Secure Network, presents a research talk at Black Hat US 2020 together with Dr. Federico Maggi from Trend Micro Research.\n
-		The conference talk, “OTRazor: Static Code Analysis for Vulnerability Discovery in Industrial Automation Scripts“, describes the authors’ findings about security aspects of the proprietary and domain-specific programming languages used to program the movement of industrial robots.\n
-		Marcello worked on the research presented during the talk while being a Ph.D. student and collaborator of Politecnico di Milano, as part of a collaboration with Trend Micro Research.\n
-		The PDF slides of the presentation can be downloaded here.`,
+		date: '2018-10-02',
+		name: 'Andrea Braschi at Sector',
+		subtitle: 'Presentation video is now available online',
+		text: `On October the 2ndat the SecTor conference (Toronto, CA). Andrea Braschi, Security Engineer at Secure Network, presented “Heimdall - Vulnerable Host Discovery and Lifecycle Monitoring Toolkit”.\n
+		The video can be found <a target="_blank" href="https://sector.ca/sessions/heimdall-vulnerable-host-discovery-and-lifecycle-monitoring-toolkit/">HERE</a>`,
+	},
+	{
+		type: 'research',
+		date: '2018-01-31',
+		name: 'Night of the Living Vulns',
+		subtitle: 'Presentation slides now available for download',
+		text: `On January 31st at the <a target="_blank" href="https://artintoscience.com/">Art Into Science Conference</a> (Austin, TX) Stefano Zanero, President at Secure Network, and Roberto Clapis, Security Engineer at Secure Network, presented “Night of the Living Vulns”.\n
+		Presentation slides in PDF format are now available for download <a target="_blank" href="https://www.securenetwork.it/docs/talks/2018-01_ACOD_Night-of-the-Living-Vulns.pdf">here</a>.`,
+	},
+	{
+		type: 'research',
+		date: '2018-01-30',
+		name: 'Dissecting Scada in Security',
+		subtitle: 'Presentation slides now available for download',
+		text: `On January 30th at the <a target="_blank" href="https://icsforum.it/">Industrial CyberSecurity Forum</a> (Milan, MI) Alberto Volpatto, CTO at Secure Network, presented “Dissecting SCADA (in)security”.\n
+		Presentation slides in PDF format are now available for download <a target="_blank" href="https://www.securenetwork.it/docs/talks/2018-01_ICS_Dissecting-Scada-Insecurity.pdf">here</a>.`,
+	},
+	{
+		type: 'research',
+		date: '2017-04-08',
+		name: 'Go get My Vulnerabilities',
+		subtitle: 'Presentation slides now available for download',
+		text: `On March 31st at <a target="_blank" href="https://www.blackhat.com/asia-17">BlackHat Asia</a> (Singapore, SG) Roberto Clapis, Security Engineer at Secure Network, presented “Go get my/vulnerabilities”.\n
+		Presentation slides in PDF format are now available for download <a target="_blank" href="https://www.securenetwork.it/docs/talks/2017-03_blackhatasia_go-get-my-vulnerabilities.pdf">here</a>.`,
+	},
+	{
+		type: 'research',
+		date: '2017-01-12',
+		name: 'Risk based secure design of automotive networks',
+		subtitle: 'Presentation slides now available for download',
+		text: `On October 22nd at <a target="_blank" href="https://www.h2hc.com.br/h2hc/en/">H2HC 2016</a> (Sao Paulo, BR) Stefano Zanero, President and founder of Secure Network, presented “Risk based secure design of automotive networks”.\n
+		Presentation slides in PDF format are now available for download <a target="_blank" href="https://www.securenetwork.it/docs/talks/2016-10_H2HC_risk-based-secure-design-of-automotive-networks.pdf">here</a>.`,
 	},
 	{
 		type: 'news',
-		date: '2019-05-01',
-		path: '/resources/',
-		icon: 'feed',
-		name: 'Marcello Pogliani Presents At Black Hat USA',
-		text: `Marcello Pogliani, Security Engineer at Secure Network, presents a research talk at Black Hat US 2020 together with Dr. Federico Maggi from Trend Micro Research.\n
-		The conference talk, “OTRazor: Static Code Analysis for Vulnerability Discovery in Industrial Automation Scripts“, describes the authors’ findings about security aspects of the proprietary and domain-specific programming languages used to program the movement of industrial robots.\n
-		Marcello worked on the research presented during the talk while being a Ph.D. student and collaborator of Politecnico di Milano, as part of a collaboration with Trend Micro Research.\n
-		The PDF slides of the presentation can be downloaded here.`,
+		date: '2021-04-26',
+		name: 'We are hiring!',
+		subtitle:
+			'We are looking for Junior Security Engineers to join our team!',
+		text: `We currently have vacancies for Junior Security Engineers to help us grow our team. We require passion, a basic knowledge of information security, programming and general IT architectures. Fluency in both English and Italian is required. For further information, <a target="_blank" href="https://www.bv-tech.it/it/junior-security-engineer-penetration-tester/">here</a> the full job post (in Italian only). Do you want to join us? Send your CV to our recruitment team at <a target="_blank" href="mailto:recruitment@bv-tech.it">recruitment@bv-tech.it</a>!`,
+	},
+	{
+		type: 'news',
+		date: '2020-07-08',
+		name: 'Alvise Discusses Industry 4.0 during the recovery',
+		subtitle: 'Alvise talks long term strategy.',
+		text: `Alvise Biffi, the coordinator of the Assolombardia’s cybersecurity Steering Committee and CEO of Secure Network, introduces Andrea Provini another member to discuss the adoption of cybersecurity strategy that considers the infrastructure, novel technology and personnel. More infor <a target="_blank" href="https://www.assolombarda.it/servizi/manifattura-e-industria-40/industria-40-per-la-ripartenza-focus-cybersecurity-webinar-8-luglio/">here</a>.`,
+	},
+	{
+		type: 'news',
+		date: '2020-06-24',
+		name: 'European Commission appoints Stefano Zanero to the SCCG',
+		subtitle: 'Stefano was appointed to SCCG',
+		text: `The European Commisson selects Professor Zanero for a role on the SCCG, an advisory body to the European Union Agency for Cybersecurity (ENISA). SCCG is the new group created by the European Commission and the European Union Agency for Cybersecurity (ENISA) as an advisory body on strategic issues on cybersecurity certification. He will primarily represent Politecnico Milano in his role there.`,
+	},
+	{
+		type: 'news',
+		date: '2020-06-17',
+		name: 'Alvise Biffi at the Silver Economy Forum',
+		subtitle: 'Alvise Biffi talks security by design at economic forum',
+		text: `Alvise Biffi recounted his experiences on projects securing and improving medical devices and telehealth at the Silver Economy Forum web conference. The silver economy composes over 25% of Italy’s national GDP and provides critical services to the country’s older population.`,
+	},
+	{
+		type: 'news',
+		date: '2019-04-10',
+		name: 'Business Mission to the UAE',
+		subtitle: 'Alvise Biffi along with the Confindustria Delegation',
+		text: `From April 14th to 16th, our CEO Alvise Biffi will take part at the Business Mission to the UAE along with a Confindustria Delegation (the largest association representing manufacturing and service companies in Italy). He will be presenting the Cybersecurity Services and the Fraud Prevention Systems offered by Secure Network.`,
+	},
+	{
+		type: 'news',
+		date: '2019-02-07',
+		name: 'CONNEXT',
+		subtitle: 'Secure Network at CONNEXT',
+		text: `Secure Network will have a speed pitch today at 1 p.m. at Connext Milano. We are also showcasing at the event, come and meet us!`,
+	},
+	{
+		type: 'news',
+		date: '2017-05-06',
+		name: 'Go get my/vulnerabilities',
+		subtitle: 'Roberto Clapis at HackInBo spring edition 2017',
+		text: `Roberto Clapis, security engineer at Secure Network, was present as a speaker at Black Hat Asia 2017.\n
+		On May 6th at <a target="_blank" href="https://www.hackinbo.it/singolo-relatore.php?id=28">HackInBo Spring edition 2017</a> (Bologna, IT) he presented “GO GET MY/VULNERABILITIES”.\n
+		The talk dives into golang scheduling internals and shows how the differences between classical threads and goroutines can lead to the introduction of new vulnerabilities. Goroutines, one of the go language unique features, is explained in details, showing how easy it is to misuse them. Every issue those features can introduce has been explained along with good code practices in order to provide attendees with the instruments to detect and prevent them.`,
+	},
+	{
+		type: 'news',
+		date: '2017-01-23',
+		name: 'Interview at Stefano Zanero',
+		subtitle: 'Stefano Zanero interview at Repubblica newspaper',
+		text: `Stefano Zanero, President and founder of Secure Network, was interviewed at the newspaper Repubblica.\n
+		The article dives into the possibility of cyber attack on the Milan city hall. Copy of the newspaper can be found <a target="_blank" href="https://www.securenetwork.it/docs/misc/2017-01_mimesi.pdf">here</a>.`,
+	},
+	{
+		type: 'news',
+		date: '2017-01-13',
+		name: 'Go get my/vulnerabilities',
+		subtitle: 'Roberto Clapis at Black Hat Asia 2017',
+		text: `Roberto Clapis, security engineer at Secure Network, will be present as a speaker at Black Hat Asia 2017.\n
+		On March 28th at <a target="_blank" href="https://www.blackhat.com/asia-17/briefings/schedule/index.html#go-get-myvulnerabilities-an-in-depth-analysis-of-go-language-runtime-and-the-new-class-of-vulnerabilities-it-introduces-5392">Black Hat Asia 2017</a> (Singapore) he will present “GO GET MY/VULNERABILITIES”.\n
+		The talk will dive into golang scheduling internals and will show how the differences between classical threads and goroutines can lead to the introduction of new vulnerabilities. Goroutines, one of the go language unique features, will be explained in details, showing how easy it is to misuse them. Every issue those features can introduce will be explained along with good code practices in order to provide attendees with the instruments to detect and prevent them.`,
+	},
+	{
+		type: 'news',
+		date: '2015-09-16',
+		name: 'Diving into Windows mobile platforms app security!',
+		subtitle: 'Luca De Fulgentis at Cyber Security Europe 2015',
+		text: `Luca De Fulgentis, CTO of Secure Network, will be present as a speaker at Cyber Security Europe 2015.\n
+		On October 8th at <a target="_blank" href="http://www.ipexpoeurope.com/Seminar-Planner/Cyber-Hack/Thursday-08-October-2015/Diving-into-Windows-Mobile-Platforms-App-Security">Cyber Security Europe</a> (London, UK) he will present “Diving into Windows mobile platforms app security!”.\n
+		The talk represents a journey into the meanders of application security targeting the new Windows Phone 8.1 and the upcoming Windows 10 Mobile systems. Starting from the description of the platforms application security models, the talk will illustrate strategies on secure design and development, while also describing security issues involving real world apps available on the Windows Store. Demos on app vulnerabilities exploitation will be provided as well.`,
+	},
+	{
+		type: 'news',
+		date: '2015-05-18',
+		name: 'Windows phone App Security for Builders and Breakers',
+		subtitle: 'Luca De Fulgentis at AppSecEU 2015',
+		text: `Luca De Fulgentis, CTO of Secure Network, will be present as a speaker at OWASP AppSecEU 2015.\n
+		On May 22nd at <a target="_blank" href="https://2015.appsec.eu/conference-program/">AppSecEU</a> (Amsterdam, NL) he will present “Windows phone App Security for Builders and Breakers”, the result of his research on Windows Phone security.\n
+		The talk will detail examples of real-world insecure code involving Windows Phone app developed with Silverlight and Windows Runtime technologies, which has been identified during our recent contribution to the definition of the Mobile Top Ten 2015. Each vulnerability has been mapped and organized on the basis of the MTT 2014 entries, thus representing a useful resource for both developers and security professionals.`,
+	},
+	{
+		type: 'news',
+		date: '2015-04-30',
+		name: 'Secure Network sponsor of Hack in The Box',
+		subtitle:
+			'Secure Network is official sponsor of HiTB security conference',
+		text: `Secure Network is based in Milan and in London and since 2004 attacks your enterprise to evaluate how it reacts to the widespread and emerging threats of the interconnected world. Forged by years of testing and research, our security engineers gained a deep expertise in breaking applications, services, networks and systems.\n
+		Our research has been featured at international conferences ranging from Black Hat to DEF CON. The most recent projects focused on the ever-growing mobile environment, identifying innovative vulnerabilities within NFC ticketing systems and Windows Phone devices and applications, which will be presented to HITBSecConf in Amsterdam next May 29th and at Black Hat Mobile Security Conference in London next June 17th.\n
+		More info about the conference can be found at <a target="_blank" href="http://conference.hitb.org/hitbsecconf2015ams/">this link</a>`,
+	},
+	{
+		type: 'news',
+		date: '2015-02-24',
+		name: 'Luca De Fulgentis at SEMAFOR 2015',
+		subtitle: 'Warsaw (PL), 26th - 27th March',
+		text: `Luca De Fulgentis, CTO of Secure Network, will be present as a speaker at SEMAFOR 2015.\n
+		On March 26th - 27th at <a target="_blank" href="http://www.computerworld.pl/konferencja/semafor2015">SEMAFOR 2015</a> (Warsaw, PL) he will talk about Windows Phone security, with a particular focus on application security.`,
+	},
+	{
+		type: 'news',
+		date: '2015-02-11',
+		name: 'The Windows Phone Freakshow',
+		subtitle: 'Luca De Fulgentis at HiTB 2015',
+		text: `Luca De Fulgentis, CTO of Secure Network, will be present as a speaker at Hack in The Box 2015.\n
+		On May 29th at <a target="_blank" href="http://conference.hitb.org/hitbsecconf2015ams/sessions/windows-phone-freakshow/">HiTB 2015</a> (Amsterdam, NL) he will present “The Windows Phone Freakshow”, the result of his latest research on Windows Phone security. Attendees will enjoy a great show of genuine (i.e. real world) and unique (i.e. previously undisclosed) exemplars of “freak code” in Windows Phone apps.`,
+	},
+	{
+		type: 'research',
+		date: '2015-12-23',
+		name: 'The Dark Ages of IoT Security',
+		subtitle: 'Presentation slides now available for download',
+		text: `On October 21st at <a target="_blank" href="http://www.smau.it/milano15/schedules/the-dark-ages-of-iot-security/">SMAU 2015</a> (Milan, IT) Stefano Zanero, President and founder of Secure Network, presented “The Dark Ages of IoT Security”.\n
+		Presentation slides in PDF format are now available for download <a target="_blank" href="https://www.securenetwork.it/docs/talks/2015-10_smau2015_the-dark-ages-of-iot-security.pdf">here</a>.`,
+	},
+	{
+		type: 'research',
+		date: '2015-07-20',
+		name: 'Down the SCADA (security) Rabbit Hole',
+		subtitle: 'Presentation slides now available for download',
+		text: `On July 8th at <a target="_blank" href="http://www.dimva2015.it/program.html">DIMVA 2015 Workshop</a> (Milano, IT) Alberto Volpatto, Security Engineer &amp; Team Leader of Secure Network, presented “Down the SCADA (security) Rabbit Hole”\n
+		Presentation slides in PDF format are now available for download <a target="_blank" href="https://www.securenetwork.it/docs/talks/2015-07_down-the-scada-security-rabbit-hole.pdf">here</a>.`,
+	},
+	{
+		type: 'research',
+		date: '2015-05-29',
+		name: 'The Windows Phone Freakshow',
+		subtitle: 'Presentation slides and whitepaper now available',
+		text: `On May 29nd at <a target="_blank" href="http://conference.hitb.org/hitbsecconf2015ams/sessions/windows-phone-freakshow/">HiTB 2015</a> (Amsterdam, NL) Luca De Fulgentis, CTO of Secure Network, presented “The Windows Phone Freakshow”, the result of his latest research on Windows Phone security\n
+		Presentation slides in PDF format are now available for download <a target="_blank" href="https://conference.hitb.org/hitbsecconf2015ams/wp-content/uploads/2015/02/D2T1-Luca-De-Fulgentis-The-Windows-Phone-Freakshow.pdf">here</a>.\n
+		The research whitepaper in PDF format is available <a target="_blank" href="https://conference.hitb.org/hitbsecconf2015ams/wp-content/uploads/2015/02/WHITEPAPER-The-Windows-Phone-Freakshow.pdf">here</a>.`,
+	},
+	{
+		type: 'research',
+		date: '2015-05-08',
+		name: 'SN-15-02 eFront Multiple Vulnerabilities',
+		subtitle: 'New security advisory for eFront',
+		text: `Secure Network releases the security advisory SN-15-02 for multiple vulnerabilities found in eFront.\n
+		<a target="_blank" href="https://www.securenetwork.it/docs/advisory/SN-15-02_eFront.pdf">SN-15-02</a>: multiple high-impact vulnerabilities have been identified in eFront version 3.6.15, which could lead to critical confidentiality violations and data theft or disruption.`,
+	},
+	{
+		type: 'research',
+		date: '2015-06-06',
+		name: 'Breaking Mifare Ultralight',
+		subtitle: 'Presentation slides available from TetCon Saigon 2015',
+		text: `On January 6th at TetCon Saigon 2015 (Ho Chi Minh, Vietnam), Matteo Beccaro presented NFCulT, the ultimate open source Android app that will let you research and exploit vulnerabilities in Ultralight implementations.\n
+		Presentation slides in PDF format version are now available for download <a target="_blank" href="https://www.securenetwork.it/docs/talks/2015-01_Tetcon-Saigon-2015.pdf">here</a>.`,
 	},
 ]
 

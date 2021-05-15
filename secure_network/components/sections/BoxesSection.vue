@@ -1,5 +1,6 @@
 <template>
 	<section>
+		<title-component v-if="title != ''" :title="title" />
 		<div class="content grid">
 			<box-card
 				v-for="(box, index) in boxes"
@@ -7,7 +8,7 @@
 				:btn-path="box.path"
 				:icon="box.icon"
 				:title="box.title"
-				:text="box.text"
+				:text="box.name"
 				:card-class="box.type + '-box'"
 			/>
 		</div>
@@ -16,9 +17,9 @@
 
 <script>
 import BoxCard from '../items/BoxCard.vue'
-
+import TitleComponent from '~/components/items/TitleComponent.vue'
 export default {
-	components: { BoxCard },
+	components: { BoxCard, TitleComponent },
 	props: {
 		wrapper: {
 			type: String,
@@ -27,6 +28,11 @@ export default {
 		boxes: {
 			type: Array,
 			required: true,
+		},
+		title: {
+			type: String,
+			required: false,
+			default: '',
 		},
 	},
 }

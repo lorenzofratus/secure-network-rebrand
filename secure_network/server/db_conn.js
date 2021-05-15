@@ -125,6 +125,7 @@ function defineDatabaseStructure() {
 			text: DataTypes.TEXT,
 			path: DataTypes.STRING,
 			icon: DataTypes.STRING,
+			subtitle: DataTypes.STRING,
 		},
 		{ sequelize: db, modelName: 'resource' }
 	)
