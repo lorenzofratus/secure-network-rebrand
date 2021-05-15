@@ -18,7 +18,7 @@
 				</h4>
 				<h1 class="title">{{ title }}</h1>
 				<h3 v-if="subtitle" class="subtitle">{{ subtitle }}</h3>
-				<div v-if="buttons.length > 0" class="buttons">
+				<div v-if="buttons.length" class="buttons">
 					<button-component
 						v-for="(button, index) in buttons"
 						:key="'main-section-button-' + index + '-' + wrapper"
@@ -26,6 +26,7 @@
 						:btn-class="button.class"
 						:btn-text="button.text"
 					/>
+					<div v-if="buttons.length == 1" />
 				</div>
 			</div>
 			<img :src="img" class="cover" :class="{ rounded: isRounded }" />
