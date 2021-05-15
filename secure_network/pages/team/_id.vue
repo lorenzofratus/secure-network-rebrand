@@ -15,6 +15,7 @@
 
 		<image-components-section
 			v-if="area != null"
+			id="area"
 			title="Current occupation"
 			:components="[area]"
 			:wrapper="person.id"
@@ -22,6 +23,7 @@
 
 		<items-section
 			v-if="services.length"
+			id="services"
 			title="Provided Services"
 			:wrapper="person.id"
 			:items="services"
@@ -78,13 +80,13 @@ export default {
 				buttons: [
 					{
 						class: 'primary',
-						text: 'Section',
-						path: '/',
+						text: 'My Area',
+						path: '#area',
 					},
 					{
 						class: 'secondary',
-						text: 'Contact us',
-						path: '/contacts',
+						text: 'My Services',
+						path: '#services',
 					},
 				],
 				isRounded: true,
