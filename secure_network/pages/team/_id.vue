@@ -1,7 +1,7 @@
 <template>
 	<div class="container">
 		<main-section
-			:buttons="main_section.buttons"
+			:buttons="buttons"
 			:img="person.img"
 			:title="person.name + ' ' + person.surname"
 			:wrapper="person.id"
@@ -68,27 +68,33 @@ export default {
 		)
 		const services = payload.data
 
+		const buttons = [
+			{
+				class: 'primary',
+				text: 'My Area',
+				path: '#area',
+			},
+			{
+				class: 'secondary',
+				text: 'My Services',
+				path: '#services',
+			},
+		]
+		if (person.role === 'founder') {
+			buttons.shift()
+			buttons[0].class = 'primary'
+		}
+
 		return {
 			person,
 			area,
 			services,
+			buttons,
 		}
 	},
 	data() {
 		return {
 			main_section: {
-				buttons: [
-					{
-						class: 'primary',
-						text: 'My Area',
-						path: '#area',
-					},
-					{
-						class: 'secondary',
-						text: 'My Services',
-						path: '#services',
-					},
-				],
 				isRounded: true,
 			},
 		}
