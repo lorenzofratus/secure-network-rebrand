@@ -95,7 +95,6 @@ export default {
 					},
 				],
 			},
-			breadcrumbs: [{ text: 'Areas', path: '/areas' }],
 		}
 	},
 }

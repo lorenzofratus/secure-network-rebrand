@@ -738,6 +738,11 @@ const p_s = [
 		service_id: 'vulnerability-assessment',
 		isReference: true,
 	},
+	{
+		person_id: 'michiele-roviello',
+		service_id: 'vulnerability-assessment',
+		isReference: true,
+	},
 ].sort(compareByName)
 
 const res = [
