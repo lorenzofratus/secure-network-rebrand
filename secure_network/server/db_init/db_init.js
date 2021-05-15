@@ -739,8 +739,18 @@ const p_s = [
 		isReference: true,
 	},
 	{
-		person_id: 'michiele-roviello',
+		person_id: 'alvise-biffi',
 		service_id: 'vulnerability-assessment',
+		isReference: true,
+	},
+	{
+		person_id: 'alvise-biffi',
+		service_id: 'software-licensing-&-code-protection',
+		isReference: true,
+	},
+	{
+		person_id: 'alvise-biffi',
+		service_id: 'wireless-network-&-infrastructres',
 		isReference: true,
 	},
 ].sort(compareByName)
