@@ -40,24 +40,6 @@ export default {
 	components: {
 		ButtonComponent,
 	},
-	computed: {
-		breadcrumbs() {
-			const steps = this.$route.fullPath.split('/')
-			steps.shift()
-			steps.pop()
-			console.log(steps)
-
-			const breadcrumbs = []
-			steps.forEach((step, index) => {
-				breadcrumbs.push({
-					text: step.replace(/-/g, ' '),
-					path: '/' + steps.slice(0, index + 1).join('/'),
-				})
-			})
-
-			return breadcrumbs
-		},
-	},
 	props: {
 		title: {
 			type: String,
@@ -90,13 +72,23 @@ export default {
 				return false
 			},
 		},
-		/* breadcrumbs: {
-			type: Array,
-			required: false,
-			default() {
-				return []
-			},
-		}, */
+	},
+	computed: {
+		breadcrumbs() {
+			const steps = this.$route.fullPath.split('/')
+			steps.shift()
+			steps.pop()
+
+			const breadcrumbs = []
+			steps.forEach((step, index) => {
+				breadcrumbs.push({
+					text: step.replace(/-/g, ' '),
+					path: '/' + steps.slice(0, index + 1).join('/'),
+				})
+			})
+
+			return breadcrumbs
+		},
 	},
 }
 </script>

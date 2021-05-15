@@ -16,7 +16,7 @@
 		/>
 		<boxes-section
 			id="news"
-			:title="'Last News'"
+			:title="'Latest News'"
 			:boxes="resources"
 			:wrapper="wrapper"
 			class="resources"
@@ -54,7 +54,7 @@ export default {
 				buttons: [
 					{
 						class: 'primary',
-						text: 'Last News',
+						text: 'Latest News',
 						path: '#news',
 					},
 					{

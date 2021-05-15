@@ -24,13 +24,12 @@ export default {
 	},
 	methods: {
 		scrollTo(event) {
-			const target = document.querySelector(
-				event.target.closest('a').hash
-			)
+			const anchor = event.target.closest('a')
+			const target = document.querySelector(anchor.hash)
 			if (!target) return
 			event.preventDefault()
 
-			this.$scrollTo(target)
+			this.$scrollTo(target, +anchor.getAttribute('data-offset') || 0)
 		},
 	},
 }

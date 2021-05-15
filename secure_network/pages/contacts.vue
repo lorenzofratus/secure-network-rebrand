@@ -7,6 +7,7 @@
 			:wrapper="wrapper"
 		/>
 		<form-section
+			id="email"
 			title="We Can Guarantee Your Security Together"
 			:wrapper="wrapper"
 		/>
@@ -29,13 +30,23 @@
 					<span class="icon material-icons">email</span>
 					<p class="info">info@securenetwork.it</p>
 				</a>
-				<a class="card interactive" tabindex="0" @click="showMap(1)">
+				<a
+					href="#map"
+					data-offset="-100"
+					class="card interactive"
+					@click="showMap(1)"
+				>
 					<h3 class="spacer">Italy</h3>
 					<p class="info centered">
 						Via Valtorta, 48<br />20127, Milano
 					</p>
 				</a>
-				<a class="card interactive" tabindex="0" @click="showMap(2)">
+				<a
+					href="#map"
+					data-offset="-100"
+					class="card interactive"
+					@click="showMap(2)"
+				>
 					<h3 class="spacer">Italy</h3>
 					<p class="info centered">
 						Piazza A. Diaz, 6<br />20123, Milano
@@ -68,6 +79,11 @@ export default {
 				buttons: [
 					{
 						class: 'primary',
+						text: 'Email Us',
+						path: '#email',
+					},
+					{
+						class: 'secondary',
 						text: 'Reach Us',
 						path: '#info',
 					},
@@ -82,13 +98,9 @@ export default {
 			activeMap: 1,
 		}
 	},
-	mounted() {
-		this.map = document.getElementById('map')
-	},
 	methods: {
 		showMap(index) {
 			this.activeMap = index
-			this.$scrollTo(this.map, -100)
 		},
 	},
 }

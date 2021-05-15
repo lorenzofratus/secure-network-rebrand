@@ -88,12 +88,12 @@ export default {
 			buttons: [
 				{
 					class: 'primary',
-					text: 'Area',
+					text: 'See Area',
 					path: '#areas',
 				},
 				{
 					class: 'secondary',
-					text: 'Team',
+					text: 'See Team',
 					path: '#team',
 				},
 			],

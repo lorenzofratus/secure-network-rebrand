@@ -52,7 +52,7 @@ export default {
 				buttons: [
 					{
 						class: 'primary',
-						text: 'Services',
+						text: 'See Services',
 						path: '#services',
 					},
 				],

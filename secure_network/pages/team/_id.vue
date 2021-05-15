@@ -5,7 +5,7 @@
 			:img="person.img"
 			:title="person.name + ' ' + person.surname"
 			:wrapper="person.id"
-			:is-rounded="main_section.isRounded"
+			:is-rounded="true"
 		/>
 		<alt-section
 			:title="'About ' + person.name + '...'"
@@ -68,36 +68,38 @@ export default {
 		)
 		const services = payload.data
 
-		const buttons = [
-			{
-				class: 'primary',
-				text: 'My Area',
-				path: '#area',
-			},
-			{
-				class: 'secondary',
-				text: 'My Services',
-				path: '#services',
-			},
-		]
-		if (person.role === 'founder') {
-			buttons.shift()
-			buttons[0].class = 'primary'
-		}
-
 		return {
 			person,
 			area,
 			services,
-			buttons,
 		}
 	},
 	data() {
 		return {
 			main_section: {
-				isRounded: true,
+				buttons: [
+					{
+						class: 'secondary',
+						text: 'My Area',
+						path: '#area',
+					},
+					{
+						class: 'secondary',
+						text: 'My Services',
+						path: '#services',
+					},
+				],
 			},
 		}
+	},
+	computed: {
+		buttons() {
+			const buttons = []
+			if (this.area != null) buttons.push(this.main_section.buttons[0])
+			if (this.services.length) buttons.push(this.main_section.buttons[1])
+			if (buttons.length) buttons[0].class = 'primary'
+			return buttons
+		},
 	},
 }
 </script>

@@ -65,6 +65,7 @@ a {
 	transition-timing-function: ease-in-out;
 	transition-property: box-shadow, color, background-color;
 	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+	text-transform: capitalize;
 }
 .button.secondary {
 	background-color: var(--dark-color);

@@ -49,7 +49,7 @@ export default {
 				buttons: [
 					{
 						class: 'primary',
-						text: 'Categories',
+						text: 'See Categories',
 						path: '#categories',
 					},
 				],
