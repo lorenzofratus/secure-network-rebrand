@@ -79,7 +79,7 @@ export default {
 			main_section: {
 				buttons: [
 					{
-						class: 'primary',
+						class: 'secondary',
 						text: 'My Area',
 						path: '#area',
 					},
@@ -97,6 +97,7 @@ export default {
 			const buttons = []
 			if (this.area != null) buttons.push(this.main_section.buttons[0])
 			if (this.services.length) buttons.push(this.main_section.buttons[1])
+			if (buttons.length) buttons[0].class = 'primary'
 			return buttons
 		},
 	},

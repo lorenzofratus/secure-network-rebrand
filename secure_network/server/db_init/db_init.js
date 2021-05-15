@@ -526,7 +526,6 @@ const p_s = [
 	{
 		person_id: 'diego-zaffaroni',
 		service_id: 'network-penetration-testing',
-		isReference: true,
 	},
 	{
 		person_id: 'enrico-coronese',
@@ -536,7 +535,6 @@ const p_s = [
 	{
 		person_id: 'enrico-coronese',
 		service_id: 'reverse-engineering',
-		isReference: true,
 	},
 	{
 		person_id: 'ilaria-buonagurio',
@@ -550,7 +548,6 @@ const p_s = [
 	{
 		person_id: 'ilaria-buonagurio',
 		service_id: 'web-application-testing',
-		isReference: true,
 	},
 	{
 		person_id: 'riccardo-cospite',
@@ -577,6 +574,30 @@ const p_s = [
 	{
 		person_id: 'marcello-pogliani',
 		service_id: 'vulnerability-detection-&-exploitation',
+	},
+	{
+		person_id: 'stefano-zanero',
+		service_id: 'vulnerability-detection-&-exploitation',
+		isReference: true,
+	},
+	{
+		person_id: 'stefano-zanero',
+		service_id: 'web-application-testing',
+		isReference: true,
+	},
+	{
+		person_id: 'stefano-zanero',
+		service_id: 'reverse-engineering',
+		isReference: true,
+	},
+	{
+		person_id: 'stefano-zanero',
+		service_id: 'vulnerability-detection-&-exploitation',
+		isReference: true,
+	},
+	{
+		person_id: 'stefano-zanero',
+		service_id: 'network-penetration-testing',
 		isReference: true,
 	},
 	{
@@ -668,7 +689,6 @@ const p_s = [
 	{
 		person_id: 'giorgio-campiotti',
 		service_id: 'penetration-test',
-		isReference: true,
 	},
 	{
 		person_id: 'giorgio-campiotti',
@@ -707,7 +727,6 @@ const p_s = [
 	{
 		person_id: 'tommaso-pescanoce',
 		service_id: 'virtual-infrastructres',
-		isReference: true,
 	},
 	{
 		person_id: 'tommaso-pescanoce',
@@ -731,7 +750,6 @@ const p_s = [
 	{
 		person_id: 'michiele-roviello',
 		service_id: 'software-licensing-&-code-protection',
-		isReference: true,
 	},
 	{
 		person_id: 'michiele-roviello',
@@ -753,7 +771,17 @@ const p_s = [
 		service_id: 'wireless-network-&-infrastructres',
 		isReference: true,
 	},
-].sort(compareByName)
+	{
+		person_id: 'alvise-biffi',
+		service_id: 'virtual-infrastructres',
+		isReference: true,
+	},
+	{
+		person_id: 'alvise-biffi',
+		service_id: 'penetration-test',
+		isReference: true,
+	},
+]
 
 const res = [
 	{
