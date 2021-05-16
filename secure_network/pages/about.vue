@@ -72,7 +72,7 @@ export default {
 				],
 				button: {
 					class: 'secondary',
-					text: 'Our Team',
+					text: 'Discover Our Team',
 					path: '/team',
 				},
 			},
