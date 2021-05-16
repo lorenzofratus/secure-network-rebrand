@@ -13,15 +13,34 @@
 			:wrapper="wrapper"
 			:button="alt_section.button"
 		/>
+
+		<image-components-section
+			id="founders"
+			title="Our Founders"
+			:components="founders"
+			:wrapper="wrapper"
+			:is-rounded="true"
+		/>
 	</div>
 </template>
 
 <script>
 import MainSection from '~/components/sections/MainSection.vue'
 import AltSection from '~/components/sections/AltSection.vue'
+import ImageComponentsSection from '~/components/sections/ImageComponentsSection'
 export default {
-	components: { MainSection, AltSection },
+	components: { MainSection, AltSection, ImageComponentsSection },
 	layout: 'default',
+	async asyncData({ $axios }) {
+		const { data } = await $axios.get(
+			`${process.env.BASE_URL}/api/people-by-role/founder`
+		)
+		const founders = data
+
+		return {
+			founders,
+		}
+	},
 	data() {
 		return {
 			wrapper: 'About',
@@ -31,8 +50,8 @@ export default {
 				buttons: [
 					{
 						class: 'primary',
-						text: 'Our Team',
-						path: '/team',
+						text: 'Our Founders',
+						path: '#founders',
 					},
 					{
 						class: 'secondary',
@@ -51,6 +70,11 @@ export default {
 					Formed by a young and cutting-edge Red Team of engineers and always up to date thanks to the close collaboration with Politecnico di Milano.`,
 					`The stable research and development studies and the active participation to international conferences, lectures and workshops, make Secure Network one of the most effective security companies.`,
 				],
+				button: {
+					class: 'secondary',
+					text: 'Our Team',
+					path: '/team',
+				},
 			},
 		}
 	},

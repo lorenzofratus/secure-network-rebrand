@@ -73,6 +73,11 @@ export default {
 					'We can train your staff and raise your overall security awareness, so that future developments stay reliably and predictably secure.',
 				],
 				centered: true,
+				button: {
+					class: 'secondary',
+					text: 'About Us',
+					path: '/about',
+				},
 			},
 		}
 	},
