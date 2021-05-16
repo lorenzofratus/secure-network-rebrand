@@ -4,6 +4,8 @@ import initializeDatabase from '../db_conn'
 const app = express()
 app.use(express.json())
 
+app.enable('trust proxy')
+
 async function init() {
 	const db = await initializeDatabase()
 	const {
@@ -16,6 +18,13 @@ async function init() {
 	} = db._tables
 	const { Op } = require('sequelize')
 	const sequelize = require('sequelize')
+
+	app.use((req, res, next) => {
+		if (process.env.NODE_ENV !== 'dev' && !req.secure)
+			return res.redirect('https://' + req.headers.host + req.url)
+		next()
+	})
+
 	/**
 	 * Find all queries
 	 */
@@ -66,14 +75,14 @@ async function init() {
 
 	app.get('/resources-by-year/:year', async (req, res) => {
 		const { year } = req.params
-		const literal_str = 'extract(YEAR FROM date) = ' + year
+		const literalStr = 'extract(YEAR FROM date) = ' + year
 		const payload = await Resource.findAll({
-			where: sequelize.literal(literal_str),
+			where: sequelize.literal(literalStr),
 		})
 		const resources = []
 		payload.forEach((item) => {
-			const id_arr = item.dataValues.id.split('-')
-			const title = ('0' + id_arr[1]).slice(-2) + ' ' + id_arr[0]
+			const idArr = item.dataValues.id.split('-')
+			const title = ('0' + idArr[1]).slice(-2) + ' ' + idArr[0]
 			item.dataValues.title = title
 			resources.push(item.dataValues)
 		})
@@ -113,7 +122,7 @@ async function init() {
 	app.get('/people-by-role/:role', async (req, res) => {
 		const { role } = req.params
 		return res.json(
-			await Person.findAll({ where: { role: role }, order: ['id'] })
+			await Person.findAll({ where: { role }, order: ['id'] })
 		)
 	})
 
@@ -123,7 +132,7 @@ async function init() {
 			await Person.findAll({
 				where: {
 					area_id: area,
-					role: role,
+					role,
 				},
 				order: ['id'],
 			})
@@ -149,7 +158,6 @@ async function init() {
 		const resources = []
 		let date
 		payload.forEach((item) => {
-			const id_arr = item.dataValues.id.split('-')
 			date = new Date(item.dataValues.date)
 			item.dataValues.title =
 				('0' + date.getDate()).slice(-2) +
@@ -170,16 +178,16 @@ async function init() {
 		const { area } = req.params
 
 		// Retrieving category ids list
-		const cat_ids = await Service.findAll({
+		const catIds = await Service.findAll({
 			attributes: ['category_id'],
 			where: { area_id: area },
 		})
-		const category_ids = []
-		let cat_id
-		cat_ids.forEach((item) => {
-			cat_id = item.dataValues.category_id
-			if (category_ids.indexOf(cat_id) === -1) {
-				category_ids.push(cat_id)
+		const categoryIds = []
+		let catId
+		catIds.forEach((item) => {
+			catId = item.dataValues.category_id
+			if (!categoryIds.includes(catId)) {
+				categoryIds.push(catId)
 			}
 		})
 
@@ -188,7 +196,7 @@ async function init() {
 			await ServiceCategory.findAll({
 				where: {
 					id: {
-						[Op.in]: category_ids,
+						[Op.in]: categoryIds,
 					},
 				},
 				order: ['id'],
@@ -202,7 +210,7 @@ async function init() {
 		const payload = await PersonService.findAll({
 			where: {
 				service_id: service,
-				isReference: isReference,
+				isReference,
 			},
 			order: ['person_id'],
 			include: [Person],
