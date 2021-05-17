@@ -68,12 +68,12 @@ export default {
 				buttons: [
 					{
 						class: 'primary',
-						text: 'Founders',
+						text: 'Our Founders',
 						path: '#founders',
 					},
 					{
 						class: 'secondary',
-						text: 'Employees',
+						text: 'Our Employees',
 						path: '#employees',
 					},
 				],
