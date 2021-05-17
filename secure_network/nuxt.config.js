@@ -6,7 +6,7 @@ const servMid = [
 		handler: '~/server/rest/api.js',
 	},
 ]
-if (process.env.NODE_ENV === 'prduduction') {
+if (process.env.NODE_ENV === 'production') {
 	servMid.push('redirect-ssl')
 }
 
