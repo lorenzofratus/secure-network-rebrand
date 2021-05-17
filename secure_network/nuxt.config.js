@@ -1,4 +1,15 @@
 /* eslint-disable prettier/prettier */
+// Redirect of ssl requests only on production mode
+const servMid = [
+	{
+		path: '/api',
+		handler: '~/server/rest/api.js',
+	},
+]
+if (process.env.NODE_ENV === 'prduduction') {
+	servMid.push('redirect-ssl')
+}
+
 export default {
 	ssr: true,
 	target: 'server',
@@ -10,12 +21,7 @@ export default {
 				? 'http://localhost:3000'
 				: 'https://securenetwork.herokuapp.com',
 	},
-	serverMiddleware: [
-		{
-			path: '/api',
-			handler: '~/server/rest/api.js',
-		},
-	],
+	serverMiddleware: servMid,
 	// Global page headers: https://go.nuxtjs.dev/config-head
 	head: {
 		title: 'Secure Network',
@@ -35,8 +41,7 @@ export default {
 			{ rel: 'preconnect', href: 'https://fonts.gstatic.com' },
 			{
 				rel: 'stylesheet',
-				href:
-					'https://fonts.googleapis.com/css2?family=Epilogue:wght@200;300;400;700;800&display=swap',
+				href: 'https://fonts.googleapis.com/css2?family=Epilogue:wght@200;300;400;700;800&display=swap',
 			},
 			{
 				rel: 'stylesheet',
