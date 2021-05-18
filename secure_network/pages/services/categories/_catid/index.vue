@@ -64,6 +64,11 @@ export default {
 			},
 		}
 	},
+	head() {
+		return {
+			title: this.category.name + ' | Secure Network',
+		}
+	},
 }
 </script>
 

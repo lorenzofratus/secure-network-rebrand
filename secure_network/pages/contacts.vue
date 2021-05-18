@@ -100,6 +100,11 @@ export default {
 			activeMap: 1,
 		}
 	},
+	head() {
+		return {
+			title: 'Contacts | Secure Network',
+		}
+	},
 	methods: {
 		showMap(event) {
 			const index = +event.target.closest('a').getAttribute('data-index')

@@ -2,8 +2,8 @@
 	<footer class="footer wave-before wave-concave-dark">
 		<div class="content">
 			<a href="#__layout" class="logo arrow" @click="$scrollTo">
-				<p class="hidden">Scroll To Top</p>
 				<span class="left-bar"></span><span class="right-bar"></span>
+				<p class="hidden">Scroll To Top</p>
 			</a>
 			<nuxt-link :to="home.path" class="logo">
 				{{ home.name }}
@@ -121,8 +121,8 @@ export default {
 	transform: translateY(-0.35em) rotate(40deg);
 }
 
-.hidden {
-	display: none;
-	visibility: hidden;
+.footer .hidden {
+	height: 0;
+	overflow: hidden;
 }
 </style>

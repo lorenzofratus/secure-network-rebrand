@@ -59,7 +59,7 @@ export default {
 					{
 						class: 'secondary',
 						text: 'Contact Us',
-						path: '/contacts',
+						path: '/contacts#email',
 					},
 				],
 				img: '/images/covers/about.svg',
@@ -79,6 +79,11 @@ export default {
 					path: '/team',
 				},
 			},
+		}
+	},
+	head() {
+		return {
+			title: 'About | Secure Network',
 		}
 	},
 }

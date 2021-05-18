@@ -1,7 +1,7 @@
 <template>
 	<span class="sub-section">
 		<div class="content">
-			<h4 v-if="tag != ''" class="tag">{{ tag }}</h4>
+			<h3 v-if="tag != ''" class="h4 tag">{{ tag }}</h3>
 			<h2 class="spacer spacer-small">{{ title }}</h2>
 			<p>{{ abstract }}</p>
 			<button-component
@@ -10,7 +10,12 @@
 				:btn-text="btnText"
 			/>
 		</div>
-		<img :src="img" class="cover" :class="{ rounded: isRounded }" />
+		<img
+			:src="img"
+			class="cover"
+			:alt="title"
+			:class="{ rounded: isRounded }"
+		/>
 	</span>
 </template>
 
@@ -56,7 +61,7 @@ export default {
 	data() {
 		return {
 			btnClass: 'secondary',
-			btnText: 'Read More',
+			btnText: 'Discover',
 		}
 	},
 	computed: {

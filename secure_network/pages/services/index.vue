@@ -75,6 +75,11 @@ export default {
 			},
 		}
 	},
+	head() {
+		return {
+			title: 'Services | Secure Network',
+		}
+	},
 	computed: {},
 }
 </script>

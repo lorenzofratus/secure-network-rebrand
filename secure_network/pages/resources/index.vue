@@ -42,6 +42,11 @@ export default {
 			},
 		}
 	},
+	head() {
+		return {
+			title: 'Resources | Secure Network',
+		}
+	},
 }
 </script>
 

@@ -20,7 +20,7 @@
 					</span>
 				</h4>
 				<h1 class="title">{{ title }}</h1>
-				<h3 v-if="subtitle" class="subtitle">{{ subtitle }}</h3>
+				<h2 v-if="subtitle" class="h3 subtitle">{{ subtitle }}</h2>
 				<div v-if="buttons.length" class="buttons">
 					<button-component
 						v-for="(button, index) in buttons"

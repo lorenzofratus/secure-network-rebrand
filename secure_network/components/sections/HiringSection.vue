@@ -38,8 +38,4 @@ export default {
 }
 </script>
 
-<style scoped>
-section {
-	padding-bottom: 0;
-}
-</style>
+<style scoped></style>

@@ -101,6 +101,11 @@ export default {
 			},
 		}
 	},
+	head() {
+		return {
+			title: this.area.name + ' | Secure Network',
+		}
+	},
 }
 </script>
 

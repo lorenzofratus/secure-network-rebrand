@@ -166,8 +166,14 @@ function defineDatabaseStructure() {
 }
 
 async function insertTables() {
-	const { ServiceCategory, Service, Person, Area, PersonService, Resource } =
-		db._tables
+	const {
+		ServiceCategory,
+		Service,
+		Person,
+		Area,
+		PersonService,
+		Resource,
+	} = db._tables
 	await insertItems(Area, areas)
 	await insertItems(ServiceCategory, service_categories)
 	await insertItems(Service, services)

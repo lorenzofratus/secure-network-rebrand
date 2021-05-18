@@ -93,6 +93,11 @@ export default {
 			},
 		}
 	},
+	head() {
+		return {
+			title: 'Team | Secure Network',
+		}
+	},
 }
 </script>
 

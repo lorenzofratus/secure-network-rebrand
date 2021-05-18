@@ -103,6 +103,11 @@ export default {
 			],
 		}
 	},
+	head() {
+		return {
+			title: this.service.name + ' | Secure Network',
+		}
+	},
 }
 </script>
 

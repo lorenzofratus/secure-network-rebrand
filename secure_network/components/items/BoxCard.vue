@@ -44,7 +44,7 @@ export default {
 	},
 	data() {
 		return {
-			btnText: 'Read more',
+			btnText: 'Discover',
 			btnClass: 'secondary',
 		}
 	},

@@ -71,7 +71,7 @@ export default {
 					{
 						class: 'secondary',
 						text: 'Contact us',
-						path: '/contacts',
+						path: '/contacts#email',
 					},
 				],
 				img: '/images/covers/index.svg',

@@ -65,6 +65,11 @@ export default {
 			animating: false,
 		}
 	},
+	head() {
+		return {
+			title: 'Resources of ' + this.year + ' | Secure Network',
+		}
+	},
 	computed: {
 		types() {
 			const types = [{ text: 'All Types', filter: '' }]
@@ -82,9 +87,6 @@ export default {
 			return this.types[this.activeFilter].filter
 		},
 	},
-	// mounted() {
-	// 	this.section = document.getElementById('resources')
-	// },
 	methods: {
 		changeFilter(index) {
 			this.animating = true
