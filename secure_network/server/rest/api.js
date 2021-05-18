@@ -221,6 +221,8 @@ async function init() {
 		})
 		const services = []
 		payload.forEach((item) => {
+			item.dataValues.service.dataValues.isReference =
+				item.dataValues.isReference
 			services.push(item.dataValues.service)
 		})
 

@@ -9,6 +9,7 @@
 				:title="item.name"
 				:text="item.text"
 				:path="item.path"
+				:highlighted="item.isReference"
 			/>
 		</div>
 	</section>

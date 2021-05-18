@@ -37,6 +37,11 @@ export default {
 			type: String,
 			required: true,
 		},
+		highlighted: {
+			type: Boolean,
+			required: false,
+			default: false,
+		},
 	},
 	data() {
 		return {
