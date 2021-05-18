@@ -179,7 +179,7 @@ async function insertTables() {
 async function initializeDatabase() {
 	// Some code to initialize the db
 	defineDatabaseStructure()
-	await db.sync({ force: true })
+	await db.sync({ force: false })
 	// Uncomment to insert initializiation info within the db
 	await insertTables()
 	return db
