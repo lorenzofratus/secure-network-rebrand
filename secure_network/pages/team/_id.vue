@@ -96,6 +96,15 @@ export default {
 			},
 		}
 	},
+	head() {
+		return {
+			title:
+				this.person.name +
+				' ' +
+				this.person.surname +
+				' | Secure Network',
+		}
+	},
 	computed: {
 		buttons() {
 			const buttons = []

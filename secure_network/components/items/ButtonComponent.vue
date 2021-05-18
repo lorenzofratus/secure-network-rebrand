@@ -1,7 +1,15 @@
 /* eslint-disable vue/prop-name-casing */
 <template>
+	<button
+		v-if="btnPath == ''"
+		class="button"
+		:class="btnClass"
+		@click="emitClick"
+	>
+		{{ btnText }}
+	</button>
 	<a
-		v-if="btnPath[0] == '#'"
+		v-else-if="btnPath[0] == '#'"
 		:href="btnPath"
 		class="button"
 		:class="btnClass"
@@ -10,13 +18,7 @@
 	>
 		{{ btnText }}
 	</a>
-	<nuxt-link
-		v-else
-		:to="btnPath"
-		class="button"
-		:class="btnClass"
-		@click.native="emitClick"
-	>
+	<nuxt-link v-else :to="btnPath" class="button" :class="btnClass">
 		{{ btnText }}
 	</nuxt-link>
 </template>
@@ -40,7 +42,7 @@ export default {
 	},
 	methods: {
 		emitClick(e) {
-			if (this.btnPath === '') this.$emit('click', e)
+			this.$emit('click', e)
 		},
 	},
 }
@@ -53,6 +55,9 @@ a {
 .buttons .button {
 	width: auto;
 	margin: 0;
+}
+button.button {
+	border: none;
 }
 .button {
 	display: block;
@@ -77,6 +82,7 @@ a {
 .button.outlined {
 	position: relative;
 	color: var(--primary-color);
+	background-color: transparent;
 }
 .button.outlined::after {
 	content: '';

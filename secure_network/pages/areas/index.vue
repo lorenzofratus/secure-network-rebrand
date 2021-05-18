@@ -55,7 +55,7 @@ export default {
 					{
 						class: 'secondary',
 						text: 'Contact us',
-						path: '/contacts',
+						path: '/contacts#email',
 					},
 				],
 				img: '/images/covers/areas.svg',
@@ -67,6 +67,11 @@ export default {
 					'The policies form the basis of any security plan and define the requirements to be followed and rules that must be adhered to in different business areas. These documents provide, together with the implementation of appropriate technological tools, which all entities involved realize security measures in the form prescribed respecting the mandatory regulations and contributing to the security company.',
 				],
 			},
+		}
+	},
+	head() {
+		return {
+			title: 'Areas | Secure Network',
 		}
 	},
 }

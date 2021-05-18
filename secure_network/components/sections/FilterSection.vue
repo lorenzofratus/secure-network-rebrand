@@ -46,7 +46,7 @@ export default {
 	},
 	methods: {
 		checkFilter(e) {
-			const index = e.target.closest('a').getAttribute('data-index')
+			const index = e.target.closest('button').getAttribute('data-index')
 			if (this.activeFilter !== index) {
 				this.activeFilter = index
 				this.$emit('filter', index)

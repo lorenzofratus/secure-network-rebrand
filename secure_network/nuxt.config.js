@@ -34,7 +34,12 @@ export default {
 				name: 'viewport',
 				content: 'width=device-width, initial-scale=1',
 			},
-			{ hid: 'description', name: 'description', content: '' },
+			{
+				hid: 'description',
+				name: 'description',
+				content:
+					'Secure Network performs comprehensive security assessments, securing your applications and infrastructures thoroughly and extensively.',
+			},
 			{ name: 'msapplication-TileColor', content: '#003554' },
 			{ name: 'theme-color', content: '#003554' },
 		],

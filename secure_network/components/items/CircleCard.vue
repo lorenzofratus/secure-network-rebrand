@@ -1,6 +1,6 @@
 <template>
 	<nuxt-link :to="path" class="circle">
-		<img class="image" :src="img" />
+		<img class="image" alt="" :src="img" />
 		<div class="titling card interactive">
 			<h3>{{ name }}</h3>
 			<h3>{{ surname }}</h3>
@@ -49,6 +49,7 @@ a {
 }
 .circle:focus .titling {
 	outline: auto;
+	outline-color: -webkit-focus-ring-color;
 }
 .circle .titling h3 {
 	margin: 0;

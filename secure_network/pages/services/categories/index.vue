@@ -9,7 +9,6 @@
 		<alt-section
 			:title="alt_section.title"
 			:paragraphs="alt_section.paragraphs"
-			:button="alt_section.button"
 			:wrapper="wrapper"
 		/>
 		<items-section
@@ -66,12 +65,12 @@ export default {
 					'The wide range of courses, delivered anywhere in the world, provides multiple paths that can meet the needs of all our customers, including developers and system administrators, commercial agents, security consultant, manager, law enforcement and military.',
 					'In addition to the various courses offered and already defined, Secure Network is able to understand the specific needs of its customers and develop courses that meet every need.',
 				],
-				button: {
-					class: 'secondary',
-					text: 'See All Services',
-					path: '/services',
-				},
 			},
+		}
+	},
+	head() {
+		return {
+			title: 'Service Categories | Secure Network',
 		}
 	},
 	computed: {},

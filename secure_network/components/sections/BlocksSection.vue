@@ -15,7 +15,7 @@
 							block.icon
 						}}</span>
 					</div>
-					<h4 class="title">{{ block.title }}</h4>
+					<h3 class="h4 title">{{ block.title }}</h3>
 				</div>
 				<p class="text">{{ block.text }}</p>
 				<p class="placeholder">{{ block.text }}</p>

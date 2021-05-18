@@ -55,6 +55,11 @@ export default {
 			},
 		}
 	},
+	head() {
+		return {
+			title: this.resource.title + ' | Secure Network',
+		}
+	},
 }
 </script>
 

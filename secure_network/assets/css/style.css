@@ -34,6 +34,7 @@
 	--half-page: 400px;
 	--half-content: 325px;
 	--padding: 3em;
+	--half-padding: 1.5em;
 
 	--wave-width: 110vw;
 	--wave-height: 11vw; /* Fallback */
@@ -173,6 +174,7 @@ section:not(.alt-section) ~ section:not(.alt-section) {
 .alt-section {
 	position: relative;
 	background-color: var(--alt-background);
+	padding-bottom: var(--half-padding);
 }
 .alt-section .content {
 	max-width: var(--content);
