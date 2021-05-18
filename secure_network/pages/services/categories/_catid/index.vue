@@ -27,22 +27,26 @@ export default {
 		ItemsSection,
 	},
 	layout: 'default',
-	async asyncData({ $axios, route }) {
-		const { catid } = route.params
-		let payload = await $axios.get(
-			`${process.env.BASE_URL}/api/services-by-category/${catid}`
-		)
-		const services = payload.data
+	async asyncData({ $axios, route, error }) {
+		try {
+			const { catid } = route.params
+			let payload = await $axios.get(
+				`${process.env.BASE_URL}/api/services-by-category/${catid}`
+			)
+			const services = payload.data
 
-		payload = await $axios.get(
-			`${process.env.BASE_URL}/api/service-category/${catid}`
-		)
-		const category = payload.data
-		category.paragraphs = category.text.split('\n')
+			payload = await $axios.get(
+				`${process.env.BASE_URL}/api/service-category/${catid}`
+			)
+			const category = payload.data
+			category.paragraphs = category.text.split('\n')
 
-		return {
-			services,
-			category,
+			return {
+				services,
+				category,
+			}
+		} catch (err) {
+			error({ statusCode: 404 })
 		}
 	},
 	data() {

@@ -31,14 +31,18 @@ export default {
 		AltSection,
 		ItemsSection,
 	},
-	async asyncData({ $axios }) {
-		// fetch data from the api server
-		const { data } = await $axios.get(
-			`${process.env.BASE_URL}/api/service-categories`
-		)
-		const serviceCategories = data
-		return {
-			serviceCategories,
+	async asyncData({ $axios, error }) {
+		try {
+			// fetch data from the api server
+			const { data } = await $axios.get(
+				`${process.env.BASE_URL}/api/service-categories`
+			)
+			const serviceCategories = data
+			return {
+				serviceCategories,
+			}
+		} catch (err) {
+			error({ statusCode: 500 })
 		}
 	},
 	data() {

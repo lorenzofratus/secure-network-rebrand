@@ -48,30 +48,34 @@ export default {
 		HiringSection,
 	},
 	layout: 'default',
-	async asyncData({ $axios, route }) {
-		const { id } = route.params
-		let payload = await $axios.get(
-			`${process.env.BASE_URL}/api/people/${id}`
-		)
-		const person = payload.data
-		person.paragraphs = person.text.split('\n')
+	async asyncData({ $axios, route, error }) {
+		try {
+			const { id } = route.params
+			let payload = await $axios.get(
+				`${process.env.BASE_URL}/api/people/${id}`
+			)
+			const person = payload.data
+			person.paragraphs = person.text.split('\n')
 
-		payload = await $axios.get(
-			`${process.env.BASE_URL}/api/areas/${person.area_id}`
-		)
+			payload = await $axios.get(
+				`${process.env.BASE_URL}/api/areas/${person.area_id}`
+			)
 
-		const area = payload.data
-		if (area && person.role) area.tag = person.role + ' at'
+			const area = payload.data
+			if (area && person.role) area.tag = person.role + ' at'
 
-		payload = await $axios.get(
-			`${process.env.BASE_URL}/api/services-by-person/${id}`
-		)
-		const services = payload.data
+			payload = await $axios.get(
+				`${process.env.BASE_URL}/api/services-by-person/${id}`
+			)
+			const services = payload.data
 
-		return {
-			person,
-			area,
-			services,
+			return {
+				person,
+				area,
+				services,
+			}
+		} catch (err) {
+			error({ statusCode: 404 })
 		}
 	},
 	data() {

@@ -26,13 +26,18 @@ import AltSection from '~/components/sections/AltSection.vue'
 import ImageComponentsSection from '~/components/sections/ImageComponentsSection.vue'
 export default {
 	components: { MainSection, AltSection, ImageComponentsSection },
-	layout: 'default',
-	async asyncData({ $axios }) {
-		// fetch data from the api server
-		const { data } = await $axios.get(`${process.env.BASE_URL}/api/areas`)
-		const areas = data
-		return {
-			areas,
+	async asyncData({ $axios, error }) {
+		try {
+			// fetch data from the api server
+			const { data } = await $axios.get(
+				`${process.env.BASE_URL}/api/areas`
+			)
+			const areas = data
+			return {
+				areas,
+			}
+		} catch (err) {
+			error({ statusCode: 500 })
 		}
 	},
 	data() {

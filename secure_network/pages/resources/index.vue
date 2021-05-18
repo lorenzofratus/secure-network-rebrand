@@ -20,13 +20,17 @@ export default {
 		TimelineSection,
 	},
 	layout: 'default',
-	async asyncData({ $axios }) {
-		const { data } = await $axios.get(
-			`${process.env.BASE_URL}/api/resources-aggregation`
-		)
-		const years = data
-		return {
-			years,
+	async asyncData({ $axios, error }) {
+		try {
+			const { data } = await $axios.get(
+				`${process.env.BASE_URL}/api/resources-aggregation`
+			)
+			const years = data
+			return {
+				years,
+			}
+		} catch (err) {
+			error({ statusCode: 500 })
 		}
 	},
 	data() {

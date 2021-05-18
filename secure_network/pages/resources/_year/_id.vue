@@ -25,24 +25,28 @@ export default {
 		AltSection,
 	},
 	layout: 'default',
-	async asyncData({ $axios, route }) {
-		const { id } = route.params
-		const { data } = await $axios.get(
-			`${process.env.BASE_URL}/api/resources/${id}`
-		)
-		const resource = data
-		const date = new Date(resource.date)
-		const year = date.getFullYear()
-		resource.title =
-			('0' + date.getDate()).slice(-2) +
-			' ' +
-			date.toLocaleString('EN', { month: 'long' }) +
-			' ' +
-			year
-		resource.paragraphs = resource.text.split('\n')
-		resource.img = '/images/covers/' + resource.type + '.svg'
+	async asyncData({ $axios, route, error }) {
+		try {
+			const { id } = route.params
+			const { data } = await $axios.get(
+				`${process.env.BASE_URL}/api/resources/${id}`
+			)
+			const resource = data
+			const date = new Date(resource.date)
+			const year = date.getFullYear()
+			resource.title =
+				('0' + date.getDate()).slice(-2) +
+				' ' +
+				date.toLocaleString('EN', { month: 'long' }) +
+				' ' +
+				year
+			resource.paragraphs = resource.text.split('\n')
+			resource.img = '/images/covers/' + resource.type + '.svg'
 
-		return { resource }
+			return { resource }
+		} catch (err) {
+			error({ statusCode: 404 })
+		}
 	},
 	data() {
 		return {

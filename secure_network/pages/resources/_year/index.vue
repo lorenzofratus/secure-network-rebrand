@@ -35,13 +35,17 @@ export default {
 		BoxesSection,
 	},
 	layout: 'default',
-	async asyncData({ $axios, route }) {
-		const { year } = route.params
-		const { data } = await $axios.get(
-			`${process.env.BASE_URL}/api/resources-by-year/${year}`
-		)
-		const resources = data
-		return { resources, year }
+	async asyncData({ $axios, route, error }) {
+		try {
+			const { year } = route.params
+			const { data } = await $axios.get(
+				`${process.env.BASE_URL}/api/resources-by-year/${year}`
+			)
+			const resources = data
+			return { resources, year }
+		} catch (err) {
+			error({ statusCode: 404 })
+		}
 	},
 	data() {
 		return {

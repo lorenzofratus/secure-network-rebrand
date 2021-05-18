@@ -44,19 +44,23 @@ export default {
 		ImageComponentsSection,
 		HiringSection,
 	},
-	async asyncData({ $axios }) {
-		// fetch data from the api server
-		let payload = await $axios.get(`${process.env.BASE_URL}/api/team`)
-		const team = payload.data
+	async asyncData({ $axios, error }) {
+		try {
+			// fetch data from the api server
+			let payload = await $axios.get(`${process.env.BASE_URL}/api/team`)
+			const team = payload.data
 
-		payload = await $axios.get(
-			`${process.env.BASE_URL}/api/people-by-role/founder`
-		)
-		const founders = payload.data
+			payload = await $axios.get(
+				`${process.env.BASE_URL}/api/people-by-role/founder`
+			)
+			const founders = payload.data
 
-		return {
-			team,
-			founders,
+			return {
+				team,
+				founders,
+			}
+		} catch (err) {
+			error({ statusCode: 500 })
 		}
 	},
 	data() {

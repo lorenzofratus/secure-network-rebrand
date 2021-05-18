@@ -50,37 +50,41 @@ export default {
 		ImageComponentsSection,
 		PeopleSection,
 	},
-	async asyncData({ $axios, route }) {
-		const { id } = route.params
-		let payload = await $axios.get(
-			`${process.env.BASE_URL}/api/services/${id}`
-		)
-		const service = payload.data
-		service.paragraphs = service.text.split('\n')
+	async asyncData({ $axios, route, error }) {
+		try {
+			const { id } = route.params
+			let payload = await $axios.get(
+				`${process.env.BASE_URL}/api/services/${id}`
+			)
+			const service = payload.data
+			service.paragraphs = service.text.split('\n')
 
-		payload = await $axios.get(
-			`${process.env.BASE_URL}/api/areas/${service.area_id}`
-		)
+			payload = await $axios.get(
+				`${process.env.BASE_URL}/api/areas/${service.area_id}`
+			)
 
-		const area = payload.data
+			const area = payload.data
 
-		payload = await $axios.get(
-			`${process.env.BASE_URL}/api/people-by-service/${id}/true`
-		)
-		const referents = payload.data
-		referents.forEach((person) => (person.tag = 'reference'))
+			payload = await $axios.get(
+				`${process.env.BASE_URL}/api/people-by-service/${id}/true`
+			)
+			const referents = payload.data
+			referents.forEach((person) => (person.tag = 'reference'))
 
-		payload = await $axios.get(
-			`${process.env.BASE_URL}/api/people-by-service/${id}/false`
-		)
+			payload = await $axios.get(
+				`${process.env.BASE_URL}/api/people-by-service/${id}/false`
+			)
 
-		const people = payload.data
+			const people = payload.data
 
-		return {
-			service,
-			referents,
-			people,
-			area,
+			return {
+				service,
+				referents,
+				people,
+				area,
+			}
+		} catch (err) {
+			error({ statusCode: 404 })
 		}
 	},
 	data() {

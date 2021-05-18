@@ -44,39 +44,43 @@ export default {
 		ImageComponentsSection,
 	},
 	layout: 'default',
-	async asyncData({ $axios, route }) {
-		const { id } = route.params
-		// Retrieving the area
-		let payload = await $axios.get(
-			`${process.env.BASE_URL}/api/areas/${id}`
-		)
-		const area = payload.data
-		area.paragraphs = area.text.split('\n')
+	async asyncData({ $axios, route, error }) {
+		try {
+			const { id } = route.params
+			// Retrieving the area
+			let payload = await $axios.get(
+				`${process.env.BASE_URL}/api/areas/${id}`
+			)
+			const area = payload.data
+			area.paragraphs = area.text.split('\n')
 
-		// Retrieving employees
-		payload = await $axios.get(
-			`${process.env.BASE_URL}/api/people-by-area-and-role/${id}/employee/`
-		)
-		const people = payload.data
+			// Retrieving employees
+			payload = await $axios.get(
+				`${process.env.BASE_URL}/api/people-by-area-and-role/${id}/employee/`
+			)
+			const people = payload.data
 
-		// Retrieving the manager
-		payload = await $axios.get(
-			`${process.env.BASE_URL}/api/people-by-area-and-role/${id}/manager/`
-		)
-		const managers = payload.data
-		managers.forEach((manager) => (manager.tag = manager.role))
+			// Retrieving the manager
+			payload = await $axios.get(
+				`${process.env.BASE_URL}/api/people-by-area-and-role/${id}/manager/`
+			)
+			const managers = payload.data
+			managers.forEach((manager) => (manager.tag = manager.role))
 
-		// Retrieving the categories of services offered by the area
-		payload = await $axios.get(
-			`${process.env.BASE_URL}/api/service-categories-by-area/${id}`
-		)
-		const serviceCategories = payload.data
+			// Retrieving the categories of services offered by the area
+			payload = await $axios.get(
+				`${process.env.BASE_URL}/api/service-categories-by-area/${id}`
+			)
+			const serviceCategories = payload.data
 
-		return {
-			area,
-			people,
-			managers,
-			serviceCategories,
+			return {
+				area,
+				people,
+				managers,
+				serviceCategories,
+			}
+		} catch (err) {
+			error({ statusCode: 404 })
 		}
 	},
 	data() {

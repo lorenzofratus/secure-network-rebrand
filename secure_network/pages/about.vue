@@ -30,15 +30,18 @@ import AltSection from '~/components/sections/AltSection.vue'
 import ImageComponentsSection from '~/components/sections/ImageComponentsSection'
 export default {
 	components: { MainSection, AltSection, ImageComponentsSection },
-	layout: 'default',
-	async asyncData({ $axios }) {
-		const { data } = await $axios.get(
-			`${process.env.BASE_URL}/api/people-by-role/founder`
-		)
-		const founders = data
+	async asyncData({ $axios, error }) {
+		try {
+			const { data } = await $axios.get(
+				`${process.env.BASE_URL}/api/people-by-role/founder`
+			)
+			const founders = data
 
-		return {
-			founders,
+			return {
+				founders,
+			}
+		} catch (err) {
+			error({ statusCode: 500 })
 		}
 	},
 	data() {
