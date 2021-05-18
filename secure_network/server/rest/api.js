@@ -216,7 +216,7 @@ async function init() {
 			where: {
 				person_id: person,
 			},
-			order: ['service_id'],
+			order: [['isReference', 'DESC'], 'service_id'],
 			include: [Service],
 		})
 		const services = []

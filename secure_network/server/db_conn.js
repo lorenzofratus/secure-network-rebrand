@@ -165,29 +165,32 @@ function defineDatabaseStructure() {
 	}
 }
 
-async function insertTables() {
-	const {
-		ServiceCategory,
-		Service,
-		Person,
-		Area,
-		PersonService,
-		Resource,
-	} = db._tables
-	await insertItems(Area, areas)
-	await insertItems(ServiceCategory, service_categories)
-	await insertItems(Service, services)
-	await insertItems(Person, people)
-	await insertItems(PersonService, person_service)
-	await insertItems(Resource, resources)
+async function insertTables(dev) {
+	if (dev) {
+		const {
+			ServiceCategory,
+			Service,
+			Person,
+			Area,
+			PersonService,
+			Resource,
+		} = db._tables
+		await insertItems(Area, areas)
+		await insertItems(ServiceCategory, service_categories)
+		await insertItems(Service, services)
+		await insertItems(Person, people)
+		await insertItems(PersonService, person_service)
+		await insertItems(Resource, resources)
+	}
 }
 
 async function initializeDatabase() {
 	// Some code to initialize the db
+	const dev = false
 	defineDatabaseStructure()
-	await db.sync({ force: false })
+	await db.sync({ force: dev })
 	// Uncomment to insert initializiation info within the db
-	await insertTables()
+	await insertTables(dev)
 	return db
 }
 export default initializeDatabase
