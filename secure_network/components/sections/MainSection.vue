@@ -2,7 +2,10 @@
 	<div class="wrapper">
 		<div class="header">
 			<div class="content">
-				<h4 v-if="breadcrumbs.length" class="breadcrumbs">
+				<h4
+					v-if="showBreadcrumb && breadcrumbs.length"
+					class="breadcrumbs"
+				>
 					<span
 						v-for="(link, index) in breadcrumbs"
 						:key="wrapper + '-' + index"
@@ -68,9 +71,12 @@ export default {
 		isRounded: {
 			type: Boolean,
 			required: false,
-			default() {
-				return false
-			},
+			default: false,
+		},
+		showBreadcrumb: {
+			type: Boolean,
+			required: false,
+			default: true,
 		},
 	},
 	computed: {
