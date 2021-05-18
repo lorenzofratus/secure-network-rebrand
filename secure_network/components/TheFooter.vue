@@ -95,6 +95,7 @@ export default {
 .footer .arrow:focus .left-bar,
 .footer .arrow:focus .right-bar {
 	outline: auto;
+	outline-color: -webkit-focus-ring-color;
 }
 .footer .arrow:hover .left-bar,
 .footer .arrow:focus .left-bar,

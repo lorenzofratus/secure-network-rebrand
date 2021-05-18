@@ -49,6 +49,7 @@ a {
 }
 .circle:focus .titling {
 	outline: auto;
+	outline-color: -webkit-focus-ring-color;
 }
 .circle .titling h3 {
 	margin: 0;

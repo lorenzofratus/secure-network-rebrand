@@ -1,8 +1,9 @@
 <template>
-	<div class="card item">
+	<div class="card item" :class="{ highlighted: highlighted }">
 		<img v-if="img.includes('/')" :src="img" alt="" class="image" />
 		<span v-else class="icon material-icons">{{ img }}</span>
 		<div class="text">
+			<h4 v-if="highlighted" class="tag">Reference for</h4>
 			<h3 class="spacer">{{ title }}</h3>
 			<p class="centered-text">
 				{{ abstract }}
@@ -67,6 +68,10 @@ export default {
 	flex-direction: column;
 	text-align: center;
 }
+.item.highlighted {
+	background-color: var(--alt-background);
+	border: var(--line-weight) solid var(--primary-color);
+}
 .item .image {
 	height: 8em;
 	margin: 0 auto 1em;
@@ -74,6 +79,16 @@ export default {
 .item .icon {
 	font-size: 60px;
 	margin: 0 0 0.25em;
+}
+.item .tag {
+	text-transform: uppercase;
+	text-align: center;
+	margin: 0;
+	color: var(--primary-color);
+	font-weight: var(--btn-font-weight);
+}
+.item .tag ~ .spacer {
+	margin-top: 0.25em;
 }
 .item .text {
 	text-align: left;
