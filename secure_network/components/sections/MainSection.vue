@@ -115,7 +115,7 @@ export default {
 	flex-wrap: wrap-reverse;
 }
 .header > * {
-	flex: 0 1 auto;
+	flex: 1 1 auto;
 	max-width: var(--half-page);
 	margin: 0 auto;
 }

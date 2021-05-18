@@ -35,13 +35,38 @@ export default {
 				content: 'width=device-width, initial-scale=1',
 			},
 			{ hid: 'description', name: 'description', content: '' },
+			{ name: 'msapplication-TileColor', content: '#003554' },
+			{ name: 'theme-color', content: '#003554' },
 		],
 		link: [
-			{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+			{
+				rel: 'apple-touch-icon',
+				sizes: '180x180',
+				href: '/apple-touch-icon.png',
+			},
+			{
+				rel: 'icon',
+				type: 'image/png',
+				sizes: '32x32',
+				href: '/favicon-32x32.png',
+			},
+			{
+				rel: 'icon',
+				type: 'image/png',
+				sizes: '16x16',
+				href: '/favicon-16x16.png',
+			},
+			{ rel: 'manifest', href: '/site.webmanifest' },
+			{
+				rel: 'mask-icon',
+				href: '/safari-pinned-tab.svg',
+				color: '#00a6fb',
+			},
 			{ rel: 'preconnect', href: 'https://fonts.gstatic.com' },
 			{
 				rel: 'stylesheet',
-				href: 'https://fonts.googleapis.com/css2?family=Epilogue:wght@200;300;400;700;800&display=swap',
+				href:
+					'https://fonts.googleapis.com/css2?family=Epilogue:wght@200;300;400;700;800&display=swap',
 			},
 			{
 				rel: 'stylesheet',
