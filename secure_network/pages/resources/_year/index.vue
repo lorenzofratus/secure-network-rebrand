@@ -88,7 +88,6 @@ export default {
 	methods: {
 		changeFilter(index) {
 			this.animating = true
-			// this.$scrollTo(this.section, -200)
 			setTimeout(() => {
 				this.animating = false
 				this.activeFilter = index

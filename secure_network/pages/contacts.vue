@@ -33,8 +33,9 @@
 				<a
 					href="#map"
 					data-offset="-100"
+					data-index="1"
 					class="card interactive"
-					@click="showMap(1)"
+					@click="showMap"
 				>
 					<h3 class="spacer">Italy</h3>
 					<p class="info centered">
@@ -45,7 +46,8 @@
 					href="#map"
 					data-offset="-100"
 					class="card interactive"
-					@click="showMap(2)"
+					data-index="2"
+					@click="showMap"
 				>
 					<h3 class="spacer">Italy</h3>
 					<p class="info centered">
@@ -99,7 +101,9 @@ export default {
 		}
 	},
 	methods: {
-		showMap(index) {
+		showMap(event) {
+			const index = +event.target.closest('a').getAttribute('data-index')
+			this.$scrollTo(event)
 			this.activeMap = index
 		},
 	},

@@ -4,13 +4,14 @@
 			v-for="(option, index) in menuOptions"
 			:key="'social-item-' + index"
 		>
-			<a :href="option.href" class="link">
-				<component
-					:is="option.icon"
-					:title="'Follow us on ' + option.name"
-					role="link"
-					class="icon"
-				/>
+			<a
+				:href="option.href"
+				:title="'Follow us on ' + option.name"
+				target="_blank"
+				rel="noopener noreferrer"
+				class="link"
+			>
+				<component :is="option.icon" role="link" class="icon" />
 			</a>
 		</li>
 	</ul>

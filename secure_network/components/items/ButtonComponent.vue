@@ -1,20 +1,24 @@
 /* eslint-disable vue/prop-name-casing */
 <template>
 	<a
-		v-if="btnPath.includes('#')"
+		v-if="btnPath[0] == '#'"
 		:href="btnPath"
 		class="button"
 		:class="btnClass"
-		>{{ btnText }}</a
+		data-offset="-64"
+		@click="$scrollTo"
 	>
+		{{ btnText }}
+	</a>
 	<nuxt-link
 		v-else
 		:to="btnPath"
 		class="button"
 		:class="btnClass"
 		@click.native="emitClick"
-		>{{ btnText }}</nuxt-link
 	>
+		{{ btnText }}
+	</nuxt-link>
 </template>
 
 <script>

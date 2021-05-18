@@ -32,7 +32,12 @@
 					<div v-if="buttons.length == 1" />
 				</div>
 			</div>
-			<img :src="img" class="cover" :class="{ rounded: isRounded }" />
+			<img
+				:src="img"
+				class="cover"
+				:alt="title"
+				:class="{ rounded: isRounded }"
+			/>
 		</div>
 	</div>
 </template>

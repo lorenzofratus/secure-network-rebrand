@@ -1,9 +1,10 @@
 <template>
 	<footer class="footer wave-before wave-concave-dark">
 		<div class="content">
-			<a href="#__layout" class="logo arrow"
-				><span class="left-bar"></span><span class="right-bar"></span
-			></a>
+			<a href="#__layout" class="logo arrow" @click="$scrollTo">
+				<p class="hidden">Scroll To Top</p>
+				<span class="left-bar"></span><span class="right-bar"></span>
+			</a>
 			<nuxt-link :to="home.path" class="logo">
 				{{ home.name }}
 			</nuxt-link>
@@ -118,5 +119,10 @@ export default {
 .footer .arrow:hover .right-bar,
 .footer .arrow:focus .right-bar {
 	transform: translateY(-0.35em) rotate(40deg);
+}
+
+.hidden {
+	display: none;
+	visibility: hidden;
 }
 </style>

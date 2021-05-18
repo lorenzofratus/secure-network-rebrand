@@ -66,7 +66,7 @@ export default {
 	position: relative;
 	text-align: center;
 	padding: var(--padding);
-	cursor: help;
+	cursor: pointer;
 
 	overflow: hidden;
 	-webkit-backface-visibility: hidden;

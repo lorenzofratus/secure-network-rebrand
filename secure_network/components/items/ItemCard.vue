@@ -1,6 +1,6 @@
 <template>
 	<div class="card item">
-		<img v-if="img.includes('/')" :src="img" class="image" />
+		<img v-if="img.includes('/')" :src="img" alt="" class="image" />
 		<span v-else class="icon material-icons">{{ img }}</span>
 		<div class="text">
 			<h3 class="spacer">{{ title }}</h3>

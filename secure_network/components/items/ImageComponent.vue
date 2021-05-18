@@ -95,6 +95,7 @@ export default {
 	text-transform: uppercase;
 	margin: 0;
 	color: var(--primary-color);
+	font-size: var(--btn-font-size);
 	font-weight: var(--btn-font-weight);
 }
 .sub-section .tag ~ .spacer {
