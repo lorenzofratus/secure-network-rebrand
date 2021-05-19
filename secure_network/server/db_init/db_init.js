@@ -576,11 +576,6 @@ const p_s = [
 	},
 	{
 		person_id: 'stefano-zanero',
-		service_id: 'vulnerability-detection-&-exploitation',
-		isReference: true,
-	},
-	{
-		person_id: 'stefano-zanero',
 		service_id: 'web-application-testing',
 		isReference: true,
 	},
@@ -730,12 +725,10 @@ const p_s = [
 	{
 		person_id: 'tommaso-pescanoce',
 		service_id: 'device-analysis',
-		isReference: true,
 	},
 	{
 		person_id: 'tommaso-pescanoce',
 		service_id: 'corporate-workstation-penetration-test',
-		isReference: true,
 	},
 	{
 		person_id: 'tommaso-pescanoce',

@@ -74,7 +74,6 @@ export default {
 	text-align: center;
 }
 .item.highlighted {
-	background-color: var(--alt-background);
 	border: var(--line-weight) solid var(--primary-color);
 }
 .item .image {
