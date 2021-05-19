@@ -7,7 +7,7 @@
 			<button-component
 				:btn-class="btnClass"
 				:btn-path="btnPath"
-				:btn-text="btnText"
+				:btn-text="btnText + ' ' + type"
 			/>
 		</div>
 		<img
@@ -31,6 +31,11 @@ export default {
 			required: true,
 		},
 		tag: {
+			type: String,
+			required: false,
+			default: '',
+		},
+		type: {
 			type: String,
 			required: false,
 			default: '',
@@ -80,8 +85,7 @@ export default {
 .sub-section {
 	display: block;
 	max-width: var(--page);
-	margin: 0 auto 5em;
-	padding: 0 var(--padding);
+	margin: 0 auto 2.5em;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -94,6 +98,9 @@ export default {
 	flex: 0 1 auto;
 	max-width: var(--half-page);
 	margin: 0 auto;
+}
+.sub-section .content {
+	margin: 1em 0;
 }
 
 .sub-section .tag {
@@ -112,7 +119,7 @@ export default {
 }
 .sub-section .cover {
 	display: block;
-	padding: 0 5%;
+	padding: 5%;
 	box-sizing: border-box;
 	height: auto;
 	width: 100%;

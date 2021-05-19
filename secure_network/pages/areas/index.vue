@@ -14,6 +14,7 @@
 		/>
 		<image-components-section
 			id="areas"
+			type="area"
 			:components="areas"
 			:wrapper="wrapper"
 		/>

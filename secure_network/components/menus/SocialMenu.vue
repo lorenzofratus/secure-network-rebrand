@@ -11,7 +11,12 @@
 				rel="noopener noreferrer"
 				class="link"
 			>
-				<component :is="option.icon" role="link" class="icon" />
+				<component
+					:is="option.icon"
+					role="link"
+					class="icon"
+					:title="'Follow us on ' + option.name"
+				/>
 			</a>
 		</li>
 	</ul>

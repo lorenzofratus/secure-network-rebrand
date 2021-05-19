@@ -6,6 +6,7 @@
 			:key="'area-card-' + index + '-' + wrapper"
 			:title="item.surname ? item.name + ' ' + item.surname : item.name"
 			:tag="item.tag"
+			:type="type"
 			:text="item.text"
 			:img="item.img"
 			:btn-path="item.path"
@@ -22,6 +23,11 @@ export default {
 	components: { ImageComponent, TitleComponent },
 	props: {
 		title: {
+			type: String,
+			required: false,
+			default: '',
+		},
+		type: {
 			type: String,
 			required: false,
 			default: '',

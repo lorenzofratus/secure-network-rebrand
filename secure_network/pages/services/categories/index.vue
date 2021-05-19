@@ -13,6 +13,7 @@
 		/>
 		<items-section
 			id="categories"
+			type="category"
 			:wrapper="wrapper"
 			:items="serviceCategories"
 		/>

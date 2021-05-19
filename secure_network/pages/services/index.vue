@@ -12,7 +12,12 @@
 			:wrapper="wrapper"
 			:button="alt_section.button"
 		/>
-		<items-section id="services" :wrapper="wrapper" :items="services" />
+		<items-section
+			id="services"
+			type="service"
+			:wrapper="wrapper"
+			:items="services"
+		/>
 	</div>
 </template>
 

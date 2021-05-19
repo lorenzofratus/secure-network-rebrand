@@ -10,7 +10,7 @@
 		<button-component
 			:btn-path="btnPath"
 			:btn-class="btnClass"
-			:btn-text="btnText"
+			:btn-text="btnText + ' ' + type"
 		/>
 	</div>
 </template>
@@ -23,6 +23,11 @@ export default {
 		icon: {
 			type: String,
 			required: true,
+		},
+		type: {
+			type: String,
+			required: false,
+			default: '',
 		},
 		title: {
 			type: String,
@@ -44,7 +49,7 @@ export default {
 	},
 	data() {
 		return {
-			btnText: 'Discover',
+			btnText: 'Read',
 			btnClass: 'secondary',
 		}
 	},

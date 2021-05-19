@@ -12,7 +12,7 @@
 		<button-component
 			:btn-path="path"
 			:btn-class="btnClass"
-			:btn-text="btnText"
+			:btn-text="btnText + ' ' + type"
 		/>
 	</div>
 </template>
@@ -25,6 +25,11 @@ export default {
 		title: {
 			type: String,
 			required: true,
+		},
+		type: {
+			type: String,
+			required: false,
+			default: '',
 		},
 		text: {
 			type: String,
@@ -46,7 +51,7 @@ export default {
 	},
 	data() {
 		return {
-			btnText: 'Discover',
+			btnText: 'Explore',
 			btnClass: 'secondary',
 		}
 	},
@@ -83,7 +88,7 @@ export default {
 .item .tag {
 	text-transform: uppercase;
 	text-align: center;
-	margin: 0;
+	margin: 0.75em 0 0;
 	color: var(--primary-color);
 	font-weight: var(--btn-font-weight);
 }

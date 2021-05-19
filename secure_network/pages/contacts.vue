@@ -19,46 +19,52 @@
 			/>
 
 			<div class="grid content">
-				<a class="card interactive contact" href="tel:+390283994606">
-					<span class="icon material-icons">phone</span>
-					<p class="info">+39 02 83994606</p>
-				</a>
 				<a
+					v-for="(contact, index) in info.contacts"
+					:key="'contact-' + index + '-' + wrapper"
 					class="card interactive contact"
-					href="mailto:info@securenetwork.it"
+					:href="
+						(contact.type == 'phone'
+							? 'tel:'
+							: contact.type == 'email'
+							? 'mailto:'
+							: '') + contact.data
+					"
 				>
-					<span class="icon material-icons">email</span>
-					<p class="info">info@securenetwork.it</p>
+					<span class="icon material-icons">{{ contact.type }}</span>
+					<p class="info">{{ contact.data }}</p>
 				</a>
 				<a
+					v-for="(headquarter, index) in info.headquarters"
+					:key="'headquarter-' + index + '-' + wrapper"
 					href="#map"
 					data-offset="-100"
-					data-index="1"
-					class="card interactive"
+					:data-index="index"
+					class="card map-card interactive"
+					:class="{ active: activeMap == index }"
 					@click="showMap"
 				>
-					<h3 class="spacer">Italy</h3>
+					<h3 class="spacer">{{ headquarter.state }}</h3>
 					<p class="info centered">
-						Via Valtorta, 48<br />20127, Milano
-					</p>
-				</a>
-				<a
-					href="#map"
-					data-offset="-100"
-					class="card interactive"
-					data-index="2"
-					@click="showMap"
-				>
-					<h3 class="spacer">Italy</h3>
-					<p class="info centered">
-						Piazza A. Diaz, 6<br />20123, Milano
+						{{ headquarter.street }}, {{ headquarter.number
+						}}<br />{{ headquarter.zip }}, {{ headquarter.city }}
 					</p>
 				</a>
 			</div>
 		</section>
 		<div id="map" class="map-section">
-			<span class="map map-1" :class="{ active: activeMap == 1 }"></span>
-			<span class="map map-2" :class="{ active: activeMap == 2 }"></span>
+			<span
+				v-for="(headquarter, index) in info.headquarters"
+				:key="'map-' + index + '-' + wrapper"
+				class="map"
+				:style="'background: url(' + headquarter.map + ')'"
+				:class="{
+					active: activeMap == index,
+					old: oldMap == index,
+					even: mapChanges % 2 == 0,
+					odd: mapChanges % 2 != 0,
+				}"
+			></span>
 		</div>
 	</div>
 </template>
@@ -97,7 +103,40 @@ export default {
 				text:
 					'Our operational headquarter is in Milan, near the "Turro" metro station.',
 			},
-			activeMap: 1,
+			info: {
+				contacts: [
+					{
+						type: 'phone',
+						data: '+39 02 83994606',
+					},
+					{
+						type: 'email',
+						data: 'info@securenetwork.it',
+					},
+				],
+				headquarters: [
+					{
+						state: 'Italy',
+						city: 'Milan',
+						zip: '20127',
+						street: 'Via Valtorta',
+						number: '48',
+						map: '/images/maps/map-1.jpg',
+					},
+					{
+						state: 'Italy',
+						city: 'Milan',
+						zip: '20123',
+						street: 'Piazza A. Diaz',
+						number: '6',
+						map: '/images/maps/map-2.jpg',
+					},
+				],
+			},
+			clickableMaps: true,
+			oldMap: -1,
+			activeMap: 0,
+			mapChanges: 0,
 		}
 	},
 	head() {
@@ -107,9 +146,20 @@ export default {
 	},
 	methods: {
 		showMap(event) {
+			if (!this.clickableMaps) return
 			const index = +event.target.closest('a').getAttribute('data-index')
 			this.$scrollTo(event)
+
+			if (this.activeMap === index) return
+			this.mapChanges++
+			this.clickableMaps = false
+			this.oldMap = this.activeMap
 			this.activeMap = index
+
+			setTimeout(() => {
+				this.oldMap = -1
+				this.clickableMaps = true
+			}, 750)
 		},
 	},
 }
@@ -118,6 +168,25 @@ export default {
 <style scoped>
 p.centered {
 	text-align: center;
+}
+
+.map-card {
+	position: relative;
+}
+.map-card::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	border: var(--line-weight) solid var(--primary-color);
+	border-radius: var(--card-radius);
+	opacity: 0;
+	transition: 0.35s opacity ease-in-out;
+}
+.map-card.active::after {
+	opacity: 1;
 }
 
 .contact {
@@ -164,17 +233,19 @@ p.centered {
 	z-index: -2;
 	background: no-repeat center center;
 	background-size: cover;
-	transition: 0.75s left ease-in-out;
-}
-.map-1 {
-	background-image: url('/images/maps/map-1.jpg');
-	left: -100%;
-}
-.map-2 {
-	background-image: url('/images/maps/map-2.jpg');
 	left: 100%;
+}
+.map.even {
+	left: 100%;
+}
+.map.odd {
+	left: -100%;
 }
 .map.active {
 	left: 0;
+	transition: 0.75s left ease-in-out;
+}
+.map.old {
+	transition: 0.75s left ease-in-out;
 }
 </style>

@@ -13,6 +13,7 @@
 		/>
 		<image-components-section
 			id="areas"
+			type="area"
 			title="Located In"
 			:components="[area]"
 			:wrapper="service.id"

@@ -7,6 +7,7 @@
 				:key="'item-' + index + '-' + wrapper"
 				:img="item.img"
 				:title="item.name"
+				:type="type"
 				:text="item.text"
 				:path="item.path"
 				:highlighted="item.isReference"
@@ -25,6 +26,11 @@ export default {
 		wrapper: {
 			type: String,
 			required: true,
+		},
+		type: {
+			type: String,
+			required: false,
+			default: '',
 		},
 		title: {
 			type: String,

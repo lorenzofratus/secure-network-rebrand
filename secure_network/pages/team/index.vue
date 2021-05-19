@@ -67,7 +67,7 @@ export default {
 		return {
 			wrapper: 'Team',
 			main_section: {
-				title: 'Your Protection, Our Mission',
+				title: 'A Cutting-Edge Team Of Researchers',
 				subtitle: '',
 				buttons: [
 					{

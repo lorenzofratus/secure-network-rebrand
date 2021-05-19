@@ -8,8 +8,7 @@
 				v-for="(year, index) in years"
 				:key="'timeline-section-item-' + index + '-' + wrapper"
 				:year="year.year"
-				:news-count="year.news"
-				:research-count="year.research"
+				:types="resourceTypes(year)"
 				:path="year.path"
 			/>
 		</div>
@@ -30,6 +29,20 @@ export default {
 		years: {
 			type: Array,
 			required: true,
+		},
+	},
+	methods: {
+		resourceTypes(year) {
+			return [
+				{
+					name: 'news',
+					count: year.news,
+				},
+				{
+					name: 'research',
+					count: year.research,
+				},
+			]
 		},
 	},
 }

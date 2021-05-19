@@ -14,6 +14,7 @@
 		<items-section
 			id="categories"
 			title="Categories Of Services"
+			type="category"
 			:wrapper="area.id"
 			:items="serviceCategories"
 		/>

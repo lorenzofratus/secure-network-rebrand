@@ -13,7 +13,7 @@
 			:wrapper="wrapper"
 			:button="alt_section.button"
 		/>
-
+		<threats-section :wrapper="wrapper" />
 		<image-components-section
 			id="founders"
 			title="Our Founders"
@@ -27,9 +27,15 @@
 <script>
 import MainSection from '~/components/sections/MainSection.vue'
 import AltSection from '~/components/sections/AltSection.vue'
+import ThreatsSection from '~/components/sections/ThreatsSection.vue'
 import ImageComponentsSection from '~/components/sections/ImageComponentsSection'
 export default {
-	components: { MainSection, AltSection, ImageComponentsSection },
+	components: {
+		MainSection,
+		AltSection,
+		ThreatsSection,
+		ImageComponentsSection,
+	},
 	async asyncData({ $axios, error }) {
 		try {
 			const { data } = await $axios.get(

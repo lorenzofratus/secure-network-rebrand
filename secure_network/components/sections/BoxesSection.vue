@@ -7,6 +7,7 @@
 				:key="'box-' + index + '-' + wrapper"
 				:btn-path="box.path"
 				:icon="box.icon"
+				type="resource"
 				:title="box.title"
 				:text="box.name"
 				:card-class="box.type + '-box'"

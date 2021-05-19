@@ -2,11 +2,12 @@
 	<div class="timeline-item">
 		<div class="content">
 			<h3 class="year h1">{{ year }}</h3>
-			<div class="count h3">
-				<b>{{ newsCount }}</b> News
-			</div>
-			<div class="count h3">
-				<b>{{ researchCount }}</b> Research
+			<div
+				v-for="(type, index) in types"
+				:key="'resource-type-' + index + '-' + wrapper"
+				class="count h3"
+			>
+				<b>{{ type.count }}</b> {{ type.name }}
 			</div>
 			<button-component
 				:btn-class="'secondary'"
@@ -28,12 +29,8 @@ export default {
 			type: Number,
 			required: true,
 		},
-		newsCount: {
-			type: Number,
-			required: true,
-		},
-		researchCount: {
-			type: Number,
+		types: {
+			type: Array,
 			required: true,
 		},
 		path: {
@@ -66,6 +63,7 @@ export default {
 	margin: 0;
 }
 .timeline-item .count {
+	text-transform: capitalize;
 	padding: 0;
 	margin: 0.5em 0;
 	display: flex;

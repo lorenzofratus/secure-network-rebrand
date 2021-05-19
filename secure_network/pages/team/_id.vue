@@ -16,6 +16,7 @@
 		<image-components-section
 			v-if="area != null"
 			id="area"
+			type="area"
 			title="Current occupation"
 			:components="[area]"
 			:wrapper="person.id"
@@ -24,6 +25,7 @@
 		<items-section
 			v-if="services.length"
 			id="services"
+			type="service"
 			title="Provided Services"
 			:wrapper="person.id"
 			:items="services"

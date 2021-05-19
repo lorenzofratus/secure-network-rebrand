@@ -11,7 +11,12 @@
 			:paragraphs="category.paragraphs"
 			:wrapper="wrapper"
 		/>
-		<items-section id="services" :wrapper="wrapper" :items="services" />
+		<items-section
+			id="services"
+			type="service"
+			:wrapper="wrapper"
+			:items="services"
+		/>
 	</div>
 </template>
 
