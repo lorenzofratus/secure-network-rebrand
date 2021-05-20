@@ -20,6 +20,7 @@ export default {
 			process.env.NODE_ENV === 'dev'
 				? 'http://localhost:3000'
 				: 'https://securenetwork.herokuapp.com',
+		configurationId: '5bbb2329-982d-4bb0-824e-1a52912f9962',
 	},
 	serverMiddleware: servMid,
 	// Global page headers: https://go.nuxtjs.dev/config-head
@@ -84,7 +85,7 @@ export default {
 	css: ['~/assets/css/normalize', '~/assets/css/style'],
 
 	// Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-	plugins: ['~/plugins/scroll-to.js'],
+	plugins: ['~/plugins/mmcc.js', '~/plugins/scroll-to.js'],
 
 	// Auto import components: https://go.nuxtjs.dev/config-components
 	components: true,
