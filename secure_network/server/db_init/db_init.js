@@ -483,7 +483,6 @@ const p_s = [
 	{
 		person_id: 'andrea-jegher',
 		service_id: 'application-vulnerability-assessment',
-		isReference: true,
 	},
 	{
 		person_id: 'andrea-jegher',
@@ -525,7 +524,6 @@ const p_s = [
 	{
 		person_id: 'ilaria-buonagurio',
 		service_id: 'vulnerability-detection-&-exploitation',
-		isReference: true,
 	},
 	{
 		person_id: 'ilaria-buonagurio',
@@ -725,7 +723,6 @@ const p_s = [
 	{
 		person_id: 'michiele-roviello',
 		service_id: 'wireless-network-&-infrastructres',
-		isReference: true,
 	},
 	{
 		person_id: 'michiele-roviello',
@@ -734,7 +731,6 @@ const p_s = [
 	{
 		person_id: 'michiele-roviello',
 		service_id: 'vulnerability-assessment',
-		isReference: true,
 	},
 	{
 		person_id: 'alvise-biffi',

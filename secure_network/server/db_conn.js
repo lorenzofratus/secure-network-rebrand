@@ -186,7 +186,7 @@ async function insertTables(dev) {
 
 async function initializeDatabase() {
 	// Some code to initialize the db
-	const dev = false
+	const dev = true
 	defineDatabaseStructure()
 	await db.sync({ force: dev })
 	// Uncomment to insert initializiation info within the db
