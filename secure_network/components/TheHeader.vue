@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<header>
 		<nav class="nav" :class="{ opened: isOpened }">
 			<div class="content">
 				<nuxt-link
@@ -22,7 +22,7 @@
 			</div>
 		</nav>
 		<div class="shadow"></div>
-	</div>
+	</header>
 </template>
 
 <script>

@@ -1,5 +1,5 @@
 <template>
-	<div class="container">
+	<main class="container">
 		<main-section
 			:img="main_section.img"
 			:title="main_section.title"
@@ -7,7 +7,7 @@
 			:wrapper="wrapper"
 		/>
 		<timeline-section :wrapper="wrapper" :years="years" />
-	</div>
+	</main>
 </template>
 
 <script>

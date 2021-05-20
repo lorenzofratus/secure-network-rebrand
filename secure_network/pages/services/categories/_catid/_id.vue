@@ -1,5 +1,5 @@
 <template>
-	<div class="container">
+	<main class="container">
 		<main-section
 			:buttons="buttons"
 			:img="service.img"
@@ -35,7 +35,7 @@
 			:people="people"
 			:wrapper="service.id"
 		/>
-	</div>
+	</main>
 </template>
 
 <script>

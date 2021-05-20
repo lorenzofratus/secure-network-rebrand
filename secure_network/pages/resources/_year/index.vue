@@ -1,5 +1,5 @@
 <template>
-	<div class="container">
+	<main class="container">
 		<main-section
 			:img="main_section.img"
 			:title="main_section.title + year"
@@ -20,7 +20,7 @@
 			class="resources"
 			:class="[filterClass, { animating: animating }]"
 		/>
-	</div>
+	</main>
 </template>
 
 <script>

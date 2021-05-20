@@ -1,5 +1,5 @@
 <template>
-	<div class="container">
+	<main class="container">
 		<main-section
 			:buttons="main_section.buttons"
 			:img="main_section.img"
@@ -21,7 +21,7 @@
 			:wrapper="wrapper"
 			:is-rounded="true"
 		/>
-	</div>
+	</main>
 </template>
 
 <script>

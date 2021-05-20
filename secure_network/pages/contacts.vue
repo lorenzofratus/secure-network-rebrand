@@ -1,5 +1,5 @@
 <template>
-	<div class="container">
+	<main class="container">
 		<main-section
 			:buttons="main_section.buttons"
 			:img="main_section.img"
@@ -66,7 +66,7 @@
 				}"
 			></span>
 		</div>
-	</div>
+	</main>
 </template>
 
 <script>

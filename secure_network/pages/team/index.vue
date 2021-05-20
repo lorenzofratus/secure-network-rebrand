@@ -1,5 +1,5 @@
 <template>
-	<div class="container">
+	<main class="container">
 		<main-section
 			:buttons="main_section.buttons"
 			:img="main_section.img"
@@ -26,7 +26,7 @@
 			:wrapper="wrapper"
 		/>
 		<hiring-section :wrapper="wrapper" />
-	</div>
+	</main>
 </template>
 
 <script>

@@ -1,5 +1,5 @@
 <template>
-	<div class="container">
+	<main class="container">
 		<main-section
 			:buttons="buttons"
 			:img="person.img"
@@ -30,7 +30,8 @@
 			:wrapper="person.id"
 			:items="services"
 		/>
-	</div>
+		<hiring-section :wrapper="person.id" />
+	</main>
 </template>
 
 <script>

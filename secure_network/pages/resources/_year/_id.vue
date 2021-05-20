@@ -1,5 +1,5 @@
 <template>
-	<div class="container">
+	<main class="container">
 		<main-section
 			:img="resource.img"
 			:title="resource.title"
@@ -12,7 +12,7 @@
 			:contains-link="true"
 			:wrapper="resource.id"
 		/>
-	</div>
+	</main>
 </template>
 
 <script>
