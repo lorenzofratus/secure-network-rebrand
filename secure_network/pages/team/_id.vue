@@ -30,7 +30,6 @@
 			:wrapper="person.id"
 			:items="services"
 		/>
-		<hiring-section :wrapper="person.id" />
 	</div>
 </template>
 
@@ -39,7 +38,6 @@ import ItemsSection from '~/components/sections/ItemsSection.vue'
 import MainSection from '~/components/sections/MainSection.vue'
 import AltSection from '~/components/sections/AltSection.vue'
 import ImageComponentsSection from '~/components/sections/ImageComponentsSection.vue'
-import HiringSection from '~/components/sections/HiringSection.vue'
 
 export default {
 	components: {
@@ -47,7 +45,6 @@ export default {
 		AltSection,
 		ImageComponentsSection,
 		ItemsSection,
-		HiringSection,
 	},
 	layout: 'default',
 	async asyncData({ $axios, route, error }) {
