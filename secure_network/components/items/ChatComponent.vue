@@ -37,10 +37,8 @@
 				</span>
 			</div>
 		</div>
-		<button class="chat-button">
-			<span class="icon material-icons" @click="isOpen = !isOpen">
-				question_answer
-			</span>
+		<button class="chat-button" @click="isOpen = !isOpen">
+			<span class="icon material-icons"> question_answer </span>
 		</button>
 	</div>
 </template>
@@ -50,7 +48,7 @@ export default {
 	data() {
 		return {
 			messageToSend: '',
-			isOpen: true,
+			isOpen: false,
 		}
 	},
 	methods: {
