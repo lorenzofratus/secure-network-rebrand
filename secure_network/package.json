@@ -15,7 +15,7 @@
     "core-js": "^3.12.1",
     "dotenv": "^9.0.2",
     "express": "^4.17.1",
-    "mmcc": "https://gitlab.com/i3lab/mmcc/frontend/mmcc-vue.git",
+    "mmcc": "git@gitlab.com:i3lab/mmcc/frontend/mmcc-vue.git",
     "nuxt": "^2.15.6",
     "pg": "^8.6.0",
     "pg-hstore": "^2.3.3",
