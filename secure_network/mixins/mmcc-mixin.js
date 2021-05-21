@@ -22,6 +22,7 @@ export default {
 		// Adding the default event listener for messages
 		WebSocketEventBus.onMessage((message) => {
 			const self = this
+			console.log(message)
 			setTimeout(() => {
 				if (message.utterance) {
 					self.$store.commit('chat/addMessage', {

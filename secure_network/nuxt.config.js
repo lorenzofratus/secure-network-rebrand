@@ -71,8 +71,7 @@ export default {
 			{ rel: 'preconnect', href: 'https://fonts.gstatic.com' },
 			{
 				rel: 'stylesheet',
-				href:
-					'https://fonts.googleapis.com/css2?family=Epilogue:wght@200;300;400;700;800&display=swap',
+				href: 'https://fonts.googleapis.com/css2?family=Epilogue:wght@200;300;400;700;800&display=swap',
 			},
 			{
 				rel: 'stylesheet',
