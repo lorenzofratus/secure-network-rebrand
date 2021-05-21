@@ -1,16 +1,21 @@
 <template>
 	<div class="chat">
+		<button class="chat-button" @click="isOpen = !isOpen">
+			<span class="icon material-icons"> question_answer </span>
+		</button>
 		<div class="chat-container" :class="{ open: isOpen }">
-			<div class="chat-header">
-				<div>
-					<h4 class="title">Exploit</h4>
-					<p class="subtitle">Your Virtual Assistant</p>
-				</div>
-				<span class="icon material-icons" @click="isOpen = false">
-					close
-				</span>
+			<div class="chat-footer">
+				<input
+					v-model="messageToSend"
+					type="text"
+					placeholder="Type a message..."
+					@keypress.enter="sendMessage"
+				/>
+				<button class="chat-button-inside" @click="sendMessage">
+					<span class="icon material-icons"> send </span>
+				</button>
 			</div>
-			<div id="chat-window" class="chat-window">
+			<div ref="chat-window" class="chat-window">
 				<div
 					v-for="(message, index) of $store.state.chat.messages"
 					:key="`message-${index}`"
@@ -25,21 +30,17 @@
 					</div>
 				</div>
 			</div>
-			<div class="chat-footer">
-				<input
-					v-model="messageToSend"
-					type="text"
-					placeholder="Type a message..."
-					@keypress.enter="sendMessage"
-				/>
-				<span class="icon material-icons" @click="sendMessage">
-					send
-				</span>
+			<div class="chat-header">
+				<div class="exploit"></div>
+				<div class="titling">
+					<h4 class="title">Exploit</h4>
+					<p class="subtitle">Your Virtual Assistant</p>
+				</div>
+				<button class="chat-button-inside" @click="isOpen = false">
+					<span class="icon material-icons"> close </span>
+				</button>
 			</div>
 		</div>
-		<button class="chat-button" @click="isOpen = !isOpen">
-			<span class="icon material-icons"> question_answer </span>
-		</button>
 	</div>
 </template>
 
@@ -49,6 +50,19 @@ export default {
 		return {
 			messageToSend: '',
 			isOpen: false,
+			toBeScrolled: true,
+		}
+	},
+	beforeUpdate() {
+		const container = this.$refs['chat-window']
+		this.toBeScrolled =
+			container.scrollTop + container.clientHeight ===
+			container.scrollHeight
+	},
+	updated() {
+		const container = this.$refs['chat-window']
+		if (this.toBeScrolled) {
+			container.scrollTop = container.scrollHeight
 		}
 	},
 	methods: {
@@ -75,6 +89,7 @@ export default {
 
 <style scoped>
 .chat {
+	--icon-size: 24px;
 	--button-size: 60px;
 	--button-padding: 30px;
 	--container-padding: 105px;
@@ -87,7 +102,7 @@ export default {
 	position: fixed;
 	bottom: var(--button-padding);
 	right: var(--button-padding);
-	z-index: 2;
+	z-index: 3;
 	border: none;
 	height: var(--button-size);
 	width: var(--button-size);
@@ -118,10 +133,16 @@ export default {
 	font-size: 30px;
 	color: var(--primary-color);
 }
+.chat-button-inside {
+	background: transparent;
+	border: none;
+	padding: 0;
+	height: var(--icon-size);
+}
 
 .chat-container {
 	display: flex;
-	flex-direction: column;
+	flex-direction: column-reverse;
 	position: fixed;
 	bottom: var(--container-padding);
 	right: var(--button-padding);
@@ -137,10 +158,25 @@ export default {
 	transition: 0.35s ease-in-out;
 	transition-property: transform, opacity;
 	overflow: hidden;
+	z-index: 3;
 }
 .chat-container.open {
 	transform: scale(1);
 	opacity: 1;
+}
+
+@media screen and (max-width: 410px) {
+	.chat-container {
+		width: auto;
+		left: var(--button-padding);
+	}
+}
+
+@media screen and (max-height: 735px) {
+	.chat-container {
+		height: auto;
+		top: var(--button-padding);
+	}
 }
 
 .chat-header,
@@ -151,12 +187,25 @@ export default {
 	align-items: center;
 	width: 100%;
 	box-sizing: border-box;
-	z-index: 2;
+	z-index: 3;
 }
 
 .chat-header {
-	padding: 1em 1.5em;
+	padding: 1em 0;
 	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+.chat-header > * {
+	flex-grow: 0;
+}
+.chat-header .titling {
+	flex-grow: 1;
+}
+.chat-header .exploit {
+	background: url('/images/exploit.svg') center no-repeat;
+	background-size: contain;
+	height: 40px;
+	width: 40px;
+	margin: 0 1em;
 }
 .chat-header .title {
 	margin: 0 0 0.25em;
@@ -168,21 +217,23 @@ export default {
 	font-size: 0.8em;
 	line-height: 1em;
 }
+.chat-header .chat-button-inside {
+	margin: 0 1.5em;
+}
 .chat-header .icon {
 	color: var(--dark-color);
 	cursor: pointer;
-	padding-left: 0.5em;
 }
 
 .chat-window {
 	flex-grow: 1;
 	overflow-y: auto;
+	overflow-x: hidden;
 	height: auto;
 	padding: 0.5em 0;
 }
 
 .chat-footer {
-	padding: 0 1.5em 0 0;
 	box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
 }
 .chat-footer input {
@@ -193,7 +244,11 @@ export default {
 .chat-footer input:focus {
 	outline: none;
 }
+.chat-footer .chat-button-inside {
+	margin: 0 1.5em 0 0;
+}
 .chat-footer .icon {
+	font-size: var(--icon-size);
 	color: var(--primary-color);
 	cursor: pointer;
 }
@@ -202,9 +257,13 @@ export default {
 	width: 100%;
 	display: flex;
 	justify-content: flex-end;
+	transform: translateX(0);
+	animation-duration: 0.5s;
+	animation-name: slide-in-right;
 }
 .message.sender {
 	justify-content: flex-start;
+	animation-name: slide-in-left;
 }
 .message-content {
 	line-height: 1em;
@@ -220,6 +279,23 @@ export default {
 .message-content.sender {
 	border-radius: 0 1.5em 1.5em 1.5em;
 	background: var(--primary-color);
-	color: white;
+	color: var(--background);
+}
+
+@keyframes slide-in-left {
+	from {
+		transform: translateX(-100%);
+	}
+	to {
+		transform: translateX(0);
+	}
+}
+@keyframes slide-in-right {
+	from {
+		transform: translateX(100%);
+	}
+	to {
+		transform: translateX(0);
+	}
 }
 </style>
