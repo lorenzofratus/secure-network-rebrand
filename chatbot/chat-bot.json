@@ -2,8 +2,8 @@
     "name": "Secure Network ChatBot",
     "data": {
         "kb": {
-            "continue_v": ["continue", "ok", "go"],
-            "steps_v": ["/", "/about"],
+            "continue_v": ["continue", "ok", "go", "yes", "go on", "c"],
+            "steps_v": ["/", "/", "/about"],
             "stay_message": "I don't understand. Do you want to continue?",
             "start": "Hi! My name is Exploit, nice to meet you!",
             "first_xor": {
@@ -40,23 +40,31 @@
             },
             "contact_form": {
                 "initials": ["This is our email form, "],
+                "payload": {
+                    "guide": "/contacts#email"
+                },
                 "completed": {
-                    "utterance": "Thanks! We'll get in touch soon."
+                    "utterance": "Thanks! We'll get in touch soon.",
+                    "payload": {
+                        "guide": "/contacts#email"
+                    }
                 }
             },
             "contact_page": {
                 "initials": ["Here you can find all the information you need."],
                 "completed": {
-                    "utterance": "We look forward to hearing from you!"
+                    "utterance": "We look forward to hearing from you!",
+                    "payload": {
+                        "guide": "/contacts"
+                    }
                 }
             },
-            "guide": "Now I will show you the main pages of our website.",
-            "home": "This is our home page, here you can find our introduction together with the latest news.",
+            "guide": "Are you ready to start the tour?.",
+            "home": "This is our home page, here you can find a brief introduction and the latest news.",
             "about": "This is our about page, here you can find information about our company and what we do.",
             "end": "I'm here if you need more help. Bye!"
         },
         "process": {
-            "first_activity_id": "start",
             "activities": [
                 {
                     "my_id": "start",
@@ -66,7 +74,7 @@
                 },
                 {
                     "my_id": "first_xor",
-                    "next_id": null,
+                    "next_id": "end",
                     "choices": ["contact_xor", "guide"],
                     "my_type": "XOR",
                     "callback": "generic_xor"
@@ -82,7 +90,7 @@
                     "my_id": "contact_form",
                     "next_id": null,
                     "my_type": "TASK",
-                    "callback": "nothing"
+                    "callback": "guide"
                 },
                 {
                     "my_id": "contact_page",
@@ -106,14 +114,15 @@
                     "my_id": "about",
                     "next_id": null,
                     "my_type": "TASK",
-                    "callback": "guide"
+                    "callback": "nothing"
                 },
                 {
                     "my_id": "end",
                     "next_id": "start",
                     "my_type": "END"
                 }
-            ]
+            ],
+            "first_activity_id": "start"
         }
     }
 }
