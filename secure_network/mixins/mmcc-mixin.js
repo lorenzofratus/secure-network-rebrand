@@ -21,18 +21,21 @@ export default {
 
 		// Adding the default event listener for messages
 		WebSocketEventBus.onMessage((message) => {
+			const self = this
 			console.log(message)
-			if (message.utterance) {
-				this.$store.commit('chat/addMessage', {
-					sender: true,
-					content: message.utterance,
-				})
-			}
-			if (message.payload) {
-				if (message.payload.guide) {
-					this.$router.push(message.payload.guide)
+			setTimeout(() => {
+				if (message.utterance) {
+					self.$store.commit('chat/addMessage', {
+						sender: true,
+						content: message.utterance,
+					})
 				}
-			}
+				if (message.payload) {
+					if (message.payload.guide) {
+						self.$router.push(message.payload.guide)
+					}
+				}
+			}, 1000)
 		})
 	},
 }
