@@ -122,7 +122,7 @@ website:
 	\item Advertise the services offered by the company.
 	\item Convert the user's visit into a business contact. 
 \end{itemize}
-
+\noindent
 Figure \ref{fig:model} illustrates the model of this process, the 
 meaning of each activity will be better explained in the next chapter.
 
@@ -134,11 +134,22 @@ meaning of each activity will be better explained in the next chapter.
 \end{figure}
 
 \chapter{Activities}
-
+\section{Start \& Exit Activities}
+\subsection{Start Activity}
+This activity is used as entry point of the interaction, implementing the 
+\emph{start} callback. It is used to present the bot to the user and allow to
+procede to the next activity without waiting any input by the user. 
+No change on the GUI.
+\subsection{End Activity}
+This activity is used as exit point of the interaction, implementing the 
+\emph{exit} callback. It is used to thanks the user for the interaction. 
+This activity waits for a new message of the user, in order to re-start the whole 
+interaction from the beginning. No change on the GUI.
 \section{XOR Activities}
 All of the following activities represent exit points strategically placed
 within the conversation to convey users to the contact form.
-None of them performs direct changes to the GUI.
+None of them performs direct changes to the GUI. Each of them implements a callback,
+which can be called \emph{generic\_xor}, whose goal is to select the right path to take.
 
 \subsection{First XOR}
 This is the first activity that is performed during any interaction with
@@ -160,44 +171,51 @@ take a look at a specific service.
 \subsection{Show All Categories}
 The purpose of this task is to move the user's focus to the page containing 
 all categories of services. 
-The agent interacts with the GUI showing that page. 
+The agent interacts with the GUI showing that page, using a callback,
+called \emph{nothing}, which contains as a payload a \texttt{guide} field, to
+be used for the redirection.
 This transition is accompained by a chat message inviting the user to read 
-the category descriptions.
+the description of shown categories.
 
 \subsection{Select Category}
-Here, the chatbot asks the user to select the category he want to explore 
+Categories shown by the previous task allow the user to procede with this step.
+Here, the chatbot asks the user to select the category he want to explore
 and awaits his response.
-The user can reply in chat or directly click on one of the buttons in the GUI.
-No changes, other than the messages on the chat, are made.
+The user can reply in chat, with the name of the category or directly click on one 
+of the buttons in the GUI, which will fill the chat for the user.
+No change on the GUI happens during this task. Again, the \emph{nothing} callback can 
+be used, this time with an empty payload.
 
 \subsection{Show Category}
 This is also a transitional activity, the chatbot interacts with the GUI to 
-bring the user to the page of the category he has selected.
-As always, a chat message tells the user to read the service descriptions on 
-that page.
+bring the user to the page of the chosen category, using the \emph{nothing} callback, 
+with the proper payload. As always, a chat message tells the user to read the description 
+of presented services.
 
 \subsection{Select Service}
 This is the beginning of the deepest nesting level of this conversation.
 The agent asks and waits for the name of a specific service belonging to the 
 category that the user has selected in the previous steps.
-Even in this case, the user can reply interacting with the page and there are 
-no changes in the GUI.
+Even in this case, the user can reply by pressing the button of the specific
+service. No changes in the GUI. The \emph{nothing} callback with empty payload
+is used.
 
 \subsection{Show Service}
 After the selection, the agent opens the page containing the description of 
-that specific service.
+that specific service, using the \emph{nothing} callback, with the proper payload.
 As usual, the agent displays a message in chat but in this case also waits 
 for user input before continuing with the process.
-
+\clearpage
 \subsection{Show Email Form}
 This is the final point of confluence of any conversation.
 Here, the agent will take the user directly to the contact page, more
-precisely at the section containing the contact form.
-The chatbot will also pre-fill the \emph{Subject} field of the form,
+precisely at the section containing the contact form, again, using the \emph{nothing} callback, 
+with the proper payload.
+The chatbot will use the \texttt{subject} field of the payload 
+to pre-fill, the \emph{Subject} field of the form,
 as well as a short introductory sentence in the \emph{Message}, based
-on the knowledge acquired during the previous interaction.
-After the user has sent the message, the conversation will end with a 
-farewell phrase.
+on the knowledge acquired during the previous interaction, passed through the \texttt{intro} field of the payload.
+After the user has sent the message, the conversation will end with a farewell phrase.
 
 \chapter{Scenario}
 \emph{Antonio} is a 43 years old Italian entrepreneur. 
