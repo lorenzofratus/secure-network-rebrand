@@ -1,0 +1,9 @@
+[0] Config.pm:304> INFO - This is Biber 2.14
+[0] Config.pm:307> INFO - Logfile is 'design_doc.blg'
+[141] biber-darwin:322> INFO - === Lun Mag 24, 2021, 21:01:41
+[157] Biber.pm:415> INFO - Reading 'design_doc.bcf'
+[258] Biber.pm:943> INFO - Found 0 citekeys in bib section 0
+[264] Utils.pm:304> WARN - The file 'design_doc.bcf' does not contain any citations!
+[273] bbl.pm:652> INFO - Writing 'design_doc.bbl' with encoding 'UTF-8'
+[288] bbl.pm:755> INFO - Output to design_doc.bbl
+[288] Biber.pm:128> INFO - WARNINGS: 1
