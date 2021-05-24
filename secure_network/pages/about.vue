@@ -14,13 +14,6 @@
 			:button="alt_section.button"
 		/>
 		<threats-section :wrapper="wrapper" />
-		<image-components-section
-			id="founders"
-			title="Our Founders"
-			:components="founders"
-			:wrapper="wrapper"
-			:is-rounded="true"
-		/>
 	</main>
 </template>
 
@@ -28,27 +21,11 @@
 import MainSection from '~/components/sections/MainSection.vue'
 import AltSection from '~/components/sections/AltSection.vue'
 import ThreatsSection from '~/components/sections/ThreatsSection.vue'
-import ImageComponentsSection from '~/components/sections/ImageComponentsSection'
 export default {
 	components: {
 		MainSection,
 		AltSection,
 		ThreatsSection,
-		ImageComponentsSection,
-	},
-	async asyncData({ $axios, error }) {
-		try {
-			const { data } = await $axios.get(
-				`${process.env.BASE_URL}/api/people-by-role/founder`
-			)
-			const founders = data
-
-			return {
-				founders,
-			}
-		} catch (err) {
-			error({ statusCode: 500 })
-		}
 	},
 	data() {
 		return {
