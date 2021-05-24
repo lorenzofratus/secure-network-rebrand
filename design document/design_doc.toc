@@ -14,6 +14,6 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {6}Visual Design}{10}{chapter.6}%
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {7}Interaction Scenarios}{13}{chapter.7}%
+\contentsline {chapter}{\numberline {7}Interaction Scenarios}{11}{chapter.7}%
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {8}DB Design}{14}{chapter.8}%
+\contentsline {chapter}{\numberline {8}DB Design}{12}{chapter.8}%
