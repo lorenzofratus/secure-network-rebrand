@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.12.28)  24 MAY 2021 21:09
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.12.28)  24 MAY 2021 21:41
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -543,82 +543,110 @@ Package: fancyhdr 2019/01/31 v3.10 Extensive control of page headers and footers
 \f@nch@O@erf=\skip65
 \f@nch@O@olf=\skip66
 \f@nch@O@orf=\skip67
+) (/usr/local/texlive/2020/texmf-dist/tex/latex/pdfpages/pdfpages.sty
+Package: pdfpages 2020/01/28 v0.5q Insert pages of external PDF documents (AM)
+ (/usr/local/texlive/2020/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+) (/usr/local/texlive/2020/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count315
+\calc@Bcount=\count316
+\calc@Adimen=\dimen286
+\calc@Bdimen=\dimen287
+\calc@Askip=\skip68
+\calc@Bskip=\skip69
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count317
+\calc@Cskip=\skip70
+) (/usr/local/texlive/2020/texmf-dist/tex/latex/eso-pic/eso-pic.sty
+Package: eso-pic 2018/04/12 v2.0h eso-pic (RN)
+)
+\AM@pagewidth=\dimen288
+\AM@pageheight=\dimen289
+ (/usr/local/texlive/2020/texmf-dist/tex/latex/pdfpages/pppdftex.def
+File: pppdftex.def 2020/01/28 v0.5q Pdfpages driver for pdfTeX (AM)
+)
+\AM@pagebox=\box69
+\AM@global@opts=\toks46
+\AM@pagecnt=\count318
+\AM@toc@title=\toks47
+\c@AM@survey=\count319
+\AM@templatesizebox=\box70
 ) (/usr/local/texlive/2020/texmf-dist/tex/latex/titlesec/titlesec.sty
 Package: titlesec 2019/10/16 v2.13 Sectioning titles
-\ttl@box=\box69
-\beforetitleunit=\skip68
-\aftertitleunit=\skip69
-\ttl@plus=\dimen286
-\ttl@minus=\dimen287
-\ttl@toksa=\toks46
-\titlewidth=\dimen288
-\titlewidthlast=\dimen289
-\titlewidthfirst=\dimen290
+\ttl@box=\box71
+\beforetitleunit=\skip71
+\aftertitleunit=\skip72
+\ttl@plus=\dimen290
+\ttl@minus=\dimen291
+\ttl@toksa=\toks48
+\titlewidth=\dimen292
+\titlewidthlast=\dimen293
+\titlewidthfirst=\dimen294
 ) (/usr/local/texlive/2020/texmf-dist/tex/latex/biblatex/biblatex.sty
 Package: biblatex 2019/12/01 v3.14 programmable bibliographies (PK/MW)
  (/usr/local/texlive/2020/texmf-dist/tex/latex/logreq/logreq.sty
 Package: logreq 2010/08/04 v1.0 xml request logger
-\lrq@indent=\count315
+\lrq@indent=\count320
  (/usr/local/texlive/2020/texmf-dist/tex/latex/logreq/logreq.def
 File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
-)) (/usr/local/texlive/2020/texmf-dist/tex/latex/base/ifthen.sty
-Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
-)
-\c@tabx@nest=\count316
-\c@listtotal=\count317
-\c@listcount=\count318
-\c@liststart=\count319
-\c@liststop=\count320
-\c@citecount=\count321
-\c@citetotal=\count322
-\c@multicitecount=\count323
-\c@multicitetotal=\count324
-\c@instcount=\count325
-\c@maxnames=\count326
-\c@minnames=\count327
-\c@maxitems=\count328
-\c@minitems=\count329
-\c@citecounter=\count330
-\c@maxcitecounter=\count331
-\c@savedcitecounter=\count332
-\c@uniquelist=\count333
-\c@uniquename=\count334
-\c@refsection=\count335
-\c@refsegment=\count336
-\c@maxextratitle=\count337
-\c@maxextratitleyear=\count338
-\c@maxextraname=\count339
-\c@maxextradate=\count340
-\c@maxextraalpha=\count341
-\c@abbrvpenalty=\count342
-\c@highnamepenalty=\count343
-\c@lownamepenalty=\count344
-\c@maxparens=\count345
-\c@parenlevel=\count346
-\blx@tempcnta=\count347
-\blx@tempcntb=\count348
-\blx@tempcntc=\count349
-\blx@maxsection=\count350
-\blx@maxsegment@0=\count351
-\blx@notetype=\count352
-\blx@parenlevel@text=\count353
-\blx@parenlevel@foot=\count354
-\blx@sectionciteorder@0=\count355
-\blx@entrysetcounter=\count356
-\labelnumberwidth=\skip70
-\labelalphawidth=\skip71
-\biblabelsep=\skip72
-\bibitemsep=\skip73
-\bibnamesep=\skip74
-\bibinitsep=\skip75
-\bibparsep=\skip76
-\bibhang=\skip77
+))
+\c@tabx@nest=\count321
+\c@listtotal=\count322
+\c@listcount=\count323
+\c@liststart=\count324
+\c@liststop=\count325
+\c@citecount=\count326
+\c@citetotal=\count327
+\c@multicitecount=\count328
+\c@multicitetotal=\count329
+\c@instcount=\count330
+\c@maxnames=\count331
+\c@minnames=\count332
+\c@maxitems=\count333
+\c@minitems=\count334
+\c@citecounter=\count335
+\c@maxcitecounter=\count336
+\c@savedcitecounter=\count337
+\c@uniquelist=\count338
+\c@uniquename=\count339
+\c@refsection=\count340
+\c@refsegment=\count341
+\c@maxextratitle=\count342
+\c@maxextratitleyear=\count343
+\c@maxextraname=\count344
+\c@maxextradate=\count345
+\c@maxextraalpha=\count346
+\c@abbrvpenalty=\count347
+\c@highnamepenalty=\count348
+\c@lownamepenalty=\count349
+\c@maxparens=\count350
+\c@parenlevel=\count351
+\blx@tempcnta=\count352
+\blx@tempcntb=\count353
+\blx@tempcntc=\count354
+\blx@maxsection=\count355
+\blx@maxsegment@0=\count356
+\blx@notetype=\count357
+\blx@parenlevel@text=\count358
+\blx@parenlevel@foot=\count359
+\blx@sectionciteorder@0=\count360
+\blx@entrysetcounter=\count361
+\labelnumberwidth=\skip73
+\labelalphawidth=\skip74
+\biblabelsep=\skip75
+\bibitemsep=\skip76
+\bibnamesep=\skip77
+\bibinitsep=\skip78
+\bibparsep=\skip79
+\bibhang=\skip80
 \blx@bcfin=\read4
 \blx@bcfout=\write4
 \blx@langwohyphens=\language86
-\c@mincomprange=\count357
-\c@maxcomprange=\count358
-\c@mincompwidth=\count359
+\c@mincomprange=\count362
+\c@maxcomprange=\count363
+\c@mincompwidth=\count364
 Package biblatex Info: Trying to load biblatex default data model...
 Package biblatex Info: ... file 'blx-dm.def' found.
  (/usr/local/texlive/2020/texmf-dist/tex/latex/biblatex/blx-dm.def
@@ -628,88 +656,88 @@ Package biblatex Info: Trying to load biblatex style data model...
 Package biblatex Info: ... file 'draft.dbx' not found.
 Package biblatex Info: Trying to load biblatex custom data model...
 Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
-\c@afterword=\count360
-\c@savedafterword=\count361
-\c@annotator=\count362
-\c@savedannotator=\count363
-\c@author=\count364
-\c@savedauthor=\count365
-\c@bookauthor=\count366
-\c@savedbookauthor=\count367
-\c@commentator=\count368
-\c@savedcommentator=\count369
-\c@editor=\count370
-\c@savededitor=\count371
-\c@editora=\count372
-\c@savededitora=\count373
-\c@editorb=\count374
-\c@savededitorb=\count375
-\c@editorc=\count376
-\c@savededitorc=\count377
-\c@foreword=\count378
-\c@savedforeword=\count379
-\c@holder=\count380
-\c@savedholder=\count381
-\c@introduction=\count382
-\c@savedintroduction=\count383
-\c@namea=\count384
-\c@savednamea=\count385
-\c@nameb=\count386
-\c@savednameb=\count387
-\c@namec=\count388
-\c@savednamec=\count389
-\c@translator=\count390
-\c@savedtranslator=\count391
-\c@shortauthor=\count392
-\c@savedshortauthor=\count393
-\c@shorteditor=\count394
-\c@savedshorteditor=\count395
-\c@labelname=\count396
-\c@savedlabelname=\count397
-\c@institution=\count398
-\c@savedinstitution=\count399
-\c@lista=\count400
-\c@savedlista=\count401
-\c@listb=\count402
-\c@savedlistb=\count403
-\c@listc=\count404
-\c@savedlistc=\count405
-\c@listd=\count406
-\c@savedlistd=\count407
-\c@liste=\count408
-\c@savedliste=\count409
-\c@listf=\count410
-\c@savedlistf=\count411
-\c@location=\count412
-\c@savedlocation=\count413
-\c@organization=\count414
-\c@savedorganization=\count415
-\c@origlocation=\count416
-\c@savedoriglocation=\count417
-\c@origpublisher=\count418
-\c@savedorigpublisher=\count419
-\c@publisher=\count420
-\c@savedpublisher=\count421
-\c@language=\count422
-\c@savedlanguage=\count423
-\c@origlanguage=\count424
-\c@savedoriglanguage=\count425
-\c@pageref=\count426
-\c@savedpageref=\count427
-\shorthandwidth=\skip78
-\shortjournalwidth=\skip79
-\shortserieswidth=\skip80
-\shorttitlewidth=\skip81
-\shortauthorwidth=\skip82
-\shorteditorwidth=\skip83
-\locallabelnumberwidth=\skip84
-\locallabelalphawidth=\skip85
-\localshorthandwidth=\skip86
-\localshortjournalwidth=\skip87
-\localshortserieswidth=\skip88
-\localshorttitlewidth=\skip89
-\localshortauthorwidth=\skip90
-\localshorteditorwidth=\skip91
+\c@afterword=\count365
+\c@savedafterword=\count366
+\c@annotator=\count367
+\c@savedannotator=\count368
+\c@author=\count369
+\c@savedauthor=\count370
+\c@bookauthor=\count371
+\c@savedbookauthor=\count372
+\c@commentator=\count373
+\c@savedcommentator=\count374
+\c@editor=\count375
+\c@savededitor=\count376
+\c@editora=\count377
+\c@savededitora=\count378
+\c@editorb=\count379
+\c@savededitorb=\count380
+\c@editorc=\count381
+\c@savededitorc=\count382
+\c@foreword=\count383
+\c@savedforeword=\count384
+\c@holder=\count385
+\c@savedholder=\count386
+\c@introduction=\count387
+\c@savedintroduction=\count388
+\c@namea=\count389
+\c@savednamea=\count390
+\c@nameb=\count391
+\c@savednameb=\count392
+\c@namec=\count393
+\c@savednamec=\count394
+\c@translator=\count395
+\c@savedtranslator=\count396
+\c@shortauthor=\count397
+\c@savedshortauthor=\count398
+\c@shorteditor=\count399
+\c@savedshorteditor=\count400
+\c@labelname=\count401
+\c@savedlabelname=\count402
+\c@institution=\count403
+\c@savedinstitution=\count404
+\c@lista=\count405
+\c@savedlista=\count406
+\c@listb=\count407
+\c@savedlistb=\count408
+\c@listc=\count409
+\c@savedlistc=\count410
+\c@listd=\count411
+\c@savedlistd=\count412
+\c@liste=\count413
+\c@savedliste=\count414
+\c@listf=\count415
+\c@savedlistf=\count416
+\c@location=\count417
+\c@savedlocation=\count418
+\c@organization=\count419
+\c@savedorganization=\count420
+\c@origlocation=\count421
+\c@savedoriglocation=\count422
+\c@origpublisher=\count423
+\c@savedorigpublisher=\count424
+\c@publisher=\count425
+\c@savedpublisher=\count426
+\c@language=\count427
+\c@savedlanguage=\count428
+\c@origlanguage=\count429
+\c@savedoriglanguage=\count430
+\c@pageref=\count431
+\c@savedpageref=\count432
+\shorthandwidth=\skip81
+\shortjournalwidth=\skip82
+\shortserieswidth=\skip83
+\shorttitlewidth=\skip84
+\shortauthorwidth=\skip85
+\shorteditorwidth=\skip86
+\locallabelnumberwidth=\skip87
+\locallabelalphawidth=\skip88
+\localshorthandwidth=\skip89
+\localshortjournalwidth=\skip90
+\localshortserieswidth=\skip91
+\localshorttitlewidth=\skip92
+\localshortauthorwidth=\skip93
+\localshorteditorwidth=\skip94
 Package biblatex Info: Trying to load compatibility code...
 Package biblatex Info: ... file 'blx-compat.def' found.
  (/usr/local/texlive/2020/texmf-dist/tex/latex/biblatex/blx-compat.def
@@ -719,19 +747,19 @@ Package biblatex Info: Trying to load generic definitions...
 Package biblatex Info: ... file 'biblatex.def' found.
  (/usr/local/texlive/2020/texmf-dist/tex/latex/biblatex/biblatex.def
 File: biblatex.def 2019/12/01 v3.14 biblatex compatibility (PK/MW)
-\c@textcitecount=\count428
-\c@textcitetotal=\count429
-\c@textcitemaxnames=\count430
-\c@biburlbigbreakpenalty=\count431
-\c@biburlbreakpenalty=\count432
-\c@biburlnumpenalty=\count433
-\c@biburlucpenalty=\count434
-\c@biburllcpenalty=\count435
+\c@textcitecount=\count433
+\c@textcitetotal=\count434
+\c@textcitemaxnames=\count435
+\c@biburlbigbreakpenalty=\count436
+\c@biburlbreakpenalty=\count437
+\c@biburlnumpenalty=\count438
+\c@biburlucpenalty=\count439
+\c@biburllcpenalty=\count440
 \biburlbigskip=\muskip18
 \biburlnumskip=\muskip19
 \biburlucskip=\muskip20
 \biburllcskip=\muskip21
-\c@smartand=\count436
+\c@smartand=\count441
 )
 Package biblatex Info: Trying to load bibliography style 'draft'...
 Package biblatex Info: ... file 'draft.bbx' found.
@@ -741,8 +769,8 @@ Package biblatex Info: Trying to load bibliography style 'standard'...
 Package biblatex Info: ... file 'standard.bbx' found.
  (/usr/local/texlive/2020/texmf-dist/tex/latex/biblatex/bbx/standard.bbx
 File: standard.bbx 2019/12/01 v3.14 biblatex bibliography style (PK/MW)
-\c@bbx:relatedcount=\count437
-\c@bbx:relatedtotal=\count438
+\c@bbx:relatedcount=\count442
+\c@bbx:relatedtotal=\count443
 ))
 Package biblatex Info: Trying to load citation style 'draft'...
 Package biblatex Info: ... file 'draft.cbx' found.
@@ -761,58 +789,58 @@ Package biblatex Info: ... file 'biblatex.cfg' found.
 File: biblatex.cfg 
 )) (/usr/local/texlive/2020/texmf-dist/tex/latex/titling/titling.sty
 Package: titling 2009/09/04 v2.1d maketitle typesetting
-\thanksmarkwidth=\skip92
-\thanksmargin=\skip93
-\droptitle=\skip94
+\thanksmarkwidth=\skip95
+\thanksmargin=\skip96
+\droptitle=\skip97
 )
 
-Package Fancyhdr Warning: \fancyfoot's `E' option without twoside option is useless on input line 100.
-
-
 Package Fancyhdr Warning: \fancyfoot's `E' option without twoside option is useless on input line 101.
+
+
+Package Fancyhdr Warning: \fancyfoot's `E' option without twoside option is useless on input line 102.
 
 
 Package biblatex Warning: 'babel/polyglossia' detected but 'csquotes' missing.
 (biblatex)                Loading 'csquotes' recommended.
 
-\@quotelevel=\count439
-\@quotereset=\count440
+\@quotelevel=\count444
+\@quotereset=\count445
 (/usr/local/texlive/2020/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
 File: l3backend-pdfmode.def 2020-03-12 L3 backend support: PDF mode
-\l__kernel_color_stack_int=\count441
-\l__pdf_internal_box=\box70
+\l__kernel_color_stack_int=\count446
+\l__pdf_internal_box=\box72
 ) (/Users/simoneorlando/Documents/SecureNetwork/SecureNetworkRebrand/design document/design_doc.aux)
 \openout1 = `design_doc.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 103.
-LaTeX Font Info:    ... okay on input line 103.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 103.
-LaTeX Font Info:    ... okay on input line 103.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 103.
-LaTeX Font Info:    ... okay on input line 103.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 103.
-LaTeX Font Info:    ... okay on input line 103.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 103.
-LaTeX Font Info:    ... okay on input line 103.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 103.
-LaTeX Font Info:    ... okay on input line 103.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 103.
-LaTeX Font Info:    ... okay on input line 103.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 103.
-LaTeX Font Info:    ... okay on input line 103.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 104.
+LaTeX Font Info:    ... okay on input line 104.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 104.
+LaTeX Font Info:    ... okay on input line 104.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 104.
+LaTeX Font Info:    ... okay on input line 104.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 104.
+LaTeX Font Info:    ... okay on input line 104.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 104.
+LaTeX Font Info:    ... okay on input line 104.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 104.
+LaTeX Font Info:    ... okay on input line 104.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 104.
+LaTeX Font Info:    ... okay on input line 104.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 104.
+LaTeX Font Info:    ... okay on input line 104.
  (/usr/local/texlive/2020/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count442
-\scratchdimen=\dimen291
-\scratchbox=\box71
-\nofMPsegments=\count443
-\nofMParguments=\count444
-\everyMPshowfont=\toks47
-\MPscratchCnt=\count445
-\MPscratchDim=\dimen292
-\MPnumerator=\count446
-\makeMPintoPDFobject=\count447
-\everyMPtoPDFconversion=\toks48
+\scratchcounter=\count447
+\scratchdimen=\dimen295
+\scratchbox=\box73
+\nofMPsegments=\count448
+\nofMParguments=\count449
+\everyMPshowfont=\toks49
+\MPscratchCnt=\count450
+\MPscratchDim=\dimen296
+\MPnumerator=\count451
+\makeMPintoPDFobject=\count452
+\everyMPtoPDFconversion=\toks50
 ) (/usr/local/texlive/2020/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
@@ -853,19 +881,19 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Info: Redefining \it@ocap on input line 103.
-LaTeX Info: Redefining \it@ccap on input line 103.
+LaTeX Info: Redefining \it@ocap on input line 104.
+LaTeX Info: Redefining \it@ccap on input line 104.
 
 File italian.ldf warning: 
 italian.ldf    With OT1 encoding guillemets are poorly faked
 italian.ldf    Use T1 encoding
 italian.ldf    or specify a font with command \CaporaliFrom
 italian.ldf    See the documentation concerning the babel-italian typesetting 
-italian.ldf    on input line 103.
+italian.ldf    on input line 104.
 
-\c@lstlisting=\count448
-\AtBeginShipoutBox=\box72
-Package hyperref Info: Link coloring OFF on input line 103.
+\c@lstlisting=\count453
+\AtBeginShipoutBox=\box74
+Package hyperref Info: Link coloring OFF on input line 104.
 (/usr/local/texlive/2020/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
  (/usr/local/texlive/2020/texmf-dist/tex/latex/refcount/refcount.sty
@@ -873,11 +901,11 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 ) (/usr/local/texlive/2020/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count449
+\c@section@level=\count454
 )
-LaTeX Info: Redefining \ref on input line 103.
-LaTeX Info: Redefining \pageref on input line 103.
-LaTeX Info: Redefining \nameref on input line 103.
+LaTeX Info: Redefining \ref on input line 104.
+LaTeX Info: Redefining \pageref on input line 104.
+LaTeX Info: Redefining \nameref on input line 104.
  (/Users/simoneorlando/Documents/SecureNetwork/SecureNetworkRebrand/design document/design_doc.out) (/Users/simoneorlando/Documents/SecureNetwork/SecureNetworkRebrand/design document/design_doc.out)
 \@outlinefile=\write5
 \openout5 = `design_doc.out'.
@@ -885,11 +913,18 @@ LaTeX Info: Redefining \nameref on input line 103.
  ABD: EveryShipout initializing macros
 
 Package pgfplots Warning: running in backwards compatibility mode (unsuitable tick labels; missing features). Consider writing \pgfplotsset{compat=1.17} into your preamble.
- on input line 103.
+ on input line 104.
 
+(/usr/local/texlive/2020/texmf-dist/tex/latex/pdflscape/pdflscape.sty
+Package: pdflscape 2019/12/05 v0.12 Display of landscape pages in PDF (HO)
+ (/usr/local/texlive/2020/texmf-dist/tex/latex/graphics/lscape.sty
+Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
+)
+Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
+)
 Package biblatex Info: Trying to load language 'italian'...
 Package biblatex Info: ... file 'italian.lbx' found.
-(/usr/local/texlive/2020/texmf-dist/tex/latex/biblatex/lbx/italian.lbx
+ (/usr/local/texlive/2020/texmf-dist/tex/latex/biblatex/lbx/italian.lbx
 File: italian.lbx 2019/12/01 v3.14 biblatex localization (PK/MW)
 )
 Package biblatex Info: Input encoding 'utf8' detected.
@@ -900,18 +935,18 @@ Package biblatex Info: Automatic encoding selection.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'design_doc.bbl' found.
  (/Users/simoneorlando/Documents/SecureNetwork/SecureNetworkRebrand/design document/design_doc.bbl)
-Package biblatex Info: Reference section=0 on input line 103.
-Package biblatex Info: Reference segment=0 on input line 103.
-<images/polimi_logo.jpg, id=35, 401.5pt x 150.5625pt>
+Package biblatex Info: Reference section=0 on input line 104.
+Package biblatex Info: Reference segment=0 on input line 104.
+<images/polimi_logo.jpg, id=39, 401.5pt x 150.5625pt>
 File: images/polimi_logo.jpg Graphic file (type jpg)
 <use images/polimi_logo.jpg>
-Package pdftex.def Info: images/polimi_logo.jpg  used on input line 105.
+Package pdftex.def Info: images/polimi_logo.jpg  used on input line 106.
 (pdftex.def)             Requested size: 362.77264pt x 136.04947pt.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 105.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 106.
  (/usr/local/texlive/2020/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 105.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 106.
  (/usr/local/texlive/2020/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
@@ -923,7 +958,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.108 \chapter
+l.109 \chapter
               {Abstract} [1
 
 ]
@@ -932,58 +967,165 @@ Capitolo 1.
 
 ]
 Capitolo 2.
-<images/C-IDM.pdf, id=62, 644.4075pt x 474.81387pt>
+<images/C-IDM.pdf, id=66, 644.4075pt x 474.81387pt>
 File: images/C-IDM.pdf Graphic file (type pdf)
 <use images/C-IDM.pdf>
-Package pdftex.def Info: images/C-IDM.pdf  used on input line 124.
+Package pdftex.def Info: images/C-IDM.pdf  used on input line 125.
 (pdftex.def)             Requested size: 483.69687pt x 356.41382pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 121--128
+
+ []
+
 [3
 
  </Users/simoneorlando/Documents/SecureNetwork/SecureNetworkRebrand/design document/images/C-IDM.pdf>]
 Capitolo 3.
+<images/content_tables_pt2.pdf, id=87, 549.97469pt x 277.035pt>
+File: images/content_tables_pt2.pdf Graphic file (type pdf)
+<use images/content_tables_pt2.pdf>
+Package pdftex.def Info: images/content_tables_pt2.pdf  used on input line 134.
+(pdftex.def)             Requested size: 435.32422pt x 219.2822pt.
+<images/content_tables_pt1.pdf, id=88, 549.97469pt x 790.87468pt>
+File: images/content_tables_pt1.pdf Graphic file (type pdf)
+<use images/content_tables_pt1.pdf>
+Package pdftex.def Info: images/content_tables_pt1.pdf  used on input line 138.
+(pdftex.def)             Requested size: 435.32422pt x 626.00299pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 130--141
+
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
 [4
 
-]
+ </Users/simoneorlando/Documents/SecureNetwork/SecureNetworkRebrand/design document/images/content_tables_pt2.pdf>] [5 </Users/simoneorlando/Documents/SecureNetwork/SecureNetworkRebrand/design document/images/content_tables_pt1.pdf>]
 Capitolo 4.
-[5
+<images/page_mapping_pt1.pdf, id=114, 565.15138pt x 543.95218pt>
+File: images/page_mapping_pt1.pdf Graphic file (type pdf)
+<use images/page_mapping_pt1.pdf>
+Package pdftex.def Info: images/page_mapping_pt1.pdf  used on input line 147.
+(pdftex.def)             Requested size: 459.51054pt x 442.29205pt.
+<images/page_mapping_pt2.pdf, id=115, 565.15138pt x 672.59276pt>
+File: images/page_mapping_pt2.pdf Graphic file (type pdf)
+<use images/page_mapping_pt2.pdf>
+Package pdftex.def Info: images/page_mapping_pt2.pdf  used on input line 151.
+(pdftex.def)             Requested size: 459.51054pt x 546.8908pt.
+<images/page_mapping_pt3.pdf, id=116, 565.15138pt x 443.7378pt>
+File: images/page_mapping_pt3.pdf Graphic file (type pdf)
+<use images/page_mapping_pt3.pdf>
+Package pdftex.def Info: images/page_mapping_pt3.pdf  used on input line 155.
+(pdftex.def)             Requested size: 459.51054pt x 360.8069pt.
 
-]
-Capitolo 5.
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
 [6
 
-]
+ </Users/simoneorlando/Documents/SecureNetwork/SecureNetworkRebrand/design document/images/page_mapping_pt1.pdf>] [7 </Users/simoneorlando/Documents/SecureNetwork/SecureNetworkRebrand/design document/images/page_mapping_pt2.pdf>] [8 </Users/simoneorlando/Documents/SecureNetwork/SecureNetworkRebrand/design document/images/page_mapping_pt3.pdf>]
+Capitolo 5.
+
+
+pdfTeX warning: pdflatex (file /Users/simoneorlando/Documents/SecureNetwork/SecureNetworkRebrand/design document/images/P-IDM.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<images/P-IDM.pdf, id=159, 1621.97961pt x 1113.19882pt>
+File: images/P-IDM.pdf Graphic file (type pdf)
+<use images/P-IDM.pdf>
+Package pdftex.def Info: images/P-IDM.pdf  used on input line 163.
+(pdftex.def)             Requested size: 483.69687pt x 331.95787pt.
+[9
+
+ </Users/simoneorlando/Documents/SecureNetwork/SecureNetworkRebrand/design document/images/P-IDM.pdf>]
 Capitolo 6.
-[7
+<images/homepage_screen.pdf, id=182, 614.295pt x 794.97pt>
+File: images/homepage_screen.pdf Graphic file (type pdf)
+<use images/homepage_screen.pdf>
+Package pdftex.def Info: images/homepage_screen.pdf  used on input line 169.
+(pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
+File: images/homepage_screen.pdf Graphic file (type pdf)
+<use images/homepage_screen.pdf>
+Package pdftex.def Info: images/homepage_screen.pdf  used on input line 169.
+(pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
+<images/homepage_screen.pdf, id=185, page=1, 614.295pt x 794.97pt>
+File: images/homepage_screen.pdf Graphic file (type pdf)
+<use images/homepage_screen.pdf, page 1>
+Package pdftex.def Info: images/homepage_screen.pdf , page1 used on input line 169.
+(pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
+File: images/homepage_screen.pdf Graphic file (type pdf)
+<use images/homepage_screen.pdf, page 1>
+Package pdftex.def Info: images/homepage_screen.pdf , page1 used on input line 169.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+[10
 
 ]
+File: images/homepage_screen.pdf Graphic file (type pdf)
+<use images/homepage_screen.pdf, page 1>
+Package pdftex.def Info: images/homepage_screen.pdf , page1 used on input line 169.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+File: images/homepage_screen.pdf Graphic file (type pdf)
+<use images/homepage_screen.pdf, page 1>
+Package pdftex.def Info: images/homepage_screen.pdf , page1 used on input line 169.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+File: images/homepage_screen.pdf Graphic file (type pdf)
+<use images/homepage_screen.pdf, page 1>
+Package pdftex.def Info: images/homepage_screen.pdf , page1 used on input line 169.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+ [11 </Users/simoneorlando/Documents/SecureNetwork/SecureNetworkRebrand/design document/images/homepage_screen.pdf>]
+<images/homepage_screen.pdf, id=211, page=2, 614.295pt x 794.97pt>
+File: images/homepage_screen.pdf Graphic file (type pdf)
+<use images/homepage_screen.pdf, page 2>
+Package pdftex.def Info: images/homepage_screen.pdf , page2 used on input line 169.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+File: images/homepage_screen.pdf Graphic file (type pdf)
+<use images/homepage_screen.pdf, page 2>
+Package pdftex.def Info: images/homepage_screen.pdf , page2 used on input line 169.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+File: images/homepage_screen.pdf Graphic file (type pdf)
+<use images/homepage_screen.pdf, page 2>
+Package pdftex.def Info: images/homepage_screen.pdf , page2 used on input line 169.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+ [12 </Users/simoneorlando/Documents/SecureNetwork/SecureNetworkRebrand/design document/images/homepage_screen.pdf>]
 Capitolo 7.
-[8
+[13
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 140.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 140.
+Capitolo 8.
+[14
+
+] (/Users/simoneorlando/Documents/SecureNetwork/SecureNetworkRebrand/design document/design_doc.lof)
+\tf@lof=\write7
+\openout7 = `design_doc.lof'.
+
+ [15
+
+]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 181.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 181.
  (/Users/simoneorlando/Documents/SecureNetwork/SecureNetworkRebrand/design document/design_doc.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 140.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 140.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 181.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 181.
 Package rerunfilecheck Info: File `design_doc.out' has not changed.
-(rerunfilecheck)             Checksum: E70122429E973BEC83251FB66D287EE1;336.
+(rerunfilecheck)             Checksum: 980847A70D6F5D3B313A0D2AC26CFAAC;404.
 Package logreq Info: Writing requests to 'design_doc.run.xml'.
 \openout1 = `design_doc.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 36262 strings out of 480608
- 821695 string characters out of 5903629
- 1547809 words of memory out of 5000000
- 51572 multiletter control sequences out of 15000+600000
- 536317 words of font info for 40 fonts, out of 8000000 for 9000
+ 37064 strings out of 480608
+ 835455 string characters out of 5903629
+ 1562450 words of memory out of 5000000
+ 52323 multiletter control sequences out of 15000+600000
+ 540495 words of font info for 56 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 68i,11n,98p,899b,1340s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on "/Users/simoneorlando/Documents/SecureNetwork/SecureNetworkRebrand/design document/design_doc.pdf" (9 pages, 139092 bytes).
+ 68i,18n,98p,899b,1340s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb>
+Output written on "/Users/simoneorlando/Documents/SecureNetwork/SecureNetworkRebrand/design document/design_doc.pdf" (16 pages, 1967727 bytes).
 PDF statistics:
- 126 PDF objects out of 1000 (max. 8388607)
- 103 compressed objects within 2 object streams
- 18 named destinations out of 1000 (max. 500000)
- 79 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 254 PDF objects out of 1000 (max. 8388607)
+ 198 compressed objects within 2 object streams
+ 30 named destinations out of 1000 (max. 500000)
+ 142 words of extra memory for PDF output out of 10000 (max. 10000000)
 

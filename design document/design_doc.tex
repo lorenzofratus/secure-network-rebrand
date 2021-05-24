@@ -15,6 +15,7 @@
 \usepackage[hidelinks]{hyperref}
 \usepackage{pgfplots}
 \usepackage{fancyhdr}
+\usepackage{pdfpages}
 \pagestyle{fancy}
 \graphicspath{{images/}}
 
@@ -91,8 +92,8 @@ Cristian C. Spagnuolo, 10745353, cristiancarmine.spagnuolo@mail.polimi.it}
 \course{Hypermedia Applications}
 \professor{Franca Garzotto\\
 Delivery date: 28/06/2021\\
-Link to prototype: \url{https://securenetwork.herokuapp.com}\\
-Github repository: \url{https://github.com/lorenzofratus/SecureNetworkRebrand.git}}
+Link to prototype: \href{https://securenetwork.herokuapp.com}[securenetwork.heroku.com]\\
+Github repository: \href{https://github.com/lorenzofratus/SecureNetworkRebrand.git}[SecureNetworkRebrand.git]}
 
 \fancyhead{}
 \renewcommand{\headrulewidth}{0pt}
@@ -118,7 +119,7 @@ respective E-R diagram.
 
 \chapter{C-IDM Diagram}
 In this section we report the C-IDM diagram that we used as a basic structure for 
-the development of the design of our website.
+the development of the design of our website.\\\\
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=\textwidth]{C-IDM.pdf}
@@ -126,15 +127,55 @@ the development of the design of our website.
 \end{figure}
 
 \chapter{Content tables}
+Here we illustrate the content tables that expand the C-IDM diagram of the previous 
+chapter.\\\\
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.9\textwidth]{content_tables_pt2.pdf}
+\end{figure}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.9\textwidth]{content_tables_pt1.pdf}
+	\caption{Content tables (C-IDM in the small)}
+\end{figure}
 
-%\chapter{Mapping Content Tables into Pages}
+\chapter{Mapping Content Tables into Pages}
+Continuing, we present the result of the application of the process of page mapping 
+to the content tables reported in the last chapter.
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.95\textwidth]{page_mapping_pt1.pdf}
+\end{figure}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.95\textwidth]{page_mapping_pt2.pdf}
+\end{figure}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.95\textwidth]{page_mapping_pt3.pdf}
+	\caption{Pages mapping}
+\end{figure}
 
 \chapter{P-IDM diagram}
+In this section we report the P-IDM diagram which describes the navigation design of our website.\\
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=\textwidth]{P-IDM.pdf}
+	\caption{P-IDM Diagram}
+\end{figure}
 
 \chapter{Visual Design}
+Ciao 
+\includepdf[pages=-]{homepage_screen.pdf}
+
+
+
 
 \chapter{Interaction Scenarios}
 
 \chapter{DB Design}
 
+
+
+\listoffigures
 \end{document}
