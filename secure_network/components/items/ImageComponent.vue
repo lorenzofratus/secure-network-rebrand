@@ -2,7 +2,7 @@
 	<span class="sub-section">
 		<div class="content">
 			<!-- The tag prop contains a string that is displayed above the title to add some info -->
-			<h3 v-if="tag != ''" class="h4 tag">{{ tag }}</h3>
+			<span v-if="tag != ''" class="h4 tag">{{ tag }}</span>
 			<h2 class="spacer spacer-small">{{ title }}</h2>
 			<p>{{ abstract }}</p>
 			<button-component
@@ -100,6 +100,7 @@ export default {
 }
 
 .sub-section .tag {
+	display: block;
 	text-transform: uppercase;
 	margin: 0;
 	color: var(--primary-color);

@@ -38,6 +38,7 @@ import GridSection from '~/components/sections/GridSection.vue'
 import MainSection from '~/components/sections/MainSection.vue'
 import AltSection from '~/components/sections/AltSection.vue'
 import ImageComponentsSection from '~/components/sections/ImageComponentsSection.vue'
+import HiringSection from '~/components/sections/HiringSection.vue'
 
 export default {
 	components: {
@@ -45,8 +46,8 @@ export default {
 		AltSection,
 		ImageComponentsSection,
 		GridSection,
+		HiringSection,
 	},
-	layout: 'default',
 	async asyncData({ $axios, route, error }) {
 		try {
 			const { id } = route.params

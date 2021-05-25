@@ -9,7 +9,7 @@
 		/>
 		<span v-else class="icon material-icons">{{ object.img }}</span>
 		<div class="text">
-			<h4 v-if="object.isReference" class="tag">Reference for</h4>
+			<span v-if="object.isReference" class="h4 tag">Reference for</span>
 			<h3 class="spacer">{{ object.name }}</h3>
 			<p class="centered-text">
 				{{ abstract }}
@@ -69,6 +69,7 @@ export default {
 	margin: 0 0 0.25em;
 }
 .item .tag {
+	display: block;
 	text-transform: uppercase;
 	text-align: center;
 	margin: 0.75em 0 0;

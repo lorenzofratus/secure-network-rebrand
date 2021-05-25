@@ -48,7 +48,6 @@ export default {
 		GridSection,
 		ImageComponentsSection,
 	},
-	layout: 'default',
 	async asyncData({ $axios, route, error }) {
 		try {
 			const { id } = route.params
