@@ -97,6 +97,9 @@ export default {
 .app-menu .anchor:hover {
 	color: var(--primary-color);
 }
+.app-menu.light .anchor:hover {
+	color: var(--accent-color);
+}
 
 @media screen and (max-width: 785px) {
 	.app-menu:not(.mobile) {

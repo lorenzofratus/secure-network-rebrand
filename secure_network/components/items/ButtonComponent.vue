@@ -84,9 +84,10 @@ button.button {
 	background-color: var(--dark-color);
 }
 .button.outlined {
+	font-size: 1.2em;
 	position: relative;
 	color: var(--primary-color);
-	background-color: transparent;
+	background-color: var(--alt-background);
 }
 .button.outlined::after {
 	content: '';

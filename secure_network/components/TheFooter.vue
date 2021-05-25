@@ -55,7 +55,7 @@ export default {
 	transition: 0.35s color ease-in-out;
 }
 .footer .logo:hover {
-	color: var(--primary-color);
+	color: var(--accent-color);
 }
 .footer .copy-info {
 	color: var(--light-color);
@@ -92,7 +92,7 @@ export default {
 .footer .arrow:focus .left-bar,
 .footer .arrow:hover .right-bar,
 .footer .arrow:focus .right-bar {
-	background-color: var(--primary-color);
+	background-color: var(--accent-color);
 }
 .footer .arrow .left-bar {
 	right: 50%;

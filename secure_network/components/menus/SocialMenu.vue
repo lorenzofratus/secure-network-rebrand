@@ -60,7 +60,7 @@ export default {
 	margin: 0 0.25em;
 }
 .social-menu .link:hover {
-	color: var(--primary-color);
+	color: var(--accent-color);
 }
 .social-menu .icon {
 	display: block;

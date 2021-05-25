@@ -1,7 +1,8 @@
 /*** GLOBAL VARIABLES ***/
 
 :root {
-	--primary-color: #00a6fb;
+	--accent-color: #00a6fb;
+	--primary-color: #007cbd;
 	--light-color: #c0e9fe;
 	--dark-color: #003554;
 	--background: #ffffff;
@@ -100,12 +101,12 @@ p.centered {
 
 a,
 a:visited {
-	color: var(--primary-color);
+	color: var(--dark-color);
 	transition: 0.35s color ease-in-out;
 }
 a:hover,
 a:focus {
-	color: var(--dark-color);
+	color: var(--primary-color);
 }
 
 .spacer {
