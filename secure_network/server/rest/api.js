@@ -1,3 +1,14 @@
+/*
+ * Copyright (c) 2021
+ *
+ * Api server used to retrieve information from the database.
+ * It implements a series of http endpoints, each of them perform
+ * a given query on the database
+ *
+ * @author Lorenzo Fratus
+ * @author Simone Orlando
+ * @author Cristian C. Spagnuolo
+ */
 import express from 'express'
 import initializeDatabase from '../db/db_conn'
 
@@ -10,9 +21,8 @@ async function init() {
 		db._tables
 	const { Op } = require('sequelize')
 	const sequelize = require('sequelize')
-	/**
-	 * Find all queries
-	 */
+
+	// Find all queries
 	app.get('/service-categories', async (req, res) => {
 		return res.json(await ServiceCategory.findAll({ order: ['id'] }))
 	})
@@ -29,10 +39,7 @@ async function init() {
 		return res.json(await Area.findAll({ order: ['id'] }))
 	})
 
-	/**
-	 * Find by id queries
-	 */
-
+	// Find by id queries
 	app.get('/services/:service', async (req, res) => {
 		const { service } = req.params
 		return res.json(await Service.findByPk(service))
@@ -73,10 +80,8 @@ async function init() {
 		})
 		return res.json(resources)
 	})
-	/**
-	 * Specific queries
-	 */
 
+	// Specific queries
 	app.get('/services-by-category/:category', async (req, res) => {
 		const { category } = req.params
 		return res.json(
@@ -156,10 +161,7 @@ async function init() {
 		return res.json(resources)
 	})
 
-	/**
-	 * Joined queries
-	 */
-
+	// Joined queries
 	app.get('/service-categories-by-area/:area', async (req, res) => {
 		const { area } = req.params
 
@@ -229,10 +231,7 @@ async function init() {
 		return res.json(services)
 	})
 
-	/**
-	 * Aggregate queries
-	 */
-
+	// Aggregate queries
 	app.get('/resources-aggregation/', async (req, res) => {
 		const payload = await Resource.findAll({
 			attributes: [
@@ -267,32 +266,9 @@ async function init() {
 		}
 		return res.json(resources)
 	})
-
-	/**
-	 * Utility queries
-	 */
-	app.get('/people_ids/:area', async (req, res) => {
-		const { area } = req.params
-		return res.json(
-			await Person.findAll({
-				attributes: [['id', 'person_id']],
-				where: { area_id: area, [Op.not]: { role: 'founder' } },
-				order: ['person_id'],
-			})
-		)
-	})
-
-	app.get('/service_ids/:area', async (req, res) => {
-		const { area } = req.params
-		return res.json(
-			await Service.findAll({
-				attributes: [['id', 'service_id']],
-				where: { area_id: area },
-				order: ['id'],
-			})
-		)
-	})
 }
+
+// Initialization of the api server
 init()
 
 export default app

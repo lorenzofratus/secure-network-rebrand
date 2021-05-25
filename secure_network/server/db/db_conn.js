@@ -1,7 +1,14 @@
+/*
+ * Copyright (c) 2021
+ *
+ * @author Lorenzo Fratus
+ * @author Simone Orlando
+ * @author Cristian C. Spagnuolo
+ */
+
 /* eslint-disable camelcase */
-/* 
-	Initialization variables
-*/
+
+// Initialization variables
 import {
 	service_categories,
 	services,
@@ -11,12 +18,10 @@ import {
 	resources,
 } from './db_init.js'
 
+// Required to read information from the env also in development mode
 require('dotenv').config()
 
-/*
-	Database initialization
-*/
-
+// Database initialization
 const { Sequelize, DataTypes, Model } = require('sequelize')
 const db = new Sequelize(process.env.DATABASE_URL, {
 	ssl: true,
@@ -25,9 +30,8 @@ const db = new Sequelize(process.env.DATABASE_URL, {
 		freezeTableName: true,
 	},
 })
-/*
-	Utilities functions
-*/
+
+// Utilities functions
 async function insertItem(table, item) {
 	const object = await table.create(item)
 	return object
@@ -184,12 +188,13 @@ async function insertTables(dev) {
 	}
 }
 
+// Initialization of the database
 async function initializeDatabase() {
-	// Some code to initialize the db
+	// Used to insert data into the database only in production
 	const dev = false
+
 	defineDatabaseStructure()
 	await db.sync({ force: dev })
-	// Uncomment to insert initializiation info within the db
 	await insertTables(dev)
 	return db
 }

@@ -1,3 +1,12 @@
+<!--
+ * Copyright (c) 2021
+ *
+ * This is the introductory page all Service Categories.
+ *
+ * @author Lorenzo Fratus 
+ * @author Simone Orlando 
+ * @author Cristian C. Spagnuolo 
+ -->
 <template>
 	<main class="container">
 		<main-section
@@ -32,9 +41,13 @@ export default {
 		AltSection,
 		GridSection,
 	},
+	/*
+	 * This function retrieves information from the api server, which are then
+	 * used for server side rendering.
+	 */
 	async asyncData({ $axios, error }) {
 		try {
-			// fetch data from the api server
+			// Retrieve all service categories from the database
 			const { data } = await $axios.get(
 				`${process.env.BASE_URL}/api/service-categories`
 			)

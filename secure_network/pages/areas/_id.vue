@@ -1,3 +1,12 @@
+<!--
+ * Copyright (c) 2021
+ *
+ * This is the page for a single Area.
+ *
+ * @author Lorenzo Fratus 
+ * @author Simone Orlando 
+ * @author Cristian C. Spagnuolo 
+ -->
 <template>
 	<main class="container">
 		<main-section
@@ -48,30 +57,35 @@ export default {
 		GridSection,
 		ImageComponentsSection,
 	},
+	/*
+	 * This function retrieves information from the api server, which are then
+	 * used for server side rendering.
+	 */
 	async asyncData({ $axios, route, error }) {
 		try {
 			const { id } = route.params
-			// Retrieving the area
+			// Retrieve the given area from the database
 			let payload = await $axios.get(
 				`${process.env.BASE_URL}/api/areas/${id}`
 			)
 			const area = payload.data
 			area.paragraphs = area.text.split('\n')
 
-			// Retrieving employees
+			// Retrieve all employees working in this area from the database
 			payload = await $axios.get(
 				`${process.env.BASE_URL}/api/people-by-area-and-role/${id}/employee/`
 			)
 			const people = payload.data
 
-			// Retrieving the manager
+			// Retrieve the manager of the area from the database
 			payload = await $axios.get(
 				`${process.env.BASE_URL}/api/people-by-area-and-role/${id}/manager/`
 			)
 			const managers = payload.data
+			// Add to each manager the tag attribute
 			managers.forEach((manager) => (manager.tag = manager.role))
 
-			// Retrieving the categories of services offered by the area
+			// Retrieve the categories of services offered by this area from the database
 			payload = await $axios.get(
 				`${process.env.BASE_URL}/api/service-categories-by-area/${id}`
 			)

@@ -1,3 +1,12 @@
+<!--
+ * Copyright (c) 2021
+ *
+ * This is the about page.
+ *
+ * @author Lorenzo Fratus 
+ * @author Simone Orlando 
+ * @author Cristian C. Spagnuolo 
+ -->
 <template>
 	<main class="container">
 		<main-section

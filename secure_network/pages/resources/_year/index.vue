@@ -1,3 +1,13 @@
+<!--
+ * Copyright (c) 2021
+ *
+ * This is the introductory page all Resources by year the given year.
+ * You can filter resources by type.
+ *
+ * @author Lorenzo Fratus 
+ * @author Simone Orlando 
+ * @author Cristian C. Spagnuolo 
+ -->
 <template>
 	<main class="container">
 		<main-section
@@ -36,9 +46,14 @@ export default {
 		FilterSection,
 		GridSection,
 	},
+	/*
+	 * This function retrieves information from the api server, which are then
+	 * used for server side rendering.
+	 */
 	async asyncData({ $axios, route, error }) {
 		try {
 			const { year } = route.params
+			// Retrieve all resources of the given year from the database
 			const { data } = await $axios.get(
 				`${process.env.BASE_URL}/api/resources-by-year/${year}`
 			)
@@ -72,7 +87,9 @@ export default {
 		}
 	},
 	computed: {
-		// Computes the types to be displayed in the filter (at least All Types always is displayed)
+		// Computes the types to be displayed in the filter (at least All Types always is displayed).
+		// This allow to avoid to filter by a type which is not present at all in the given set.
+		// See what happens in year 2021 (no research available) and in year 2018 (no news available).
 		types() {
 			const types = [{ text: 'All Types', filter: '' }]
 			let fetched = this.resources.map((resource) => resource.type)

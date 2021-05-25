@@ -1,3 +1,12 @@
+<!--
+ * Copyright (c) 2021
+ *
+ * This is the page of the whole Team.
+ *
+ * @author Lorenzo Fratus 
+ * @author Simone Orlando 
+ * @author Cristian C. Spagnuolo 
+ -->
 <template>
 	<main class="container">
 		<main-section
@@ -50,12 +59,17 @@ export default {
 		GridSection,
 		ImageComponentsSection,
 	},
+	/*
+	 * This function retrieves information from the api server, which are then
+	 * used for server side rendering.
+	 */
 	async asyncData({ $axios, error }) {
 		try {
-			// fetch data from the api server
+			// Retrieve all people whose role is not founder from the database
 			let payload = await $axios.get(`${process.env.BASE_URL}/api/team`)
 			const team = payload.data
 
+			// Retrieve all people whose role is founder from the database
 			payload = await $axios.get(
 				`${process.env.BASE_URL}/api/people-by-role/founder`
 			)
@@ -117,4 +131,4 @@ export default {
 }
 </script>
 
-<style></style>
+<style scoped></style>

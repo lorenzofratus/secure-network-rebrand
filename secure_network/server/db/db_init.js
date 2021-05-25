@@ -1,6 +1,20 @@
+/*
+ * Copyright (c) 2021
+ *
+ * Initit file for the insertion of data within the database.
+ * Each table is initialized in the db_conn.js by importing following collections
+ *
+ * @author Lorenzo Fratus
+ * @author Simone Orlando
+ * @author Cristian C. Spagnuolo
+ */
+
 /* eslint-disable camelcase */
+// Used to sort information, just for the sake of debugging. Then, each query use the order keyword
+//to better fit our needs
 import { compareByName } from '../utils/comparator.js'
 
+// Utilities used to process static data and compute dynamically some useful properties
 function refine(items) {
 	items.forEach((item) => {
 		const id = item.name.toLowerCase()
@@ -40,8 +54,7 @@ function refineRes(items) {
 	})
 }
 
-/* Raw variables definition */
-
+// Raw variables definition, inserted by hand and then refined programmatically
 const sv_categories = [
 	{
 		name: 'Application Security',
@@ -986,7 +999,7 @@ const res = [
 	},
 ]
 
-/* Refined definition */
+// Refine collections before exporting
 refine(sv_categories)
 export const service_categories = sv_categories
 

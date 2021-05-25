@@ -1,7 +1,7 @@
 <!--
  * Copyright (c) 2021
  *
- *  TheFooter is the footer of the website. It is implemented in the default layout.
+ * TheFooter is the footer of the website. It is implemented in the default layout.
  *
  * @author Lorenzo Fratus 
  * @author Simone Orlando 

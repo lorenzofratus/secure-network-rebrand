@@ -1,3 +1,12 @@
+<!--
+ * Copyright (c) 2021
+ *
+ * This is the introductory page all Resources grouped and counted by year and type.
+ *
+ * @author Lorenzo Fratus 
+ * @author Simone Orlando 
+ * @author Cristian C. Spagnuolo 
+ -->
 <template>
 	<main class="container">
 		<main-section
@@ -19,8 +28,14 @@ export default {
 		MainSection,
 		TimelineSection,
 	},
+	/*
+	 * This function retrieves information from the api server, which are then
+	 * used for server side rendering.
+	 */
 	async asyncData({ $axios, error }) {
 		try {
+			// Retrieve aggregated information about resources, grouped and counted by year and type from the database
+			// This is the most complex query implemented.
 			const { data } = await $axios.get(
 				`${process.env.BASE_URL}/api/resources-aggregation`
 			)

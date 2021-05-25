@@ -1,3 +1,12 @@
+<!--
+ * Copyright (c) 2021
+ *
+ * This is the introductory page of all Areas.
+ *
+ * @author Lorenzo Fratus 
+ * @author Simone Orlando 
+ * @author Cristian C. Spagnuolo 
+ -->
 <template>
 	<main class="container">
 		<main-section
@@ -27,9 +36,13 @@ import AltSection from '~/components/sections/AltSection.vue'
 import ImageComponentsSection from '~/components/sections/ImageComponentsSection.vue'
 export default {
 	components: { MainSection, AltSection, ImageComponentsSection },
+	/*
+	 * This function retrieves information from the api server, which are then
+	 * used for server side rendering.
+	 */
 	async asyncData({ $axios, error }) {
 		try {
-			// fetch data from the api server
+			// Retrieve all available areas from the database
 			const { data } = await $axios.get(
 				`${process.env.BASE_URL}/api/areas`
 			)

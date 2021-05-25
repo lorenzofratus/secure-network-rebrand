@@ -1,3 +1,10 @@
+/*
+ * Copyright (c) 2021
+ *
+ * @author Lorenzo Fratus
+ * @author Simone Orlando
+ * @author Cristian C. Spagnuolo
+ */
 export default (context, inject) => {
 	const scrollTo = (event) => {
 		// Gets the element that started the event and the element we want to scroll to

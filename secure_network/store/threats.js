@@ -1,3 +1,12 @@
+/*
+ * Copyright (c) 2021
+ *
+ * Store which contains static information used in at least two pages, to avoid replication.
+ *
+ * @author Lorenzo Fratus
+ * @author Simone Orlando
+ * @author Cristian C. Spagnuolo
+ */
 export const state = () => {
 	return {
 		title: 'It is not a matter of if, but when and how',

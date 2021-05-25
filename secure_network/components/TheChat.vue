@@ -1,8 +1,8 @@
 <!--
  * Copyright (c) 2021
  *
- *  TheChat is implemented in the default layout and allow the user to interact
- *  with a multimodal chat bot.
+ * TheChat is implemented in the default layout and allow the user to interact
+ * with a multimodal chat bot.
  *
  * @author Lorenzo Fratus 
  * @author Simone Orlando 

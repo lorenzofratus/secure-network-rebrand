@@ -1,3 +1,12 @@
+<!--
+ * Copyright (c) 2021
+ *
+ * This is the home page of the website.
+ *
+ * @author Lorenzo Fratus 
+ * @author Simone Orlando 
+ * @author Cristian C. Spagnuolo 
+ -->
 <template>
 	<main class="container">
 		<main-section
@@ -45,10 +54,15 @@ export default {
 		AltSection,
 		GridSection,
 	},
+	/*
+	 * This function retrieves information from the api server, which are then
+	 * used for server side rendering.
+	 */
 	async asyncData({ $axios, error }) {
-		// Choose the number of news you want to get
 		try {
+			// Number of news you want to retrieve
 			const n = 4
+			// Retrieve last n news from the database
 			const { data } = await $axios.get(
 				`${process.env.BASE_URL}/api/last-news/${n}`
 			)

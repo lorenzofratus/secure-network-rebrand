@@ -1,3 +1,12 @@
+<!--
+ * Copyright (c) 2021
+ *
+ * This is the page of the given Category, which contains all Services that belong to it.
+ *
+ * @author Lorenzo Fratus 
+ * @author Simone Orlando 
+ * @author Cristian C. Spagnuolo 
+ -->
 <template>
 	<main class="container">
 		<main-section
@@ -32,18 +41,26 @@ export default {
 		AltSection,
 		GridSection,
 	},
+	/*
+	 * This function retrieves information from the api server, which are then
+	 * used for server side rendering.
+	 */
 	async asyncData({ $axios, route, error }) {
 		try {
 			const { catid } = route.params
+			// Retrieve all services that belong to the given category from the database
 			let payload = await $axios.get(
 				`${process.env.BASE_URL}/api/services-by-category/${catid}`
 			)
 			const services = payload.data
 
+			// Retrieve the given category from the database
 			payload = await $axios.get(
 				`${process.env.BASE_URL}/api/service-category/${catid}`
 			)
 			const category = payload.data
+
+			// Split the category.text property in order to get several paragraphs.
 			category.paragraphs = category.text.split('\n')
 
 			return {

@@ -1,3 +1,12 @@
+<!--
+ * Copyright (c) 2021
+ *
+ * Default layout used by all pages.
+ *
+ * @author Lorenzo Fratus 
+ * @author Simone Orlando 
+ * @author Cristian C. Spagnuolo 
+ -->
 <template>
 	<div>
 		<the-header />

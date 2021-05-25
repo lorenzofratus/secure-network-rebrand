@@ -1,3 +1,12 @@
+<!--
+ * Copyright (c) 2021
+ *
+ * Error layout, used when somthing went wrong.
+ *
+ * @author Lorenzo Fratus 
+ * @author Simone Orlando  
+ * @author Cristian C. Spagnuolo 
+ -->
 <template>
 	<main-section
 		:wrapper="wrapper"

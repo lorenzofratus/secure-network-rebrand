@@ -1,3 +1,12 @@
+/*
+ * Copyright (c) 2021
+ *
+ * Code shared by all components importing this mixin.
+ *
+ * @author Lorenzo Fratus
+ * @author Simone Orlando
+ * @author Cristian C. Spagnuolo
+ */
 export default {
 	data() {
 		const list = []
