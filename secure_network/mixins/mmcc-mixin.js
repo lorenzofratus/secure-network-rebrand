@@ -13,6 +13,18 @@ export default {
 		const configurationId = process.env.configurationId
 		return { list, configurationId }
 	},
+	methods: {
+		skip(WebSocketEventBus) {
+			const packet = {
+				message: {
+					type: 'data',
+					payload: { data: 'null payload' },
+				},
+				configurationId: process.env.configurationId,
+			}
+			WebSocketEventBus.$emit('send', packet)
+		},
+	},
 	watch: {
 		'$store.state.messages'() {
 			this.list = this.$store.state.messages
@@ -33,13 +45,28 @@ export default {
 			const self = this
 			// Adding 1 second timeout before adding the message to the chat
 			// This makes the chatbot less "aggressive" towards the user
-			setTimeout(() => {
-				if (message.utterance) {
-					self.$store.commit('chat/addMessage', {
-						sender: true,
-						content: message.utterance,
-					})
+			console.log(message)
+			if (message.utterance) {
+				// The bot prints twice the start message when restarts from the beginning
+				// To avoid the visualization of such a duplicated message, when it is detected
+				// it is sent a dummy payload to the backend to skip this message and receive directly
+				// the second one
+				if (
+					message.utterance.includes('Exploit') &&
+					!message.utterance.includes('tour') &&
+					self.$store.state.chat.messages.length
+				) {
+					self.skip(WebSocketEventBus)
+				} else {
+					setTimeout(() => {
+						self.$store.commit('chat/addMessage', {
+							sender: true,
+							content: message.utterance,
+						})
+					}, 1000)
 				}
+			}
+			setTimeout(() => {
 				if (message.payload) {
 					if (message.payload.guide) {
 						self.$router.push(message.payload.guide)

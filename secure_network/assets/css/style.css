@@ -3,6 +3,7 @@
 :root {
 	--accent-color: #00a6fb;
 	--primary-color: #007cbd;
+	/* --primary-color: linear-gradient(to bottom, #00a6fb, #007cbd); */
 	--light-color: #c0e9fe;
 	--dark-color: #003554;
 	--background: #ffffff;
