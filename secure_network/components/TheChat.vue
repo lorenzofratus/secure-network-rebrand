@@ -7,12 +7,18 @@
 		<div class="chat-container" :class="{ open: isOpen }">
 			<!-- Footer block, contains input and send button -->
 			<div class="chat-footer">
-				<input
-					v-model="messageToSend"
-					type="text"
-					placeholder="Type a message..."
-					@keypress.enter="sendMessage"
-				/>
+				<div class="field">
+					<input
+						id="message"
+						v-model="messageToSend"
+						type="text"
+						@keypress.enter="sendMessage"
+					/>
+					<!-- Simulates the behavior of the placeholder but in this way is also detected by screen readers -->
+					<label for="message" :class="{ show: messageToSend == '' }">
+						Type a message...
+					</label>
+				</div>
 				<button class="chat-button-inside" @click="sendMessage">
 					<span class="icon material-icons"> send </span>
 				</button>
@@ -244,6 +250,9 @@ export default {
 .chat-footer {
 	box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
 }
+.chat-footer .field {
+	position: relative;
+}
 .chat-footer input {
 	flex-grow: 1;
 	padding: 1em 1.5em;
@@ -259,6 +268,16 @@ export default {
 	font-size: var(--icon-size);
 	color: var(--primary-color);
 	cursor: pointer;
+}
+.chat-footer label {
+	position: absolute;
+	left: 1.5em;
+	top: 1em;
+	color: #767676;
+	display: none;
+}
+.chat-footer label.show {
+	display: block;
 }
 
 .message {
