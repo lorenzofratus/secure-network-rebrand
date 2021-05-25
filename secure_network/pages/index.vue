@@ -23,14 +23,20 @@
 			type="resource"
 			class="resources"
 		/>
-		<threats-section :wrapper="wrapper" />
+		<grid-section
+			:wrapper="wrapper"
+			:small="true"
+			child="threat-card"
+			:title="$store.state.threats.title"
+			:elements="$store.state.threats.blocks"
+			:button="$store.state.threats.button"
+		/>
 	</main>
 </template>
 
 <script>
 import MainSection from '~/components/sections/MainSection.vue'
 import AltSection from '~/components/sections/AltSection.vue'
-import ThreatsSection from '~/components/sections/ThreatsSection.vue'
 import GridSection from '~/components/sections/GridSection.vue'
 
 export default {
@@ -38,7 +44,6 @@ export default {
 		MainSection,
 		AltSection,
 		GridSection,
-		ThreatsSection,
 	},
 	async asyncData({ $axios, error }) {
 		// Choose the number of news you want to get

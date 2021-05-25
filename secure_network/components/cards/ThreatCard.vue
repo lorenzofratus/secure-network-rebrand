@@ -3,30 +3,22 @@
 		<div class="preview">
 			<div class="wrapper">
 				<div class="background"></div>
-				<span class="icon material-icons">{{ icon }}</span>
+				<span class="icon material-icons">{{ object.icon }}</span>
 			</div>
-			<h3 class="h4 title">{{ title }}</h3>
+			<h3 class="h4 title">{{ object.title }}</h3>
 		</div>
 		<!-- .text is shown at focus and hover, cannot give the dimensions to the card as it needs to be "position: absolute" -->
 		<!-- .placeholder is never visible and is only used to give the right dimensions to the card -->
-		<p class="text">{{ text }}</p>
-		<p class="placeholder">{{ text }}</p>
+		<p class="text">{{ object.text }}</p>
+		<p class="placeholder">{{ object.text }}</p>
 	</div>
 </template>
 
 <script>
 export default {
 	props: {
-		icon: {
-			type: String,
-			required: true,
-		},
-		title: {
-			type: String,
-			required: true,
-		},
-		text: {
-			type: String,
+		object: {
+			type: Object,
 			required: true,
 		},
 	},

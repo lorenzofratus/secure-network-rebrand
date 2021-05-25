@@ -10,9 +10,9 @@
 				<b>{{ type.count }}</b> {{ type.name }}
 			</div>
 			<button-component
-				:btn-class="'secondary'"
 				:btn-path="path"
-				:btn-text="'Explore'"
+				btn-text="Explore"
+				btn-class="secondary"
 			/>
 		</div>
 	</div>
@@ -25,6 +25,10 @@ export default {
 		ButtonComponent,
 	},
 	props: {
+		wrapper: {
+			type: String,
+			required: true,
+		},
 		year: {
 			type: Number,
 			required: true,

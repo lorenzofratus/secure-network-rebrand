@@ -75,7 +75,6 @@ export default {
 			title: 'Service Categories | Secure Network',
 		}
 	},
-	computed: {},
 }
 </script>
 

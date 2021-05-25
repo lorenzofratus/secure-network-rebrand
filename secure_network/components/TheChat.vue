@@ -3,7 +3,9 @@
 		<button class="chat-button" @click="isOpen = !isOpen">
 			<span class="icon material-icons"> question_answer </span>
 		</button>
+		<!-- Elements are displayed in reverse to allow keyboard navigation -->
 		<div class="chat-container" :class="{ open: isOpen }">
+			<!-- Footer block, contains input and send button -->
 			<div class="chat-footer">
 				<input
 					v-model="messageToSend"
@@ -15,6 +17,7 @@
 					<span class="icon material-icons"> send </span>
 				</button>
 			</div>
+			<!-- Window block, contains messages, it is scrollable -->
 			<div ref="chat-window" class="chat-window">
 				<div
 					v-for="(message, index) of $store.state.chat.messages"
@@ -30,6 +33,7 @@
 					</div>
 				</div>
 			</div>
+			<!-- Header block, contains the profile image of the bot, the title and the close button -->
 			<div class="chat-header">
 				<div class="exploit"></div>
 				<div class="titling">
@@ -53,12 +57,15 @@ export default {
 			toBeScrolled: true,
 		}
 	},
+	// Before any update in the component checks if the user is scrolled all the way to the bottom of the window
+	// This check is done to avoid scrolling the window to a user that is reading old messages (not scrolled to the bottom)
 	beforeUpdate() {
 		const container = this.$refs['chat-window']
 		this.toBeScrolled =
 			container.scrollTop + container.clientHeight ===
 			container.scrollHeight
 	},
+	// When an update happens (in particular when a message is added) scrolls the window in order to always display the latest message
 	updated() {
 		const container = this.$refs['chat-window']
 		if (this.toBeScrolled) {
@@ -66,6 +73,7 @@ export default {
 		}
 	},
 	methods: {
+		// Sends message to the chatbot
 		sendMessage() {
 			if (this.messageToSend === '') return
 			const { WebSocketEventBus } = require('mmcc/WebSocketEventBus')

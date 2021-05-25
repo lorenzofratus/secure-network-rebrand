@@ -24,7 +24,7 @@
 			title="Currently Employing"
 			:components="managers"
 			:wrapper="area.id"
-			:is-rounded="true"
+			:rounded="true"
 		/>
 		<grid-section
 			:wrapper="area.id"

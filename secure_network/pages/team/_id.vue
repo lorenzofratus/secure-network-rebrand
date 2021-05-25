@@ -5,14 +5,13 @@
 			:img="person.img"
 			:title="person.name + ' ' + person.surname"
 			:wrapper="person.id"
-			:is-rounded="true"
+			:rounded="true"
 		/>
 		<alt-section
 			:title="'About ' + person.name + '...'"
 			:paragraphs="person.paragraphs"
 			:wrapper="person.id"
 		/>
-
 		<image-components-section
 			v-if="area != null"
 			id="area"
@@ -21,7 +20,6 @@
 			:components="[area]"
 			:wrapper="person.id"
 		/>
-
 		<grid-section
 			v-if="services.length"
 			id="services"
@@ -112,9 +110,11 @@ export default {
 	},
 	computed: {
 		buttons() {
+			// Computes the structural links to be displayed in the main section (displayed only if the corresponding section exists)
 			const buttons = []
 			if (this.area != null) buttons.push(this.main_section.buttons[0])
 			if (this.services.length) buttons.push(this.main_section.buttons[1])
+			// Sets as primary the first button, independently on what it is
 			if (buttons.length) buttons[0].class = 'primary'
 			return buttons
 		},

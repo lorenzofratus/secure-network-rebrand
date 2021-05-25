@@ -1,20 +1,21 @@
 <template>
 	<span class="sub-section">
 		<div class="content">
+			<!-- The tag prop contains a string that is displayed above the title to add some info -->
 			<h3 v-if="tag != ''" class="h4 tag">{{ tag }}</h3>
 			<h2 class="spacer spacer-small">{{ title }}</h2>
 			<p>{{ abstract }}</p>
 			<button-component
-				:btn-class="btnClass"
 				:btn-path="btnPath"
-				:btn-text="btnText + ' ' + type"
+				:btn-text="'Discover ' + type"
+				btn-class="secondary"
 			/>
 		</div>
 		<img
 			:src="img"
 			class="cover"
 			:alt="title"
-			:class="{ rounded: isRounded }"
+			:class="{ rounded: rounded }"
 		/>
 	</span>
 </template>
@@ -57,19 +58,14 @@ export default {
 			type: String,
 			required: true,
 		},
-		isRounded: {
+		rounded: {
 			type: Boolean,
 			required: false,
 			default: false,
 		},
 	},
-	data() {
-		return {
-			btnClass: 'secondary',
-			btnText: 'Discover',
-		}
-	},
 	computed: {
+		// Simple method that cuts the paragraph to "count" words and adds ellipsis
 		abstract() {
 			const count = 25
 			let words = this.text.split(/\s|\n/)

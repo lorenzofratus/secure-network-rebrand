@@ -10,13 +10,16 @@
 						v-for="(link, index) in breadcrumbs"
 						:key="wrapper + '-' + index"
 					>
+						<!-- Divider skipped at the first iteration of the loop -->
 						<span v-if="index != 0"> &gt; </span>
+						<!-- Last one is highlighted with a different color -->
 						<nuxt-link
 							:to="link.path"
 							class="link"
 							:class="{ last: index == breadcrumbs.length - 1 }"
-							>{{ link.text }}</nuxt-link
 						>
+							{{ link.text }}
+						</nuxt-link>
 					</span>
 				</h4>
 				<h1 class="title">{{ title }}</h1>
@@ -29,6 +32,7 @@
 						:btn-class="button.class"
 						:btn-text="button.text"
 					/>
+					<!-- Empty div to keep the size of the button consistent when there is only one -->
 					<div v-if="buttons.length == 1" />
 				</div>
 			</div>
@@ -36,7 +40,7 @@
 				:src="img"
 				class="cover"
 				:alt="title"
-				:class="{ rounded: isRounded }"
+				:class="{ rounded: rounded }"
 			/>
 		</div>
 	</div>
@@ -73,7 +77,7 @@ export default {
 			type: String,
 			required: true,
 		},
-		isRounded: {
+		rounded: {
 			type: Boolean,
 			required: false,
 			default: false,
@@ -86,14 +90,19 @@ export default {
 	},
 	computed: {
 		breadcrumbs() {
+			// We get breadcrumbs directly from the page URL
 			const steps = this.$route.fullPath.split('/')
+			// Remove the host part
 			steps.shift()
+			// Remove current page
 			steps.pop()
 
 			const breadcrumbs = []
 			steps.forEach((step, index) => {
 				breadcrumbs.push({
+					// Replace hyphens with spaces
 					text: step.replace(/-/g, ' '),
+					// Incrementally builds the path of the single breadcrumb link
 					path: '/' + steps.slice(0, index + 1).join('/'),
 				})
 			})

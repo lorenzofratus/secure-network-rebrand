@@ -32,7 +32,6 @@ export default {
 		AltSection,
 		GridSection,
 	},
-	layout: 'default',
 	async asyncData({ $axios, route, error }) {
 		try {
 			const { catid } = route.params

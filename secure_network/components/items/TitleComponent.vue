@@ -19,9 +19,7 @@ export default {
 		text: {
 			type: String,
 			required: false,
-			default() {
-				return ''
-			},
+			default: '',
 		},
 	},
 }

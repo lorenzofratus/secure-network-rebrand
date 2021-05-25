@@ -1,5 +1,6 @@
 <template>
 	<div class="field">
+		<!-- We can have an input or a textarea based on the type prop -->
 		<textarea
 			v-if="type === 'text-area'"
 			:id="name"

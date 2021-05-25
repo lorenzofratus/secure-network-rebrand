@@ -19,6 +19,7 @@
 			/>
 
 			<div class="grid content">
+				<!-- Display all the contact information cards, performs a call/writes an email on click -->
 				<a
 					v-for="(contact, index) in info.contacts"
 					:key="'contact-' + index + '-' + wrapper"
@@ -34,6 +35,7 @@
 					<span class="icon material-icons">{{ contact.type }}</span>
 					<p class="info">{{ contact.data }}</p>
 				</a>
+				<!-- Display all the headquarter information cards, scrolls to the corresponding map on click -->
 				<a
 					v-for="(headquarter, index) in info.headquarters"
 					:key="'headquarter-' + index + '-' + wrapper"
@@ -46,12 +48,15 @@
 				>
 					<h3 class="spacer">{{ headquarter.state }}</h3>
 					<p class="info centered">
-						{{ headquarter.street }}, {{ headquarter.number
-						}}<br />{{ headquarter.zip }}, {{ headquarter.city }}
+						{{ headquarter.street }}, {{ headquarter.number }}
+						<br />
+						{{ headquarter.zip }}, {{ headquarter.city }}
 					</p>
 				</a>
 			</div>
 		</section>
+		<!-- List of map images, only one is taken into view depending on the last headquarter card clicked -->
+		<!-- Should work with any number of headquarters -->
 		<div id="map" class="map-section">
 			<span
 				v-for="(headquarter, index) in info.headquarters"
@@ -100,8 +105,7 @@ export default {
 			},
 			title_component: {
 				title: 'Come And See Us',
-				text:
-					'Our operational headquarter is in Milan, near the "Turro" metro station.',
+				text: 'Our operational headquarter is in Milan, near the "Turro" metro station.',
 			},
 			info: {
 				contacts: [
@@ -145,18 +149,24 @@ export default {
 		}
 	},
 	methods: {
+		// Shows the map corresponding to the clicked headquarter
 		showMap(event) {
 			if (!this.clickableMaps) return
-			const index = +event.target.closest('a').getAttribute('data-index')
+			// Scroll to the map
 			this.$scrollTo(event)
 
+			const index = +event.target.closest('a').getAttribute('data-index')
 			if (this.activeMap === index) return
+			// Used to change the animation at each click
 			this.mapChanges++
+			// Maps cannot be clicked anymore until the end of the animation
 			this.clickableMaps = false
+			// oldMap animates differently than activeMap
 			this.oldMap = this.activeMap
 			this.activeMap = index
 
 			setTimeout(() => {
+				// End of the animation
 				this.oldMap = -1
 				this.clickableMaps = true
 			}, 750)

@@ -17,7 +17,7 @@
 			title="Our Founders"
 			:components="founders"
 			:wrapper="wrapper"
-			:is-rounded="true"
+			:rounded="true"
 		/>
 		<grid-section
 			id="employees"

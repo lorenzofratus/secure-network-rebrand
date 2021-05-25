@@ -11,6 +11,7 @@
 				rel="noopener noreferrer"
 				class="link"
 			>
+				<!-- We used components instead of images because it was the cleanest way to change the color on hover -->
 				<component
 					:is="option.icon"
 					role="link"
@@ -23,44 +24,21 @@
 </template>
 
 <script>
-import LinkedinLogo from '~/components/social-logos/LinkedinLogo'
-import FacebookLogo from '~/components/social-logos/FacebookLogo'
-import TwitterLogo from '~/components/social-logos/TwitterLogo'
-import GithubLogo from '~/components/social-logos/GithubLogo'
+import LinkedinLogo from '~/components/social-logos/LinkedinLogo.vue'
+import FacebookLogo from '~/components/social-logos/FacebookLogo.vue'
+import TwitterLogo from '~/components/social-logos/TwitterLogo.vue'
+import GithubLogo from '~/components/social-logos/GithubLogo.vue'
 
 export default {
+	components: {
+		LinkedinLogo,
+		FacebookLogo,
+		TwitterLogo,
+		GithubLogo,
+	},
 	data() {
 		return {
-			components: {
-				LinkedinLogo,
-				FacebookLogo,
-				TwitterLogo,
-				GithubLogo,
-			},
-			menuOptions: [
-				{
-					name: 'LinkedIn',
-					href:
-						'https://www.linkedin.com/company/secure-network-s.r.l./',
-					icon: LinkedinLogo,
-				},
-				{
-					name: 'Facebook',
-					href:
-						'https://www.facebook.com/pages/Secure-Network-Srl/73399076138',
-					icon: FacebookLogo,
-				},
-				{
-					name: 'Twitter',
-					href: 'https://twitter.com/_securenetwork',
-					icon: TwitterLogo,
-				},
-				{
-					name: 'GitHub',
-					href: 'https://github.com/securenetwork',
-					icon: GithubLogo,
-				},
-			],
+			menuOptions: this.$store.state.menu.social,
 		}
 	},
 }

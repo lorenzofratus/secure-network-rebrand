@@ -1,6 +1,6 @@
 <template>
 	<div class="card item" :class="{ highlighted: object.isReference }">
-		<!-- Check if "img" is an image (path including '/') or an icon (simple text) -->
+		<!-- Checks if "img" is an image (path including '/') or an icon (simple text) -->
 		<img
 			v-if="object.img.includes('/')"
 			:src="object.img"
@@ -17,8 +17,8 @@
 		</div>
 		<button-component
 			:btn-path="object.path"
-			:btn-class="btnClass"
-			:btn-text="btnText + ' ' + type"
+			:btn-text="'Explore ' + type"
+			btn-class="secondary"
 		/>
 	</div>
 </template>
@@ -38,14 +38,8 @@ export default {
 			default: '',
 		},
 	},
-	data() {
-		return {
-			btnText: 'Explore',
-			btnClass: 'secondary',
-		}
-	},
 	computed: {
-		// Simple method that cuts any paragraph to "count" words and adds ellipsis
+		// Simple method that cuts the paragraph to "count" words and adds ellipsis
 		abstract() {
 			const count = 15
 			let words = this.object.text.split(/\s|\n/)

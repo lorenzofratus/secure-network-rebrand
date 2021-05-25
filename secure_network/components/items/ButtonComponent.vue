@@ -1,5 +1,6 @@
-/* eslint-disable vue/prop-name-casing */
 <template>
+	<!-- We can have three types of ButtonComponent that only share the innerText so we decided to split them -->
+	<!-- The first type is the simple button, it has no effect on routing and emits a click event -->
 	<button
 		v-if="btnPath == ''"
 		class="button"
@@ -8,6 +9,7 @@
 	>
 		{{ btnText }}
 	</button>
+	<!-- The second type is a structural link, it begins with '#' and scrolls to a given section without leaving the page -->
 	<a
 		v-else-if="btnPath[0] == '#'"
 		:href="btnPath"
@@ -18,6 +20,7 @@
 	>
 		{{ btnText }}
 	</a>
+	<!-- The third type is a NuxtLink, it goes to another page -->
 	<nuxt-link v-else :to="btnPath" class="button" :class="btnClass">
 		{{ btnText }}
 	</nuxt-link>
@@ -41,6 +44,7 @@ export default {
 		},
 	},
 	methods: {
+		// Method used to emit the click event
 		emitClick(e) {
 			this.$emit('click', e)
 		},

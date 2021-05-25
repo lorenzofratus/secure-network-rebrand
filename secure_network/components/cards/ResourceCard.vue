@@ -9,8 +9,8 @@
 		</p>
 		<button-component
 			:btn-path="object.path"
-			:btn-class="btnClass"
-			:btn-text="btnText + ' ' + type"
+			:btn-text="'Read ' + type"
+			btn-class="secondary"
 		/>
 	</div>
 </template>
@@ -30,14 +30,8 @@ export default {
 			default: '',
 		},
 	},
-	data() {
-		return {
-			btnText: 'Read',
-			btnClass: 'secondary',
-		}
-	},
 	computed: {
-		// Simple method that cuts any paragraph to "count" words and adds ellipsis
+		// Simple method that cuts the paragraph to "count" words and adds ellipsis
 		abstract() {
 			const count = 15
 			let words = this.object.name.split(/\s|\n/)
