@@ -13,19 +13,26 @@
 			:wrapper="wrapper"
 			:button="alt_section.button"
 		/>
-		<threats-section :wrapper="wrapper" />
+		<grid-section
+			:wrapper="wrapper"
+			:small="true"
+			child="threat-card"
+			:title="$store.state.threats.title"
+			:elements="$store.state.threats.blocks"
+			:button="$store.state.threats.button"
+		/>
 	</main>
 </template>
 
 <script>
 import MainSection from '~/components/sections/MainSection.vue'
 import AltSection from '~/components/sections/AltSection.vue'
-import ThreatsSection from '~/components/sections/ThreatsSection.vue'
+import GridSection from '~/components/sections/GridSection.vue'
 export default {
 	components: {
 		MainSection,
 		AltSection,
-		ThreatsSection,
+		GridSection,
 	},
 	data() {
 		return {

@@ -1,13 +1,12 @@
 <template>
 	<footer class="footer wave-before wave-concave-dark">
 		<div class="content">
+			<!-- Arrow link that scrolls to the top of the page -->
 			<a href="#__layout" class="logo arrow" @click="$scrollTo">
 				<span class="left-bar"></span><span class="right-bar"></span>
 				<p class="hidden">Scroll To Top</p>
 			</a>
-			<nuxt-link :to="home.path" class="logo">
-				{{ home.name }}
-			</nuxt-link>
+			<nuxt-link to="/" class="logo"> Secure Network </nuxt-link>
 			<app-menu :light-theme="true" />
 			<social-menu />
 			<p class="copy-info h4">
@@ -19,21 +18,13 @@
 </template>
 
 <script>
-import AppMenu from './menus/AppMenu'
-import SocialMenu from './menus/SocialMenu.vue'
+import AppMenu from '~/components/menus/AppMenu.vue'
+import SocialMenu from '~/components/menus/SocialMenu.vue'
 
 export default {
 	components: {
 		AppMenu,
 		SocialMenu,
-	},
-	data() {
-		return {
-			home: {
-				name: 'Secure Network',
-				path: '/',
-			},
-		}
 	},
 }
 </script>

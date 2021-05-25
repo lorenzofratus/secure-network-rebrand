@@ -1,9 +1,10 @@
 <template>
 	<section>
 		<title-component v-if="title != ''" :title="title" />
+		<!-- In title we check if item has a surname because this component can also be used with people -->
 		<image-component
 			v-for="(item, index) in components"
-			:key="'area-card-' + index + '-' + wrapper"
+			:key="'image-component-' + index + '-' + wrapper"
 			:title="item.surname ? item.name + ' ' + item.surname : item.name"
 			:tag="item.tag"
 			:type="type"
@@ -11,7 +12,7 @@
 			:img="item.img"
 			:btn-path="item.path"
 			:wrapper="wrapper"
-			:is-rounded="isRounded"
+			:rounded="rounded"
 		/>
 	</section>
 </template>
@@ -40,7 +41,7 @@ export default {
 			type: Array,
 			required: true,
 		},
-		isRounded: {
+		rounded: {
 			type: Boolean,
 			required: false,
 			default: false,

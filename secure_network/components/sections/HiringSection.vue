@@ -1,4 +1,5 @@
 <template>
+	<!-- Section with static content repeated in multiple pages -->
 	<alt-section
 		:title="alt_section.title"
 		:paragraphs="alt_section.paragraphs"

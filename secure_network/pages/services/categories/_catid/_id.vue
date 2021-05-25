@@ -18,16 +18,14 @@
 			:components="[area]"
 			:wrapper="service.id"
 		/>
-
 		<image-components-section
 			v-if="referents.length"
 			id="team"
 			title="Provided by"
 			:components="referents"
 			:wrapper="service.id"
-			:is-rounded="true"
+			:rounded="true"
 		/>
-
 		<grid-section
 			v-if="people.length"
 			:id="referents.length ? '' : 'team'"

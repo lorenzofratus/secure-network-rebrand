@@ -10,8 +10,9 @@
 			<timeline-component
 				v-for="(year, index) in years"
 				:key="'timeline-section-item-' + index + '-' + wrapper"
+				:wrapper="wrapper"
 				:year="year.year"
-				:types="resourceTypes(year)"
+				:types="resourceTypes[year.year]"
 				:path="year.path"
 			/>
 		</div>
@@ -34,18 +35,23 @@ export default {
 			required: true,
 		},
 	},
-	methods: {
-		resourceTypes(year) {
-			return [
-				{
-					name: 'news',
-					count: year.news,
-				},
-				{
-					name: 'research',
-					count: year.research,
-				},
-			]
+	computed: {
+		// Counts the resources of each type for each year
+		resourceTypes() {
+			const yearTypes = {}
+			for (const year of this.years) {
+				yearTypes[year.year] = [
+					{
+						name: 'news',
+						count: year.news,
+					},
+					{
+						name: 'research',
+						count: year.research,
+					},
+				]
+			}
+			return yearTypes
 		},
 	},
 }

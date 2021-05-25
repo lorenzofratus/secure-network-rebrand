@@ -24,7 +24,6 @@ export default {
 		MainSection,
 		AltSection,
 	},
-	layout: 'default',
 	async asyncData({ $axios, route, error }) {
 		try {
 			const { id } = route.params

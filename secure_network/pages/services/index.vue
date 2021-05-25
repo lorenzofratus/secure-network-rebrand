@@ -86,7 +86,6 @@ export default {
 			title: 'Services | Secure Network',
 		}
 	},
-	computed: {},
 }
 </script>
 

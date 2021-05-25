@@ -1,44 +1,30 @@
 <template>
 	<section
-		class="alt-section wave-before wave-after wave-concave-alt wave-convex-alt"
+		class="
+			alt-section
+			wave-before wave-after wave-concave-alt wave-convex-alt
+		"
 	>
 		<div class="content">
 			<h2 class="spacer">{{ title }}</h2>
 			<form ref="form" class="form">
-				<div class="fields">
+				<div
+					v-for="(group, i) in formFields"
+					:key="'group-' + i + '-' + wrapper"
+					class="group"
+				>
 					<input-component
-						:label="formFields.name.label"
-						:placeholder="formFields.name.placeholder"
-						:name="formFields.name.label"
-						:type="formFields.name.type"
-					/>
-					<input-component
-						:label="formFields.email.label"
-						:placeholder="formFields.email.placeholder"
-						:name="formFields.email.label"
-						:type="formFields.email.type"
-					/>
-				</div>
-				<div class="fields">
-					<input-component
-						:label="formFields.subject.label"
-						:placeholder="formFields.subject.placeholder"
-						:name="formFields.subject.label"
-						:type="formFields.subject.type"
-					/>
-				</div>
-				<div class="fields">
-					<input-component
-						:label="formFields.message.label"
-						:placeholder="formFields.message.placeholder"
-						:name="formFields.message.label"
-						:type="formFields.message.type"
+						v-for="(field, j) in group"
+						:key="'field-' + i + '-' + j + '-' + wrapper"
+						:label="field.label"
+						:placeholder="field.placeholder"
+						:name="field.label"
+						:type="field.type"
 					/>
 				</div>
 				<button-component
-					:btn-path="formButton.path"
-					:btn-text="formButton.text"
-					:btn-class="formButton.class"
+					:btn-text="buttonText"
+					btn-class="primary"
 					@click="submitForm"
 				/>
 			</form>
@@ -47,8 +33,8 @@
 </template>
 
 <script>
-import ButtonComponent from '../items/ButtonComponent.vue'
-import InputComponent from '../items/InputComponent.vue'
+import ButtonComponent from '~/components/items/ButtonComponent.vue'
+import InputComponent from '~/components/items/InputComponent.vue'
 export default {
 	components: { ButtonComponent, InputComponent },
 	props: {
@@ -63,40 +49,46 @@ export default {
 	},
 	data() {
 		return {
-			formFields: {
-				name: {
-					label: 'Full Name',
-					placeholder: 'John H. Doe',
-					name: 'name',
-					type: 'text',
-				},
-				email: {
-					label: 'Email Address',
-					placeholder: 'john.doe@gmail.com',
-					name: 'email',
-					type: 'email',
-				},
-				subject: {
-					label: 'Subject',
-					placeholder: 'Security audit for our infrastructure',
-					name: 'subject',
-					type: 'text',
-				},
-				message: {
-					label: 'Message',
-					placeholder: 'Write your message here',
-					name: 'message',
-					type: 'text-area',
-				},
-			},
-			formButton: {
-				class: 'primary',
-				text: 'Send Message',
-			},
+			// The fields of a sub-array are displayed on the same line
+			formFields: [
+				[
+					{
+						label: 'Full Name',
+						placeholder: 'John H. Doe',
+						name: 'name',
+						type: 'text',
+					},
+					{
+						label: 'Email Address',
+						placeholder: 'john.doe@gmail.com',
+						name: 'email',
+						type: 'email',
+					},
+				],
+				[
+					{
+						label: 'Subject',
+						placeholder: 'Security audit for our infrastructure',
+						name: 'subject',
+						type: 'text',
+					},
+				],
+				[
+					{
+						label: 'Message',
+						placeholder: 'Write your message here',
+						name: 'message',
+						type: 'text-area',
+					},
+				],
+			],
+			buttonText: 'Send Message',
 		}
 	},
 	methods: {
-		submitForm() {
+		// Actually doesn't submit the form, only validates it and then gives a feedback changing the value of the button text
+		submitForm(e) {
+			e.preventDefault()
 			let error = false
 			for (const field of this.$refs.form.elements) {
 				if (!field.reportValidity()) {
@@ -107,7 +99,7 @@ export default {
 					field.classList.remove('error')
 				}
 			}
-			if (!error) this.formButton.text = 'Easter Egg'
+			if (!error) this.buttonText = 'Easter Egg'
 		},
 	},
 }
@@ -117,13 +109,13 @@ export default {
 .form {
 	padding: 1.5em 0 0;
 }
-.fields {
+.group {
 	display: grid;
 	margin: 3em 0;
 	gap: 3em;
 	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
-.fields:first-of-type {
+.group:first-of-type {
 	margin-top: 0;
 }
 </style>

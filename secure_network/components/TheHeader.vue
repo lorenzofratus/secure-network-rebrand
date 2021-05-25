@@ -2,18 +2,17 @@
 	<header>
 		<nav class="nav" :class="{ opened: isOpened }">
 			<div class="content">
-				<nuxt-link
-					:to="home.path"
-					class="logo"
-					@click.native="closeOpened"
-				>
-					{{ home.name }}
+				<!-- Closes the mobile menu when the link is clicked -->
+				<nuxt-link to="/" class="logo" @click.native="closeOpened">
+					Secure Network
 				</nuxt-link>
+				<!-- Closes the mobile menu when a link is clicked -->
 				<app-menu
 					:align-right="true"
 					:show-on-mobile="true"
 					@navigation="closeOpened"
 				/>
+				<!-- Toggles the mobile menu when the button is clicked -->
 				<div class="nav-btn" @click="toggleOpened">
 					<div class="bar1"></div>
 					<div class="bar2"></div>
@@ -26,7 +25,7 @@
 </template>
 
 <script>
-import AppMenu from './menus/AppMenu'
+import AppMenu from '~/components/menus/AppMenu'
 
 export default {
 	components: {
@@ -34,10 +33,7 @@ export default {
 	},
 	data() {
 		return {
-			home: {
-				name: 'Secure Network',
-				path: '/',
-			},
+			// Controls the css that opens and closes the mobile menu
 			isOpened: false,
 		}
 	},

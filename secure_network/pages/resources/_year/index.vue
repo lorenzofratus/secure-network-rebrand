@@ -36,7 +36,6 @@ export default {
 		FilterSection,
 		GridSection,
 	},
-	layout: 'default',
 	async asyncData({ $axios, route, error }) {
 		try {
 			const { year } = route.params
@@ -73,6 +72,7 @@ export default {
 		}
 	},
 	computed: {
+		// Computes the types to be displayed in the filter (at least All Types always is displayed)
 		types() {
 			const types = [{ text: 'All Types', filter: '' }]
 			let fetched = this.resources.map((resource) => resource.type)
@@ -85,14 +85,18 @@ export default {
 			)
 			return types
 		},
+		// Gets the class to be set to each card in order to make the filter work, depends on the type of resource
 		filterClass() {
 			return this.types[this.activeFilter].filter
 		},
 	},
 	methods: {
+		// Performs resource filtering
 		changeFilter(index) {
+			// Animating set to true until the end of the animation to fade out the old resources and in the new
 			this.animating = true
 			setTimeout(() => {
+				// End of the animation
 				this.animating = false
 				this.activeFilter = index
 			}, 500)

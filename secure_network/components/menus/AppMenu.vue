@@ -42,35 +42,11 @@ export default {
 	},
 	data() {
 		return {
-			menuOptions: [
-				{
-					name: 'Services',
-					path: '/services',
-				},
-				{
-					name: 'Areas',
-					path: '/areas',
-				},
-				{
-					name: 'Team',
-					path: '/team',
-				},
-				{
-					name: 'Resources',
-					path: '/resources',
-				},
-				{
-					name: 'About',
-					path: '/about',
-				},
-				{
-					name: 'Contacts',
-					path: '/contacts',
-				},
-			],
+			menuOptions: this.$store.state.menu.navigation,
 		}
 	},
 	methods: {
+		// Emits a navigation event that is used to close the mobile menu
 		closeMenu() {
 			this.$emit('navigation')
 		},

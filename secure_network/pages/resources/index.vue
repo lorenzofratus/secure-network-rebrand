@@ -19,7 +19,6 @@ export default {
 		MainSection,
 		TimelineSection,
 	},
-	layout: 'default',
 	async asyncData({ $axios, error }) {
 		try {
 			const { data } = await $axios.get(

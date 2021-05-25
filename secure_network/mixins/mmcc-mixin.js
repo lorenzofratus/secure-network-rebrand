@@ -22,7 +22,8 @@ export default {
 		// Adding the default event listener for messages
 		WebSocketEventBus.onMessage((message) => {
 			const self = this
-			console.log(message)
+			// Adding 1 second timeout before adding the message to the chat
+			// This makes the chatbot less "aggressive" towards the user
 			setTimeout(() => {
 				if (message.utterance) {
 					self.$store.commit('chat/addMessage', {
