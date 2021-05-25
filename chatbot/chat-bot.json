@@ -29,31 +29,31 @@
 					{
 						"id": "contact_form",
 						"intents": ["send", "email", "write", "mail", "message", "form"],
-						"utterance": ["As you prefer!"]
+						"utterance": ["As you prefer!"],
+						"payload": {
+							"guide": "/contacts#email"
+						}
 					},
 					{
 						"id": "contact_page",
 						"intents": ["phone", "map", "call", "address", "place", "page", "contacts", "contact", "contact page", "info", "contact info"],
-						"utterance": ["Great. You are going to be redirect to the contact page!"]
+						"utterance": ["Great. You are going to be redirect to the contact page!"],
+						"payload": {
+							"guide": "/contacts"
+						}
 					}
 				]
 			},
 			"contact_form": {
-				"initials": ["This is our email form, "],
+				"initials": ["This is our email form."],
 				"completed": {
-					"utterance": "Thanks! We'll get in touch soon.",
-					"payload": {
-						"guide": "/contacts#email"
-					}
+					"utterance": "Thanks! We'll get in touch soon."
 				}
 			},
 			"contact_page": {
 				"initials": ["Here you can find all the information you need."],
 				"completed": {
-					"utterance": "We look forward to hearing from you!",
-					"payload": {
-						"guide": "/contacts"
-					}
+					"utterance": "We look forward to hearing from you!"
 				}
 			},
 			"guide": {
