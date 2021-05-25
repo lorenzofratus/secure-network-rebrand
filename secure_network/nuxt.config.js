@@ -66,7 +66,7 @@ export default {
 			{
 				rel: 'mask-icon',
 				href: '/safari-pinned-tab.svg',
-				color: '#00a6fb',
+				color: '#007cbd',
 			},
 			{ rel: 'preconnect', href: 'https://fonts.gstatic.com' },
 			{

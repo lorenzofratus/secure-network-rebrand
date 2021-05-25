@@ -53,7 +53,7 @@
 			<div class="chat-header">
 				<div class="exploit"></div>
 				<div class="titling">
-					<h4 class="title">Exploit</h4>
+					<span class="h4 title">Exploit</span>
 					<p class="subtitle">Your Virtual Assistant</p>
 				</div>
 				<button class="chat-button-inside" @click="isOpen = false">

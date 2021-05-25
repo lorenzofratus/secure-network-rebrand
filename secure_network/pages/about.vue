@@ -43,11 +43,6 @@ export default {
 				buttons: [
 					{
 						class: 'primary',
-						text: 'Our Founders',
-						path: '#founders',
-					},
-					{
-						class: 'secondary',
 						text: 'Contact Us',
 						path: '/contacts#email',
 					},
