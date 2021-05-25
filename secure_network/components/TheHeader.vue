@@ -1,3 +1,12 @@
+<!--
+ * Copyright (c) 2021
+ *
+ *  TheHeader is the header of the website. It is implemented in the default layout.
+ *
+ * @author Lorenzo Fratus 
+ * @author Simone Orlando 
+ * @author Cristian C. Spagnuolo 
+ -->
 <template>
 	<header>
 		<nav class="nav" :class="{ opened: isOpened }">

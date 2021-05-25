@@ -1,3 +1,12 @@
+<!--
+ * Copyright (c) 2021
+ *
+ *  TheFooter is the footer of the website. It is implemented in the default layout.
+ *
+ * @author Lorenzo Fratus 
+ * @author Simone Orlando 
+ * @author Cristian C. Spagnuolo 
+ -->
 <template>
 	<footer class="footer wave-before wave-concave-dark">
 		<div class="content">

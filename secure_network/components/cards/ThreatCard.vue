@@ -1,3 +1,12 @@
+<!--
+ * Copyright (c) 2021
+ *
+ * A ThreatCard is used to show information about a possible Threat.
+ *
+ * @author Lorenzo Fratus 
+ * @author Simone Orlando 
+ * @author Cristian C. Spagnuolo 
+ -->
 <template>
 	<div class="card block" tabindex="0">
 		<div class="preview">

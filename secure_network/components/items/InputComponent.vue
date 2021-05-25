@@ -1,3 +1,12 @@
+<!--
+ * Copyright (c) 2021
+ *
+ * An InputComponent is used to model form sub-sections.
+ *
+ * @author Lorenzo Fratus 
+ * @author Simone Orlando 
+ * @author Cristian C. Spagnuolo 
+ -->
 <template>
 	<div class="field">
 		<!-- We can have an input or a textarea based on the type prop -->

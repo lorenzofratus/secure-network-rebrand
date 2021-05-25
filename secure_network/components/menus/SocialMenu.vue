@@ -1,3 +1,13 @@
+<!--
+ * Copyright (c) 2021
+ *
+ * A SocialMenu is used to model social logos which are embedded in the
+ * footer of the page.
+ *
+ * @author Lorenzo Fratus 
+ * @author Simone Orlando 
+ * @author Cristian C. Spagnuolo 
+ -->
 <template>
 	<ul class="social-menu">
 		<li

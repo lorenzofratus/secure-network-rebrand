@@ -1,3 +1,10 @@
+<!--
+ * Copyright (c) 2021
+ *
+ * @author Lorenzo Fratus 
+ * @author Simone Orlando 
+ * @author Cristian C. Spagnuolo 
+ -->
 <template>
 	<svg
 		xmlns="http://www.w3.org/2000/svg"

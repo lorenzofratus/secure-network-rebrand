@@ -1,3 +1,12 @@
+<!--
+ * Copyright (c) 2021
+ *
+ * A ServiceCard is used to show syntetized information about a given service.
+ *
+ * @author Lorenzo Fratus 
+ * @author Simone Orlando 
+ * @author Cristian C. Spagnuolo 
+ -->
 <template>
 	<div class="card item" :class="{ highlighted: object.isReference }">
 		<!-- Checks if "img" is an image (path including '/') or an icon (simple text) -->

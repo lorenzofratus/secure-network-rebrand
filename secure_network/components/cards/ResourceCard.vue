@@ -1,3 +1,12 @@
+<!--
+ * Copyright (c) 2021
+ *
+ * A ResourceCard is used to show syntetized information about a given resource.
+ *
+ * @author Lorenzo Fratus 
+ * @author Simone Orlando 
+ * @author Cristian C. Spagnuolo 
+ -->
 <template>
 	<div class="card box" :class="object.type + '-box'">
 		<span class="heading">

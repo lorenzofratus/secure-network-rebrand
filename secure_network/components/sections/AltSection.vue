@@ -1,3 +1,13 @@
+<!--
+ * Copyright (c) 2021
+ *
+ * An AltSection is a section which contains a title, an optional set of paragraphs and an 
+ * optional button. It is used in almost all pages to give a description of the context.
+ *
+ * @author Lorenzo Fratus 
+ * @author Simone Orlando 
+ * @author Cristian C. Spagnuolo 
+ -->
 <template>
 	<section
 		class="

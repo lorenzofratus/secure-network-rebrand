@@ -1,3 +1,12 @@
+<!--
+ * Copyright (c) 2021
+ *
+ * A TitleComponent is used to add a simple title to a more complex element.
+ *
+ * @author Lorenzo Fratus 
+ * @author Simone Orlando 
+ * @author Cristian C. Spagnuolo 
+ -->
 <template>
 	<div class="content">
 		<h2 class="spacer" :class="{ 'big-margin': text == '' }">

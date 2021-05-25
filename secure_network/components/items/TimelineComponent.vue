@@ -1,3 +1,13 @@
+<!--
+ * Copyright (c) 2021
+ *
+ * A TimelineComponent is used to highlight how many resources, grouped by type, 
+ * are available for a given year.
+ *
+ * @author Lorenzo Fratus 
+ * @author Simone Orlando 
+ * @author Cristian C. Spagnuolo 
+ -->
 <template>
 	<div class="timeline-item">
 		<div class="content">

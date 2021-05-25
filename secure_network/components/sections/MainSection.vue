@@ -1,3 +1,14 @@
+<!--
+ * Copyright (c) 2021
+ *
+ * A MainSection is the first section you see in almost each page. It contains a title, 
+ * optionally both a subtitles and a group of buttons, and an image. It also shows bread crumbs
+ * where needed, supporting the implementation of the index pattern.
+ *
+ * @author Lorenzo Fratus 
+ * @author Simone Orlando 
+ * @author Cristian C. Spagnuolo 
+ -->
 <template>
 	<div class="wrapper">
 		<div class="header">

@@ -29,7 +29,6 @@
 			:elements="services"
 			type="service"
 		/>
-		<hiring-section :wrapper="person.id" />
 	</main>
 </template>
 

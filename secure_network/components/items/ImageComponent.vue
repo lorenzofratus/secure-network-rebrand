@@ -1,3 +1,12 @@
+<!--
+ * Copyright (c) 2021
+ *
+ * An ImageComponent is made up of an image, a text description and a ButtonComponent.
+ *
+ * @author Lorenzo Fratus 
+ * @author Simone Orlando 
+ * @author Cristian C. Spagnuolo 
+ -->
 <template>
 	<span class="sub-section">
 		<div class="content">
@@ -31,6 +40,7 @@ export default {
 			type: String,
 			required: true,
 		},
+		// Use to highlight specific properties of the given element
 		tag: {
 			type: String,
 			required: false,

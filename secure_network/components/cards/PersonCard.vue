@@ -1,3 +1,12 @@
+<!--
+ * Copyright (c) 2021
+ *
+ * A PersonCard is used to show syntetized information about a given Person.
+ *
+ * @author Lorenzo Fratus 
+ * @author Simone Orlando 
+ * @author Cristian C. Spagnuolo 
+ -->
 <template>
 	<nuxt-link :to="object.path" class="circle">
 		<img class="image" alt="" :src="object.img" />

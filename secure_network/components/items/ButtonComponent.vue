@@ -1,3 +1,12 @@
+<!--
+ * Copyright (c) 2021
+ *
+ * A ButtonComponent is a button which can perform three types of operations.
+ *
+ * @author Lorenzo Fratus 
+ * @author Simone Orlando 
+ * @author Cristian C. Spagnuolo 
+ -->
 <template>
 	<!-- We can have three types of ButtonComponent that only share the innerText so we decided to split them -->
 	<!-- The first type is the simple button, it has no effect on routing and emits a click event -->

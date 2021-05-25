@@ -1,3 +1,13 @@
+<!--
+ * Copyright (c) 2021
+ *
+ * An AppMenu is used to model landmarks which are embedded both in the
+ * header and in the footer of the page.
+ *
+ * @author Lorenzo Fratus 
+ * @author Simone Orlando 
+ * @author Cristian C. Spagnuolo 
+ -->
 <template>
 	<ul
 		class="app-menu"

@@ -1,3 +1,14 @@
+<!--
+ * Copyright (c) 2021
+ *
+ * A GridSection is a section which allow to visualize cards of different types.
+ * It has a wide usage within the website in order to show all previews of a given
+ * collection of elements.
+ *
+ * @author Lorenzo Fratus 
+ * @author Simone Orlando 
+ * @author Cristian C. Spagnuolo 
+ -->
 <template>
 	<section>
 		<title-component v-if="title != ''" :title="title" />

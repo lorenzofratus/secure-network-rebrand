@@ -1,3 +1,14 @@
+<!--
+ * Copyright (c) 2021
+ *
+ * A FilterSection is a section which allow the user to filter resources by type. It simply 
+ * contains at most three button components, some of them can be avoided if there are no resources
+ * of a given type.
+ *
+ * @author Lorenzo Fratus 
+ * @author Simone Orlando 
+ * @author Cristian C. Spagnuolo 
+ -->
 <template>
 	<section
 		class="

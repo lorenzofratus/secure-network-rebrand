@@ -1,3 +1,12 @@
+<!--
+ * Copyright (c) 2021
+ *
+ * A TimelineSection is the section which shows a list of TimelineComponents.
+ *
+ * @author Lorenzo Fratus 
+ * @author Simone Orlando 
+ * @author Cristian C. Spagnuolo 
+ -->
 <template>
 	<section
 		class="
@@ -36,7 +45,11 @@ export default {
 		},
 	},
 	computed: {
-		// Counts the resources of each type for each year
+		/*
+		 *	This computed property allow to parse information retrieved by the
+		 *	backend in such a way the timeline component can display dinamically
+		 *	the number of resources of each type.
+		 */
 		resourceTypes() {
 			const yearTypes = {}
 			for (const year of this.years) {

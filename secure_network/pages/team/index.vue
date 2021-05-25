@@ -27,7 +27,13 @@
 			child="person-card"
 			:elements="team"
 		/>
-		<hiring-section :wrapper="wrapper" />
+		<alt-section
+			:title="alt_section_2.title"
+			:paragraphs="alt_section_2.paragraphs"
+			:wrapper="wrapper"
+			:button="alt_section_2.button"
+			:centered="alt_section_2.centered"
+		/>
 	</main>
 </template>
 
@@ -36,7 +42,6 @@ import ImageComponentsSection from '~/components/sections/ImageComponentsSection
 import MainSection from '~/components/sections/MainSection.vue'
 import AltSection from '~/components/sections/AltSection.vue'
 import GridSection from '~/components/sections/GridSection.vue'
-import HiringSection from '~/components/sections/HiringSection.vue'
 
 export default {
 	components: {
@@ -44,7 +49,6 @@ export default {
 		AltSection,
 		GridSection,
 		ImageComponentsSection,
-		HiringSection,
 	},
 	async asyncData({ $axios, error }) {
 		try {
@@ -92,6 +96,16 @@ export default {
 					'Formed by a young and cutting-edge Red Team of engineers and always up to date thanks to the close collaboration with Politecnico di Milano.',
 					'The stable research and development studies and the active participation to international conferences, lectures and workshops, make Secure Network one of the most effective security companies.',
 				],
+			},
+			alt_section_2: {
+				title: 'We are hiring!',
+				paragraphs: ['Come hack with us!'],
+				button: {
+					class: 'primary',
+					text: 'Contact Us',
+					path: '/contacts',
+				},
+				centered: true,
 			},
 		}
 	},

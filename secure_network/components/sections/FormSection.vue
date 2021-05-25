@@ -1,3 +1,13 @@
+<!--
+ * Copyright (c) 2021
+ *
+ * A FormSection is a section which allow the user to contact the responsible of 
+ * the enterprise.
+ *
+ * @author Lorenzo Fratus 
+ * @author Simone Orlando 
+ * @author Cristian C. Spagnuolo 
+ -->
 <template>
 	<section
 		class="

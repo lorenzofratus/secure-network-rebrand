@@ -1,3 +1,14 @@
+<!--
+ * Copyright (c) 2021
+ *
+ * An ImageComponentSection is a section which lists a group of ImageComponents.
+ * It can be used either to display Areas or People which have a significant role
+ * within the given context.
+ *
+ * @author Lorenzo Fratus 
+ * @author Simone Orlando 
+ * @author Cristian C. Spagnuolo 
+ -->
 <template>
 	<section>
 		<title-component v-if="title != ''" :title="title" />
