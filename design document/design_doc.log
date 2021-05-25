@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.12.28)  24 MAY 2021 21:09
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.3.14)  25 MAY 2021 10:04
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**"/Users/simoneorlando/Documents/SecureNetwork/SecureNetworkRebrand/design document/design_doc.tex"
-(/Users/simoneorlando/Documents/SecureNetwork/SecureNetworkRebrand/design document/design_doc.tex
+**"/Users/cristianspagnuolo/Documents/Hypermedia/SecureNetworkRebrand/design document/design_doc.tex"
+(/Users/cristianspagnuolo/Documents/Hypermedia/SecureNetworkRebrand/design document/design_doc.tex
 LaTeX2e <2020-02-02> patch level 5
 L3 programming layer <2020-03-06> (/usr/local/texlive/2020/texmf-dist/tex/latex/base/report.cls
 Document Class: report 2019/12/20 v1.4l Standard LaTeX document class
@@ -781,7 +781,7 @@ Package biblatex Warning: 'babel/polyglossia' detected but 'csquotes' missing.
 File: l3backend-pdfmode.def 2020-03-12 L3 backend support: PDF mode
 \l__kernel_color_stack_int=\count441
 \l__pdf_internal_box=\box70
-) (/Users/simoneorlando/Documents/SecureNetwork/SecureNetworkRebrand/design document/design_doc.aux)
+) (/Users/cristianspagnuolo/Documents/Hypermedia/SecureNetworkRebrand/design document/design_doc.aux)
 \openout1 = `design_doc.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 103.
@@ -878,7 +878,7 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 103.
 LaTeX Info: Redefining \pageref on input line 103.
 LaTeX Info: Redefining \nameref on input line 103.
- (/Users/simoneorlando/Documents/SecureNetwork/SecureNetworkRebrand/design document/design_doc.out) (/Users/simoneorlando/Documents/SecureNetwork/SecureNetworkRebrand/design document/design_doc.out)
+ (/Users/cristianspagnuolo/Documents/Hypermedia/SecureNetworkRebrand/design document/design_doc.out) (/Users/cristianspagnuolo/Documents/Hypermedia/SecureNetworkRebrand/design document/design_doc.out)
 \@outlinefile=\write5
 \openout5 = `design_doc.out'.
 
@@ -899,7 +899,7 @@ Package biblatex Info: Automatic encoding selection.
 
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'design_doc.bbl' found.
- (/Users/simoneorlando/Documents/SecureNetwork/SecureNetworkRebrand/design document/design_doc.bbl)
+ (/Users/cristianspagnuolo/Documents/Hypermedia/SecureNetworkRebrand/design document/design_doc.bbl)
 Package biblatex Info: Reference section=0 on input line 103.
 Package biblatex Info: Reference segment=0 on input line 103.
 <images/polimi_logo.jpg, id=35, 401.5pt x 150.5625pt>
@@ -916,7 +916,7 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 105.
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
-{/usr/local/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map} </Users/simoneorlando/Documents/SecureNetwork/SecureNetworkRebrand/design document/images/polimi_logo.jpg>] (/Users/simoneorlando/Documents/SecureNetwork/SecureNetworkRebrand/design document/design_doc.toc)
+{/usr/local/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map} </Users/cristianspagnuolo/Documents/Hypermedia/SecureNetworkRebrand/design document/images/polimi_logo.jpg>] (/Users/cristianspagnuolo/Documents/Hypermedia/SecureNetworkRebrand/design document/design_doc.toc)
 \tf@toc=\write6
 \openout6 = `design_doc.toc'.
 
@@ -939,7 +939,7 @@ Package pdftex.def Info: images/C-IDM.pdf  used on input line 124.
 (pdftex.def)             Requested size: 483.69687pt x 356.41382pt.
 [3
 
- </Users/simoneorlando/Documents/SecureNetwork/SecureNetworkRebrand/design document/images/C-IDM.pdf>]
+ </Users/cristianspagnuolo/Documents/Hypermedia/SecureNetworkRebrand/design document/images/C-IDM.pdf>]
 Capitolo 3.
 [4
 
@@ -962,7 +962,7 @@ Capitolo 7.
 ]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 140.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 140.
- (/Users/simoneorlando/Documents/SecureNetwork/SecureNetworkRebrand/design document/design_doc.aux)
+ (/Users/cristianspagnuolo/Documents/Hypermedia/SecureNetworkRebrand/design document/design_doc.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 140.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 140.
 Package rerunfilecheck Info: File `design_doc.out' has not changed.
@@ -973,14 +973,14 @@ Package logreq Info: Writing requests to 'design_doc.run.xml'.
  ) 
 Here is how much of TeX's memory you used:
  36262 strings out of 480608
- 821695 string characters out of 5903629
+ 821712 string characters out of 5903630
  1547809 words of memory out of 5000000
  51572 multiletter control sequences out of 15000+600000
  536317 words of font info for 40 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 68i,11n,98p,899b,1340s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 68i,11n,98p,900b,1340s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on "/Users/simoneorlando/Documents/SecureNetwork/SecureNetworkRebrand/design document/design_doc.pdf" (9 pages, 139092 bytes).
+Output written on "/Users/cristianspagnuolo/Documents/Hypermedia/SecureNetworkRebrand/design document/design_doc.pdf" (9 pages, 139094 bytes).
 PDF statistics:
  126 PDF objects out of 1000 (max. 8388607)
  103 compressed objects within 2 object streams
