@@ -1,5 +1,5 @@
 import express from 'express'
-import initializeDatabase from '../db_conn'
+import initializeDatabase from '../db/db_conn'
 
 const app = express()
 app.use(express.json())

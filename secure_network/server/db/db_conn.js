@@ -9,7 +9,7 @@ import {
 	areas,
 	person_service,
 	resources,
-} from './db_init/db_init.js'
+} from './db_init.js'
 
 require('dotenv').config()
 

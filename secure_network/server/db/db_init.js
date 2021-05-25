@@ -446,6 +446,7 @@ const ppl = [
 		img: '/images/team/stefano-zanero.jpeg',
 		path: '/team/',
 		role: 'founder',
+		area_id: 'training',
 		text: `Stefano Zanero is Chairman of Secure Network. Stefano received a PhD in Computer Engineering from Politecnico di Milano, where he is currently an associate professor with the Dipartimento di Elettronica, Informazione e Bioingegneria. His research focuses on mobile malware, malware analysis, and systems security. Besides teaching “Computer Security” and “Computer Forensics” at Politecnico, he has an extensive speaking and training experience in Italy and abroad. He co-authored over 50 scientific papers and books.\n
 		He is an associate editor for the “Journal in computer virology and hacking techniques”. He’s a Senior Member of the IEEE (covering volunteer positions at national and regional level), the IEEE Computer Society (for which he is a member of the Board of Governors), and a lifetime senior member of the ACM. Stefano co-founded the Italian chapter of ISSA (Information System Security Association), of which he is a senior member. He sits in the International Board of Directors of the same association.`,
 	},
@@ -455,6 +456,7 @@ const ppl = [
 		img: '/images/team/alvise-biffi.jpeg',
 		path: '/team/',
 		role: 'founder',
+		area_id: 'enterprise-security',
 		text: `Alvise Biffi is Chief Executive Officer of Secure Network, which he founded together with Stefano Zanero in 2004. Alvise is actively in charge of business development and management.\n
 		Graduated in Businees Economics from the Bocconi University of Milan, Alvise works in the IT strategic management sector since 1999. Before founding Secure Network, Alvise has been the President of JEME Bocconi and worked as Marketing Manager for SoftPeople.\n
 		Since 2005, Alvise has been an active member of Assolombarda, the association of tertiary and industrial companies based in the Milan area. During the following years, he fulfilled several relevant positions. He is now the President of Piccola e Media Impresa of Assolombarda, Vice President of both Assolombarda and Piccola Industria Confindustria and council member of the Chamber of Commerce of Milan.`,

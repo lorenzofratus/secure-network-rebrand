@@ -61,7 +61,11 @@ export default {
 			)
 
 			const area = payload.data
-			if (area && person.role) area.tag = person.role + ' at'
+			if (area && person.role)
+				area.tag =
+					person.role !== 'founder'
+						? person.role + ' at'
+						: person.role + ' of'
 
 			payload = await $axios.get(
 				`${process.env.BASE_URL}/api/services-by-person/${id}`
