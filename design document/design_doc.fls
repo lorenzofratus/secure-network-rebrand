@@ -259,6 +259,16 @@ INPUT /usr/local/texlive/2020/texmf-dist/tex/generic/pgf/libraries/pgflibraryplo
 INPUT /usr/local/texlive/2020/texmf-dist/tex/generic/pgf/libraries/pgflibraryplotmarks.code.tex
 INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
 INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
+INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/pdfpages/pdfpages.sty
+INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/pdfpages/pdfpages.sty
+INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/base/ifthen.sty
+INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/base/ifthen.sty
+INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/tools/calc.sty
+INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/tools/calc.sty
+INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/eso-pic/eso-pic.sty
+INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/eso-pic/eso-pic.sty
+INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/pdfpages/pppdftex.def
+INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/pdfpages/pppdftex.def
 INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/titlesec/titlesec.sty
 INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/titlesec/titlesec.sty
 INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/biblatex/biblatex.sty
@@ -267,8 +277,6 @@ INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/logreq/logreq.sty
 INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/logreq/logreq.sty
 INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/logreq/logreq.def
 INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/logreq/logreq.def
-INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/base/ifthen.sty
-INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/base/ifthen.sty
 INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/biblatex/blx-dm.def
 INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/biblatex/blx-dm.def
 INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/biblatex/blx-compat.def
@@ -310,6 +318,10 @@ OUTPUT /Users/cristianspagnuolo/Documents/Hypermedia/SecureNetworkRebrand/design
 INPUT /Users/cristianspagnuolo/Documents/Hypermedia/SecureNetworkRebrand/design document/design_doc.out
 INPUT /Users/cristianspagnuolo/Documents/Hypermedia/SecureNetworkRebrand/design document/design_doc.out
 OUTPUT /Users/cristianspagnuolo/Documents/Hypermedia/SecureNetworkRebrand/design document/design_doc.out
+INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/pdflscape/pdflscape.sty
+INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/pdflscape/pdflscape.sty
+INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/graphics/lscape.sty
+INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/graphics/lscape.sty
 INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/biblatex/lbx/italian.lbx
 INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/biblatex/lbx/italian.lbx
 OUTPUT /Users/cristianspagnuolo/Documents/Hypermedia/SecureNetworkRebrand/design document/design_doc.bcf
@@ -335,7 +347,6 @@ INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/amsfonts/umsb.fd
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
-INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmtt12.tfm
 INPUT /usr/local/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
@@ -345,6 +356,50 @@ OUTPUT /Users/cristianspagnuolo/Documents/Hypermedia/SecureNetworkRebrand/design
 INPUT /Users/cristianspagnuolo/Documents/Hypermedia/SecureNetworkRebrand/design document/images/C-IDM.pdf
 INPUT /Users/cristianspagnuolo/Documents/Hypermedia/SecureNetworkRebrand/design document/images/C-IDM.pdf
 INPUT /Users/cristianspagnuolo/Documents/Hypermedia/SecureNetworkRebrand/design document/images/C-IDM.pdf
+INPUT /Users/cristianspagnuolo/Documents/Hypermedia/SecureNetworkRebrand/design document/images/content_tables_pt2.pdf
+INPUT /Users/cristianspagnuolo/Documents/Hypermedia/SecureNetworkRebrand/design document/images/content_tables_pt2.pdf
+INPUT /Users/cristianspagnuolo/Documents/Hypermedia/SecureNetworkRebrand/design document/images/content_tables_pt2.pdf
+INPUT /Users/cristianspagnuolo/Documents/Hypermedia/SecureNetworkRebrand/design document/images/content_tables_pt1.pdf
+INPUT /Users/cristianspagnuolo/Documents/Hypermedia/SecureNetworkRebrand/design document/images/content_tables_pt1.pdf
+INPUT /Users/cristianspagnuolo/Documents/Hypermedia/SecureNetworkRebrand/design document/images/content_tables_pt1.pdf
+INPUT /Users/cristianspagnuolo/Documents/Hypermedia/SecureNetworkRebrand/design document/images/page_mapping_pt1.pdf
+INPUT /Users/cristianspagnuolo/Documents/Hypermedia/SecureNetworkRebrand/design document/images/page_mapping_pt1.pdf
+INPUT /Users/cristianspagnuolo/Documents/Hypermedia/SecureNetworkRebrand/design document/images/page_mapping_pt1.pdf
+INPUT /Users/cristianspagnuolo/Documents/Hypermedia/SecureNetworkRebrand/design document/images/page_mapping_pt2.pdf
+INPUT /Users/cristianspagnuolo/Documents/Hypermedia/SecureNetworkRebrand/design document/images/page_mapping_pt2.pdf
+INPUT /Users/cristianspagnuolo/Documents/Hypermedia/SecureNetworkRebrand/design document/images/page_mapping_pt2.pdf
+INPUT /Users/cristianspagnuolo/Documents/Hypermedia/SecureNetworkRebrand/design document/images/page_mapping_pt3.pdf
+INPUT /Users/cristianspagnuolo/Documents/Hypermedia/SecureNetworkRebrand/design document/images/page_mapping_pt3.pdf
+INPUT /Users/cristianspagnuolo/Documents/Hypermedia/SecureNetworkRebrand/design document/images/page_mapping_pt3.pdf
+INPUT /Users/cristianspagnuolo/Documents/Hypermedia/SecureNetworkRebrand/design document/images/P-IDM.pdf
+INPUT /Users/cristianspagnuolo/Documents/Hypermedia/SecureNetworkRebrand/design document/images/P-IDM.pdf
+INPUT /Users/cristianspagnuolo/Documents/Hypermedia/SecureNetworkRebrand/design document/images/P-IDM.pdf
+INPUT /Users/cristianspagnuolo/Documents/Hypermedia/SecureNetworkRebrand/design document/images/ER_model.pdf
+INPUT /Users/cristianspagnuolo/Documents/Hypermedia/SecureNetworkRebrand/design document/images/ER_model.pdf
+INPUT /Users/cristianspagnuolo/Documents/Hypermedia/SecureNetworkRebrand/design document/images/ER_model.pdf
+INPUT /Users/cristianspagnuolo/Documents/Hypermedia/SecureNetworkRebrand/design document/images/ER-Logic-Tables.pdf
+INPUT /Users/cristianspagnuolo/Documents/Hypermedia/SecureNetworkRebrand/design document/images/ER-Logic-Tables.pdf
+INPUT /Users/cristianspagnuolo/Documents/Hypermedia/SecureNetworkRebrand/design document/images/ER-Logic-Tables.pdf
+INPUT /Users/cristianspagnuolo/Documents/Hypermedia/SecureNetworkRebrand/design document/design_doc.lof
+INPUT /Users/cristianspagnuolo/Documents/Hypermedia/SecureNetworkRebrand/design document/design_doc.lof
+INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmr8.tfm
+INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmr6.tfm
+INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmmi12.tfm
+INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmmi8.tfm
+INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmmi6.tfm
+INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm
+INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmsy8.tfm
+INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmsy6.tfm
+INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmex10.tfm
+INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm
+INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm
+INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
+INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
+INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam7.tfm
+INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
+INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
+INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
+OUTPUT /Users/cristianspagnuolo/Documents/Hypermedia/SecureNetworkRebrand/design document/design_doc.lof
 INPUT /Users/cristianspagnuolo/Documents/Hypermedia/SecureNetworkRebrand/design document/design_doc.aux
 INPUT /Users/cristianspagnuolo/Documents/Hypermedia/SecureNetworkRebrand/design document/design_doc.out
 INPUT /Users/cristianspagnuolo/Documents/Hypermedia/SecureNetworkRebrand/design document/design_doc.out
@@ -353,4 +408,3 @@ OUTPUT /Users/cristianspagnuolo/Documents/Hypermedia/SecureNetworkRebrand/design
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb
-INPUT /usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb
