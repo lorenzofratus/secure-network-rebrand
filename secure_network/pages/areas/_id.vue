@@ -11,12 +11,13 @@
 			:paragraphs="area.paragraphs"
 			:wrapper="area.id"
 		/>
-		<items-section
+		<grid-section
 			id="categories"
-			title="Categories Of Services"
-			type="category"
 			:wrapper="area.id"
-			:items="serviceCategories"
+			title="Categories Of Services"
+			child="service-card"
+			:elements="serviceCategories"
+			type="category"
 		/>
 		<image-components-section
 			id="team"
@@ -25,23 +26,26 @@
 			:wrapper="area.id"
 			:is-rounded="true"
 		/>
-		<people-section :people="people" :wrapper="area.id" />
+		<grid-section
+			:wrapper="area.id"
+			:small="true"
+			child="person-card"
+			:elements="people"
+		/>
 	</main>
 </template>
 
 <script>
-import ItemsSection from '~/components/sections/ItemsSection.vue'
+import GridSection from '~/components/sections/GridSection.vue'
 import MainSection from '~/components/sections/MainSection.vue'
 import AltSection from '~/components/sections/AltSection.vue'
-import PeopleSection from '~/components/sections/PeopleSection.vue'
 import ImageComponentsSection from '~/components/sections/ImageComponentsSection.vue'
 
 export default {
 	components: {
 		MainSection,
 		AltSection,
-		ItemsSection,
-		PeopleSection,
+		GridSection,
 		ImageComponentsSection,
 	},
 	layout: 'default',

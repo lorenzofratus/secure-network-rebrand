@@ -22,20 +22,21 @@
 			:wrapper="person.id"
 		/>
 
-		<items-section
+		<grid-section
 			v-if="services.length"
 			id="services"
-			type="service"
-			title="Provided Services"
 			:wrapper="person.id"
-			:items="services"
+			title="Provided Services"
+			child="service-card"
+			:elements="services"
+			type="service"
 		/>
 		<hiring-section :wrapper="person.id" />
 	</main>
 </template>
 
 <script>
-import ItemsSection from '~/components/sections/ItemsSection.vue'
+import GridSection from '~/components/sections/GridSection.vue'
 import MainSection from '~/components/sections/MainSection.vue'
 import AltSection from '~/components/sections/AltSection.vue'
 import ImageComponentsSection from '~/components/sections/ImageComponentsSection.vue'
@@ -45,7 +46,7 @@ export default {
 		MainSection,
 		AltSection,
 		ImageComponentsSection,
-		ItemsSection,
+		GridSection,
 	},
 	layout: 'default',
 	async asyncData({ $axios, route, error }) {

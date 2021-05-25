@@ -14,11 +14,13 @@
 			:button="alt_section.button"
 			:centered="alt_section.centered"
 		/>
-		<boxes-section
+		<grid-section
 			id="news"
-			:title="'Latest News'"
-			:boxes="resources"
 			:wrapper="wrapper"
+			title="Latest News"
+			child="resource-card"
+			:elements="resources"
+			type="resource"
 			class="resources"
 		/>
 		<threats-section :wrapper="wrapper" />
@@ -28,14 +30,14 @@
 <script>
 import MainSection from '~/components/sections/MainSection.vue'
 import AltSection from '~/components/sections/AltSection.vue'
-import BoxesSection from '~/components/sections/BoxesSection.vue'
 import ThreatsSection from '~/components/sections/ThreatsSection.vue'
+import GridSection from '~/components/sections/GridSection.vue'
 
 export default {
 	components: {
 		MainSection,
 		AltSection,
-		BoxesSection,
+		GridSection,
 		ThreatsSection,
 	},
 	async asyncData({ $axios, error }) {

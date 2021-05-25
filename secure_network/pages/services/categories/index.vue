@@ -11,17 +11,18 @@
 			:paragraphs="alt_section.paragraphs"
 			:wrapper="wrapper"
 		/>
-		<items-section
+		<grid-section
 			id="categories"
-			type="category"
 			:wrapper="wrapper"
-			:items="serviceCategories"
+			child="service-card"
+			:elements="serviceCategories"
+			type="category"
 		/>
 	</main>
 </template>
 
 <script>
-import ItemsSection from '~/components/sections/ItemsSection.vue'
+import GridSection from '~/components/sections/GridSection.vue'
 import MainSection from '~/components/sections/MainSection.vue'
 import AltSection from '~/components/sections/AltSection.vue'
 
@@ -29,7 +30,7 @@ export default {
 	components: {
 		MainSection,
 		AltSection,
-		ItemsSection,
+		GridSection,
 	},
 	async asyncData({ $axios, error }) {
 		try {

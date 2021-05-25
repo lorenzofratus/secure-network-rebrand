@@ -1,6 +1,9 @@
 <template>
 	<section
-		class="alt-section wave-before wave-after wave-concave-alt wave-convex-alt"
+		class="
+			alt-section
+			wave-before wave-after wave-concave-alt wave-convex-alt
+		"
 	>
 		<div class="content">
 			<h2 class="spacer">Select Any Year</h2>

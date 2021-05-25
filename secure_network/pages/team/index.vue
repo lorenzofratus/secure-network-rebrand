@@ -19,11 +19,13 @@
 			:wrapper="wrapper"
 			:is-rounded="true"
 		/>
-		<people-section
+		<grid-section
 			id="employees"
-			title="Our Employees"
-			:people="team"
 			:wrapper="wrapper"
+			:small="true"
+			title="Our Employees"
+			child="person-card"
+			:elements="team"
 		/>
 		<hiring-section :wrapper="wrapper" />
 	</main>
@@ -33,14 +35,14 @@
 import ImageComponentsSection from '~/components/sections/ImageComponentsSection.vue'
 import MainSection from '~/components/sections/MainSection.vue'
 import AltSection from '~/components/sections/AltSection.vue'
-import PeopleSection from '~/components/sections/PeopleSection.vue'
+import GridSection from '~/components/sections/GridSection.vue'
 import HiringSection from '~/components/sections/HiringSection.vue'
 
 export default {
 	components: {
 		MainSection,
 		AltSection,
-		PeopleSection,
+		GridSection,
 		ImageComponentsSection,
 		HiringSection,
 	},

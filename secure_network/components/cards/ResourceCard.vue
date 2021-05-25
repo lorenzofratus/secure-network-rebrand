@@ -1,14 +1,14 @@
 <template>
-	<div class="card box" :class="cardClass">
+	<div class="card box" :class="object.type + '-box'">
 		<span class="heading">
-			<span class="icon material-icons">{{ icon }}</span>
-			<h3 class="title">{{ title }}</h3>
+			<span class="icon material-icons">{{ object.icon }}</span>
+			<h3 class="title">{{ object.title }}</h3>
 		</span>
 		<p class="text">
 			{{ abstract }}
 		</p>
 		<button-component
-			:btn-path="btnPath"
+			:btn-path="object.path"
 			:btn-class="btnClass"
 			:btn-text="btnText + ' ' + type"
 		/>
@@ -16,32 +16,15 @@
 </template>
 
 <script>
-import ButtonComponent from './ButtonComponent.vue'
+import ButtonComponent from '~/components/items/ButtonComponent.vue'
 export default {
 	components: { ButtonComponent },
 	props: {
-		icon: {
-			type: String,
+		object: {
+			type: Object,
 			required: true,
 		},
 		type: {
-			type: String,
-			required: false,
-			default: '',
-		},
-		title: {
-			type: String,
-			required: true,
-		},
-		text: {
-			type: String,
-			required: true,
-		},
-		btnPath: {
-			type: String,
-			required: true,
-		},
-		cardClass: {
 			type: String,
 			required: false,
 			default: '',
@@ -54,9 +37,10 @@ export default {
 		}
 	},
 	computed: {
+		// Simple method that cuts any paragraph to "count" words and adds ellipsis
 		abstract() {
 			const count = 15
-			let words = this.text.split(/\s|\n/)
+			let words = this.object.name.split(/\s|\n/)
 			if (words.length <= count) return words.join(' ')
 			words = words.splice(0, count)
 			return words.join(' ') + ' ...'

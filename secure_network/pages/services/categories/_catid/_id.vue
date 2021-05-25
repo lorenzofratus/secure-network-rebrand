@@ -28,12 +28,14 @@
 			:is-rounded="true"
 		/>
 
-		<people-section
+		<grid-section
 			v-if="people.length"
 			:id="referents.length ? '' : 'team'"
-			:title="referents.length ? '' : 'Provided by'"
-			:people="people"
 			:wrapper="service.id"
+			:small="true"
+			:title="referents.length ? '' : 'Provided by'"
+			child="person-card"
+			:elements="people"
 		/>
 	</main>
 </template>
@@ -42,14 +44,14 @@
 import MainSection from '~/components/sections/MainSection.vue'
 import AltSection from '~/components/sections/AltSection.vue'
 import ImageComponentsSection from '~/components/sections/ImageComponentsSection.vue'
-import PeopleSection from '~/components/sections/PeopleSection.vue'
+import GridSection from '~/components/sections/GridSection.vue'
 
 export default {
 	components: {
 		MainSection,
 		AltSection,
 		ImageComponentsSection,
-		PeopleSection,
+		GridSection,
 	},
 	async asyncData({ $axios, route, error }) {
 		try {

@@ -1,16 +1,22 @@
 <template>
-	<div class="card item" :class="{ highlighted: highlighted }">
-		<img v-if="img.includes('/')" :src="img" alt="" class="image" />
-		<span v-else class="icon material-icons">{{ img }}</span>
+	<div class="card item" :class="{ highlighted: object.isReference }">
+		<!-- Check if "img" is an image (path including '/') or an icon (simple text) -->
+		<img
+			v-if="object.img.includes('/')"
+			:src="object.img"
+			alt=""
+			class="image"
+		/>
+		<span v-else class="icon material-icons">{{ object.img }}</span>
 		<div class="text">
-			<h4 v-if="highlighted" class="tag">Reference for</h4>
-			<h3 class="spacer">{{ title }}</h3>
+			<h4 v-if="object.isReference" class="tag">Reference for</h4>
+			<h3 class="spacer">{{ object.name }}</h3>
 			<p class="centered-text">
 				{{ abstract }}
 			</p>
 		</div>
 		<button-component
-			:btn-path="path"
+			:btn-path="object.path"
 			:btn-class="btnClass"
 			:btn-text="btnText + ' ' + type"
 		/>
@@ -18,35 +24,18 @@
 </template>
 
 <script>
-import ButtonComponent from './ButtonComponent.vue'
+import ButtonComponent from '~/components/items/ButtonComponent.vue'
 export default {
 	components: { ButtonComponent },
 	props: {
-		title: {
-			type: String,
+		object: {
+			type: Object,
 			required: true,
 		},
 		type: {
 			type: String,
 			required: false,
 			default: '',
-		},
-		text: {
-			type: String,
-			required: true,
-		},
-		path: {
-			type: String,
-			required: true,
-		},
-		img: {
-			type: String,
-			required: true,
-		},
-		highlighted: {
-			type: Boolean,
-			required: false,
-			default: false,
 		},
 	},
 	data() {
@@ -56,9 +45,10 @@ export default {
 		}
 	},
 	computed: {
+		// Simple method that cuts any paragraph to "count" words and adds ellipsis
 		abstract() {
 			const count = 15
-			let words = this.text.split(/\s|\n/)
+			let words = this.object.text.split(/\s|\n/)
 			if (words.length <= count) return words.join(' ')
 			words = words.splice(0, count)
 			return words.join(' ') + ' ...'
