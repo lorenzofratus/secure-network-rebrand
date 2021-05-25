@@ -119,7 +119,10 @@ respective E-R diagram.
 
 \chapter{C-IDM Diagram}
 In this section we report the C-IDM diagram that we used as a basic structure for 
-the development of the design of our website.\\\\
+the development of the design of our website. It includes all the \emph{Topics}, 
+\emph{Kind of Topics}, \emph{Groups of Topics}, \emph{Multiple Groups of Topics} and
+\emph{Nested Groups of Topics} regarding the specification. In addition, all relevant 
+relations and their cardinalities have been reported.\\\\
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=\textwidth]{C-IDM.pdf}
@@ -141,7 +144,8 @@ chapter.\\\\
 
 \chapter{Mapping Content Tables into Pages}
 Continuing, we present the result of the application of the process of page mapping 
-to the content tables reported in the last chapter.
+to the content tables reported in the last chapter. Each table has
+been divided into a series of pages, in order to increase the degree of granularity.
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.95\textwidth]{page_mapping_pt1.pdf}
@@ -175,13 +179,62 @@ Ciao
 
 \chapter{DB Design}
 In this last chapter we report the structure of the database designed 
-by us to support the website and manage the information contained in it. \\
-\begin{figure}[h]
+to support the website and manage the information contained in it. 
+We started with the conceptual design, by which is possible to identify
+the first layer of abstraction of our data. It has been moded with the 
+\emph{Entity-Relationship diagram}.\\
+\begin{figure}[H]
 	\centering
 	\includegraphics[width=0.95\textwidth]{ER_model.pdf}
 	\caption{ER Diagram}
 \end{figure}
-\begin{figure}[h]
+\noindent
+Then we proceed with the logic design, which allow to better describe the
+\emph{E-R Model}. Some additional tables have been identified to better 
+support the implementation.
+\clearpage
+\begin{itemize}
+	\item \textbf{Area}. An \emph{Area} is identified by an \texttt{id}, 
+	has a \texttt{name}, a \texttt{text} description, a string path to the image, 
+	\texttt{img}, and a \texttt{path} to reach the specific page. 
+	\item \textbf{Person}. A \emph{Person} is identified by an \texttt{id}, 
+	has a \texttt{name}, a \texttt{surname}, a \texttt{text} description, a 
+	string path to the image, \texttt{img}, a \texttt{path} to reach the specific page.
+	In addition, the relation called \emph{Assignment}, among \emph{Person} and \emph{Area}, has
+	been merged within the first table, resulting in the addition of two fiels: the 
+	\texttt{area\_id} as foreign key and the \texttt{role} of the person within the area.
+	Each \emph{Person} is assigned to exactly one \emph{Area}, whereas in each \emph{Area} several
+	\emph{People} are assigned.
+	\item \textbf{Service\_Category}. This tables was born due to normalization purposes. 
+	It would have been redundant adding for each \emph{Service} information about the complex 
+	attribute \emph{Category}. To avoid replication, we decided to perform this normalization 
+	procedure. A \emph{Service\_Category} is identified by an \texttt{id}, 
+	has a \texttt{name}, a \texttt{text} description, a string path to the image, 
+	\texttt{img}, and a \texttt{path} to reach the specific page. 
+	\item \textbf{Service}. A \emph{Service} is identified by an \texttt{id}, 
+	has a \texttt{name}, a \texttt{text} description, a string path to the image, \texttt{img}, 
+	a \texttt{path} to reach the specific page.
+	The \texttt{category\_id} is the foreign key, used to support the normalization process 
+	described in the previous table. 
+	Each \emph{Service} is mapped with exactly one \emph{Service\_Category}, whereas each 
+	\emph{Service\_Category} is mapped with several \emph{Services}.
+	In addition, the relation called \emph{Offer}, among 
+	\emph{Service} and \emph{Area}, has	been merged within the first table, resulting in 
+	the addition of the fiel \texttt{area\_id} as foreign key.
+	Each \emph{Service} is offered by exactly one \emph{Area}, whereas each \emph{Area} offers 
+	several \emph{Services}.
+	\item \textbf{Person\_Service}. This tables was born to support the \emph{N-N} relation, 
+	\emph{Provide}, among \emph{Person} and \emph{Service}. A \emph{Person\_Service} is 
+	identified by an autoincremental \texttt{id} and presents a boolean field, \texttt{isReference}, 
+	which states whether or not the \emph{Person}, identified by the foreign key \texttt{person\_id}, 
+	is the reference for the \emph{Service}, identified by the foreign key \texttt{service\_id}.
+	\item \textbf{Resource}. A \emph{Resource} is identified by an \texttt{id}, has a 
+	\texttt{type}, a \texttt{name}, a \texttt{date}, a \texttt{text} description, a \texttt{subtitle} 
+	a string path to the \texttt{icon}, and a \texttt{path} to reach the specific page. 
+\end{itemize}
+
+
+\begin{figure}[H]
 	\centering
 	\includegraphics[width=0.95\textwidth]{ER-Logic-Tables.pdf}
 	\caption{Relational Tables}
