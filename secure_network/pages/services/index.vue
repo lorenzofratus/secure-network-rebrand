@@ -12,17 +12,18 @@
 			:wrapper="wrapper"
 			:button="alt_section.button"
 		/>
-		<items-section
+		<grid-section
 			id="services"
-			type="service"
 			:wrapper="wrapper"
-			:items="services"
+			child="service-card"
+			:elements="services"
+			type="service"
 		/>
 	</main>
 </template>
 
 <script>
-import ItemsSection from '~/components/sections/ItemsSection.vue'
+import GridSection from '~/components/sections/GridSection.vue'
 import MainSection from '~/components/sections/MainSection.vue'
 import AltSection from '~/components/sections/AltSection.vue'
 
@@ -30,7 +31,7 @@ export default {
 	components: {
 		MainSection,
 		AltSection,
-		ItemsSection,
+		GridSection,
 	},
 	async asyncData({ $axios, error }) {
 		try {

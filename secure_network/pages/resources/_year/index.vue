@@ -13,10 +13,12 @@
 			:wrapper="wrapper + year"
 			@filter="changeFilter"
 		/>
-		<boxes-section
+		<grid-section
 			id="resources"
-			:boxes="resources"
-			:wrapper="wrapper + year"
+			:wrapper="wrapper + '-' + year"
+			child="resource-card"
+			:elements="resources"
+			type="resource"
 			class="resources"
 			:class="[filterClass, { animating: animating }]"
 		/>
@@ -26,13 +28,13 @@
 <script>
 import MainSection from '~/components/sections/MainSection.vue'
 import FilterSection from '~/components/sections/FilterSection.vue'
-import BoxesSection from '~/components/sections/BoxesSection.vue'
+import GridSection from '~/components/sections/GridSection.vue'
 
 export default {
 	components: {
 		MainSection,
 		FilterSection,
-		BoxesSection,
+		GridSection,
 	},
 	layout: 'default',
 	async asyncData({ $axios, route, error }) {

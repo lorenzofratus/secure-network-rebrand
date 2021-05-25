@@ -1,9 +1,9 @@
 <template>
-	<nuxt-link :to="path" class="circle">
-		<img class="image" alt="" :src="img" />
+	<nuxt-link :to="object.path" class="circle">
+		<img class="image" alt="" :src="object.img" />
 		<div class="titling card interactive">
-			<h3>{{ name }}</h3>
-			<h3>{{ surname }}</h3>
+			<h3>{{ object.name }}</h3>
+			<h3>{{ object.surname }}</h3>
 		</div>
 	</nuxt-link>
 </template>
@@ -11,20 +11,8 @@
 <script>
 export default {
 	props: {
-		img: {
-			type: String,
-			required: true,
-		},
-		name: {
-			type: String,
-			required: true,
-		},
-		surname: {
-			type: String,
-			required: true,
-		},
-		path: {
-			type: String,
+		object: {
+			type: Object,
 			required: true,
 		},
 	},
