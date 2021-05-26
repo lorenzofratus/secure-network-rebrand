@@ -22,13 +22,12 @@
 						id="message"
 						v-model="messageToSend"
 						type="text"
+						placeholder="Type a message..."
 						@keypress.enter="sendMessage"
 					/>
 					<!-- Simulates the behavior of the placeholder but in this way is also detected by screen readers -->
 					<!-- We did not use v-if to hide the placeholder otherwise screen readers would not detect it when there is a message written -->
-					<label for="message" :class="{ show: showPlaceholder }">
-						Type a message...
-					</label>
+					<label for="message"> Type a message... </label>
 				</div>
 				<button class="chat-button-inside" @click="sendMessage">
 					<span class="icon material-icons"> send </span>
@@ -72,7 +71,6 @@ export default {
 			messageToSend: '',
 			isOpen: false,
 			toBeScrolled: true,
-			showPlaceholder: true,
 		}
 	},
 	// Before any update in the component checks if the user is scrolled all the way to the bottom of the window
@@ -83,17 +81,12 @@ export default {
 			container.scrollTop + container.clientHeight ===
 			container.scrollHeight
 	},
-	// Fired when an update happens in the component
+	// Fired when an update happens in the component, scrolls the window in order to always display the latest message
 	updated() {
-		// Scrolls the window in order to always display the latest message
 		const container = this.$refs['chat-window']
 		if (this.toBeScrolled) {
 			container.scrollTop = container.scrollHeight
 		}
-
-		// Updates the variable that detects if the message is empty or not
-		// Note that placing this check inside the template like :class="{ show: messageToSent === '' }" did not work on mobile phones
-		this.showPlaceholder = this.messageToSend === ''
 	},
 	methods: {
 		// Sends message to the chatbot
@@ -276,6 +269,9 @@ export default {
 	padding: 1em 1.5em;
 	border: none;
 }
+.chat-footer input::placeholder {
+	opacity: 0;
+}
 .chat-footer input:focus {
 	outline: none;
 }
@@ -294,7 +290,7 @@ export default {
 	color: #767676;
 	opacity: 0;
 }
-.chat-footer label.show {
+.chat-footer input:placeholder-shown + label {
 	opacity: 1;
 }
 
