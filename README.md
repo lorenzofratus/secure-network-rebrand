@@ -15,8 +15,6 @@
   </p>
 </p>
 
-
-
 <!-- TABLE OF CONTENTS -->
 <details open="open">
   <summary><h2 style="display: inline-block">Table of Contents</h2></summary>
@@ -41,9 +39,8 @@
   </ol>
 </details>
 
-
-
 <!-- ABOUT THE PROJECT -->
+
 ## About The Project
 
 <!-- ![Home Page Screenshot](../assets/screen-1.png?raw=true) -->
@@ -52,19 +49,22 @@ This project has been developed as final assignment for the _Hypermedia Applicat
 
 ### Built With
 
-* [Vue.js](https://vuejs.org)
-* [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
-
+-   [Vue.js](https://vuejs.org)
+-   [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+-   [Nuxt](https://nuxtjs.org/)
+-   [PostgreSQL](https://www.postgresql.org/)
 
 <!-- TEAM -->
+
 ## Team
 
 <!-- TODO: remove stuff before going public -->
-The team that developed this project is called `FratusOrlandoSpagnuolo` and is composed by:
-* [Lorenzo Fratus](https://github.com/lorenzofratus) - 10619073 - lorenzo1.fratus@mail.polimi.it
-* [Simone Orlando](https://github.com/simoneorlando97) - 10530758 - simone.orlando@mail.polimi.it
-* [Cristian Carmine Spagnuolo](https://github.com/cris96spa) - 10745353 - cristiancarmine.spagnuolo@mail.polimi.it
 
+The team that developed this project is called `FratusOrlandoSpagnuolo` and is composed by:
+
+-   [Lorenzo Fratus](https://github.com/lorenzofratus) - 10619073 - lorenzo1.fratus@mail.polimi.it
+-   [Simone Orlando](https://github.com/simoneorlando97) - 10530758 - simone.orlando@mail.polimi.it
+-   [Cristian Carmine Spagnuolo](https://github.com/cris96spa) - 10745353 - cristiancarmine.spagnuolo@mail.polimi.it
 
 <!-- GETTING STARTED -->
 <!-- ## Getting Started
@@ -90,7 +90,6 @@ This is an example of how to list things you need to use the software and how to
    npm install
    ``` -->
 
-
 <!-- USAGE EXAMPLES -->
 <!-- ## Usage
 
@@ -98,12 +97,11 @@ Use this space to show useful examples of how a project can be used. Additional 
 
 _For more examples, please refer to the [Documentation](https://example.com)_ -->
 
-
 <!-- LICENSE -->
+
 ## License
 
 Distributed under the [GNU GPLv3 License](LICENSE).
-
 
 <!-- CONTACT -->
 <!-- ## Contact

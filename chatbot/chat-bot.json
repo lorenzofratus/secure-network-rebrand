@@ -2,7 +2,7 @@
 	"name": "Secure Network ChatBot",
 	"data": {
 		"kb": {
-			"continue_v": ["continue", "ok", "go", "yes", "go on", "c", "ready", "y", "yes, I am"],
+			"continue_v": ["continue", "ok", "okay", "go", "yes", "go on", "c", "ready", "y", "yes, I am"],
 			"steps_v": ["/", "/", "/about"],
 			"stay_message": "I don't understand. Do you want to continue?",
 			"start": "Hi! My name is Exploit, nice to meet you!",
@@ -60,21 +60,21 @@
 				}
 			},
 			"guide": {
-				"initials": ["I will show you our main page and the about page. Are you ready to start the tour?"],
+				"initials": ["I will show you our main page and the about page.\nAre you ready to start the tour?"],
 				"completed": {
 					"utterance": "Amazing!",
 					"payload": {} 
 				}
 			},
 			"home": {
-				"initials": ["This is our home page. Here you can find a brief introduction of our company and the latest news."],
+				"initials": ["This is our home page.\nHere you can find a brief introduction of our company and the latest news."],
 				"completed": {
 					"utterance": "Let's continue!",
 					"payload": {} 
 				}
 			},
 			"about": {
-				"initials": ["This is our about page. Here you can find information about our company and what we do."],
+				"initials": ["This is our about page.\nHere you can find information about our company and what we do."],
 				"completed": {
 					"utterance": "The tour is over.",
 					"payload": {} 
