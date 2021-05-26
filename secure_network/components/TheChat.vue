@@ -100,7 +100,7 @@ export default {
 			const packet = {
 				message: {
 					type: 'data',
-					payload: { data: this.messageToSend },
+					payload: { data: this.messageToSend.toLowerCase() },
 				},
 				configurationId: process.env.configurationId,
 			}
