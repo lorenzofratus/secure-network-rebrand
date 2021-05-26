@@ -8,7 +8,7 @@
  * @author Cristian C. Spagnuolo 
  -->
 <template>
-	<!-- We can have three types of ButtonComponent that only share the innerText so we decided to split them -->
+	<!-- We can have two types of ButtonComponent that only share the innerText so we decided to split them -->
 	<!-- The first type is the simple button, it has no effect on routing and emits a click event -->
 	<button
 		v-if="btnPath == ''"
@@ -18,18 +18,7 @@
 	>
 		{{ btnText }}
 	</button>
-	<!-- The second type is a structural link, it begins with '#' and scrolls to a given section without leaving the page -->
-	<a
-		v-else-if="btnPath[0] == '#'"
-		:href="btnPath"
-		class="button"
-		:class="btnClass"
-		data-offset="-64"
-		@click="$scrollTo"
-	>
-		{{ btnText }}
-	</a>
-	<!-- The third type is a NuxtLink, it goes to another page -->
+	<!-- The second type is a NuxtLink, it goes to another page or to the same page scrolling (if starting with '#') -->
 	<nuxt-link v-else :to="btnPath" class="button" :class="btnClass">
 		{{ btnText }}
 	</nuxt-link>

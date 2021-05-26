@@ -84,7 +84,7 @@ export default {
 	css: ['~/assets/css/normalize', '~/assets/css/style'],
 
 	// Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-	plugins: ['~/plugins/mmcc.js', '~/plugins/scroll-to.js'],
+	plugins: ['~/plugins/mmcc.js'],
 
 	// Auto import components: https://go.nuxtjs.dev/config-components
 	components: true,
@@ -106,4 +106,9 @@ export default {
 
 	// Build Configuration: https://go.nuxtjs.dev/config-build
 	build: {},
+
+	// Router middleware that allows smooth scroll
+	router: {
+		middleware: ['scroll-to'],
+	},
 }

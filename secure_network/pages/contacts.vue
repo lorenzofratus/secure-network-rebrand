@@ -49,11 +49,10 @@
 					v-for="(headquarter, index) in info.headquarters"
 					:key="'headquarter-' + index + '-' + wrapper"
 					href="#map"
-					data-offset="-100"
 					:data-index="index"
 					class="card map-card interactive"
 					:class="{ active: activeMap == index }"
-					@click="showMap"
+					@click="showMap(index)"
 				>
 					<h3 class="spacer">{{ headquarter.state }}</h3>
 					<p class="info centered">
@@ -159,12 +158,9 @@ export default {
 	},
 	methods: {
 		// Shows the map corresponding to the clicked headquarter
-		showMap(event) {
+		showMap(index) {
 			if (!this.clickableMaps) return
-			// Scroll to the map
-			this.$scrollTo(event)
 
-			const index = +event.target.closest('a').getAttribute('data-index')
 			if (this.activeMap === index) return
 			// Used to change the animation at each click
 			this.mapChanges++
