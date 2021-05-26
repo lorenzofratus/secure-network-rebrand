@@ -101,6 +101,9 @@ export default {
 	background-color: var(--primary-color);
 	transition: 0.35s width ease-in-out;
 }
+.app-menu.light .anchor::after {
+	background-color: var(--accent-color);
+}
 .app-menu .anchor.active::after {
 	width: 100%;
 }

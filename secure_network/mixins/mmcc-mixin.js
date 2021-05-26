@@ -43,8 +43,6 @@ export default {
 		// Adding the default event listener for messages
 		WebSocketEventBus.onMessage((message) => {
 			const self = this
-			// Adding 1 second timeout before adding the message to the chat
-			// This makes the chatbot less "aggressive" towards the user
 			console.log(message)
 			if (message.utterance) {
 				// The bot prints twice the start message when restarts from the beginning
@@ -58,12 +56,20 @@ export default {
 				) {
 					self.skip(WebSocketEventBus)
 				} else {
-					setTimeout(() => {
-						self.$store.commit('chat/addMessage', {
-							sender: true,
-							content: message.utterance,
-						})
-					}, 1000)
+					// Adding 1 second timeout before adding the first message to the chat and then 0.5 seconds for each subsequent message
+					// This makes the chatbot less "aggressive" towards the user
+					const utterances = message.utterance.split('\n')
+					const speed = 600
+					let timeout = 1000
+					for (const utterance of utterances) {
+						setTimeout(() => {
+							self.$store.commit('chat/addMessage', {
+								sender: true,
+								content: utterance,
+							})
+						}, timeout)
+						timeout += speed
+					}
 				}
 			}
 			setTimeout(() => {

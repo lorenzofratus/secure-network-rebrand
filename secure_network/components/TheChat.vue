@@ -25,7 +25,8 @@
 						@keypress.enter="sendMessage"
 					/>
 					<!-- Simulates the behavior of the placeholder but in this way is also detected by screen readers -->
-					<label for="message" :class="{ show: messageToSend == '' }">
+					<!-- We did not use v-if to hide the placeholder otherwise screen readers would not detect it when there is a message written -->
+					<label for="message" :class="{ show: showPlaceholder }">
 						Type a message...
 					</label>
 				</div>
@@ -71,6 +72,7 @@ export default {
 			messageToSend: '',
 			isOpen: false,
 			toBeScrolled: true,
+			showPlaceholder: true,
 		}
 	},
 	// Before any update in the component checks if the user is scrolled all the way to the bottom of the window
@@ -81,12 +83,17 @@ export default {
 			container.scrollTop + container.clientHeight ===
 			container.scrollHeight
 	},
-	// When an update happens (in particular when a message is added) scrolls the window in order to always display the latest message
+	// Fired when an update happens in the component
 	updated() {
+		// Scrolls the window in order to always display the latest message
 		const container = this.$refs['chat-window']
 		if (this.toBeScrolled) {
 			container.scrollTop = container.scrollHeight
 		}
+
+		// Updates the variable that detects if the message is empty or not
+		// Note that placing this check inside the template like :class="{ show: messageToSent === '' }" did not work on mobile phones
+		this.showPlaceholder = this.messageToSend === ''
 	},
 	methods: {
 		// Sends message to the chatbot
@@ -284,10 +291,10 @@ export default {
 	left: 1.5em;
 	top: 1em;
 	color: #767676;
-	display: none;
+	opacity: 0;
 }
 .chat-footer label.show {
-	display: block;
+	opacity: 1;
 }
 
 .message {
@@ -303,20 +310,26 @@ export default {
 	animation-name: slide-in-left;
 }
 .message-content {
-	line-height: 1em;
+	line-height: 1.2em;
 	padding: 0.7em 1em 0.5em;
 	margin: 0.5em 0.75em;
 	width: auto;
 	background: var(--alt-background);
 	color: black;
-	border-radius: 1.5em 0 1.5em 1.5em;
+	border-radius: 1em 0 1em 1em;
 	box-shadow: 0 9px 12px 1px rgba(0, 0, 0, 0.14),
 		0 3px 16px 2px rgba(0, 0, 0, 0.12), 0 5px 6px -3px rgba(0, 0, 0, 0.2);
 }
 .message-content.sender {
-	border-radius: 0 1.5em 1.5em 1.5em;
+	border-radius: 0 1em 1em 1em;
 	background: var(--primary-color);
 	color: var(--background);
+}
+
+.message.sender + .message.sender .message-content,
+.message:not(.sender) + .message:not(.sender) .message-content {
+	border-radius: 1em;
+	margin-top: -0.25em;
 }
 
 @keyframes slide-in-left {
