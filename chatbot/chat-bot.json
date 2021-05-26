@@ -32,7 +32,7 @@
 					{
 						"id": "contact_form",
 						"intents": ["send", "email", "write", "mail", "message", "form"],
-						"utterance": ["As you prefer!"],
+						"utterance": ["Here you are."],
 						"payload": {
 							"guide": "/contacts#email"
 						}
@@ -40,7 +40,7 @@
 					{
 						"id": "contact_page",
 						"intents": ["phone", "map", "call", "address", "place", "page", "contacts", "contact", "contact page", "info", "contact info"],
-						"utterance": ["Great. You are going to be redirect to the contact page!"],
+						"utterance": ["As you prefer!"],
 						"payload": {
 							"guide": "/contacts#info"
 						}

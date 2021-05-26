@@ -2,6 +2,7 @@
  * Copyright (c) 2021
  *
  * Code shared by all components importing this mixin.
+ * Used to manage the chat through WebSocket protocol.
  *
  * @author Lorenzo Fratus
  * @author Simone Orlando
@@ -61,7 +62,30 @@ export default {
 					const utterances = message.utterance.split('\n')
 					const speed = 600
 					let timeout = 1000
-					for (const utterance of utterances) {
+					for (let utterance of utterances) {
+						// Utterance replacement if you are already on the given page, to give a feedback to the user
+						// since router.push() does not refresh the page if you are already there.
+						if (
+							self.$router.history.current.fullPath ===
+								message.payload.guide &&
+							utterance.includes('This is our')
+						) {
+							utterance = utterance.replace(
+								'This is',
+								'You are already on'
+							)
+						}
+						if (
+							self.$router.history.current.fullPath ===
+								message.payload.guide &&
+							utterance.includes('Let me take you to')
+						) {
+							utterance = utterance.replace(
+								'Let me take you to',
+								'You are already on'
+							)
+						}
+
 						setTimeout(() => {
 							self.$store.commit('chat/addMessage', {
 								sender: true,
@@ -75,7 +99,10 @@ export default {
 			setTimeout(() => {
 				if (message.payload) {
 					if (message.payload.guide) {
-						self.$router.push(message.payload.guide)
+						self.$router.push({
+							path: message.payload.guide,
+							param: { t: Date.now() },
+						})
 					}
 				}
 			}, 1000)
