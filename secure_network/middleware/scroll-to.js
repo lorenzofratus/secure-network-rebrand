@@ -15,14 +15,6 @@ const scrollTo = (hash) => {
 	const target = document.querySelector(hash)
 	if (!target) return
 
-	// Move the focus to the target element if focusable
-	target.focus()
-	// If not focusable, set tabindex to make it focusable and then focus it
-	if (!target.matches(':focus')) {
-		target.setAttribute('tabindex', '0')
-		target.focus()
-	}
-
 	// Get the target style (compatible with different browsers)
 	const style = target.currentStyle || window.getComputedStyle(target)
 	// Compute the position to wich scroll (px)
@@ -48,11 +40,18 @@ const scrollTo = (hash) => {
 	}
 
 	step()
+
+	// Move the focus to the target element if focusable
+	target.focus()
+	// If not focusable, set tabindex to make it focusable and then focus it
+	if (!target.matches(':focus')) {
+		target.setAttribute('tabindex', '0')
+		target.focus()
+	}
 }
 
 // Intercept every change of route to allow smooth scroll
 export default function ({ route, redirect, from }) {
-	console.log(route)
 	const hash = route.hash
 	if (!hash) return
 
