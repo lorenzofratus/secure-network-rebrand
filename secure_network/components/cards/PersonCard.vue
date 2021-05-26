@@ -1,7 +1,8 @@
 <!--
  * Copyright (c) 2021
  *
- * A PersonCard is used to show syntetized information about a given Person.
+ * A PersonCard is used to show syntetized information about a person. 
+ * It contains the profile picture, the name and the surname of the subject.
  *
  * @author Lorenzo Fratus 
  * @author Simone Orlando 

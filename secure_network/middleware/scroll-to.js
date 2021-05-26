@@ -1,6 +1,9 @@
 /*
  * Copyright (c) 2021
  *
+ * This middleware has been written by us in order to support a smooth scrolling
+ * for structural links.
+ *
  * @author Lorenzo Fratus
  * @author Simone Orlando
  * @author Cristian C. Spagnuolo
