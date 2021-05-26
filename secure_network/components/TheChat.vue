@@ -107,6 +107,7 @@ export default {
 			const packet = {
 				message: {
 					type: 'data',
+					// Lowercase before senting to make the backend not case sensitive
 					payload: { data: this.messageToSend.toLowerCase() },
 				},
 				configurationId: process.env.configurationId,
