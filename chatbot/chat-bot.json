@@ -13,7 +13,10 @@
 					{
 						"id": "contact_xor",
 						"intents": ["contact", "email", "mail", "message", "phone", "map", "form", "call"],
-						"utterance": ["Let me take you to our contact page."]
+						"utterance": ["Let me take you to our contact page."],
+						"payload": {
+							"guide": "/contacts"
+						}
 					},
 					{
 						"id": "guide",
@@ -39,7 +42,7 @@
 						"intents": ["phone", "map", "call", "address", "place", "page", "contacts", "contact", "contact page", "info", "contact info"],
 						"utterance": ["Great. You are going to be redirect to the contact page!"],
 						"payload": {
-							"guide": "/contacts"
+							"guide": "/contacts#info"
 						}
 					}
 				]
