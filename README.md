@@ -56,34 +56,33 @@ This project has been developed as final assignment for the _Hypermedia Applicat
 -   [PostgreSQL](https://www.postgresql.org/)
 
 <!-- SERVER SIDE -->
-###Backend
+### Backend
 To support the frontend, an express rest api has been deveped. It has the objective of implementing several http endpoints which allow the interaction with the database. There are two main files:
 * **Api.js** implements enponts
 * **Db_conn.js** defines the structure of the database and initialize it by reading initialization information from another file.
 
 <!-- CLIENT SIDE -->
-###Fronted Components
+### Fronted Components
 The frontend has been developed as VueJS app, using the NuxtJS framework.
 
-####Cards
+#### Cards
 * **PersonCard.vue** is used to show syntetized information about a person. It contains the profile picture, the name and the surname of the subject.
 * **ResourceCard.vue** is used to show syntetized information about a given resource.
 * **ServiceCard.vue** is used to show syntetized information about a given service.
 * **ThreatCard** is used to show information about a possible Threat.
 
-####Items
+#### Items
 * **ButtonComponent.vue** is a button which can perform three different types of operations.
 * **ImageComponent.vue** is made up of an image, a text description and a ButtonComponent.
 * **InputComponent.vue** is used to model form sub-sections.
 * **TimelineComponent.vue** is used to highlight how many resources, grouped by type, are available for a given year.
 * **TitleComponent.vue** is used to add a simple title to a more complex element.
 
-####Menus
+#### Menus
 * **AppMenu.vue** is used to model landmarks which are embedded both in the header and in the footer of the page.
 * **SocialMenu.vue** is used to model social logos which are embedded in the footer of the page.
 
-####Sections
-* ****
+#### Sections
 * **AltSection.vue** is a section which contains a title, an optional set of paragraphs and an optional button. It is used in almost all pages to give a description of the context.
 
 * **FilterSection.vue**  A FilterSection is a section which allow the user to filter resources by type. It simply contains at most three button components, some of them can be avoided if there are no resources of a given type.
@@ -98,9 +97,9 @@ The frontend has been developed as VueJS app, using the NuxtJS framework.
 
 * **TimelineSection.vue** is the section which shows a list of TimelineComponents.
 
-####Singletons
+#### Singletons
 * **TheChat.vue** is implemented in the default layout and allow the user to interact with a multimodal chat bot.
-* **TheFooter.vue** is the footer of the website. It is implemented in the default layout and wrapps the AppMenu and the SocialMenu
+* **TheFooter.vue** is the footer of the website. It is implemented in the default layout and wrapps the AppMenu and the SocialMenu.
 * **TheHeader.vue** is the header of the website. It is implemented in the default layout and wraps the AppMenu.
 
 <!-- TEAM -->
