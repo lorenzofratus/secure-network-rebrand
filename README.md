@@ -23,6 +23,9 @@
       <a href="#about-the-project">About The Project</a>
       <ul>
         <li><a href="#built-with">Built With</a></li>
+        <li><a href="#backend">Backend</a></li>
+        <li><a href="#backend">Backend</a></li>
+        <li><a href="#fronted-components">Frontend Components</a></li>
       </ul>
     </li>
     <li><a href="#team">Team</a></li>
@@ -102,7 +105,23 @@ The frontend has been developed as VueJS app, using the NuxtJS framework.
 * **TheFooter.vue** is the footer of the website. It is implemented in the default layout and wrapps the AppMenu and the SocialMenu.
 * **TheHeader.vue** is the header of the website. It is implemented in the default layout and wraps the AppMenu.
 
+<!-- ADDITIONAL PLUGINS -->
+### Plugins
+#### Dotenv
+Used to retrieve database credentials from the environment also in development mode. It is a best practice to retrieve such these information from the environment, rather than hardcoding them.
+
+#### Redirect SSL
+Used in order to force the usage of HTTPS protocol, rather than sending data over plain HTTP.
+
+#### Multi Modal Chatbot Creator
+Experimental framework developed by PHD students of the Hypermedia Application course to support a multi modal chatbot.
+
+#### Store
+Used both to support chatbot features and static content used in several sections in order to avoid code replication.
 <!-- TEAM -->
+
+#### Router
+VueJS plugin which allow to manage easily inter and intra page routing. In addition, we developed a customized middleware plugin to support smooth scrolling behaviour for the router.
 
 ## Team
 
