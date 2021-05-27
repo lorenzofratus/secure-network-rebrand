@@ -58,6 +58,9 @@ export default {
 				`${process.env.BASE_URL}/api/resources-by-year/${year}`
 			)
 			const resources = data
+			if (!resources.length) {
+				throw error({ statusCode: 404 })
+			}
 			return { resources, year }
 		} catch (err) {
 			error({ statusCode: 404 })

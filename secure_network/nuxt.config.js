@@ -99,6 +99,7 @@ export default {
 	modules: [
 		// https://go.nuxtjs.dev/axios
 		'@nuxtjs/axios',
+		'@nuxtjs/robots',
 	],
 
 	// Axios module configuration: https://go.nuxtjs.dev/config-axios
