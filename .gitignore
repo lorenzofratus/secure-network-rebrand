@@ -15,6 +15,7 @@ chatbot/design_report.xdv
 chatbot/design_report.bbl
 chatbot/design_report.blg
 chatbot/design_report.pdf
+design document/__latexindent_temp.tex
 design document/design_doc.aux
 design document/design_doc.bcf
 design document/design_doc.fdb_latexmk
@@ -28,3 +29,4 @@ design document/design_doc.xdv
 design document/design_doc.bbl
 design document/design_doc.blg
 design document/design_doc.pdf
+design document/design_doc.lof
