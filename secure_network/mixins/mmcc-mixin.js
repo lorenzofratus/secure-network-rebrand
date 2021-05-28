@@ -56,11 +56,13 @@ export default {
 					self.$store.state.chat.messages.length
 				) {
 					self.skip(WebSocketEventBus)
+				} else if (message.utterance.includes('Bye!')) {
+					// WebSocketEventBus.$emit('connect', data)
 				} else {
-					// Adding 1 second timeout before adding the first message to the chat and then 0.5 seconds for each subsequent message
+					// Adding 1 second timeout before adding the first message to the chat and then 0.55 seconds for each subsequent message
 					// This makes the chatbot less "aggressive" towards the user
 					const utterances = message.utterance.split('\n')
-					const speed = 600
+					const speed = 550
 					let timeout = 1000
 					for (let utterance of utterances) {
 						// Utterance replacement if you are already on the given page, to give a feedback to the user

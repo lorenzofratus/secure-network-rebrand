@@ -2,19 +2,18 @@
 .vscode/settings.json
 vetur.config.js
 chatbot/__latexindent_temp.tex
-chatbot/design_report.aux
-chatbot/design_report.bcf
-chatbot/design_report.fdb_latexmk
-chatbot/design_report.fls
-chatbot/design_report.log
-chatbot/design_report.out
-chatbot/design_report.run.xml
-chatbot/design_report.synctex.gz
-chatbot/design_report.toc
-chatbot/design_report.xdv
-chatbot/design_report.bbl
-chatbot/design_report.blg
-chatbot/design_report.pdf
+chatbot/chatbot_report.aux
+chatbot/chatbot_report.bcf
+chatbot/chatbot_report.fdb_latexmk
+chatbot/chatbot_report.fls
+chatbot/chatbot_report.log
+chatbot/chatbot_report.out
+chatbot/chatbot_report.run.xml
+chatbot/chatbot_report.synctex.gz
+chatbot/chatbot_report.toc
+chatbot/chatbot_report.xdv
+chatbot/chatbot_report.bbl
+chatbot/chatbot_report.blg
 design document/__latexindent_temp.tex
 design document/design_doc.aux
 design document/design_doc.bcf
@@ -28,5 +27,4 @@ design document/design_doc.toc
 design document/design_doc.xdv
 design document/design_doc.bbl
 design document/design_doc.blg
-design document/design_doc.pdf
 design document/design_doc.lof

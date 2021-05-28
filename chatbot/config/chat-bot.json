@@ -136,9 +136,8 @@
 				},
 				{
 					"my_id": "end",
-					"next_id": "start",
-					"my_type": "TASK",
-					"callback": "nothing"
+					"next_id": "first_xor",
+					"my_type": "END"
 				}
 			],
 			"first_activity_id": "start"
