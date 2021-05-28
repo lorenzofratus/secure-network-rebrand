@@ -10,7 +10,7 @@
 <template>
 	<main class="container">
 		<main-section
-			:buttons="buttons"
+			:buttons="main_section.buttons"
 			:img="service.img"
 			:title="service.name"
 			:wrapper="service.id"
@@ -19,6 +19,7 @@
 			:title="'Service Overview'"
 			:paragraphs="service.paragraphs"
 			:wrapper="service.id"
+			:button="alt_section.button"
 		/>
 		<image-components-section
 			id="areas"
@@ -108,18 +109,27 @@ export default {
 	},
 	data() {
 		return {
-			buttons: [
-				{
-					class: 'primary',
-					text: 'See Area',
-					path: '#areas',
-				},
-				{
+			main_section: {
+				buttons: [
+					{
+						class: 'primary',
+						text: 'See Area',
+						path: '#areas',
+					},
+					{
+						class: 'secondary',
+						text: 'See Team',
+						path: '#team',
+					},
+				],
+			},
+			alt_section: {
+				button: {
 					class: 'secondary',
-					text: 'See Team',
-					path: '#team',
+					text: 'Contact Us',
+					path: '/contacts#email',
 				},
-			],
+			},
 		}
 	},
 	head() {
