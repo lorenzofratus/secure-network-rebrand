@@ -31,6 +31,7 @@
 			:elements="resources"
 			type="resource"
 			class="resources"
+			:button="news_section.button"
 		/>
 		<grid-section
 			:wrapper="wrapper"
@@ -103,6 +104,13 @@ export default {
 					class: 'secondary',
 					text: 'About Us',
 					path: '/about',
+				},
+			},
+			news_section: {
+				button: {
+					class: 'secondary',
+					text: 'All Resources',
+					path: '/resources',
 				},
 			},
 		}
