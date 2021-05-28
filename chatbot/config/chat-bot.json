@@ -137,7 +137,8 @@
 				{
 					"my_id": "end",
 					"next_id": "first_xor",
-					"my_type": "END"
+					"my_type": "end",
+					"callback": "nothing"
 				}
 			],
 			"first_activity_id": "start"
