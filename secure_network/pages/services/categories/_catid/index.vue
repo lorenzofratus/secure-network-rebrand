@@ -19,6 +19,7 @@
 			title="About this category"
 			:paragraphs="category.paragraphs"
 			:wrapper="wrapper"
+			:button="alt_section.button"
 		/>
 		<grid-section
 			id="services"
@@ -83,6 +84,13 @@ export default {
 					},
 				],
 				img: '/images/covers/index.svg',
+			},
+			alt_section: {
+				button: {
+					class: 'secondary',
+					text: 'Contact Us',
+					path: '/contacts#email',
+				},
 			},
 		}
 	},
