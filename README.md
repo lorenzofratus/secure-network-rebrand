@@ -126,6 +126,9 @@ VueJS plugin which allow to manage easily inter and intra page routing. In addit
 
 Nuxt plugin that manages the creation of the robots.txt file.
 
+### Chat Bot Integration
+To complete the Part 2 of the chat bot optional project, we followed the documentation available at [Multi Modal Chatbot Creator] (https://gitlab.com/i3lab/mmcc/frontend/mmcc-vue/-/blob/master/README.md)
+
 <!-- TEAM -->
 
 ## Team
@@ -143,7 +146,7 @@ Person Code: 10619073 - Email: [lorenzo1.fratus](mailto:lorenzo1.fratus@mail.pol
 Person Code: 10530758 - Email: [simone.orlando](mailto:simone.orlando@mail.polimi.it)
 
 ### [Cristian Carmine Spagnuolo](https://github.com/cris96spa) aka **The Brains**
-> _..._
+> _I worked on the backend implementation, dealing with the database interface and the implementation of api methods._
 
 Person Code: 10745353 - Email: [cristiancarmine.spagnuolo](mailto:cristiancarmine.spagnuolo@mail.polimi.it)
 
