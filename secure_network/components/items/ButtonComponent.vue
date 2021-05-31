@@ -1,7 +1,7 @@
 <!--
  * Copyright (c) 2021
  *
- * A ButtonComponent is a button which can perform three different types of operations.
+ * A ButtonComponent is a button which can be used both for navigation and as a click event generator.
  *
  * @author Lorenzo Fratus 
  * @author Simone Orlando 

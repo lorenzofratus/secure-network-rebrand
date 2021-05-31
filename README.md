@@ -71,11 +71,11 @@ The frontend has been developed as VueJS app, using the NuxtJS framework.
 
 #### Items
 
--   `ButtonComponent.vue` is a button which can perform three different types of operations.
--   `ImageComponent.vue` is made up of an image, a text description and a ButtonComponent.
--   `InputComponent.vue` is used to model form sub-sections.
+-   `ButtonComponent.vue` is a button which can be used both for navigation and as a click event generator.
+-   `ImageComponent.vue` is made up of an image, a text description and a ButtonComponent; it is used to show syntetized information about a person or an area.
+-   `InputComponent.vue` is used to model an input or a textarea for a form.
 -   `TimelineComponent.vue` is used to highlight how many resources, grouped by type, are available for a given year.
--   `TitleComponent.vue` is used to add a simple title to a more complex element.
+-   `TitleComponent.vue` is used to add a simple title and optionally a paragraph to a more complex element.
 
 #### Menus
 
@@ -86,7 +86,7 @@ The frontend has been developed as VueJS app, using the NuxtJS framework.
 
 -   `AltSection.vue` is a section which contains a title, an optional set of paragraphs and an optional button. It is used in almost all pages to give a description of the context.
 
--   `FilterSection.vue` A FilterSection is a section which allow the user to filter resources by type. It simply contains at most three button components, some of them can be avoided if there are no resources of a given type.
+-   `FilterSection.vue` is a section which allow the user to filter resources by type. It contains one button component to see all the resources and one button component for each type of resource present.
 
 -   `FormSection.vue` is a section which allow the user to contact the responsible of the enterprise.
 
@@ -136,13 +136,22 @@ Nuxt plugin that manages the creation of the robots.txt file.
 
 ## Team
 
-<!-- TODO: remove stuff before going public -->
-
 The team that developed this project is called `FratusOrlandoSpagnuolo` and is composed by:
 
--   [Lorenzo Fratus](https://github.com/lorenzofratus) - 10619073 - lorenzo1.fratus@mail.polimi.it
--   [Simone Orlando](https://github.com/simoneorlando97) - 10530758 - simone.orlando@mail.polimi.it
--   [Cristian Carmine Spagnuolo](https://github.com/cris96spa) - 10745353 - cristiancarmine.spagnuolo@mail.polimi.it
+### [Lorenzo Fratus](https://github.com/lorenzofratus) aka **The Eyes**
+> _I used my previous experience in this field to design and implement website graphics. I also helped my teammates better understand and use HTML and CSS._
+
+Person Code: 10619073 - Email: [lorenzo1.fratus](mailto:lorenzo1.fratus@mail.polimi.it)
+
+### [Simone Orlando](https://github.com/simoneorlando97) aka **The Muscles**
+> _..._
+
+Person Code: 10530758 - Email: [simone.orlando](mailto:simone.orlando@mail.polimi.it)
+
+### [Cristian Carmine Spagnuolo](https://github.com/cris96spa) aka **The Brains**
+> _..._
+
+Person Code: 10745353 - Email: [cristiancarmine.spagnuolo](mailto:cristiancarmine.spagnuolo@mail.polimi.it)
 
 <!-- LICENSE -->
 
