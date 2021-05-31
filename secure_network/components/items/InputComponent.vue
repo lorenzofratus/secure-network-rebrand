@@ -1,7 +1,7 @@
 <!--
  * Copyright (c) 2021
  *
- * An InputComponent is used to model form sub-sections.
+ * An InputComponent is used to model an input or a textarea for a form.
  *
  * @author Lorenzo Fratus 
  * @author Simone Orlando 

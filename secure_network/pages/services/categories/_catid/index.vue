@@ -83,7 +83,7 @@ export default {
 						path: '#services',
 					},
 				],
-				img: '/images/covers/index.svg',
+				img: '/images/covers/services.svg',
 			},
 			alt_section: {
 				button: {

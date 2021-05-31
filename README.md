@@ -53,8 +53,8 @@ This project has been developed as final assignment for the _Hypermedia Applicat
 
 To support the frontend, an express rest api has been deveped. It has the objective of implementing several http endpoints which allow the interaction with the database. There are two main files:
 
--   `Api.js` implements enponts
--   `Db_conn.js` defines the structure of the database and initialize it by reading initialization information from another file.
+-   `api.js` implements enponts
+-   `db_conn.js` defines the structure of the database and initialize it by reading initialization information from another file.
 
 <!-- CLIENT SIDE -->
 
@@ -67,15 +67,15 @@ The frontend has been developed as VueJS app, using the NuxtJS framework.
 -   `PersonCard.vue` is used to show syntetized information about a person. It contains the profile picture, the name and the surname of the subject.
 -   `ResourceCard.vue` is used to show syntetized information about a given resource.
 -   `ServiceCard.vue` is used to show syntetized information about a given service.
--   `ThreatCard` is used to show information about a possible Threat.
+-   `ThreatCard.vue` is used to show information about a possible Threat.
 
 #### Items
 
--   `ButtonComponent.vue` is a button which can perform three different types of operations.
--   `ImageComponent.vue` is made up of an image, a text description and a ButtonComponent.
--   `InputComponent.vue` is used to model form sub-sections.
+-   `ButtonComponent.vue` is a button which can be used both for navigation and as a click event generator.
+-   `ImageComponent.vue` is made up of an image, a text description and a ButtonComponent; it is used to show syntetized information about a person or an area.
+-   `InputComponent.vue` is used to model an input or a textarea for a form.
 -   `TimelineComponent.vue` is used to highlight how many resources, grouped by type, are available for a given year.
--   `TitleComponent.vue` is used to add a simple title to a more complex element.
+-   `TitleComponent.vue` is used to add a simple title and optionally a paragraph to a more complex element.
 
 #### Menus
 
@@ -85,17 +85,11 @@ The frontend has been developed as VueJS app, using the NuxtJS framework.
 #### Sections
 
 -   `AltSection.vue` is a section which contains a title, an optional set of paragraphs and an optional button. It is used in almost all pages to give a description of the context.
-
--   `FilterSection.vue` A FilterSection is a section which allow the user to filter resources by type. It simply contains at most three button components, some of them can be avoided if there are no resources of a given type.
-
+-   `FilterSection.vue` is a section which allow the user to filter resources by type. It contains one button component to see all the resources and one button component for each type of resource present.
 -   `FormSection.vue` is a section which allow the user to contact the responsible of the enterprise.
-
 -   `GridSection.vue` is a section which allow to visualize cards of different types. It has a wide usage within the website in order to show all previews of a given collection of elements.
-
 -   `ImageComponentsSection.vue` is a section which lists a group of ImageComponents. It can be used either to display Areas or People which have a significant role within the given context.
-
 -   `MainSection.vue` is the first section you see in almost each page. It contains a title, optionally both a subtitles and a group of buttons, and an image. It also shows bread crumbs where needed, supporting the implementation of the index pattern.
-
 -   `TimelineSection.vue` is the section which shows a list of TimelineComponents.
 
 #### Singletons
@@ -136,13 +130,22 @@ Nuxt plugin that manages the creation of the robots.txt file.
 
 ## Team
 
-<!-- TODO: remove stuff before going public -->
-
 The team that developed this project is called `FratusOrlandoSpagnuolo` and is composed by:
 
--   [Lorenzo Fratus](https://github.com/lorenzofratus) - 10619073 - lorenzo1.fratus@mail.polimi.it
--   [Simone Orlando](https://github.com/simoneorlando97) - 10530758 - simone.orlando@mail.polimi.it
--   [Cristian Carmine Spagnuolo](https://github.com/cris96spa) - 10745353 - cristiancarmine.spagnuolo@mail.polimi.it
+### [Lorenzo Fratus](https://github.com/lorenzofratus) aka **The Eyes**
+> _I used my previous experience in this field to design and implement website graphics. I also helped my teammates better understand and use HTML and CSS._
+
+Person Code: 10619073 - Email: [lorenzo1.fratus](mailto:lorenzo1.fratus@mail.polimi.it)
+
+### [Simone Orlando](https://github.com/simoneorlando97) aka **The Muscles**
+> _..._
+
+Person Code: 10530758 - Email: [simone.orlando](mailto:simone.orlando@mail.polimi.it)
+
+### [Cristian Carmine Spagnuolo](https://github.com/cris96spa) aka **The Brains**
+> _..._
+
+Person Code: 10745353 - Email: [cristiancarmine.spagnuolo](mailto:cristiancarmine.spagnuolo@mail.polimi.it)
 
 <!-- LICENSE -->
 

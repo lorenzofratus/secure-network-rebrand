@@ -1,7 +1,7 @@
 <!--
  * Copyright (c) 2021
  *
- * An ImageComponent is made up of an image, a text description and a ButtonComponent.
+ * An ImageComponent is made up of an image, a text description and a ButtonComponent; it is used to show syntetized information about a person or an area.
  *
  * @author Lorenzo Fratus 
  * @author Simone Orlando 

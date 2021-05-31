@@ -1,7 +1,7 @@
 <!--
  * Copyright (c) 2021
  *
- * A TitleComponent is used to add a simple title to a more complex element.
+ * A TitleComponent is used to add a simple title and optionally a paragraph to a more complex element.
  *
  * @author Lorenzo Fratus 
  * @author Simone Orlando 

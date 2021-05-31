@@ -55,6 +55,12 @@
 	--line-radius: 1.5px;
 }
 
+*:-moz-focusring,
+button:-moz-focusring {
+	outline-offset: 3px;
+	outline-style: auto;
+}
+
 /*** TYPOGRAPHY ***/
 
 body {
