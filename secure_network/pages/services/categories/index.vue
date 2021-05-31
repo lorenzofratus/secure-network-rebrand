@@ -71,7 +71,7 @@ export default {
 						path: '#categories',
 					},
 				],
-				img: '/images/covers/index.svg',
+				img: '/images/covers/services.svg',
 			},
 			alt_section: {
 				title: 'Full coverage to meet specific demands',

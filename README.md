@@ -53,8 +53,8 @@ This project has been developed as final assignment for the _Hypermedia Applicat
 
 To support the frontend, an express rest api has been deveped. It has the objective of implementing several http endpoints which allow the interaction with the database. There are two main files:
 
--   `Api.js` implements enponts
--   `Db_conn.js` defines the structure of the database and initialize it by reading initialization information from another file.
+-   `api.js` implements enponts
+-   `db_conn.js` defines the structure of the database and initialize it by reading initialization information from another file.
 
 <!-- CLIENT SIDE -->
 
@@ -67,7 +67,7 @@ The frontend has been developed as VueJS app, using the NuxtJS framework.
 -   `PersonCard.vue` is used to show syntetized information about a person. It contains the profile picture, the name and the surname of the subject.
 -   `ResourceCard.vue` is used to show syntetized information about a given resource.
 -   `ServiceCard.vue` is used to show syntetized information about a given service.
--   `ThreatCard` is used to show information about a possible Threat.
+-   `ThreatCard.vue` is used to show information about a possible Threat.
 
 #### Items
 
