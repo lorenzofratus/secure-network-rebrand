@@ -140,8 +140,8 @@ The team that developed this project is called `FratusOrlandoSpagnuolo` and is c
 
 Person Code: 10619073 - Email: [lorenzo1.fratus](mailto:lorenzo1.fratus@mail.polimi.it)
 
-### [Simone Orlando](https://github.com/simoneorlando97) aka **The Muscles**
-> _..._
+### [Simone Orlando](https://github.com/simoneorlando97) aka **The Hacker**
+> _I worked on the creation of some components of the site expanding my knowledge of HTML and CSS and I shared my computer security skills to develop a more secure site._
 
 Person Code: 10530758 - Email: [simone.orlando](mailto:simone.orlando@mail.polimi.it)
 
