@@ -181,13 +181,16 @@ export default {
 	transform: scale(0);
 	opacity: 0;
 	transition: 0.35s ease-in-out;
-	transition-property: transform, opacity;
+	transition-property: transform, opacity, visibility 0.35s;
 	overflow: hidden;
 	z-index: 3;
+	visibility: hidden;
 }
 .chat-container.open {
 	transform: scale(1);
 	opacity: 1;
+	visibility: visible;
+	/* transition: 0s visibility 0.35s; */
 }
 
 @media screen and (max-width: 410px) {
