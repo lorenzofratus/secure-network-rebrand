@@ -85,17 +85,11 @@ The frontend has been developed as VueJS app, using the NuxtJS framework.
 #### Sections
 
 -   `AltSection.vue` is a section which contains a title, an optional set of paragraphs and an optional button. It is used in almost all pages to give a description of the context.
-
 -   `FilterSection.vue` is a section which allow the user to filter resources by type. It contains one button component to see all the resources and one button component for each type of resource present.
-
 -   `FormSection.vue` is a section which allow the user to contact the responsible of the enterprise.
-
 -   `GridSection.vue` is a section which allow to visualize cards of different types. It has a wide usage within the website in order to show all previews of a given collection of elements.
-
 -   `ImageComponentsSection.vue` is a section which lists a group of ImageComponents. It can be used either to display Areas or People which have a significant role within the given context.
-
 -   `MainSection.vue` is the first section you see in almost each page. It contains a title, optionally both a subtitles and a group of buttons, and an image. It also shows bread crumbs where needed, supporting the implementation of the index pattern.
-
 -   `TimelineSection.vue` is the section which shows a list of TimelineComponents.
 
 #### Singletons
