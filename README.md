@@ -164,21 +164,64 @@ The frontend has been developed as VueJS app, using the NuxtJS framework.
 
 #### Pages
   
--   `index.vue` is the home page of the website.
--   `contacts.vue` is contact page.
--   `about.vue` is the about page.
--   `team/index.vue` is the page of the whole Team.
--   `team/_id.vue` is the page for a single Person.
--   `areas/index.vue` is the introductory page of all Areas.
--   `areas/_id.vue` is the page for a single Area.
--   `resources/index.vue` is the introductory page all Resources grouped and counted by year and type.
--   `resources/_year/index.vue` is the introductory page all Resources by year the given year.
--   `resources/_year/_id.vue` is the introductory page of the given resource.
--   `services/index.vue` is the introductory page all Services.
--   `services/categories/index.vue` is the introductory page all Service Categories.
--   `services/categories/_catid/index.vue` is the page of the given Category, which contains all Services that belong to it.
--   `services/categories/_catid/_id.vue` is the page of the given Service.
-  
+-   `index.vue` is the home page of the website. Components: 
+     - *MainSection*
+     - *AltSection*
+     - *GridSection*
+-   `contacts.vue` is contact page. Components: 
+     - *MainSection*
+     - *FormSection*
+     - *TitleComponent*
+-   `about.vue` is the about page. Components: 
+     - *MainSection*
+     - *AltSection*
+     - *GridSection*
+-   `team/index.vue` is the page of the whole Team. Components: 
+     - *MainSection*
+     - *AltSection*
+     - *GridSection*
+     - *ImageComponentsSection*
+-   `team/_id.vue` is the page for a single Person. Components: 
+     - *MainSection*
+     - *AltSection*
+     - *GridSection*
+     - *ImageComponentsSection*
+-   `areas/index.vue` is the introductory page of all Areas. Components:
+     - *MainSection*
+     - *AltSection*
+     - *ImageComponentsSection*
+-   `areas/_id.vue` is the page for a single Area. Components: 
+     - *MainSection*
+     - *AltSection*
+     - *GridSection*
+     - *ImageComponentsSection*
+-   `resources/index.vue` is the introductory page all Resources grouped and counted by year and type. Components: 
+     - *MainSection*
+     - *TimelineSection*
+-   `resources/_year/index.vue` is the introductory page all Resources by year the given year. Components: 
+     - *MainSection*
+     - *FilterSection*
+     - *GridSection*
+-   `resources/_year/_id.vue` is the introductory page of the given resource. Components: 
+     - *MainSection*
+     - *AltSection*
+-   `services/index.vue` is the introductory page all Services. Components: 
+     - *MainSection*
+     - *AltSection*
+     - *GridSection*
+-   `services/categories/index.vue` is the introductory page all Service Categories. Components: 
+     - *MainSection*
+     - *AltSection*
+     - *GridSection*
+-   `services/categories/_catid/index.vue` is the page of the given Category, which contains all Services that belong to it. Components: 
+     - *MainSection*
+     - *AltSection*
+     - *GridSection*
+-   `services/categories/_catid/_id.vue` is the page of the given Service. Components: 
+     - *MainSection*
+     - *AltSection*
+     - *GridSection*
+     - *ImageComponentsSection*
 <!-- ADDITIONAL PLUGINS -->
 
 ### Plugins

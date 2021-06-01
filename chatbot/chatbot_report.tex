@@ -124,8 +124,17 @@ website:
 	\item Convert the user's visit into a business contact. 
 \end{itemize}
 \noindent
-Figure \ref{fig:model} illustrates the model of this process, the 
-meaning of each activity will be better explained in the next chapter.
+At the beginning, the chatbot introduce itself and then the user is asked whether *he wants to see all service categories or *he wants to contact the company.
+If the user wants to explore categories, the chatbot shows the given page otherwise it shows the contact form.
+\\If the user has choosen to explore categories the bot then asks if *he wants to select a specific one, or to proceed to the contact form.
+\\If the user chooses the former option, the bot asks for the selection of one category, this task can be achieved either by selecting one category among the list 
+or by typying the category name in the chat, otherwise, again the contact form will be displayed.
+\\Once a category is choosen, the bot shows the category page, and then again asks the user if *he wants to select a specific service among those that belong to the 
+shown category, or to proceed to the contact form.\\
+If the user chooses the fist option, the bot asks for the selection of one service, this task can be achieved either by selecting one service among the list 
+or by typying the service name in the chat, otherwise, again the contact form will be displayed.\\
+Upon selecting a service, the bot shows the service page and then waits the user input to automatically redirect *he to the contact form. The interaction with the user always ends 
+when the form page is displayed.
 
 \begin{figure}[h]
 	\centering
@@ -234,12 +243,12 @@ Note that, for the sake of brevity, the messages between the chatbot and the use
 \end{figure}
 
 \chapter{ChatBot Implementation} 
-To complete the second part of the chat bot optional project, we followed the documentation available at Multi Modal Chatbot Creator (https://gitlab.com/i3lab/mmcc/frontend/mmcc-vue/-/blob/master/README.md).
-At the beginning, the user is asked whether he wants explore the website or he wants to contact the company. 
+To complete the second part of the chat bot optional project, we followed the documentation available at \href{https://gitlab.com/i3lab/mmcc/frontend/mmcc-vue/-/blob/master/README.md}{\texttt{Multi Modal Chatbot Creator}}.
+\\At the beginning, the user is asked whether he wants explore the website or he wants to contact the company.
 If the user wants to explore the website, the chatbot first introduce itself, then it shows the home and the about page of the website.
-If the user wants to contact the company, the chatbot asks whether the user want to fulfill a form or go to the contact page. In either case, 
-it redirects the user to the correct page. The configuration file used for the integration of the chatbot can be found at ./chatbot/config/chat-bot.json and reflect the model provided by the assignment specification.
-At the current state of the art of the provided backend of the Multi Modal Chatbot Creator, there is no native way of performing a loop upon reaching the end activity, even if the next\_id field of the 
+If the user wants to contact the company, the chatbot asks whether the user want to fulfill a form or go to the contact page.
+In either case, it redirects the user to the correct page. The configuration file used for the integration of the chatbot can be found at \texttt{./chatbot/config/chat-bot.json} and reflect the model provided by the assignment specification.\\\\
+\textbf{N.B.} At the current state of the art of the provided backend of the \texttt{Multi Modal Chatbot Creator}, there is no native way of performing a loop upon reaching the end activity, even if the next\_id field of the 
 end task is set to a previous activity. Moreover, upon reaching the terminal state, the user will receive the same terminal answer for each additional message sent. We have already informed developers which 
 will provide in the next versione a reset callbat to support such this behaviour. To follow the exact model provided by specification, we didn't apply any custom patch.
 
