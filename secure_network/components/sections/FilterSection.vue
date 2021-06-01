@@ -5,6 +5,9 @@
  * It contains one button component to see all the resources and one button component 
  * for each type of resource present.
  *
+ * @prop title: title of the section.
+ * @prop wrapper: identify the name of the page that wraps the component, used to generate unique names for :key directive.
+ * @prop buttons: array of button objects to be used for the instantiation of at most 3 ButtonComponents.
  * @author Lorenzo Fratus 
  * @author Simone Orlando 
  * @author Cristian C. Spagnuolo 

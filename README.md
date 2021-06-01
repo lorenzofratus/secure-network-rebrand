@@ -123,27 +123,62 @@ The frontend has been developed as VueJS app, using the NuxtJS framework.
     - **button:** optional button object to be used for the instantiation of a ButtonComponent.
     - **centered:** boolen flag used to determine whether or not the text must be centered.
 -   `FilterSection.vue` is a section which allow the user to filter resources by type. It contains one button component to see all the resources and one button component for each type of resource present. Props: 
-    -  **object:** the person object whose name and surname must be displayed.
+     - **title:** title of the section.
+     - **wrapper:** identify the name of the page that wraps the component, used to generate unique names for :key directive.
+     - **buttons:** array of button objects to be used for the instantiation of at most 3 ButtonComponents.
 -   `FormSection.vue` is a section which allow the user to contact the responsible of the enterprise. Props: 
-    -  **object:** the person object whose name and surname must be displayed.
+    - **title:** title of the section.
+    - **wrapper:** identify the name of the page that wraps the component, used to generate unique names for :key directive.
 -   `GridSection.vue` is a section which allow to visualize cards of different types. It has a wide usage within the website in order to show all previews of a given collection of elements. Props: 
-    -  **object:** the person object whose name and surname must be displayed.
+    - **wrapper:** identify the name of the page that wraps the component, used to generate unique names for :key directive.
+    - **small:** used to set the css class of the component.
+    - **title:** title of the section.
+    - **child:** string used to set the :is property of the <component> element. This allow to use the same section for each type of inner component.
+    - **elements:** array of element object whose preview will be displayed.
+    - **type:** used to append a different label to the displayed button. Introduced to increase SEO.
+    - **button:** optional button object to be used for the instantiation of a ButtonComponent. 
 -   `ImageComponentsSection.vue` is a section which lists a group of ImageComponents. It can be used either to display Areas or People which have a significant role within the given context. Props: 
-    -  **object:** the person object whose name and surname must be displayed.
+    - **title:** title of the component.
+    - **type:** used to append a different label to the displayed button. Introduced to increase SEO.
+    - **wrapper:** identify the name of the page that wraps the component, used to generate unique names for :key directive.
+    - **components:** array of objects, each of which allow the initialization of a different ImageComponent.
+    - **rounded:** used to denote whether or not the image should be rounded.
 -   `MainSection.vue` is the first section you see in almost each page. It contains a title, optionally both a subtitles and a group of buttons, and an image. It also shows bread crumbs where needed, supporting the implementation of the index pattern. Props: 
-    -  **object:** the person object whose name and surname must be displayed.
+    - **title:** title of the component.
+    - **subtitle:** subtitle of the component.
+    - **type:** used to append a different label to the displayed button. Introduced to increase SEO.
+    - **buttons:** array of button objects to be used for the instantiation of at most 2 ButtonComponents.
+    - **img:** url of the displayed image.
+    - **wrapper:** identify the name of the page that wraps the component, used to generate unique names for :key directive.
+    - **rounded:** used to denote whether or not the image should be rounded.
+    - **showBreadcrumb:** boolean flag to determined whether or not breadcrumbs must be shown on the given page.
 -   `TimelineSection.vue` is the section which shows a list of TimelineComponents. Props: 
-    -  **object:** the person object whose name and surname must be displayed.
+    - **wrapper:** identify the name of the page that wraps the component, used to generate unique names for :key directive.
+    - **year:** year modeled by the component.
 
 #### Singletons
 
--   `TheChat.vue` is implemented in the default layout and allow the user to interact with a multimodal chat bot. Props: 
-    -  **object:** the person object whose name and surname must be displayed.
--   `TheFooter.vue` is the footer of the website. It is implemented in the default layout and wrapps the AppMenu and the SocialMenu. Props: 
-    -  **object:** the person object whose name and surname must be displayed.
--   `TheHeader.vue` is the header of the website. It is implemented in the default layout and wraps the AppMenu. Props: 
-    -  **object:** the person object whose name and surname must be displayed.
+-   `TheChat.vue` is implemented in the default layout and allow the user to interact with a multimodal chat bot.
+-   `TheFooter.vue` is the footer of the website. It is implemented in the default layout and wrapps the AppMenu and the SocialMenu.
+-   `TheHeader.vue` is the header of the website. It is implemented in the default layout and wraps the AppMenu.
 
+#### Pages
+  
+-   `index.vue` is the home page of the website.
+-   `contacts.vue` is contact page.
+-   `about.vue` is the about page.
+-   `team/index.vue` is the page of the whole Team.
+-   `team/_id.vue` is the page for a single Person.
+-   `areas/index.vue` is the introductory page of all Areas.
+-   `areas/_id.vue` is the page for a single Area.
+-   `resources/index.vue` is the introductory page all Resources grouped and counted by year and type.
+-   `resources/_year/index.vue` is the introductory page all Resources by year the given year.
+-   `resources/_year/_id.vue` is the introductory page of the given resource.
+-   `services/index.vue` is the introductory page all Services.
+-   `services/categories/index.vue` is the introductory page all Service Categories.
+-   `services/categories/_catid/index.vue` is the page of the given Category, which contains all Services that belong to it.
+-   `services/categories/_catid/_id.vue` is the page of the given Service.
+  
 <!-- ADDITIONAL PLUGINS -->
 
 ### Plugins
@@ -172,16 +207,6 @@ VueJS plugin which allow to manage easily inter and intra page routing. In addit
 
 Nuxt plugin that manages the creation of the robots.txt file.
 
-### Chat Bot Part2
-To complete the Part 2 of the chat bot optional project, we followed the documentation available at [Multi Modal Chatbot Creator] (https://gitlab.com/i3lab/mmcc/frontend/mmcc-vue/-/blob/master/README.md).
-
-At the beginning, the user is asked whether he wants explore the website or he wants to contact the company.
-If the user wants to explore the website, the chatbot first introduce itself, then it shows the home and the about page of the website.
-
-If the user wants to contact the company, the chatbot asks whether the user want to fulfill a form or go to the contact page. In either case, it redirects the user to the correct page.
-The configuration file used for the integration of the chatbot can be found at `./chatbot/config/chat-bot.json` and reflect the model provided by the assignment specification.
-
-**N.B.** at the current state of the art of the provided backend of the `Multi Modal Chatbot Creator`, there is no native way of performing a loop upon reaching the end activity, even if the `next_id` field of the `end` task is set to a previous activity. Moreover, upon reaching the terminal state, the user will receive the same terminal answer for each additional message sent. We have already informed developers which will provide in the next versione a `reset` callbat to support such this behaviour. To follow the exact model provided by specification, we didn't apply any custom patch.
 <!-- TEAM -->
 
 ## Team
@@ -198,8 +223,8 @@ Person Code: 10619073 - Email: [lorenzo1.fratus](mailto:lorenzo1.fratus@mail.pol
 
 Person Code: 10530758 - Email: [simone.orlando](mailto:simone.orlando@mail.polimi.it)
 
-### [Cristian Carmine Spagnuolo](https://github.com/cris96spa) aka **The Brains**
-> _I worked on the backend implementation, dealing with the database interface and the implementation of api methods._
+### [Cristian C. Spagnuolo](https://github.com/cris96spa) aka **The Brains**
+> _I worked on the backend implementation, dealing with the database interface and the implementation of api methods. Then I used these endpoints to retrieve and display stored information._
 
 Person Code: 10745353 - Email: [cristiancarmine.spagnuolo](mailto:cristiancarmine.spagnuolo@mail.polimi.it)
 

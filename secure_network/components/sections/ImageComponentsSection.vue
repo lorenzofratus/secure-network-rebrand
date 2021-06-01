@@ -5,6 +5,11 @@
  * It can be used either to display Areas or People which have a significant role
  * within the given context.
  *
+ * @prop title: title of the component.
+ * @prop type: used to append a different label to the displayed button. Introduced to increase SEO.
+ * @prop wrapper: identify the name of the page that wraps the component, used to generate unique names for :key directive.
+ * @prop components: array of objects, each of which allow the initialization of a different ImageComponent.
+ * @prop rounded: used to denote whether or not the image should be rounded.
  * @author Lorenzo Fratus 
  * @author Simone Orlando 
  * @author Cristian C. Spagnuolo 

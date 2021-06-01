@@ -5,6 +5,14 @@
  * optionally both a subtitles and a group of buttons, and an image. It also shows bread crumbs
  * where needed, supporting the implementation of the index pattern.
  *
+ * @prop title: title of the component.
+ * @prop subtitle: subtitle of the component.
+ * @prop type: used to append a different label to the displayed button. Introduced to increase SEO.
+ * @prop buttons: array of button objects to be used for the instantiation of at most 2 ButtonComponents.
+ * @prop img: url of the displayed image.
+ * @prop wrapper: identify the name of the page that wraps the component, used to generate unique names for :key directive.
+ * @prop rounded: used to denote whether or not the image should be rounded.
+ * @prop showBreadcrumb: boolean flag to determined whether or not breadcrumbs must be shown on the given page.
  * @author Lorenzo Fratus 
  * @author Simone Orlando 
  * @author Cristian C. Spagnuolo 

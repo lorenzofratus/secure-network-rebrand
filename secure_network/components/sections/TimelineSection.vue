@@ -3,6 +3,8 @@
  *
  * A TimelineSection is the section which shows a list of TimelineComponents.
  *
+ * @prop wrapper: identify the name of the page that wraps the component, used to generate unique names for :key directive.
+ * @prop year: year modeled by the component.
  * @author Lorenzo Fratus 
  * @author Simone Orlando 
  * @author Cristian C. Spagnuolo 

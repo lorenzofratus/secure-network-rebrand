@@ -5,6 +5,13 @@
  * It has a wide usage within the website in order to show all previews of a given
  * collection of elements.
  *
+ * @prop wrapper: identify the name of the page that wraps the component, used to generate unique names for :key directive.
+ * @prop small: used to set the css class of the component.
+ * @prop title: title of the section.
+ * @prop child: string used to set the :is property of the <component> element. This allow to use the same section for each type of inner component.
+ * @prop elements: array of element object whose preview will be displayed.
+ * @prop type: used to append a different label to the displayed button. Introduced to increase SEO.
+ * @prop button: optional button object to be used for the instantiation of a ButtonComponent. 
  * @author Lorenzo Fratus 
  * @author Simone Orlando 
  * @author Cristian C. Spagnuolo 
