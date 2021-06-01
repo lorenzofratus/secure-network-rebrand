@@ -162,6 +162,23 @@ The frontend has been developed as VueJS app, using the NuxtJS framework.
 -   `TheFooter.vue` is the footer of the website. It is implemented in the default layout and wrapps the AppMenu and the SocialMenu.
 -   `TheHeader.vue` is the header of the website. It is implemented in the default layout and wraps the AppMenu.
 
+#### Pages
+  
+-   `index.vue`
+-   `contacts.vue` 
+-   `about.vue`
+-   `team/index.vue`
+-   `team/_id.vue`
+-   `areas/index.vue`
+-   `areas/_id.vue`
+-   `resources/index.vue`
+-   `resources/_year/index.vue`
+-   `resources/_year/_id.vue`
+-   `services/index.vue`
+-   `services/categories/index.vue`
+-   `services/categories/_catid/index.vue`
+-   `services/categories/_catid/_id.vue`
+  
 <!-- ADDITIONAL PLUGINS -->
 
 ### Plugins
