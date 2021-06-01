@@ -164,20 +164,20 @@ The frontend has been developed as VueJS app, using the NuxtJS framework.
 
 #### Pages
   
--   `index.vue`
--   `contacts.vue` 
--   `about.vue`
--   `team/index.vue`
--   `team/_id.vue`
--   `areas/index.vue`
--   `areas/_id.vue`
--   `resources/index.vue`
--   `resources/_year/index.vue`
--   `resources/_year/_id.vue`
--   `services/index.vue`
--   `services/categories/index.vue`
--   `services/categories/_catid/index.vue`
--   `services/categories/_catid/_id.vue`
+-   `index.vue` is the home page of the website.
+-   `contacts.vue` is contact page.
+-   `about.vue` is the about page.
+-   `team/index.vue` is the page of the whole Team.
+-   `team/_id.vue` is the page for a single Person.
+-   `areas/index.vue` is the introductory page of all Areas.
+-   `areas/_id.vue` is the page for a single Area.
+-   `resources/index.vue` is the introductory page all Resources grouped and counted by year and type.
+-   `resources/_year/index.vue` is the introductory page all Resources by year the given year.
+-   `resources/_year/_id.vue` is the introductory page of the given resource.
+-   `services/index.vue` is the introductory page all Services.
+-   `services/categories/index.vue` is the introductory page all Service Categories.
+-   `services/categories/_catid/index.vue` is the page of the given Category, which contains all Services that belong to it.
+-   `services/categories/_catid/_id.vue` is the page of the given Service.
   
 <!-- ADDITIONAL PLUGINS -->
 
