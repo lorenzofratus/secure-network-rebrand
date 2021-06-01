@@ -24,6 +24,8 @@
         <li><a href="#built-with">Built With</a></li>
         <li><a href="#backend">Backend</a></li>
         <li><a href="#fronted-components">Frontend Components</a></li>
+        <li><a href="#plugins">Plugins</a></li>
+        <li><a href="#chat-bot-part2">Chat Bot Part2</a></li>
       </ul>
     </li>
     <li><a href="#team">Team</a></li>
@@ -126,12 +128,15 @@ VueJS plugin which allow to manage easily inter and intra page routing. In addit
 
 Nuxt plugin that manages the creation of the robots.txt file.
 
-### Chat Bot Integration
+### Chat Bot Part2
 To complete the Part 2 of the chat bot optional project, we followed the documentation available at [Multi Modal Chatbot Creator] (https://gitlab.com/i3lab/mmcc/frontend/mmcc-vue/-/blob/master/README.md).
+
 At the beginning, the user is asked whether he wants explore the website or he wants to contact the company.
-If the user wants to explore the website, the chatbot first introduce itself, then it shows the home and the about page of the website
+If the user wants to explore the website, the chatbot first introduce itself, then it shows the home and the about page of the website.
+
 If the user wants to contact the company, the chatbot asks whether the user want to fulfill a form or go to the contact page. In either case, it redirects the user to the correct page.
 The configuration file used for the integration of the chatbot can be found at `./chatbot/config/chat-bot.json` and reflect the model provided by the assignment specification.
+
 N.B. at the current state of the art of the provided backend of the `Multi Modal Chatbot Creator`, there is no native way of performing a loop upon reaching the end activity, even if the `next_id` field of the `end` task is set to a previous activity. Moreover, upon reaching the terminal state, the user will receive the same terminal answer for each additional message sent. We have already informed developers which will provide in the next versione a `reset` callbat to support such this behaviour. To follow the exact model provided by specification, we didn't apply any custom patch.
 <!-- TEAM -->
 
