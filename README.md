@@ -190,16 +190,6 @@ VueJS plugin which allow to manage easily inter and intra page routing. In addit
 
 Nuxt plugin that manages the creation of the robots.txt file.
 
-### Chat Bot Implementation
-To complete the Part 2 of the chat bot optional project, we followed the documentation available at [Multi Modal Chatbot Creator](https://gitlab.com/i3lab/mmcc/frontend/mmcc-vue/-/blob/master/README.md).
-
-At the beginning, the user is asked whether he wants explore the website or he wants to contact the company.
-If the user wants to explore the website, the chatbot first introduce itself, then it shows the home and the about page of the website.
-
-If the user wants to contact the company, the chatbot asks whether the user want to fulfill a form or go to the contact page. In either case, it redirects the user to the correct page.
-The configuration file used for the integration of the chatbot can be found at `./chatbot/config/chat-bot.json` and reflect the model provided by the assignment specification.
-
-**N.B.** at the current state of the art of the provided backend of the `Multi Modal Chatbot Creator`, there is no native way of performing a loop upon reaching the end activity, even if the `next_id` field of the `end` task is set to a previous activity. Moreover, upon reaching the terminal state, the user will receive the same terminal answer for each additional message sent. We have already informed developers which will provide in the next versione a `reset` callbat to support such this behaviour. To follow the exact model provided by specification, we didn't apply any custom patch.
 <!-- TEAM -->
 
 ## Team
@@ -216,7 +206,7 @@ Person Code: 10619073 - Email: [lorenzo1.fratus](mailto:lorenzo1.fratus@mail.pol
 
 Person Code: 10530758 - Email: [simone.orlando](mailto:simone.orlando@mail.polimi.it)
 
-### [Cristian Carmine Spagnuolo](https://github.com/cris96spa) aka **The Brain**
+### [Cristian C. Spagnuolo](https://github.com/cris96spa) aka **The Brains**
 > _I worked on the backend implementation, dealing with the database interface and the implementation of api methods. Then I used these endpoints to retrieve and display stored information._
 
 Person Code: 10745353 - Email: [cristiancarmine.spagnuolo](mailto:cristiancarmine.spagnuolo@mail.polimi.it)
