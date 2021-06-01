@@ -4,6 +4,12 @@
  * An AltSection is a section which contains a title, an optional set of paragraphs and an 
  * optional button. It is used in almost all pages to give a description of the context.
  *
+ * @prop title: title of the section.
+ * @prop paragraphs: array of text paragraphs shown within the component. It is used this approach for graphical purposes.
+ * @prop wrapper: identify the name of the page that wraps the component, used to generate unique names for :key directive.
+ * @prop containsLink: boolen flag used to enable or disable the v-html directive, to reduce the exposure windows of the directive.
+ * @prop button: optional button object to be used for the instantiation of a ButtonComponent.
+ * @prop centered: boolen flag used to determine whether or not the text must be centered.
  * @author Lorenzo Fratus 
  * @author Simone Orlando 
  * @author Cristian C. Spagnuolo 

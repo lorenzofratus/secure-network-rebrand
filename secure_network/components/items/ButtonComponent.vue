@@ -3,6 +3,9 @@
  *
  * A ButtonComponent is a button which can be used both for navigation and as a click event generator.
  *
+ * @prop btnPath: path used by the embedded nuxt link.
+ * @prop btnClass: used to pass the class of the button.
+ * @prop btnText: used to display the text of the button.
  * @author Lorenzo Fratus 
  * @author Simone Orlando 
  * @author Cristian C. Spagnuolo 

@@ -4,6 +4,10 @@
  * A TimelineComponent is used to highlight how many resources, grouped by type, 
  * are available for a given year.
  *
+ * @prop wrapper: identify the name of the page that wraps the component, used to generate unique names for :key directive.
+ * @prop year: year modeled by the component.
+ * @prop types: array of objects, each of which contains a type and the number of elements of that type, considering the given year.
+ * @prop path: path passed to the embedded ButtonComponent.
  * @author Lorenzo Fratus 
  * @author Simone Orlando 
  * @author Cristian C. Spagnuolo 

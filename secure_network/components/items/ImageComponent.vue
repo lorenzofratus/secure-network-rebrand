@@ -3,6 +3,14 @@
  *
  * An ImageComponent is made up of an image, a text description and a ButtonComponent; it is used to show syntetized information about a person or an area.
  *
+ * @prop title: title of the component.
+ * @prop tag: used to highlight specific properties of the given element.
+ * @prop type: used to append a different label to the displayed button. Introduced to increase SEO.
+ * @prop text: text displayed within the component.
+ * @prop btnPath: path passed to the embedded ButtonComponent.
+ * @prop img: url of the displayed image.
+ * @prop wrapper: identify the name of the page that wraps the component, used to generate unique names for :key directive.
+ * @prop rounded: used to denote whether or not the image should be rounded.
  * @author Lorenzo Fratus 
  * @author Simone Orlando 
  * @author Cristian C. Spagnuolo 
@@ -40,7 +48,7 @@ export default {
 			type: String,
 			required: true,
 		},
-		// Use to highlight specific properties of the given element
+		// Used to highlight specific properties of the given element
 		tag: {
 			type: String,
 			required: false,

@@ -44,7 +44,6 @@ export default {
 		// Adding the default event listener for messages
 		WebSocketEventBus.onMessage((message) => {
 			const self = this
-			console.log(message)
 			if (message.utterance) {
 				// Adding 1 second timeout before adding the first message to the chat and then 0.55 seconds for each subsequent message
 				// This makes the chatbot less "aggressive" towards the user

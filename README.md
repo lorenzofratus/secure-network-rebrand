@@ -66,39 +66,83 @@ The frontend has been developed as VueJS app, using the NuxtJS framework.
 
 #### Cards
 
--   `PersonCard.vue` is used to show syntetized information about a person. It contains the profile picture, the name and the surname of the subject.
--   `ResourceCard.vue` is used to show syntetized information about a given resource.
--   `ServiceCard.vue` is used to show syntetized information about a given service.
--   `ThreatCard.vue` is used to show information about a possible Threat.
+-   `PersonCard.vue` is used to show syntetized information about a person. It contains the profile picture, the name and the surname of the subject. Props: 
+    - **object:** the person object whose name and surname must be displayed. 
+-   `ResourceCard.vue` is used to show syntetized information about a given resource. Props: 
+    - **object:** the person object whose name and surname must be displayed. 
+-   `ServiceCard.vue` is used to show syntetized information about a given service. Props: 
+    - **object:** the service object whose preview must be displayed.
+    - **type:** used to append a different label to the displayed button. Introduced to increase SEO.
+-   `ThreatCard.vue` is used to show information about a possible Threat. Props: 
+    -  **object:** the static threat object whose preview must be displayed.
 
 #### Items
 
--   `ButtonComponent.vue` is a button which can be used both for navigation and as a click event generator.
--   `ImageComponent.vue` is made up of an image, a text description and a ButtonComponent; it is used to show syntetized information about a person or an area.
--   `InputComponent.vue` is used to model an input or a textarea for a form.
--   `TimelineComponent.vue` is used to highlight how many resources, grouped by type, are available for a given year.
--   `TitleComponent.vue` is used to add a simple title and optionally a paragraph to a more complex element.
+-   `ButtonComponent.vue` is a button which can be used both for navigation and as a click event generator. Props: 
+    - **object:** the person object whose name and surname must be displayed.
+    -  **btnPath:** path used by the embedded nuxt link.
+    - **btnClass:** used to pass the class of the button.
+    - **btnText:** used to display the text of the button.
+-   `ImageComponent.vue` is made up of an image, a text description and a ButtonComponent; it is used to show syntetized information about a person or an area. Props: 
+    - **title:** title of the component.
+    - **tag:** used to highlight specific properties of the given element.
+    - **type:** used to append a different label to the displayed button. Introduced to increase SEO.
+    - **text:** text displayed within the component.
+    - **btnPath:** path passed to the embedded ButtonComponent.
+    - **img:** url of the displayed image.
+    - **wrapper:** identify the name of the page that wraps the component, used to generate unique names for :key directive.
+    - **rounded:** used to denote whether or not the image should be rounded.
+-   `InputComponent.vue` is used to model an input or a textarea for a form. Props: 
+    - **label:** label of the form field.
+    - **placeholder:** placeholder of the form field.
+    - **name:** identify the name of form field.
+    - **type:** used set the type of the nested input element.
+-   `TimelineComponent.vue` is used to highlight how many resources, grouped by type, are available for a given year. Props: 
+    - **year:** year modeled by the component.
+    - **types:** array of objects, each of which contains a type and the number of elements of that type, considering the given year.
+    - **path:** path passed to the embedded ButtonComponent.
+-   `TitleComponent.vue` is used to add a simple title and optionally a paragraph to a more complex element. Props: 
+    - **title:** title of shown by the component.
+    - **text:** optional text shown by the component.
 
 #### Menus
 
--   `AppMenu.vue` is used to model landmarks which are embedded both in the header and in the footer of the page.
+-   `AppMenu.vue` is used to model landmarks which are embedded both in the header and in the footer of the page. Props:
+    - **lightTheme:** boolean flag to determined whether or not using the light theme.
+    - **alignRight:** boolean flag to determined whether or align to right.
+    - **showOnMobile:** boolean flag to determined whether or the element must be shown on mobile devices.
 -   `SocialMenu.vue` is used to model social logos which are embedded in the footer of the page.
 
 #### Sections
 
--   `AltSection.vue` is a section which contains a title, an optional set of paragraphs and an optional button. It is used in almost all pages to give a description of the context.
--   `FilterSection.vue` is a section which allow the user to filter resources by type. It contains one button component to see all the resources and one button component for each type of resource present.
--   `FormSection.vue` is a section which allow the user to contact the responsible of the enterprise.
--   `GridSection.vue` is a section which allow to visualize cards of different types. It has a wide usage within the website in order to show all previews of a given collection of elements.
--   `ImageComponentsSection.vue` is a section which lists a group of ImageComponents. It can be used either to display Areas or People which have a significant role within the given context.
--   `MainSection.vue` is the first section you see in almost each page. It contains a title, optionally both a subtitles and a group of buttons, and an image. It also shows bread crumbs where needed, supporting the implementation of the index pattern.
--   `TimelineSection.vue` is the section which shows a list of TimelineComponents.
+-   `AltSection.vue` is a section which contains a title, an optional set of paragraphs and an optional button. It is used in almost all pages to give a description of the context. Props:     
+    - **title:** title of the section.
+    - **paragraphs:** array of text paragraphs shown within the component. It is used this approach for graphical purposes.
+    - **wrapper:** identify the name of the page that wraps the component, used to generate unique names for :key directive.
+    - **containsLink:** boolen flag used to enable or disable the v-html directive, to reduce the exposure windows of the directive.
+    - **button:** optional button object to be used for the instantiation of a ButtonComponent.
+    - **centered:** boolen flag used to determine whether or not the text must be centered.
+-   `FilterSection.vue` is a section which allow the user to filter resources by type. It contains one button component to see all the resources and one button component for each type of resource present. Props: 
+    -  **object:** the person object whose name and surname must be displayed.
+-   `FormSection.vue` is a section which allow the user to contact the responsible of the enterprise. Props: 
+    -  **object:** the person object whose name and surname must be displayed.
+-   `GridSection.vue` is a section which allow to visualize cards of different types. It has a wide usage within the website in order to show all previews of a given collection of elements. Props: 
+    -  **object:** the person object whose name and surname must be displayed.
+-   `ImageComponentsSection.vue` is a section which lists a group of ImageComponents. It can be used either to display Areas or People which have a significant role within the given context. Props: 
+    -  **object:** the person object whose name and surname must be displayed.
+-   `MainSection.vue` is the first section you see in almost each page. It contains a title, optionally both a subtitles and a group of buttons, and an image. It also shows bread crumbs where needed, supporting the implementation of the index pattern. Props: 
+    -  **object:** the person object whose name and surname must be displayed.
+-   `TimelineSection.vue` is the section which shows a list of TimelineComponents. Props: 
+    -  **object:** the person object whose name and surname must be displayed.
 
 #### Singletons
 
--   `TheChat.vue` is implemented in the default layout and allow the user to interact with a multimodal chat bot.
--   `TheFooter.vue` is the footer of the website. It is implemented in the default layout and wrapps the AppMenu and the SocialMenu.
--   `TheHeader.vue` is the header of the website. It is implemented in the default layout and wraps the AppMenu.
+-   `TheChat.vue` is implemented in the default layout and allow the user to interact with a multimodal chat bot. Props: 
+    -  **object:** the person object whose name and surname must be displayed.
+-   `TheFooter.vue` is the footer of the website. It is implemented in the default layout and wrapps the AppMenu and the SocialMenu. Props: 
+    -  **object:** the person object whose name and surname must be displayed.
+-   `TheHeader.vue` is the header of the website. It is implemented in the default layout and wraps the AppMenu. Props: 
+    -  **object:** the person object whose name and surname must be displayed.
 
 <!-- ADDITIONAL PLUGINS -->
 

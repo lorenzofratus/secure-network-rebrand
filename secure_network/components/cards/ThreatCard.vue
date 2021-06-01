@@ -3,6 +3,7 @@
  *
  * A ThreatCard is used to show information about a possible Threat.
  *
+ * @prop object: the static threat object whose preview must be displayed.
  * @author Lorenzo Fratus 
  * @author Simone Orlando 
  * @author Cristian C. Spagnuolo 

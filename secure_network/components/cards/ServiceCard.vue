@@ -3,6 +3,8 @@
  *
  * A ServiceCard is used to show syntetized information about a given service.
  *
+ * @prop object: the service object whose preview must be displayed.
+ * @prop type: used to append a different label to the displayed button. Introduced to increase SEO.
  * @author Lorenzo Fratus 
  * @author Simone Orlando 
  * @author Cristian C. Spagnuolo 

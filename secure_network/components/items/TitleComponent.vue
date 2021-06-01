@@ -3,6 +3,8 @@
  *
  * A TitleComponent is used to add a simple title and optionally a paragraph to a more complex element.
  *
+ * @prop title: title of shown by the component.
+ * @prop text: optional text shown by the component.
  * @author Lorenzo Fratus 
  * @author Simone Orlando 
  * @author Cristian C. Spagnuolo 

@@ -4,6 +4,7 @@
  * A PersonCard is used to show syntetized information about a person. 
  * It contains the profile picture, the name and the surname of the subject.
  *
+ * @prop object: the person object whose name and surname must be displayed.
  * @author Lorenzo Fratus 
  * @author Simone Orlando 
  * @author Cristian C. Spagnuolo 

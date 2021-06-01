@@ -3,6 +3,10 @@
  *
  * An InputComponent is used to model an input or a textarea for a form.
  *
+ * @prop label: label of the form field.
+ * @prop placeholder: placeholder of the form field.
+ * @prop name: identify the name of form field.
+ * @prop type: used set the type of the nested input element.
  * @author Lorenzo Fratus 
  * @author Simone Orlando 
  * @author Cristian C. Spagnuolo 

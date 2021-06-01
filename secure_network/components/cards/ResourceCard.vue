@@ -3,6 +3,7 @@
  *
  * A ResourceCard is used to show syntetized information about a given resource.
  *
+ * @prop object: the resource object whose title and icon must be displayed.
  * @author Lorenzo Fratus 
  * @author Simone Orlando 
  * @author Cristian C. Spagnuolo 
@@ -18,7 +19,7 @@
 		</p>
 		<button-component
 			:btn-path="object.path"
-			:btn-text="'Read ' + type"
+			:btn-text="'Read ' + object.type"
 			btn-class="secondary"
 		/>
 	</div>
@@ -32,11 +33,6 @@ export default {
 		object: {
 			type: Object,
 			required: true,
-		},
-		type: {
-			type: String,
-			required: false,
-			default: '',
 		},
 	},
 	computed: {
