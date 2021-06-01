@@ -198,8 +198,8 @@ Person Code: 10619073 - Email: [lorenzo1.fratus](mailto:lorenzo1.fratus@mail.pol
 
 Person Code: 10530758 - Email: [simone.orlando](mailto:simone.orlando@mail.polimi.it)
 
-### [Cristian Carmine Spagnuolo](https://github.com/cris96spa) aka **The Brains**
-> _I worked on the backend implementation, dealing with the database interface and the implementation of api methods._
+### [Cristian Carmine Spagnuolo](https://github.com/cris96spa) aka **The Brain**
+> _I worked on the backend implementation, dealing with the database interface and the implementation of api methods. Then I used these endpoints to retrieve and display stored information._
 
 Person Code: 10745353 - Email: [cristiancarmine.spagnuolo](mailto:cristiancarmine.spagnuolo@mail.polimi.it)
 
