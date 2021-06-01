@@ -124,8 +124,17 @@ website:
 	\item Convert the user's visit into a business contact. 
 \end{itemize}
 \noindent
-Figure \ref{fig:model} illustrates the model of this process, the 
-meaning of each activity will be better explained in the next chapter.
+At the beginning, the chatbot introduce itself and then the user is asked whether *he wants to see all service categories or *he wants to contact the company.
+If the user wants to explore categories, the chatbot shows the given page otherwise it shows the contact form.
+\\If the user has choosen to explore categories the bot then asks if *he wants to select a specific one, or to proceed to the contact form.
+\\If the user chooses the former option, the bot asks for the selection of one category, this task can be achieved either by selecting one category among the list 
+or by typying the category name in the chat, otherwise, again the contact form will be displayed.
+\\Once a category is choosen, the bot shows the category page, and then again asks the user if *he wants to select a specific service among those that belong to the 
+shown category, or to proceed to the contact form.\\
+If the user chooses the fist option, the bot asks for the selection of one service, this task can be achieved either by selecting one service among the list 
+or by typying the service name in the chat, otherwise, again the contact form will be displayed.\\
+Upon selecting a service, the bot shows the service page and then waits the user input to automatically redirect *he to the contact form. The interaction with the user always ends 
+when the form page is displayed.
 
 \begin{figure}[h]
 	\centering
