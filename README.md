@@ -123,26 +123,44 @@ The frontend has been developed as VueJS app, using the NuxtJS framework.
     - **button:** optional button object to be used for the instantiation of a ButtonComponent.
     - **centered:** boolen flag used to determine whether or not the text must be centered.
 -   `FilterSection.vue` is a section which allow the user to filter resources by type. It contains one button component to see all the resources and one button component for each type of resource present. Props: 
-    -  **object:** the person object whose name and surname must be displayed.
+     - **title:** title of the section.
+     - **wrapper:** identify the name of the page that wraps the component, used to generate unique names for :key directive.
+     - **buttons:** array of button objects to be used for the instantiation of at most 3 ButtonComponents.
 -   `FormSection.vue` is a section which allow the user to contact the responsible of the enterprise. Props: 
-    -  **object:** the person object whose name and surname must be displayed.
+    - **title:** title of the section.
+    - **wrapper:** identify the name of the page that wraps the component, used to generate unique names for :key directive.
 -   `GridSection.vue` is a section which allow to visualize cards of different types. It has a wide usage within the website in order to show all previews of a given collection of elements. Props: 
-    -  **object:** the person object whose name and surname must be displayed.
+    - **wrapper:** identify the name of the page that wraps the component, used to generate unique names for :key directive.
+    - **small:** used to set the css class of the component.
+    - **title:** title of the section.
+    - **child:** string used to set the :is property of the <component> element. This allow to use the same section for each type of inner component.
+    - **elements:** array of element object whose preview will be displayed.
+    - **type:** used to append a different label to the displayed button. Introduced to increase SEO.
+    - **button:** optional button object to be used for the instantiation of a ButtonComponent. 
 -   `ImageComponentsSection.vue` is a section which lists a group of ImageComponents. It can be used either to display Areas or People which have a significant role within the given context. Props: 
-    -  **object:** the person object whose name and surname must be displayed.
+    - **title:** title of the component.
+    - **type:** used to append a different label to the displayed button. Introduced to increase SEO.
+    - **wrapper:** identify the name of the page that wraps the component, used to generate unique names for :key directive.
+    - **components:** array of objects, each of which allow the initialization of a different ImageComponent.
+    - **rounded:** used to denote whether or not the image should be rounded.
 -   `MainSection.vue` is the first section you see in almost each page. It contains a title, optionally both a subtitles and a group of buttons, and an image. It also shows bread crumbs where needed, supporting the implementation of the index pattern. Props: 
-    -  **object:** the person object whose name and surname must be displayed.
+    - **title:** title of the component.
+    - **subtitle:** subtitle of the component.
+    - **type:** used to append a different label to the displayed button. Introduced to increase SEO.
+    - **buttons:** array of button objects to be used for the instantiation of at most 2 ButtonComponents.
+    - **img:** url of the displayed image.
+    - **wrapper:** identify the name of the page that wraps the component, used to generate unique names for :key directive.
+    - **rounded:** used to denote whether or not the image should be rounded.
+    - **showBreadcrumb:** boolean flag to determined whether or not breadcrumbs must be shown on the given page.
 -   `TimelineSection.vue` is the section which shows a list of TimelineComponents. Props: 
-    -  **object:** the person object whose name and surname must be displayed.
+    - **wrapper:** identify the name of the page that wraps the component, used to generate unique names for :key directive.
+    - **year:** year modeled by the component.
 
 #### Singletons
 
--   `TheChat.vue` is implemented in the default layout and allow the user to interact with a multimodal chat bot. Props: 
-    -  **object:** the person object whose name and surname must be displayed.
--   `TheFooter.vue` is the footer of the website. It is implemented in the default layout and wrapps the AppMenu and the SocialMenu. Props: 
-    -  **object:** the person object whose name and surname must be displayed.
--   `TheHeader.vue` is the header of the website. It is implemented in the default layout and wraps the AppMenu. Props: 
-    -  **object:** the person object whose name and surname must be displayed.
+-   `TheChat.vue` is implemented in the default layout and allow the user to interact with a multimodal chat bot.
+-   `TheFooter.vue` is the footer of the website. It is implemented in the default layout and wrapps the AppMenu and the SocialMenu.
+-   `TheHeader.vue` is the header of the website. It is implemented in the default layout and wraps the AppMenu.
 
 <!-- ADDITIONAL PLUGINS -->
 

@@ -4,6 +4,8 @@
  * A FormSection is a section which allow the user to contact the responsible of 
  * the enterprise.
  *
+ * @prop title: title of the section.
+ * @prop wrapper: identify the name of the page that wraps the component, used to generate unique names for :key directive.
  * @author Lorenzo Fratus 
  * @author Simone Orlando 
  * @author Cristian C. Spagnuolo 
