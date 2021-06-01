@@ -136,7 +136,7 @@
 				},
 				{
 					"my_id": "end",
-					"next_id": null,
+					"next_id": "first_xor",
 					"my_type": "end"
 				}
 			],
