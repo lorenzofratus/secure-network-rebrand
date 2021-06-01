@@ -207,6 +207,31 @@ VueJS plugin which allow to manage easily inter and intra page routing. In addit
 
 Nuxt plugin that manages the creation of the robots.txt file.
 
+<!-- BEST PRACTICES -->
+
+## Best Practices
+
+In this section we will briefly outline how our usage of the framework was compliant to the best practices for our specific domain.
+
+Besides following the teachings of our tutors, we used `ESLint` to help us comply with specific rules while writing the code.
+Some examples of best practises that were imposed by this linter are:
+- The usage of shorthands (`:` instead of `v-bind`, `@` instead of `v-on`, ...).
+- The usage of proper casing (_kebab-case_ in the template and _CamelCase_ in the JavaScript).
+- The correct usage of `v-` directives (unique `:key` with `v-for`, no `v-if` with `v-for`, ...).
+
+Moreover, we preferred to implement many small components rather than few bulky ones.  
+This allowed us to obtain code that is much easier to read (therefore to maintain) and to reuse in multiple parts of the website, usually only changing the props values.
+
+As for the usage of `NuxtJS`, in different occasions we exploited the lifecycle hooks that it offers to perform actions on the data or the UI.  
+We also built different stores to keep static data that needs to be easily modifiable (`menu.js` contains the lists of landmarks and of social links) or that is used in multiple pages (`threats.js`).  
+Again, we took advantage of the routing mechanism of `NuxtJS` to implement a middleware that intercepts hash links (e.g., `/contacts#email`) and smoothly scrolls to the pointed section without displaying the hash in the URL bar.
+
+Regarding SEO and accesibility, we made sure that every page has a unique title, that the whole website is navigable using the _Tab_ key and that every input has a label to allow screen readers to correctly detect it.  
+We also used _WAVE_ and _Google Lighthouse_ to analyze the website.  
+This lead to some adjustments, the most relevant of which is a slight change in the main color (from ![#00a6fb](https://via.placeholder.com/15/00a6fb/000000?text=+) `#00a6fb` to ![#007cbd](https://via.placeholder.com/15/007cbd/000000?text=+) `#007cbd`) in order to satisfy contrast requirements.
+
+Finally, we introduced an external plugin to force the communication using _HTTPS_ rather than plain _HTTP_ as prescribed by the latest security guidelines.
+
 <!-- TEAM -->
 
 ## Team
