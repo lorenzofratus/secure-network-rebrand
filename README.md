@@ -25,7 +25,6 @@
         <li><a href="#backend">Backend</a></li>
         <li><a href="#fronted-components">Frontend Components</a></li>
         <li><a href="#plugins">Plugins</a></li>
-        <li><a href="#chat-bot-part2">Chat Bot Part2</a></li>
       </ul>
     </li>
     <li><a href="#team">Team</a></li>
@@ -226,29 +225,17 @@ The frontend has been developed as VueJS app, using the NuxtJS framework.
 
 ### Plugins
 
-#### Dotenv
+- `Dotenv:` used to retrieve database credentials from the environment also in development mode. It is a best practice to retrieve such these information from the environment, rather than hardcoding them.
 
-Used to retrieve database credentials from the environment also in development mode. It is a best practice to retrieve such these information from the environment, rather than hardcoding them.
+- `Redirect SSL:` used in order to force the usage of HTTPS protocol, rather than sending data over plain HTTP.
 
-#### Redirect SSL
+- `Multi Modal Chatbot Creator:` experimental framework developed by PHD students of the Hypermedia Application course to support a multi modal chatbot.
 
-Used in order to force the usage of HTTPS protocol, rather than sending data over plain HTTP.
+- `Store:` used both to support chatbot features and static content used in several sections in order to avoid code replication.
 
-#### Multi Modal Chatbot Creator
+- `Router:` VueJS plugin which allow to manage easily inter and intra page routing. In addition, we developed a customized middleware plugin to support smooth scrolling behaviour for the router.
 
-Experimental framework developed by PHD students of the Hypermedia Application course to support a multi modal chatbot.
-
-#### Store
-
-Used both to support chatbot features and static content used in several sections in order to avoid code replication.
-
-#### Router
-
-VueJS plugin which allow to manage easily inter and intra page routing. In addition, we developed a customized middleware plugin to support smooth scrolling behaviour for the router.
-
-#### Robots
-
-Nuxt plugin that manages the creation of the robots.txt file.
+- `Robots:` Nuxt plugin that manages the creation of the robots.txt file.
 
 <!-- BEST PRACTICES -->
 
