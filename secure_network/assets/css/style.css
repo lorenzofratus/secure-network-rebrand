@@ -33,6 +33,8 @@
 	--page: 800px;
 	--content: 650px;
 	--half-page: 400px;
+	--half-page-large: 480px;
+	--half-page-small: 320px;
 	--half-content: 325px;
 	--padding: 3em;
 	--half-padding: 1.5em;
@@ -40,14 +42,15 @@
 	--card-radius: 1em;
 
 	--wave-width: 110vw;
-	--wave-height: 11vw; /* Fallback */
-	--wave-height: calc(11vw - 1vw);
-	--wave-height-neg: -11vw; /* Fallback */
-	--wave-height-neg: calc(-11vw + 1vw);
+	--wave-height: 6.6vw; /* Fallback */
+	--wave-height: calc(6.6vw - 0.6vw);
+	--wave-height-neg: -6.6vw; /* Fallback */
+	--wave-height-neg: calc(-6.6vw + 0.6vw);
 	--wave-displacement: 100%; /* Fallback */
-	--wave-displacement: calc(100% - 0.5vw);
+	--wave-displacement: calc(100% - 0.3vw);
 
-	--nav-height: 4em;
+	--nav-height: 3.5em;
+	--sub-nav-height: 2.5em;
 	--divider-width: 120px;
 	--divider-small-width: 40px;
 	--line-weight: 3px;
@@ -123,8 +126,8 @@ a:focus {
 	text-transform: capitalize;
 }
 .spacer.big-margin {
-	margin-bottom: 3em;
-	margin-bottom: calc(4em + var(--line-weight));
+	margin-bottom: 2.5em;
+	margin-bottom: calc(2.5em + var(--line-weight));
 }
 
 .spacer::after {
@@ -155,16 +158,6 @@ a:focus {
 	grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
 }
 
-/***Grid***/
-.grid {
-	display: grid;
-	grid-gap: 50px;
-	grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-}
-.grid.small {
-	grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-}
-
 /*** Sections ***/
 section {
 	padding: var(--padding);
@@ -185,7 +178,7 @@ section:not(.alt-section) ~ section:not(.alt-section) {
 	background-color: var(--alt-background);
 	padding-bottom: var(--half-padding);
 }
-.alt-section .content {
+.alt-section .content:not(.grid) {
 	max-width: var(--content);
 	margin: 0 auto;
 }
@@ -196,6 +189,19 @@ section:not(.alt-section) ~ section:not(.alt-section) {
 .text-section .content {
 	max-width: var(--content);
 	margin: 0 auto;
+}
+
+/***Grid***/
+.grid {
+	display: grid;
+	grid-gap: 50px;
+	grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+}
+.grid.small {
+	grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+}
+.grid.wide {
+	max-width: var(--app);
 }
 
 /*** Background Waves ***/

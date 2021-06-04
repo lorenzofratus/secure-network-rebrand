@@ -28,20 +28,21 @@
 			:wrapper="wrapper"
 			:rounded="true"
 		/>
-		<grid-section
-			id="employees"
-			:wrapper="wrapper"
-			:small="true"
-			title="Our Employees"
-			child="person-card"
-			:elements="team"
-		/>
 		<alt-section
 			:title="alt_section_2.title"
 			:paragraphs="alt_section_2.paragraphs"
 			:wrapper="wrapper"
 			:button="alt_section_2.button"
 			:centered="alt_section_2.centered"
+		/>
+		<grid-section
+			id="employees"
+			:wrapper="wrapper"
+			:small="true"
+			:wide="true"
+			title="Our Employees"
+			child="person-card"
+			:elements="team"
 		/>
 	</main>
 </template>

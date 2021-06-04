@@ -12,19 +12,21 @@
 <template>
 	<div class="card item" :class="{ highlighted: object.isReference }">
 		<!-- Checks if "img" is an image (path including '/') or an icon (simple text) -->
-		<img
-			v-if="object.img.includes('/')"
-			:src="object.img"
-			alt=""
-			class="image"
-		/>
-		<span v-else class="icon material-icons">{{ object.img }}</span>
+		<div class="spacer">
+			<img
+				v-if="object.img.includes('/')"
+				:src="object.img"
+				alt=""
+				class="image"
+			/>
+			<span v-else class="icon material-icons">{{ object.img }}</span>
+		</div>
 		<div class="text">
 			<span v-if="object.isReference" class="h4 tag">Reference for</span>
-			<h3 class="spacer">{{ object.name }}</h3>
-			<p class="centered-text">
+			<h3 class="title">{{ object.name }}</h3>
+			<!-- <p class="centered-text">
 				{{ abstract }}
-			</p>
+			</p> -->
 		</div>
 		<button-component
 			:btn-path="object.path"
@@ -72,12 +74,12 @@ export default {
 	border: var(--line-weight) solid var(--primary-color);
 }
 .item .image {
-	height: 8em;
+	height: 5em;
 	margin: 0 auto 1em;
 }
 .item .icon {
-	font-size: 60px;
-	margin: 0 0 0.25em;
+	font-size: 55px;
+	margin: 0;
 }
 .item .tag {
 	display: block;
@@ -87,7 +89,11 @@ export default {
 	color: var(--primary-color);
 	font-weight: var(--btn-font-weight);
 }
-.item .tag ~ .spacer {
+.item .title {
+	text-align: center;
+	margin: 0 0.5em;
+}
+.item .tag ~ .title {
 	margin-top: 0.25em;
 }
 .item .text {

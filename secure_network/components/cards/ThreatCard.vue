@@ -70,7 +70,7 @@ export default {
 }
 .block:hover .background,
 .block:focus .background {
-	transform: scale(5) translateZ(0);
+	transform: scale(6) translateZ(0);
 }
 .block .icon {
 	position: absolute;

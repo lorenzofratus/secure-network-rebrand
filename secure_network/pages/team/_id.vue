@@ -24,12 +24,14 @@
 		<image-components-section
 			id="area"
 			type="area"
-			title="Current occupation"
+			title="Current Area"
 			:components="[area]"
 			:wrapper="person.id"
 		/>
 		<grid-section
 			id="services"
+			:alt="true"
+			:wide="true"
 			:wrapper="person.id"
 			title="Provided Services"
 			child="service-card"

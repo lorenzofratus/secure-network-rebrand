@@ -24,14 +24,15 @@
 		<image-components-section
 			id="areas"
 			type="area"
-			title="Located In"
+			title="Service Area"
 			:components="[area]"
 			:wrapper="service.id"
 		/>
 		<image-components-section
 			v-if="referents.length"
 			id="team"
-			title="Provided by"
+			:title="'Service Referent'"
+			:alt="true"
 			:components="referents"
 			:wrapper="service.id"
 			:rounded="true"
@@ -41,7 +42,7 @@
 			:id="referents.length ? '' : 'team'"
 			:wrapper="service.id"
 			:small="true"
-			:title="referents.length ? '' : 'Provided by'"
+			:title="'Service Team'"
 			child="person-card"
 			:elements="people"
 		/>
@@ -88,7 +89,7 @@ export default {
 			)
 			const referents = payload.data
 			// Add to each referent the tag attribute
-			referents.forEach((person) => (person.tag = 'reference'))
+			// referents.forEach((person) => (person.tag = 'referent'))
 
 			// Retrieve all people which are not referents for the given service
 			payload = await $axios.get(
