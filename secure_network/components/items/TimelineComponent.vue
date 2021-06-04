@@ -71,7 +71,7 @@ export default {
 	box-sizing: border-box;
 	text-align: left;
 	padding-left: var(--timeline-padding);
-	padding-bottom: 6em;
+	padding-bottom: 3em;
 	margin: 0 auto;
 }
 .timeline-item:last-of-type .content {

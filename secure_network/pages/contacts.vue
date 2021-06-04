@@ -70,7 +70,7 @@
 				v-for="(headquarter, index) in info.headquarters"
 				:key="'map-' + index + '-' + wrapper"
 				class="map"
-				:style="'background: url(' + headquarter.map + ')'"
+				:style="'background-image: url(' + headquarter.map + ')'"
 				:class="{
 					active: activeMap == index,
 					old: oldMap == index,
@@ -234,8 +234,8 @@ p.centered {
 
 .map-section {
 	position: relative;
-	height: 70vh;
-	min-height: 500px;
+	height: 50vh;
+	min-height: 350px;
 	margin: var(--wave-height-neg) 0;
 }
 .map-section:focus {
@@ -246,7 +246,8 @@ p.centered {
 	width: 100%;
 	height: 100%;
 	z-index: -2;
-	background: no-repeat center center;
+	background-repeat: no-repeat;
+	background-position: center center;
 	background-size: cover;
 	left: 100%;
 }

@@ -9,9 +9,9 @@
  * @author Cristian C. Spagnuolo
  */
 
-/* eslint-disable camelcase */
-// Used to sort information, just for the sake of debugging. Then, each query use the order keyword
-//to better fit our needs
+/* Used to sort information, just for the sake of debugging. Then, each query use the order keyword
+ * to better fit our needs
+ */
 import { compareByName } from '../utils/comparator.js'
 
 // Utilities used to process static data and compute dynamically some useful properties
@@ -50,12 +50,12 @@ function refineArticles(items) {
 		const year = d.getFullYear()
 		item.id = month + '-' + day
 		item.path = '/articles/' + year + '/' + item.id
-		item.icon = item.type == 'research' ? 'science' : 'feed'
+		item.icon = item.type === 'research' ? 'science' : 'feed'
 	})
 }
 
 // Raw variables definition, inserted by hand and then refined programmatically
-const sv_categories = [
+const svCategories = [
 	{
 		name: 'Application Security',
 		text: 'Applications process and handle most of a company’s information, including critical data. Custom applications have become an easy to reach and popular target for attackers.',
@@ -494,7 +494,7 @@ const ars = [
 	},
 ].sort(compareByName)
 
-const p_s = [
+const pS = [
 	{
 		person_id: 'andrea-jegher',
 		service_id: 'application-vulnerability-assessment',
@@ -1000,8 +1000,8 @@ const art = [
 ]
 
 // Refine collections before exporting
-refine(sv_categories)
-export const service_categories = sv_categories
+refine(svCategories)
+export const serviceCategories = svCategories
 
 refineServices(svs)
 export const services = svs
@@ -1012,7 +1012,7 @@ export const people = ppl
 refine(ars)
 export const areas = ars
 
-export const person_service = p_s
+export const personService = pS
 
 refineArticles(art)
 export const articles = art
