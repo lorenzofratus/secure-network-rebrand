@@ -21,12 +21,12 @@
 			:wrapper="area.id"
 		/>
 		<grid-section
-			id="categories"
+			id="services"
 			:wrapper="area.id"
-			title="Categories Of Services"
+			title="Provided Services"
 			child="service-card"
-			:elements="serviceCategories"
-			type="category"
+			:elements="services"
+			type="service"
 		/>
 		<image-components-section
 			id="team"
@@ -88,17 +88,17 @@ export default {
 			// Add to each manager the tag attribute
 			// managers.forEach((manager) => (manager.tag = manager.role))
 
-			// Retrieve the categories of services offered by this area from the database
+			// Retrieve services offered by this area from the database
 			payload = await $axios.get(
-				`${process.env.BASE_URL}/api/service-categories-by-area/${id}`
+				`${process.env.BASE_URL}/api/services-by-area/${id}`
 			)
-			const serviceCategories = payload.data
+			const services = payload.data
 
 			return {
 				area,
 				people,
 				managers,
-				serviceCategories,
+				services,
 			}
 		} catch (err) {
 			error({ statusCode: 404 })

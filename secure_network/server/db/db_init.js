@@ -42,14 +42,14 @@ function refinePeople(items) {
 	})
 }
 
-function refineRes(items) {
+function refineArticles(items) {
 	items.forEach((item) => {
 		const d = new Date(item.date)
 		const month = d.toLocaleString('EN', { month: 'long' }).toLowerCase()
 		const day = d.getDate()
 		const year = d.getFullYear()
 		item.id = month + '-' + day
-		item.path = '/resources/' + year + '/' + item.id
+		item.path = '/articles/' + year + '/' + item.id
 		item.icon = item.type == 'research' ? 'science' : 'feed'
 	})
 }
@@ -774,7 +774,7 @@ const p_s = [
 	},
 ]
 
-const res = [
+const art = [
 	{
 		type: 'research',
 		date: '2020-08-05',
@@ -1014,5 +1014,5 @@ export const areas = ars
 
 export const person_service = p_s
 
-refineRes(res)
-export const resources = res
+refineArticles(art)
+export const articles = art

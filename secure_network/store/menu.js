@@ -14,8 +14,8 @@ export const state = () => {
 				path: '/team',
 			},
 			{
-				name: 'Resources',
-				path: '/resources',
+				name: 'Articles',
+				path: '/articles',
 			},
 			{
 				name: 'About',

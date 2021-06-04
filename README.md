@@ -67,7 +67,7 @@ The frontend has been developed as VueJS app, using the NuxtJS framework.
 
 -   `PersonCard.vue` is used to show syntetized information about a person. It contains the profile picture, the name and the surname of the subject. Props: 
     - **object:** the person object whose name and surname must be displayed. 
--   `ResourceCard.vue` is used to show syntetized information about a given resource. Props: 
+-   `ArticleCard.vue` is used to show syntetized information about a given article. Props: 
     - **object:** the person object whose name and surname must be displayed. 
 -   `ServiceCard.vue` is used to show syntetized information about a given service. Props: 
     - **object:** the service object whose preview must be displayed.
@@ -96,7 +96,7 @@ The frontend has been developed as VueJS app, using the NuxtJS framework.
     - **placeholder:** placeholder of the form field.
     - **name:** identify the name of form field.
     - **type:** used set the type of the nested input element.
--   `TimelineComponent.vue` is used to highlight how many resources, grouped by type, are available for a given year. Props: 
+-   `TimelineComponent.vue` is used to highlight how many articles, grouped by type, are available for a given year. Props: 
     - **year:** year modeled by the component.
     - **types:** array of objects, each of which contains a type and the number of elements of that type, considering the given year.
     - **path:** path passed to the embedded ButtonComponent.
@@ -121,7 +121,7 @@ The frontend has been developed as VueJS app, using the NuxtJS framework.
     - **containsLink:** boolen flag used to enable or disable the v-html directive, to reduce the exposure windows of the directive.
     - **button:** optional button object to be used for the instantiation of a ButtonComponent.
     - **centered:** boolen flag used to determine whether or not the text must be centered.
--   `FilterSection.vue` is a section which allow the user to filter resources by type. It contains one button component to see all the resources and one button component for each type of resource present. Props: 
+-   `FilterSection.vue` is a section which allow the user to filter articles by type. It contains one button component to see all the articles and one button component for each type of article present. Props: 
      - **title:** title of the section.
      - **wrapper:** identify the name of the page that wraps the component, used to generate unique names for :key directive.
      - **buttons:** array of button objects to be used for the instantiation of at most 3 ButtonComponents.
@@ -196,14 +196,14 @@ The frontend has been developed as VueJS app, using the NuxtJS framework.
      - *AltSection*
      - *GridSection*
      - *ImageComponentsSection*
--   `resources/index.vue` is the introductory page all Resources grouped and counted by year and type. Components: 
+-   `articles/index.vue` is the introductory page all Articles grouped and counted by year and type. Components: 
      - *MainSection*
      - *TimelineSection*
--   `resources/_year/index.vue` is the introductory page all Resources by year the given year. Components: 
+-   `articles/_year/index.vue` is the introductory page all Articles by year the given year. Components: 
      - *MainSection*
      - *FilterSection*
      - *GridSection*
--   `resources/_year/_id.vue` is the introductory page of the given resource. Components: 
+-   `articles/_year/_id.vue` is the introductory page of the given article. Components: 
      - *MainSection*
      - *AltSection*
 -   `services/index.vue` is the introductory page all Services. Components: 

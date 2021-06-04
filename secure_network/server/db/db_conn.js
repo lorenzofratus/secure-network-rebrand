@@ -15,7 +15,7 @@ import {
 	people,
 	areas,
 	person_service,
-	resources,
+	articles,
 } from './db_init.js'
 
 // Required to read information from the env also in development mode
@@ -115,8 +115,8 @@ function defineDatabaseStructure() {
 		{ sequelize: db, modelName: 'area' }
 	)
 
-	class Resource extends Model {}
-	Resource.init(
+	class Article extends Model {}
+	Article.init(
 		{
 			id: {
 				type: DataTypes.STRING,
@@ -131,7 +131,7 @@ function defineDatabaseStructure() {
 			icon: DataTypes.STRING,
 			subtitle: DataTypes.STRING,
 		},
-		{ sequelize: db, modelName: 'resource' }
+		{ sequelize: db, modelName: 'article' }
 	)
 
 	const PersonService = db.define(
@@ -165,7 +165,7 @@ function defineDatabaseStructure() {
 		Person,
 		Area,
 		PersonService,
-		Resource,
+		Article,
 	}
 }
 
@@ -177,14 +177,14 @@ async function insertTables(dev) {
 			Person,
 			Area,
 			PersonService,
-			Resource,
+			Article,
 		} = db._tables
 		await insertItems(Area, areas)
 		await insertItems(ServiceCategory, service_categories)
 		await insertItems(Service, services)
 		await insertItems(Person, people)
 		await insertItems(PersonService, person_service)
-		await insertItems(Resource, resources)
+		await insertItems(Article, articles)
 	}
 }
 

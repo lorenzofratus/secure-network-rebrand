@@ -1,9 +1,9 @@
 <!--
  * Copyright (c) 2021
  *
- * A ResourceCard is used to show syntetized information about a given resource.
+ * A ArticleCard is used to show syntetized information about a given article.
  *
- * @prop object: the resource object whose title and icon must be displayed.
+ * @prop object: the article object whose title and icon must be displayed.
  * @author Lorenzo Fratus 
  * @author Simone Orlando 
  * @author Cristian C. Spagnuolo 

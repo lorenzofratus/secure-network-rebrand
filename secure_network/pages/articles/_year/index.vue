@@ -1,8 +1,8 @@
 <!--
  * Copyright (c) 2021
  *
- * This is the introductory page all Resources by year the given year.
- * You can filter resources by type.
+ * This is the introductory page all Articles by year the given year.
+ * You can filter articles by type.
  *
  * @author Lorenzo Fratus 
  * @author Simone Orlando 
@@ -18,18 +18,18 @@
 			:wrapper="wrapper + year"
 		/>
 		<filter-section
-			title="Filter Resources By"
+			title="Filter Articles By"
 			:buttons="types"
 			:wrapper="wrapper + year"
 			@filter="changeFilter"
 		/>
 		<grid-section
-			id="resources"
+			id="articles"
 			:wrapper="wrapper + '-' + year"
-			child="resource-card"
-			:elements="resources"
-			type="resource"
-			class="resources"
+			child="article-card"
+			:elements="articles"
+			type="article"
+			class="articles"
 			:class="[filterClass, { animating: animating }]"
 		/>
 	</main>
@@ -53,30 +53,30 @@ export default {
 	async asyncData({ $axios, route, error }) {
 		try {
 			const { year } = route.params
-			// Retrieve all resources of the given year from the database
+			// Retrieve all articles of the given year from the database
 			const { data } = await $axios.get(
-				`${process.env.BASE_URL}/api/resources-by-year/${year}`
+				`${process.env.BASE_URL}/api/articles-by-year/${year}`
 			)
-			const resources = data
-			if (!resources.length) {
+			const articles = data
+			if (!articles.length) {
 				throw error({ statusCode: 404 })
 			}
-			return { resources, year }
+			return { articles, year }
 		} catch (err) {
 			error({ statusCode: 404 })
 		}
 	},
 	data() {
 		return {
-			wrapper: 'resources-of-',
+			wrapper: 'articles-of-',
 			main_section: {
-				title: 'All Resources of ',
-				img: '/images/covers/resources.svg',
+				title: 'All Articles of ',
+				img: '/images/covers/articles.svg',
 				buttons: [
 					{
-						text: 'See Resources',
+						text: 'See Articles',
 						class: 'primary',
-						path: '#resources',
+						path: '#articles',
 					},
 				],
 			},
@@ -86,7 +86,7 @@ export default {
 	},
 	head() {
 		return {
-			title: 'Resources of ' + this.year + ' | Secure Network',
+			title: 'Articles of ' + this.year + ' | Secure Network',
 		}
 	},
 	computed: {
@@ -95,7 +95,7 @@ export default {
 		// See what happens in year 2021 (no research available) and in year 2018 (no news available).
 		types() {
 			const types = [{ text: 'All Types', filter: '' }]
-			let fetched = this.resources.map((resource) => resource.type)
+			let fetched = this.articles.map((article) => article.type)
 			fetched = [...new Set(fetched)].sort()
 			fetched.forEach((type) =>
 				types.push({
@@ -105,15 +105,15 @@ export default {
 			)
 			return types
 		},
-		// Gets the class to be set to each card in order to make the filter work, depends on the type of resource
+		// Gets the class to be set to each card in order to make the filter work, depends on the type of article
 		filterClass() {
 			return this.types[this.activeFilter].filter
 		},
 	},
 	methods: {
-		// Performs resource filtering
+		// Performs article filtering
 		changeFilter(index) {
-			// Animating set to true until the end of the animation to fade out the old resources and in the new
+			// Animating set to true until the end of the animation to fade out the old articles and in the new
 			this.animating = true
 			setTimeout(() => {
 				// End of the animation
@@ -126,15 +126,15 @@ export default {
 </script>
 
 <style scoped>
-.resources {
+.articles {
 	opacity: 1;
 	transition: 0.35s opacity ease-in-out;
 }
-.resources.animating {
+.articles.animating {
 	opacity: 0;
 }
-.resources.research /deep/ .box:not(.research-box),
-.resources.news /deep/ .box:not(.news-box) {
+.articles.research /deep/ .box:not(.research-box),
+.articles.news /deep/ .box:not(.news-box) {
 	display: none;
 }
 </style>

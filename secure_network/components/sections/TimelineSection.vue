@@ -23,7 +23,7 @@
 				:key="'timeline-section-item-' + index + '-' + wrapper"
 				:wrapper="wrapper"
 				:year="year.year"
-				:types="resourceTypes[year.year]"
+				:types="articleTypes[year.year]"
 				:path="year.path"
 			/>
 		</div>
@@ -50,9 +50,9 @@ export default {
 		/*
 		 *	This computed property allow to parse information retrieved by the
 		 *	backend in such a way the timeline component can display dinamically
-		 *	the number of resources of each type.
+		 *	the number of articles of each type.
 		 */
-		resourceTypes() {
+		articleTypes() {
 			const yearTypes = {}
 			for (const year of this.years) {
 				yearTypes[year.year] = [

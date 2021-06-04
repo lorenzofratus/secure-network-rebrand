@@ -222,13 +222,13 @@ In this section we report the P-IDM diagram which describes the navigation desig
 	\caption{Commented wireframes for the Service page.}
 \end{figure}
 
-\subsection{Kind of Topic: Resource}
+\subsection{Kind of Topic: Article}
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.45\textwidth]{low_fid_wireframes/resource/1.png}
-	\includegraphics[width=0.45\textwidth]{low_fid_wireframes/resource/2.png}
-	\caption{Commented wireframes for the Resources page.}
+	\includegraphics[width=0.45\textwidth]{low_fid_wireframes/article/1.png}
+	\includegraphics[width=0.45\textwidth]{low_fid_wireframes/article/2.png}
+	\caption{Commented wireframes for the Articles page.}
 \end{figure}
 
 \subsection{Group: Areas}
@@ -250,13 +250,13 @@ In this section we report the P-IDM diagram which describes the navigation desig
 	\caption{Commented wireframes for the Team page.}
 \end{figure}
 
-\subsection{Group: Resources}
+\subsection{Group: Articles}
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.45\textwidth]{low_fid_wireframes/all_resources/1.png}
-	\includegraphics[width=0.45\textwidth]{low_fid_wireframes/all_resources/2.png}
-	\caption{Commented wireframes for the Resources page.}
+	\includegraphics[width=0.45\textwidth]{low_fid_wireframes/all_articles/1.png}
+	\includegraphics[width=0.45\textwidth]{low_fid_wireframes/all_articles/2.png}
+	\caption{Commented wireframes for the Articles page.}
 \end{figure}
 
 \section{High-Fidelity Screenshots}
@@ -313,13 +313,13 @@ In this section we report the P-IDM diagram which describes the navigation desig
 	\caption{Commented screenshots for the Service page.}
 \end{figure}
 
-\subsection{Kind of Topic: Resource}
+\subsection{Kind of Topic: Article}
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.45\textwidth]{high_fid_wireframes/resource/1.png}
-	\includegraphics[width=0.45\textwidth]{high_fid_wireframes/resource/2.png}
-	\caption{Commented screenshots for the Resources page.}
+	\includegraphics[width=0.45\textwidth]{high_fid_wireframes/article/1.png}
+	\includegraphics[width=0.45\textwidth]{high_fid_wireframes/article/2.png}
+	\caption{Commented screenshots for the Articles page.}
 \end{figure}
 
 \subsection{Group: Areas}
@@ -341,13 +341,13 @@ In this section we report the P-IDM diagram which describes the navigation desig
 	\caption{Commented screenshots for the Team page.}
 \end{figure}
 
-\subsection{Group: Resources}
+\subsection{Group: Articles}
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.45\textwidth]{high_fid_wireframes/all_resources/1.png}
-	\includegraphics[width=0.45\textwidth]{high_fid_wireframes/all_resources/2.png}
-	\caption{Commented screenshots for the Resources page.}
+	\includegraphics[width=0.45\textwidth]{high_fid_wireframes/all_articles/1.png}
+	\includegraphics[width=0.45\textwidth]{high_fid_wireframes/all_articles/2.png}
+	\caption{Commented screenshots for the Articles page.}
 \end{figure}
 
 \chapter{Interaction Scenarios}
@@ -429,10 +429,10 @@ One of his students would really like to read it so she visits to the website of
 \\
 \noindent
 Right on the \emph{Home} page, she finds some of the latest news and she spots one about his professor that she wants to read.
-After reading that article, she goes back to the \emph{Resources} page using the breadcrumbs on top and she selects the year \emph{2017}.
+After reading that article, she goes back to the \emph{Articles} page using the breadcrumbs on top and she selects the year \emph{2017}.
 \\
 \noindent
-Once on the year page, she filters the resources to see only the news and then she finds the interview that she was looking for.
+Once on the year page, she filters the articles to see only the news and then she finds the interview that she was looking for.
 
 \begin{figure}[H]
 	\centering
@@ -495,7 +495,7 @@ support the implementation.
 	identified by an autoincremental \texttt{id} and presents a boolean field, \texttt{isReference}, 
 	which states whether or not the \emph{Person}, identified by the foreign key \texttt{person\_id}, 
 	is the reference for the \emph{Service}, identified by the foreign key \texttt{service\_id}.
-	\item \textbf{Resource}. A \emph{Resource} is identified by an \texttt{id}, has a 
+	\item \textbf{Article}. A \emph{Article} is identified by an \texttt{id}, has a 
 	\texttt{type}, a \texttt{name}, a \texttt{date}, a \texttt{text} description, a \texttt{subtitle} 
 	a string path to the \texttt{icon}, and a \texttt{path} to reach the specific page. 
 \end{itemize}

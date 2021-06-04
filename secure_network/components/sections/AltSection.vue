@@ -23,7 +23,7 @@
 	>
 		<div class="content">
 			<h2 class="spacer">{{ title }}</h2>
-			<!-- v-html directive is highly insecure but was the cleanest way to display external links used in the resource page.
+			<!-- v-html directive is highly insecure but was the cleanest way to display external links used in the article page.
 				 As v-html is needed only in that specific case, we preferred to use the containsLink prop to mitigate the vulnerability.
 				 In this way we use it only when it is strictly necessary. -->
 			<div v-if="paragraphs && !containsLink" class="paragraphs">
