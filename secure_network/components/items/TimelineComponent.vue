@@ -88,6 +88,7 @@ export default {
 }
 .timeline-item .count b {
 	font-weight: var(--h1-font-weight);
+	min-width: 0.8em;
 
 	padding: 0 0.5em 0 0;
 }
@@ -124,6 +125,7 @@ export default {
 @media screen and (min-width: 786px) {
 	.timeline-item .content {
 		width: auto;
+		padding-bottom: 0;
 	}
 	.timeline-item:nth-of-type(odd) .content {
 		margin: 0 0 0 auto;

@@ -48,16 +48,6 @@ export default {
 			default: '',
 		},
 	},
-	computed: {
-		// Simple method that cuts the paragraph to "count" words and adds ellipsis
-		abstract() {
-			const count = 15
-			let words = this.object.text.split(/\s|\n/)
-			if (words.length <= count) return words.join(' ')
-			words = words.splice(0, count)
-			return words.join(' ') + ' ...'
-		},
-	},
 }
 </script>
 
