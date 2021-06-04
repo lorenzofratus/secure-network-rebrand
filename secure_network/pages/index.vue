@@ -27,10 +27,10 @@
 			id="news"
 			:wrapper="wrapper"
 			title="Latest News"
-			child="resource-card"
-			:elements="resources"
-			type="resource"
-			class="resources"
+			child="article-card"
+			:elements="articles"
+			type="article"
+			class="articles"
 			:button="news_section.button"
 		/>
 		<grid-section
@@ -67,8 +67,8 @@ export default {
 			const { data } = await $axios.get(
 				`${process.env.BASE_URL}/api/last-news/${n}`
 			)
-			const resources = data
-			return { resources }
+			const articles = data
+			return { articles }
 		} catch (err) {
 			error({ statusCode: 500 })
 		}
@@ -109,8 +109,8 @@ export default {
 			news_section: {
 				button: {
 					class: 'secondary',
-					text: 'All Resources',
-					path: '/resources',
+					text: 'All Articles',
+					path: '/articles',
 				},
 			},
 		}

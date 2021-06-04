@@ -1,7 +1,7 @@
 <!--
  * Copyright (c) 2021
  *
- * A TimelineComponent is used to highlight how many resources, grouped by type, 
+ * A TimelineComponent is used to highlight how many articles, grouped by type, 
  * are available for a given year.
  *
  * @prop wrapper: identify the name of the page that wraps the component, used to generate unique names for :key directive.
@@ -18,7 +18,7 @@
 			<h3 class="year h1">{{ year }}</h3>
 			<div
 				v-for="(type, index) in types"
-				:key="'resource-type-' + index + '-' + wrapper"
+				:key="'article-type-' + index + '-' + wrapper"
 				class="count h3"
 			>
 				<b>{{ type.count }}</b> {{ type.name }}

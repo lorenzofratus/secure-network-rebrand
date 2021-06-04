@@ -17,7 +17,7 @@ app.use(express.json())
 
 async function init() {
 	const db = await initializeDatabase()
-	const { ServiceCategory, Service, Person, Area, PersonService, Resource } =
+	const { ServiceCategory, Service, Person, Area, PersonService, Article } =
 		db._tables
 	const { Op } = require('sequelize')
 	const sequelize = require('sequelize')
@@ -60,25 +60,39 @@ async function init() {
 		return res.json(await Area.findByPk(area))
 	})
 
-	app.get('/resources/:id', async (req, res) => {
+	app.get('/articles/:id', async (req, res) => {
 		const { id } = req.params
-		return res.json(await Resource.findByPk(id))
+		return res.json(await Article.findByPk(id))
 	})
 
-	app.get('/resources-by-year/:year', async (req, res) => {
+	app.get('/services-by-area/:area', async (req, res) => {
+		const { area } = req.params
+		const cat_ids = await Service.findAll({
+			where: { area_id: area },
+			order: ['category_id', 'id'],
+		})
+
+		cat_ids.forEach((item) => {
+			item.dataValues.tag = item.dataValues.category_id.replace(/-/g, ' ')
+		})
+
+		return res.json(cat_ids)
+	})
+
+	app.get('/articles-by-year/:year', async (req, res) => {
 		const { year } = req.params
 		const literal_str = 'extract(YEAR FROM date) = ' + year
-		const payload = await Resource.findAll({
+		const payload = await Article.findAll({
 			where: sequelize.literal(literal_str),
 		})
-		const resources = []
+		const articles = []
 		payload.forEach((item) => {
 			const id_arr = item.dataValues.id.split('-')
 			const title = ('0' + id_arr[1]).slice(-2) + ' ' + id_arr[0]
 			item.dataValues.title = title
-			resources.push(item.dataValues)
+			articles.push(item.dataValues)
 		})
-		return res.json(resources)
+		return res.json(articles)
 	})
 
 	// Specific queries
@@ -140,12 +154,12 @@ async function init() {
 
 	app.get('/last-news/:n', async (req, res) => {
 		const { n } = req.params
-		const payload = await Resource.findAll({
+		const payload = await Article.findAll({
 			limit: n,
 			where: { type: 'news' },
 			order: [['date', 'DESC']],
 		})
-		const resources = []
+		const articles = []
 		let date
 		payload.forEach((item) => {
 			const id_arr = item.dataValues.id.split('-')
@@ -156,9 +170,9 @@ async function init() {
 				date.toLocaleString('EN', { month: 'long' }) +
 				' ' +
 				date.getFullYear()
-			resources.push(item.dataValues)
+			articles.push(item.dataValues)
 		})
-		return res.json(resources)
+		return res.json(articles)
 	})
 
 	// Joined queries
@@ -232,14 +246,14 @@ async function init() {
 	})
 
 	// Aggregate queries
-	app.get('/resources-aggregation/', async (req, res) => {
-		const payload = await Resource.findAll({
+	app.get('/articles-aggregation/', async (req, res) => {
+		const payload = await Article.findAll({
 			attributes: [
 				[sequelize.literal('extract(YEAR FROM date)'), 'year'],
 				'type',
 				[sequelize.fn('COUNT', sequelize.col('*')), 'count'],
 			],
-			group: ['year', 'resource.type'],
+			group: ['year', 'article.type'],
 		})
 
 		const r = {}
@@ -253,7 +267,7 @@ async function init() {
 			}
 			r[year][type] = +count
 		})
-		const resources = []
+		const articles = []
 		for (const prop in r) {
 			if (r[prop].news == null) {
 				r[prop].news = 0
@@ -261,10 +275,10 @@ async function init() {
 			if (r[prop].research == null) {
 				r[prop].research = 0
 			}
-			r[prop].path = '/resources/' + r[prop].year
-			resources.unshift(r[prop])
+			r[prop].path = '/articles/' + r[prop].year
+			articles.unshift(r[prop])
 		}
-		return res.json(resources)
+		return res.json(articles)
 	})
 }
 

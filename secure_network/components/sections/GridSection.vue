@@ -43,7 +43,7 @@
 
 <script>
 import TitleComponent from '~/components/items/TitleComponent.vue'
-import ResourceCard from '~/components/cards/ResourceCard.vue'
+import ArticleCard from '~/components/cards/ArticleCard.vue'
 import PersonCard from '~/components/cards/PersonCard.vue'
 import ServiceCard from '~/components/cards/ServiceCard.vue'
 import ThreatCard from '~/components/cards/ThreatCard.vue'
@@ -51,7 +51,7 @@ import ButtonComponent from '~/components/items/ButtonComponent.vue'
 export default {
 	components: {
 		TitleComponent,
-		ResourceCard,
+		ArticleCard,
 		PersonCard,
 		ServiceCard,
 		ThreatCard,

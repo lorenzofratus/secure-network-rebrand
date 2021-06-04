@@ -1,7 +1,7 @@
 <!--
  * Copyright (c) 2021
  *
- * This is the introductory page of the given resource.
+ * This is the introductory page of the given article.
  *
  * @author Lorenzo Fratus 
  * @author Simone Orlando 
@@ -10,16 +10,16 @@
 <template>
 	<main class="container">
 		<main-section
-			:img="resource.img"
-			:title="resource.title"
-			:subtitle="resource.subtitle"
-			:wrapper="resource.id"
+			:img="article.img"
+			:title="article.title"
+			:subtitle="article.subtitle"
+			:wrapper="article.id"
 		/>
 		<alt-section
-			:title="resource.name"
-			:paragraphs="resource.paragraphs"
+			:title="article.name"
+			:paragraphs="article.paragraphs"
 			:contains-link="true"
-			:wrapper="resource.id"
+			:wrapper="article.id"
 		/>
 	</main>
 </template>
@@ -40,29 +40,29 @@ export default {
 	async asyncData({ $axios, route, error }) {
 		try {
 			const { id } = route.params
-			// Retrieve the given resource from the database
+			// Retrieve the given article from the database
 			const { data } = await $axios.get(
-				`${process.env.BASE_URL}/api/resources/${id}`
+				`${process.env.BASE_URL}/api/articles/${id}`
 			)
-			const resource = data
+			const article = data
 			// Perform some processing operations on the date to better display it
-			const date = new Date(resource.date)
+			const date = new Date(article.date)
 			const year = date.getFullYear()
-			resource.title =
+			article.title =
 				('0' + date.getDate()).slice(-2) +
 				' ' +
 				date.toLocaleString('EN', { month: 'long' }) +
 				' ' +
 				year
 
-			// Split the resource.text property in order to get several paragraphs.
-			resource.paragraphs = resource.text.split('\n')
+			// Split the article.text property in order to get several paragraphs.
+			article.paragraphs = article.text.split('\n')
 
-			// Compute the path of the image of the given resource.
-			// Each resource of the same type will display the same image in the MainSection.
-			resource.img = '/images/covers/' + resource.type + '.svg'
+			// Compute the path of the image of the given article.
+			// Each article of the same type will display the same image in the MainSection.
+			article.img = '/images/covers/' + article.type + '.svg'
 
-			return { resource }
+			return { article }
 		} catch (err) {
 			error({ statusCode: 404 })
 		}
@@ -76,7 +76,7 @@ export default {
 	},
 	head() {
 		return {
-			title: this.resource.title + ' | Secure Network',
+			title: this.article.title + ' | Secure Network',
 		}
 	},
 }

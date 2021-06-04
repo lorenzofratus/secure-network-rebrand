@@ -1,9 +1,9 @@
 <!--
  * Copyright (c) 2021
  *
- * A FilterSection is a section which allow the user to filter resources by type. 
- * It contains one button component to see all the resources and one button component 
- * for each type of resource present.
+ * A FilterSection is a section which allow the user to filter articles by type. 
+ * It contains one button component to see all the articles and one button component 
+ * for each type of article present.
  *
  * @prop title: title of the section.
  * @prop wrapper: identify the name of the page that wraps the component, used to generate unique names for :key directive.

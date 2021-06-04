@@ -21,6 +21,7 @@
 		<span v-else class="icon material-icons">{{ object.img }}</span>
 		<div class="text">
 			<span v-if="object.isReference" class="h4 tag">Reference for</span>
+			<span v-if="object.tag" class="h4 tag">{{ object.tag }}</span>
 			<h3 class="spacer">{{ object.name }}</h3>
 			<p class="centered-text">
 				{{ abstract }}

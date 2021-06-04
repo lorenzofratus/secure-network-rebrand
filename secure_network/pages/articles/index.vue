@@ -1,7 +1,7 @@
 <!--
  * Copyright (c) 2021
  *
- * This is the introductory page all Resources grouped and counted by year and type.
+ * This is the introductory page all Articles grouped and counted by year and type.
  *
  * @author Lorenzo Fratus 
  * @author Simone Orlando 
@@ -34,10 +34,10 @@ export default {
 	 */
 	async asyncData({ $axios, error }) {
 		try {
-			// Retrieve aggregated information about resources, grouped and counted by year and type from the database
+			// Retrieve aggregated information about articles, grouped and counted by year and type from the database
 			// This is the most complex query implemented.
 			const { data } = await $axios.get(
-				`${process.env.BASE_URL}/api/resources-aggregation`
+				`${process.env.BASE_URL}/api/articles-aggregation`
 			)
 			const years = data
 			return {
@@ -49,16 +49,16 @@ export default {
 	},
 	data() {
 		return {
-			wrapper: 'resources',
+			wrapper: 'articles',
 			main_section: {
-				title: 'All Our Resources Year By Year',
-				img: '/images/covers/resources.svg',
+				title: 'All Our Articles Year By Year',
+				img: '/images/covers/articles.svg',
 			},
 		}
 	},
 	head() {
 		return {
-			title: 'Resources | Secure Network',
+			title: 'Articles | Secure Network',
 		}
 	},
 }
