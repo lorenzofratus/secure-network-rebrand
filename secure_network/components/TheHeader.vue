@@ -29,6 +29,7 @@
 				</div>
 			</div>
 		</nav>
+
 		<div class="shadow"></div>
 	</header>
 </template>
@@ -63,7 +64,7 @@ export default {
 	top: 0;
 	left: 0;
 	width: 100vw;
-	z-index: 2;
+	z-index: 3;
 	background-color: var(--background);
 	transform-style: preserve-3d;
 }

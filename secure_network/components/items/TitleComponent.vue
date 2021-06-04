@@ -10,7 +10,7 @@
  * @author Cristian C. Spagnuolo 
  -->
 <template>
-	<div class="content">
+	<div class="title-section content">
 		<h2 class="spacer" :class="{ 'big-margin': text == '' }">
 			{{ title }}
 		</h2>

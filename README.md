@@ -130,18 +130,21 @@ The frontend has been developed as VueJS app, using the NuxtJS framework.
     - **wrapper:** identify the name of the page that wraps the component, used to generate unique names for :key directive.
 -   `GridSection.vue` is a section which allow to visualize cards of different types. It has a wide usage within the website in order to show all previews of a given collection of elements. Props: 
     - **wrapper:** identify the name of the page that wraps the component, used to generate unique names for :key directive.
-    - **small:** used to set the css class of the component.
+    - **small:** used to modify the minimum width of the columns of the grid.
+    - **wide:** used to modify the maximum width of the grid.
     - **title:** title of the section.
     - **child:** string used to set the :is property of the <component> element. This allow to use the same section for each type of inner component.
     - **elements:** array of element object whose preview will be displayed.
     - **type:** used to append a different label to the displayed button. Introduced to increase SEO.
     - **button:** optional button object to be used for the instantiation of a ButtonComponent. 
+    - **alt:** used to define if the section must have the default or the alternative style.
 -   `ImageComponentsSection.vue` is a section which lists a group of ImageComponents. It can be used either to display Areas or People which have a significant role within the given context. Props: 
     - **title:** title of the component.
     - **type:** used to append a different label to the displayed button. Introduced to increase SEO.
     - **wrapper:** identify the name of the page that wraps the component, used to generate unique names for :key directive.
     - **components:** array of objects, each of which allow the initialization of a different ImageComponent.
     - **rounded:** used to denote whether or not the image should be rounded.
+    - **alt:** used to define if the section must have the default or the alternative style.
 -   `MainSection.vue` is the first section you see in almost each page. It contains a title, optionally both a subtitles and a group of buttons, and an image. It also shows bread crumbs where needed, supporting the implementation of the index pattern. Props: 
     - **title:** title of the component.
     - **subtitle:** subtitle of the component.
@@ -150,7 +153,6 @@ The frontend has been developed as VueJS app, using the NuxtJS framework.
     - **img:** url of the displayed image.
     - **wrapper:** identify the name of the page that wraps the component, used to generate unique names for :key directive.
     - **rounded:** used to denote whether or not the image should be rounded.
-    - **showBreadcrumb:** boolean flag to determined whether or not breadcrumbs must be shown on the given page.
 -   `TimelineSection.vue` is the section which shows a list of TimelineComponents. Props: 
     - **wrapper:** identify the name of the page that wraps the component, used to generate unique names for :key directive.
     - **year:** year modeled by the component.

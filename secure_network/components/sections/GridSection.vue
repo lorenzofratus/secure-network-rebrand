@@ -6,22 +6,32 @@
  * collection of elements.
  *
  * @prop wrapper: identify the name of the page that wraps the component, used to generate unique names for :key directive.
- * @prop small: used to set the css class of the component.
+ * @prop small: used to modify the minimum width of the columns of the grid.
+ * @prop wide: used to modify the maximum width of the grid.
  * @prop title: title of the section.
  * @prop child: string used to set the :is property of the <component> element. This allow to use the same section for each type of inner component.
  * @prop elements: array of element object whose preview will be displayed.
  * @prop type: used to append a different label to the displayed button. Introduced to increase SEO.
  * @prop button: optional button object to be used for the instantiation of a ButtonComponent. 
+ * @prop alt: used to define if the section must have the default or the alternative style.
  * @author Lorenzo Fratus 
  * @author Simone Orlando 
  * @author Cristian C. Spagnuolo 
  -->
 <template>
-	<section>
+	<section
+		:class="{
+			'alt-section': alt,
+			'wave-before': alt,
+			'wave-after': alt,
+			'wave-convex-alt': alt,
+			'wave-concave-alt': alt,
+		}"
+	>
 		<title-component v-if="title != ''" :title="title" />
 		<div
 			class="content grid"
-			:class="{ small: small, 'with-button': button }"
+			:class="{ small: small, wide: wide, 'with-button': button }"
 		>
 			<!-- This component can be any card, depending on the child prop -->
 			<component
@@ -67,6 +77,11 @@ export default {
 			required: false,
 			default: false,
 		},
+		wide: {
+			type: Boolean,
+			required: false,
+			default: false,
+		},
 		title: {
 			type: String,
 			required: false,
@@ -91,6 +106,11 @@ export default {
 			default() {
 				return null
 			},
+		},
+		alt: {
+			type: Boolean,
+			required: false,
+			default: false,
 		},
 	},
 }

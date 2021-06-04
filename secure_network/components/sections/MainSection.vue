@@ -12,35 +12,33 @@
  * @prop img: url of the displayed image.
  * @prop wrapper: identify the name of the page that wraps the component, used to generate unique names for :key directive.
  * @prop rounded: used to denote whether or not the image should be rounded.
- * @prop showBreadcrumb: boolean flag to determined whether or not breadcrumbs must be shown on the given page.
  * @author Lorenzo Fratus 
  * @author Simone Orlando 
  * @author Cristian C. Spagnuolo 
  -->
 <template>
 	<div class="wrapper">
+		<div v-if="breadcrumbs.length" class="sub-nav">
+			<h4 class="breadcrumbs">
+				<span
+					v-for="(link, index) in breadcrumbs"
+					:key="'breadcrumb-' + index"
+				>
+					<!-- Divider skipped at the first iteration of the loop -->
+					<span v-if="index != 0"> &gt; </span>
+					<!-- Last one is highlighted with a different color -->
+					<nuxt-link
+						:to="link.path"
+						class="link"
+						:class="{ last: index == breadcrumbs.length - 1 }"
+					>
+						{{ link.text }}
+					</nuxt-link>
+				</span>
+			</h4>
+		</div>
 		<div class="header">
 			<div class="content">
-				<h4
-					v-if="showBreadcrumb && breadcrumbs.length"
-					class="breadcrumbs"
-				>
-					<span
-						v-for="(link, index) in breadcrumbs"
-						:key="wrapper + '-' + index"
-					>
-						<!-- Divider skipped at the first iteration of the loop -->
-						<span v-if="index != 0"> &gt; </span>
-						<!-- Last one is highlighted with a different color -->
-						<nuxt-link
-							:to="link.path"
-							class="link"
-							:class="{ last: index == breadcrumbs.length - 1 }"
-						>
-							{{ link.text }}
-						</nuxt-link>
-					</span>
-				</h4>
 				<h1 class="title">{{ title }}</h1>
 				<h2 v-if="subtitle" class="h3 subtitle">{{ subtitle }}</h2>
 				<div v-if="buttons.length" class="buttons">
@@ -101,11 +99,6 @@ export default {
 			required: false,
 			default: false,
 		},
-		showBreadcrumb: {
-			type: Boolean,
-			required: false,
-			default: true,
-		},
 	},
 	computed: {
 		breadcrumbs() {
@@ -114,16 +107,19 @@ export default {
 			// Remove the host part
 			steps.shift()
 			// Remove current page
-			steps.pop()
+			// steps.pop()
 
 			const breadcrumbs = []
 			steps.forEach((step, index) => {
-				breadcrumbs.push({
+				const breadcrumb = {
 					// Replace hyphens with spaces
 					text: step.replace(/-/g, ' '),
 					// Incrementally builds the path of the single breadcrumb link
 					path: '/' + steps.slice(0, index + 1).join('/'),
-				})
+				}
+				if (breadcrumb.text !== '') {
+					breadcrumbs.push(breadcrumb)
+				}
 			})
 
 			return breadcrumbs
@@ -133,18 +129,41 @@ export default {
 </script>
 
 <style scoped>
+.sub-nav {
+	position: fixed;
+	top: var(--nav-height);
+	left: 0;
+	width: 100vw;
+	z-index: 2;
+	background-color: var(--background);
+	transform-style: preserve-3d;
+}
+.sub-nav .breadcrumbs {
+	width: 100%;
+	max-width: var(--app);
+	height: var(--sub-nav-height);
+	margin: 0 auto;
+	padding: 0.5em 3em;
+	box-sizing: border-box;
+}
+
+.breadcrumbs {
+	margin: 0;
+}
+
 .breadcrumbs .link {
 	text-transform: capitalize;
 	margin: 0;
 	color: var(--dark-color);
 	text-decoration: none;
+	line-height: 1.5em;
 }
 .breadcrumbs .link.last {
 	color: var(--primary-color);
 }
 
 .header {
-	min-height: 50vh;
+	min-height: 35vh;
 	max-width: var(--page);
 	margin: 4em auto;
 	padding: 0 var(--padding);
@@ -155,29 +174,45 @@ export default {
 }
 .header > * {
 	flex: 1 1 auto;
-	max-width: var(--half-page);
 	margin: 0 auto;
+}
+
+.header .content {
+	min-width: 50%;
+	max-width: var(--half-page-large);
 }
 
 .header .title {
 	text-transform: capitalize;
+	margin: 15px 0;
 }
+.header .subtitle {
+	margin: 15px 0 25px;
+}
+
 .header .buttons {
 	justify-content: start;
+	max-width: var(--half-page);
 }
+
 .header .cover {
 	display: block;
 	padding: 5%;
 	box-sizing: border-box;
 	height: auto;
 	width: 100%;
+	max-width: var(--half-page-small);
 }
-
-.header .content {
-	min-width: 50%;
-}
-
-.header .rounded {
+.header .cover.rounded {
 	border-radius: 50%;
+}
+
+@media screen and (max-width: 855px) {
+	.header .content {
+		text-align: center;
+	}
+	.header .buttons {
+		margin: 0 auto;
+	}
 }
 </style>

@@ -23,6 +23,7 @@
 		<grid-section
 			id="services"
 			:wrapper="area.id"
+			:wide="true"
 			title="Provided Services"
 			child="service-card"
 			:elements="services"
@@ -30,7 +31,8 @@
 		/>
 		<image-components-section
 			id="team"
-			title="Currently Employing"
+			title="Area Manager"
+			:alt="true"
 			:components="managers"
 			:wrapper="area.id"
 			:rounded="true"
@@ -38,6 +40,8 @@
 		<grid-section
 			:wrapper="area.id"
 			:small="true"
+			:wide="true"
+			title="Area Team"
 			child="person-card"
 			:elements="people"
 		/>
@@ -83,7 +87,7 @@ export default {
 			)
 			const managers = payload.data
 			// Add to each manager the tag attribute
-			managers.forEach((manager) => (manager.tag = manager.role))
+			// managers.forEach((manager) => (manager.tag = manager.role))
 
 			// Retrieve services offered by this area from the database
 			payload = await $axios.get(

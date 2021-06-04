@@ -20,7 +20,7 @@
 		<div class="content">
 			<!-- The tag prop contains a string that is displayed above the title to add some info -->
 			<span v-if="tag != ''" class="h4 tag">{{ tag }}</span>
-			<h2 class="spacer spacer-small">{{ title }}</h2>
+			<h3 class="title">{{ title }}</h3>
 			<p>{{ abstract }}</p>
 			<button-component
 				:btn-path="btnPath"
@@ -96,10 +96,12 @@ export default {
 </script>
 
 <style scoped>
+.title-section + .sub-section {
+	margin-top: -1em;
+}
 .sub-section {
-	display: block;
 	max-width: var(--page);
-	margin: 0 auto 2.5em;
+	margin: 0 auto 3em;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -109,12 +111,7 @@ export default {
 	margin-bottom: 0;
 }
 .sub-section > * {
-	flex: 0 1 auto;
-	max-width: var(--half-page);
-	margin: 0 auto;
-}
-.sub-section .content {
-	margin: 1em 0;
+	flex: 1 1 0;
 }
 
 .sub-section .tag {
@@ -125,7 +122,10 @@ export default {
 	font-size: var(--btn-font-size);
 	font-weight: var(--btn-font-weight);
 }
-.sub-section .tag ~ .spacer {
+.sub-section .title {
+	font-weight: var(--h2-font-weight);
+}
+.sub-section .tag ~ .title {
 	margin-top: 0.25em;
 }
 
@@ -134,13 +134,16 @@ export default {
 }
 .sub-section .cover {
 	display: block;
-	padding: 5%;
+	padding: 0 5%;
+	margin: 0 auto;
 	box-sizing: border-box;
 	height: auto;
 	width: 100%;
+	max-width: var(--half-page-small);
 }
 .sub-section .content {
-	min-width: 50%;
+	margin: 1em auto;
+	min-width: 53.5%;
 }
 
 .sub-section:nth-of-type(even) {

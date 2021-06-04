@@ -36,6 +36,7 @@
 		<grid-section
 			:wrapper="wrapper"
 			:small="true"
+			:alt="true"
 			child="threat-card"
 			:title="$store.state.threats.title"
 			:elements="$store.state.threats.blocks"

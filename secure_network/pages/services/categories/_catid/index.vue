@@ -24,6 +24,7 @@
 		<grid-section
 			id="services"
 			:wrapper="wrapper"
+			:wide="true"
 			child="service-card"
 			:elements="services"
 			type="service"

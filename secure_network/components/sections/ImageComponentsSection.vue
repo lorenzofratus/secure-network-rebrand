@@ -10,12 +10,21 @@
  * @prop wrapper: identify the name of the page that wraps the component, used to generate unique names for :key directive.
  * @prop components: array of objects, each of which allow the initialization of a different ImageComponent.
  * @prop rounded: used to denote whether or not the image should be rounded.
+ * @prop alt: used to define if the section must have the default or the alternative style.
  * @author Lorenzo Fratus 
  * @author Simone Orlando 
  * @author Cristian C. Spagnuolo 
  -->
 <template>
-	<section>
+	<section
+		:class="{
+			'alt-section': alt,
+			'wave-before': alt,
+			'wave-after': alt,
+			'wave-convex-alt': alt,
+			'wave-concave-alt': alt,
+		}"
+	>
 		<title-component v-if="title != ''" :title="title" />
 		<!-- In title we check if item has a surname because this component can also be used with people -->
 		<image-component
@@ -58,6 +67,11 @@ export default {
 			required: true,
 		},
 		rounded: {
+			type: Boolean,
+			required: false,
+			default: false,
+		},
+		alt: {
 			type: Boolean,
 			required: false,
 			default: false,
