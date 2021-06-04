@@ -18,14 +18,14 @@
  -->
 <template>
 	<div class="wrapper">
-		<div v-if="breadcrumbs.length" class="sub-nav">
+		<div v-if="breadcrumbs.length > 1" class="sub-nav">
 			<h4 class="breadcrumbs">
 				<span
 					v-for="(link, index) in breadcrumbs"
 					:key="'breadcrumb-' + index"
 				>
 					<!-- Divider skipped at the first iteration of the loop -->
-					<span v-if="index != 0"> &gt; </span>
+					<span v-if="index != 0" class="divider"> &gt; </span>
 					<!-- Last one is highlighted with a different color -->
 					<nuxt-link
 						:to="link.path"
@@ -137,18 +137,15 @@ export default {
 	z-index: 2;
 	background-color: var(--background);
 	transform-style: preserve-3d;
+	text-align: center;
 }
 .sub-nav .breadcrumbs {
 	width: 100%;
 	max-width: var(--app);
 	height: var(--sub-nav-height);
 	margin: 0 auto;
-	padding: 0.5em 3em;
+	padding: 0em 3em 0.5em;
 	box-sizing: border-box;
-}
-
-.breadcrumbs {
-	margin: 0;
 }
 
 .breadcrumbs .link {
@@ -157,6 +154,14 @@ export default {
 	color: var(--dark-color);
 	text-decoration: none;
 	line-height: 1.5em;
+}
+.breadcrumbs .link,
+.breadcrumbs .divider {
+	opacity: 0.4;
+	transition: 0.35s opacity ease-in-out;
+}
+.breadcrumbs .link:hover {
+	opacity: 1;
 }
 .breadcrumbs .link.last {
 	color: var(--primary-color);
@@ -205,6 +210,11 @@ export default {
 }
 .header .cover.rounded {
 	border-radius: 50%;
+}
+@media screen and (max-width: 785px) {
+	.sub-nav {
+		display: none;
+	}
 }
 
 @media screen and (max-width: 855px) {

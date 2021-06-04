@@ -6,15 +6,13 @@
  * @author Cristian C. Spagnuolo
  */
 
-/* eslint-disable camelcase */
-
 // Initialization variables
 import {
-	service_categories,
+	serviceCategories,
 	services,
 	people,
 	areas,
-	person_service,
+	personService,
 	articles,
 } from './db_init.js'
 
@@ -180,10 +178,10 @@ async function insertTables(dev) {
 			Article,
 		} = db._tables
 		await insertItems(Area, areas)
-		await insertItems(ServiceCategory, service_categories)
+		await insertItems(ServiceCategory, serviceCategories)
 		await insertItems(Service, services)
 		await insertItems(Person, people)
-		await insertItems(PersonService, person_service)
+		await insertItems(PersonService, personService)
 		await insertItems(Article, articles)
 	}
 }

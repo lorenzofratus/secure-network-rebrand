@@ -51,7 +51,8 @@ export default {
 		return {
 			wrapper: 'articles',
 			main_section: {
-				title: 'All Our Articles Year By Year',
+				title: 'All Our Articles',
+				subtitle: 'Year By Year',
 				img: '/images/covers/articles.svg',
 			},
 		}

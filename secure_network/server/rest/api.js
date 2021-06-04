@@ -67,28 +67,28 @@ async function init() {
 
 	app.get('/services-by-area/:area', async (req, res) => {
 		const { area } = req.params
-		const cat_ids = await Service.findAll({
+		const services = await Service.findAll({
 			where: { area_id: area },
 			order: ['category_id', 'id'],
 		})
 
-		cat_ids.forEach((item) => {
+		services.forEach((item) => {
 			item.dataValues.tag = item.dataValues.category_id.replace(/-/g, ' ')
 		})
 
-		return res.json(cat_ids)
+		return res.json(services)
 	})
 
 	app.get('/articles-by-year/:year', async (req, res) => {
 		const { year } = req.params
-		const literal_str = 'extract(YEAR FROM date) = ' + year
+		const literalStr = 'extract(YEAR FROM date) = ' + year
 		const payload = await Article.findAll({
-			where: sequelize.literal(literal_str),
+			where: sequelize.literal(literalStr),
 		})
 		const articles = []
 		payload.forEach((item) => {
-			const id_arr = item.dataValues.id.split('-')
-			const title = ('0' + id_arr[1]).slice(-2) + ' ' + id_arr[0]
+			const idArr = item.dataValues.id.split('-')
+			const title = ('0' + idArr[1]).slice(-2) + ' ' + idArr[0]
 			item.dataValues.title = title
 			articles.push(item.dataValues)
 		})
@@ -126,7 +126,7 @@ async function init() {
 	app.get('/people-by-role/:role', async (req, res) => {
 		const { role } = req.params
 		return res.json(
-			await Person.findAll({ where: { role: role }, order: ['id'] })
+			await Person.findAll({ where: { role }, order: ['id'] })
 		)
 	})
 
@@ -136,7 +136,7 @@ async function init() {
 			await Person.findAll({
 				where: {
 					area_id: area,
-					role: role,
+					role,
 				},
 				order: ['id'],
 			})
@@ -162,7 +162,6 @@ async function init() {
 		const articles = []
 		let date
 		payload.forEach((item) => {
-			const id_arr = item.dataValues.id.split('-')
 			date = new Date(item.dataValues.date)
 			item.dataValues.title =
 				('0' + date.getDate()).slice(-2) +
@@ -180,16 +179,16 @@ async function init() {
 		const { area } = req.params
 
 		// Retrieving category ids list
-		const cat_ids = await Service.findAll({
+		const catIds = await Service.findAll({
 			attributes: ['category_id'],
 			where: { area_id: area },
 		})
-		const category_ids = []
-		let cat_id
-		cat_ids.forEach((item) => {
-			cat_id = item.dataValues.category_id
-			if (category_ids.indexOf(cat_id) === -1) {
-				category_ids.push(cat_id)
+		const categoryIds = []
+		let catId
+		catIds.forEach((item) => {
+			catId = item.dataValues.category_id
+			if (categoryIds.includes(catId)) {
+				categoryIds.push(catId)
 			}
 		})
 
@@ -198,7 +197,7 @@ async function init() {
 			await ServiceCategory.findAll({
 				where: {
 					id: {
-						[Op.in]: category_ids,
+						[Op.in]: categoryIds,
 					},
 				},
 				order: ['id'],
@@ -212,7 +211,7 @@ async function init() {
 		const payload = await PersonService.findAll({
 			where: {
 				service_id: service,
-				isReference: isReference,
+				isReference,
 			},
 			order: ['person_id'],
 			include: [Person],
@@ -239,6 +238,9 @@ async function init() {
 		payload.forEach((item) => {
 			item.dataValues.service.dataValues.isReference =
 				item.dataValues.isReference
+			item.dataValues.service.dataValues.tag = item.dataValues.isReference
+				? 'reference for'
+				: ''
 			services.push(item.dataValues.service)
 		})
 
