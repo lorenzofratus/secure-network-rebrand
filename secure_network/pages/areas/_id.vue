@@ -23,6 +23,7 @@
 		<grid-section
 			id="services"
 			:wrapper="area.id"
+			:wide="true"
 			title="Provided Services"
 			child="service-card"
 			:elements="services"
