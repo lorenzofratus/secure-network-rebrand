@@ -155,7 +155,7 @@ a:focus {
 .buttons {
 	display: grid;
 	grid-gap: 1em;
-	grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+	grid-template-columns: repeat(auto-fit, minmax(175px, 1fr));
 }
 
 /*** Sections ***/

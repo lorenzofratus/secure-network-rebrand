@@ -50,7 +50,7 @@
 						:btn-text="button.text"
 					/>
 					<!-- Empty div to keep the size of the button consistent when there is only one -->
-					<div v-if="buttons.length == 1" />
+					<div v-if="buttons.length == 1" class="padding" />
 				</div>
 			</div>
 			<img
@@ -175,7 +175,7 @@ export default {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	flex-wrap: wrap-reverse;
+	flex-wrap: nowrap;
 }
 .header > * {
 	flex: 1 1 auto;
@@ -215,14 +215,17 @@ export default {
 	.sub-nav {
 		display: none;
 	}
-}
-
-@media screen and (max-width: 855px) {
+	.header {
+		flex-direction: column-reverse;
+	}
 	.header .content {
 		text-align: center;
 	}
 	.header .buttons {
 		margin: 0 auto;
+	}
+	.header .padding {
+		display: none;
 	}
 }
 </style>
