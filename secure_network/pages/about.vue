@@ -47,8 +47,8 @@ export default {
 		return {
 			wrapper: 'About',
 			main_section: {
-				title: 'About us',
-				subtitle: '',
+				title: 'About our company',
+				subtitle: 'Cybersecurity Experts Since 2004',
 				buttons: [
 					{
 						class: 'primary',

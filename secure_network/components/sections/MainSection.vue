@@ -197,7 +197,8 @@ export default {
 
 .header .buttons {
 	justify-content: start;
-	max-width: var(--half-page);
+	width: var(--half-page);
+	/* max-width: var(--half-page); */
 }
 
 .header .cover {
@@ -222,6 +223,7 @@ export default {
 		text-align: center;
 	}
 	.header .buttons {
+		width: 100%;
 		margin: 0 auto;
 	}
 	.header .padding {
