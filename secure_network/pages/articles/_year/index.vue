@@ -18,6 +18,7 @@
 			:wrapper="wrapper + year"
 		/>
 		<filter-section
+			id="filters"
 			title="Filter Articles By"
 			:buttons="types"
 			:wrapper="wrapper + year"
@@ -119,7 +120,8 @@ export default {
 				// End of the animation
 				this.animating = false
 				this.activeFilter = index
-			}, 500)
+			}, 400)
+			this.$router.push(this.$route.fullPath + '#filters')
 		},
 	},
 }
