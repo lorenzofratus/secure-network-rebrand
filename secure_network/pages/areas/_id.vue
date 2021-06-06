@@ -111,8 +111,8 @@ export default {
 				buttons: [
 					{
 						class: 'primary',
-						text: 'See Categories',
-						path: '#categories',
+						text: 'See Services',
+						path: '#services',
 					},
 					{
 						class: 'secondary',
