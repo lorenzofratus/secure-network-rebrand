@@ -31,7 +31,6 @@
 			:elements="articles"
 			type="article"
 			class="articles"
-			:button="news_section.button"
 		/>
 		<grid-section
 			:wrapper="wrapper"
@@ -105,13 +104,6 @@ export default {
 					class: 'secondary',
 					text: 'About Us',
 					path: '/about',
-				},
-			},
-			news_section: {
-				button: {
-					class: 'secondary',
-					text: 'All Articles',
-					path: '/articles',
 				},
 			},
 		}
