@@ -150,15 +150,15 @@ chapter.\\\\
 Continuing, we present the result of the application of the process of page mapping 
 to the content tables reported in the last chapter. Each table has
 been divided into a series of pages, in order to increase the degree of granularity.
-\begin{figure}[h]
+\begin{figure}[H]
 	\centering
 	\includegraphics[width=0.95\textwidth]{page_mapping_pt1.pdf}
 \end{figure}
-\begin{figure}[h]
+\begin{figure}[H]
 	\centering
 	\includegraphics[width=0.95\textwidth]{page_mapping_pt2.pdf}
 \end{figure}
-\begin{figure}[h]
+\begin{figure}[H]
 	\centering
 	\includegraphics[width=0.95\textwidth]{page_mapping_pt3.pdf}
 \end{figure}
@@ -224,7 +224,7 @@ In this section we report the P-IDM diagram which describes the navigation desig
 	\includegraphics[width=0.45\textwidth]{low_fid_wireframes/service/3.png}
 	\caption{Commented wireframes for the Service page.}
 \end{figure}
-
+\clearpage
 \subsection{Kind of Topic: Article}
 
 \begin{figure}[H]
@@ -233,8 +233,11 @@ In this section we report the P-IDM diagram which describes the navigation desig
 	\includegraphics[width=0.45\textwidth]{low_fid_wireframes/article/2.png}
 	\caption{Commented wireframes for the Articles page.}
 \end{figure}
-
-\subsection{Group: Areas}
+\textbf{N.B.} Here there is an importat thing to be mentioned. The Kind of topic: \emph{Article} at the 
+beginning of the project was called \emph{Resource}. After an analysis we have choosen to
+rename it to increase its semantical meaning, the old name was missleading.
+High level wireframes will show the latest version of the prototype.
+\subsection{Group: All Areas}
 
 \begin{figure}[H]
 	\centering
@@ -243,7 +246,7 @@ In this section we report the P-IDM diagram which describes the navigation desig
 	\caption{Commented wireframes for the Areas page.}
 \end{figure}
 
-\subsection{Group: Team}
+\subsection{Group: Whole Team}
 
 \begin{figure}[H]
 	\centering
@@ -253,15 +256,19 @@ In this section we report the P-IDM diagram which describes the navigation desig
 	\caption{Commented wireframes for the Team page.}
 \end{figure}
 
-\subsection{Group: Articles}
+\subsection{Group: All Articles by Year}
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.45\textwidth]{low_fid_wireframes/all_articles/1.png}
 	\includegraphics[width=0.45\textwidth]{low_fid_wireframes/all_articles/2.png}
-	\caption{Commented wireframes for the Articles page.}
+	\caption{Commented wireframes for the All Articles by year page.}
 \end{figure}
-
+\textbf{N.B.} Here there is an importat thing to be mentioned. The Group: 
+\emph{All Articles by Year} at the  beginning of the project was called
+\emph{All Resource by Year}. After an analysis we have choosen to rename 
+it to increase its semantical meaning, the old name was missleading.
+High level wireframes will show the latest version of the prototype.
 \section{High-Fidelity Screenshots}
 
 \subsection{Home Page}
@@ -273,7 +280,13 @@ In this section we report the P-IDM diagram which describes the navigation desig
 	\includegraphics[width=0.45\textwidth]{high_fid_wireframes/home/3.png}
 	\caption{Commented screenshots for the Home page.}
 \end{figure}
-
+\textbf{N.B.} in this page we can found three buttons which may seems redundant:
+\begin{itemize}
+	\item \emph{Contact us:} added for marketing purposes.
+	\item \emph{See services us:} added for marketing purposes.
+	\item \emph{About us:} upon observing some interaction scenarios with 
+	potential customers we noticed that adding here this button would have been useful.
+\end{itemize}
 \subsection{Topic: Contacts}
 
 \begin{figure}[H]
@@ -293,6 +306,11 @@ In this section we report the P-IDM diagram which describes the navigation desig
 	\includegraphics[width=0.45\textwidth]{high_fid_wireframes/area/3.png}
 	\caption{Commented screenshots for the Area page.}
 \end{figure}
+\textbf{N.B.} in this page we can found breadcrumbs. The contrast is quite low,
+however, moving the pointer over them will make the text more readable. This 
+decision is a trade off among having useful orientational info and do not affect
+too much the design of the site. What has been stated is valid for all other pages
+in which breadcrumbs are available.
 
 \subsection{Kind of Topic: Person}
 
@@ -302,7 +320,9 @@ In this section we report the P-IDM diagram which describes the navigation desig
 	\includegraphics[width=0.45\textwidth]{high_fid_wireframes/person/2.png}
 	\caption{Commented screenshots for the Person page.}
 \end{figure}
-
+\textbf{N.B.} in this page we can notice how has been modeled a double relation
+among the person and offered services. The service/services for which *he is reference
+are listed at the beginning, are highligthed by a blue frame and by the tag \emph{Reference for}.
 \subsection{Kind of Topic: Service}
 
 \begin{figure}[H]
@@ -331,7 +351,7 @@ In this section we report the P-IDM diagram which describes the navigation desig
 \end{figure}
 \color{white}...\color{black}
 
-\subsection{Group: Team}
+\subsection{Group: Whole Team}
 
 \begin{figure}[H]
 	\centering
@@ -341,7 +361,7 @@ In this section we report the P-IDM diagram which describes the navigation desig
 	\caption{Commented screenshots for the Team page.}
 \end{figure}
 
-\subsection{Group: Articles}
+\subsection{Group: All Articles by Year}
 
 \begin{figure}[H]
 	\centering
@@ -500,7 +520,7 @@ support the implementation.
 	identified by an autoincremental \texttt{id} and presents a boolean field, \texttt{isReference}, 
 	which states whether or not the \emph{Person}, identified by the foreign key \texttt{person\_id}, 
 	is the reference for the \emph{Service}, identified by the foreign key \texttt{service\_id}.
-	\item \textbf{Article}. A \emph{Article} is identified by an \texttt{id}, has a 
+	\item \textbf{Article}. An \emph{Article} is identified by an \texttt{id}, has a 
 	\texttt{type}, a \texttt{name}, a \texttt{date}, a \texttt{text} description, a \texttt{subtitle} 
 	a string path to the \texttt{icon}, and a \texttt{path} to reach the specific page. 
 \end{itemize}
