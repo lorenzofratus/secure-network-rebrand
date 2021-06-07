@@ -21,6 +21,10 @@
 
 \geometry{a4paper, left=2cm, right=2cm, top=3cm}
 
+% To reduce space before the table of contents (all in one page)
+\usepackage{tocloft}
+\setlength{\cftbeforetoctitleskip}{0em}
+
 % remove 'Chapter N'
 \usepackage{titlesec}
 \titleformat{\chapter}[display]
@@ -276,9 +280,9 @@ In this section we report the P-IDM diagram which describes the navigation desig
 	\centering
 	\includegraphics[width=0.45\textwidth]{high_fid_wireframes/contacts/1.png}
 	\includegraphics[width=0.45\textwidth]{high_fid_wireframes/contacts/2.png}
-	\includegraphics[width=0.45\textwidth]{high_fid_wireframes/contacts/3.png}
 	\caption{Commented screenshots for the Contacts page.}
 \end{figure}
+\color{white}...\color{black}
 
 \subsection{Kind of Topic: Area}
 
@@ -287,10 +291,8 @@ In this section we report the P-IDM diagram which describes the navigation desig
 	\includegraphics[width=0.45\textwidth]{high_fid_wireframes/area/1.png}
 	\includegraphics[width=0.45\textwidth]{high_fid_wireframes/area/2.png}
 	\includegraphics[width=0.45\textwidth]{high_fid_wireframes/area/3.png}
-	\includegraphics[width=0.45\textwidth]{high_fid_wireframes/area/4.png}
 	\caption{Commented screenshots for the Area page.}
 \end{figure}
-\color{white}...\color{black}
 
 \subsection{Kind of Topic: Person}
 
@@ -298,7 +300,6 @@ In this section we report the P-IDM diagram which describes the navigation desig
 	\centering
 	\includegraphics[width=0.45\textwidth]{high_fid_wireframes/person/1.png}
 	\includegraphics[width=0.45\textwidth]{high_fid_wireframes/person/2.png}
-	\includegraphics[width=0.45\textwidth]{high_fid_wireframes/person/3.png}
 	\caption{Commented screenshots for the Person page.}
 \end{figure}
 
@@ -317,8 +318,7 @@ In this section we report the P-IDM diagram which describes the navigation desig
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.45\textwidth]{high_fid_wireframes/article/1.png}
-	\includegraphics[width=0.45\textwidth]{high_fid_wireframes/article/2.png}
-	\caption{Commented screenshots for the Articles page.}
+	\caption{Commented screenshots for the Article page.}
 \end{figure}
 
 \subsection{Group: Areas}
@@ -329,6 +329,7 @@ In this section we report the P-IDM diagram which describes the navigation desig
 	\includegraphics[width=0.45\textwidth]{high_fid_wireframes/all_areas/2.png}
 	\caption{Commented screenshots for the Areas page.}
 \end{figure}
+\color{white}...\color{black}
 
 \subsection{Group: Team}
 
@@ -511,6 +512,6 @@ support the implementation.
 	\caption{Relational Tables}
 \end{figure}
 
-
+\clearpage
 \listoffigures
 \end{document}
