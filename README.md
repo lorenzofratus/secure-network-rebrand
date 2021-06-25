@@ -44,18 +44,18 @@ This project has been developed as final assignment for the _Hypermedia Applicat
 
 -   [Node.js](https://nodejs.org/)
 -   [Vue.js](https://vuejs.org)
+-   [Nuxt.js](https://nuxtjs.org/)
 -   [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
--   [Nuxt](https://nuxtjs.org/)
 -   [PostgreSQL](https://www.postgresql.org/)
 
 <!-- SERVER SIDE -->
 
 ### Backend
 
-To support the frontend, an express rest api has been deveped. It has the objective of implementing several http endpoints which allow the interaction with the database. There are two main files:
+To support the frontend, an Express.js server with REST APIs has been developed. It has the objective of implementing several http endpoints which allow the interaction with the database. There are two main files:
 
--   `api.js` implements enponts
--   `db_conn.js` defines the structure of the database and initialize it by reading initialization information from another file.
+-   `api.js` implements enpoints
+-   `db_conn.js` defines the structure of the database and initializes it by reading configurations from another file.
 
 <!-- CLIENT SIDE -->
 
@@ -68,7 +68,7 @@ The frontend has been developed as VueJS app, using the NuxtJS framework.
 -   `PersonCard.vue` is used to show syntetized information about a person. It contains the profile picture, the name and the surname of the subject. Props: 
     - **object:** the person object whose name and surname must be displayed. 
 -   `ArticleCard.vue` is used to show syntetized information about a given article. Props: 
-    - **object:** the person object whose name and surname must be displayed. 
+    - **object:** the article object whose title and icon must be displayed. 
 -   `ServiceCard.vue` is used to show syntetized information about a given service. Props: 
     - **object:** the service object whose preview must be displayed.
     - **type:** used to append a different label to the displayed button. Introduced to increase SEO.
@@ -108,8 +108,8 @@ The frontend has been developed as VueJS app, using the NuxtJS framework.
 
 -   `AppMenu.vue` is used to model landmarks which are embedded both in the header and in the footer of the page. Props:
     - **lightTheme:** boolean flag to determined whether or not using the light theme.
-    - **alignRight:** boolean flag to determined whether or align to right.
-    - **showOnMobile:** boolean flag to determined whether or the element must be shown on mobile devices.
+    - **alignRight:** boolean flag to determined whether or not align to right.
+    - **showOnMobile:** boolean flag to determined whether or not the element must be shown on mobile devices.
 -   `SocialMenu.vue` is used to model social logos which are embedded in the footer of the page.
 
 #### Sections
@@ -160,7 +160,7 @@ The frontend has been developed as VueJS app, using the NuxtJS framework.
 #### Singletons
 
 -   `TheChat.vue` is implemented in the default layout and allow the user to interact with a multimodal chat bot.
--   `TheFooter.vue` is the footer of the website. It is implemented in the default layout and wrapps the AppMenu and the SocialMenu.
+-   `TheFooter.vue` is the footer of the website. It is implemented in the default layout and wraps the AppMenu and the SocialMenu.
 -   `TheHeader.vue` is the header of the website. It is implemented in the default layout and wraps the AppMenu.
 
 #### Pages
@@ -233,7 +233,7 @@ The frontend has been developed as VueJS app, using the NuxtJS framework.
 
 - `Multi Modal Chatbot Creator:` experimental framework developed by PHD students of the Hypermedia Application course to support a multi modal chatbot.
 
-- `Store:` used both to support chatbot features and static content used in several sections in order to avoid code replication.
+- `Store:` used both to support chatbot features and static content used in several sections in order to avoid replication of data.
 
 - `Router:` VueJS plugin which allow to manage easily inter and intra page routing. In addition, we developed a customized middleware plugin to support smooth scrolling behaviour for the router.
 
@@ -281,7 +281,7 @@ Person Code: 10619073 - Email: [lorenzo1.fratus](mailto:lorenzo1.fratus@mail.pol
 Person Code: 10530758 - Email: [simone.orlando](mailto:simone.orlando@mail.polimi.it)
 
 ### [Cristian C. Spagnuolo](https://github.com/cris96spa) aka **The Brains**
-> _I worked on the backend implementation, dealing with the database interface and the implementation of api methods. Then I used these endpoints to retrieve and display stored information._
+> _I worked on the backend implementation, dealing with the database interface and the implementation of API methods. Then I used these endpoints to retrieve and display stored information._
 
 Person Code: 10745353 - Email: [cristiancarmine.spagnuolo](mailto:cristiancarmine.spagnuolo@mail.polimi.it)
 

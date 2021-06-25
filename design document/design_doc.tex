@@ -280,7 +280,7 @@ High level wireframes will show the latest version of the prototype.
 	\includegraphics[width=0.45\textwidth]{high_fid_wireframes/home/3.png}
 	\caption{Commented screenshots for the Home page.}
 \end{figure}
-\textbf{N.B.} in this page we can found three buttons which may seems redundant:
+\textbf{N.B.} in this page we can find three buttons which may seems redundant:
 \begin{itemize}
 	\item \emph{Contact us:} added for marketing purposes.
 	\item \emph{See Services:} added for marketing purposes.
@@ -306,7 +306,7 @@ High level wireframes will show the latest version of the prototype.
 	\includegraphics[width=0.45\textwidth]{high_fid_wireframes/area/3.png}
 	\caption{Commented screenshots for the Area page.}
 \end{figure}
-\textbf{N.B.} in this page we can found breadcrumbs. The contrast is quite low,
+\textbf{N.B.} in this page we can find breadcrumbs. The contrast is quite low,
 however, moving the pointer over them will make the text more readable. This 
 decision is a trade off among having useful orientational info and do not affect
 too much the design of the site. What has been stated is valid for all other pages
@@ -321,8 +321,8 @@ in which breadcrumbs are available.
 	\caption{Commented screenshots for the Person page.}
 \end{figure}
 \textbf{N.B.} in this page we can notice how has been modeled a double relation
-among the person and offered services. The service/services for which *he is reference
-are listed at the beginning, are highligthed by a blue frame and by the tag \emph{Reference for}.
+among the person and offered services. The service/services for which they are reference
+are listed at the beginning and highligthed by a blue frame and a blue tag \emph{Reference for}.
 \subsection{Kind of Topic: Service}
 
 \begin{figure}[H]
@@ -401,10 +401,10 @@ After opening the page to confirm her assumptions, she browses to the \emph{Cont
 \clearpage
 \section{Scenario 2}
 A recent graduate of the Politecnico is looking for his first job in the computer security field.
-A few days ago, he attended a workshop given by Alvise Biffi in which he mentioned that the company he founded is hiring but unfortunately he does not remember the name.\\
+A few days ago, he attended a workshop given by Alvise Biffi in which it was mentioned that the company founded by the security expert is hiring.\\
 \noindent
-He thinks it is called Secure Network but, to be completely sure, he connects to their website and goes to the \emph{Team} page\textsuperscript{[1]} where he finds \emph{Alvise Biffi}.
-After reading the founder's biography abstract and decides to visit his page to have a complete reading\textsuperscript{[2]}. 
+Unfortunately, the \emph{alumnus} does not remember the exact name, he thinks it is called Secure Network but, to be completely sure, he connects to their website and goes to the \emph{Team} page\textsuperscript{[1]} where he finds \emph{Alvise Biffi}.
+After reading the founder's biography abstract, he decides to visit the page to have a complete reading\textsuperscript{[2]}. 
 \\
 \noindent
 After that, he goes back to the \emph{Team} page\textsuperscript{[3]} (using the breadcrumbs on top of the page) to give another look to the employee list and there he finds the \emph{We are hiring} title and clicks on the \emph{Contact Us} button\textsuperscript{[4]}.
@@ -481,7 +481,7 @@ the first layer of abstraction of our data. It has been moded with the
 	\caption{ER Diagram}
 \end{figure}
 \noindent
-Then we proceed with the logic design, which allow to better describe the
+Then we proceeded with the logic design, which allow to better describe the
 \emph{E-R Model}. Some additional tables have been identified to better 
 support the implementation.
 \clearpage
@@ -493,11 +493,11 @@ support the implementation.
 	has a \texttt{name}, a \texttt{surname}, a \texttt{text} description, a 
 	string path to the image, \texttt{img}, a \texttt{path} to reach the specific page.
 	In addition, the relation called \emph{Assignment}, among \emph{Person} and \emph{Area}, has
-	been merged within the first table, resulting in the addition of two fiels: the 
+	been merged within the first table, resulting in the addition of two fields: the 
 	\texttt{area\_id} as foreign key and the \texttt{role} of the person within the area.
 	Each \emph{Person} is assigned to exactly one \emph{Area}, whereas in each \emph{Area} several
 	\emph{People} are assigned.
-	\item \textbf{Service\_Category}. This tables was born due to normalization purposes. 
+	\item \textbf{Service\_Category}. This table was born due to normalization purposes. 
 	It would have been redundant adding for each \emph{Service} information about the complex 
 	attribute \emph{Category}. To avoid replication, we decided to perform this normalization 
 	procedure. A \emph{Service\_Category} is identified by an \texttt{id}, 
@@ -512,10 +512,10 @@ support the implementation.
 	\emph{Service\_Category} is mapped with several \emph{Services}.
 	In addition, the relation called \emph{Offer}, among 
 	\emph{Service} and \emph{Area}, has	been merged within the first table, resulting in 
-	the addition of the fiel \texttt{area\_id} as foreign key.
+	the addition of the field \texttt{area\_id} as foreign key.
 	Each \emph{Service} is offered by exactly one \emph{Area}, whereas each \emph{Area} offers 
 	several \emph{Services}.
-	\item \textbf{Person\_Service}. This tables was born to support the \emph{N-N} relation, 
+	\item \textbf{Person\_Service}. This table was born to support the \emph{N-N} relation, 
 	\emph{Provide}, among \emph{Person} and \emph{Service}. A \emph{Person\_Service} is 
 	identified by an autoincremental \texttt{id} and presents a boolean field, \texttt{isReference}, 
 	which states whether or not the \emph{Person}, identified by the foreign key \texttt{person\_id}, 

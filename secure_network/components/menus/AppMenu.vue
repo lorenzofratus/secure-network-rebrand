@@ -5,8 +5,8 @@
  * header and in the footer of the page.
  *
  * @prop lightTheme: boolean flag to determined whether or not using the light theme.
- * @prop alignRight: boolean flag to determined whether or align to right.
- * @prop showOnMobile: boolean flag to determined whether or the element must be shown on mobile devices.
+ * @prop alignRight: boolean flag to determined whether or not align to right.
+ * @prop showOnMobile: boolean flag to determined whether or not the element must be shown on mobile devices.
  * @author Lorenzo Fratus 
  * @author Simone Orlando 
  * @author Cristian C. Spagnuolo 

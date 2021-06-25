@@ -123,22 +123,38 @@ website:
 	\item Advertise the services offered by the company.
 	\item Convert the user's visit into a business contact. 
 \end{itemize}
+\bigbreak
 \noindent
-At the beginning, the chatbot introduce itself and then the user is asked whether *he wants to see all service categories or *he wants to contact the company.
+At the beginning, the chatbot introduce itself and then the user is asked whether they want to see all service categories or they want to contact the company.
 If the user wants to explore categories, the chatbot shows the given page otherwise it shows the contact form.
-\\If the user has choosen to explore categories the bot then asks if *he wants to select a specific one, or to proceed to the contact form.
-\\If the user chooses the former option, the bot asks for the selection of one category, this task can be achieved either by selecting one category among the list 
+
+\bigbreak
+\noindent
+If the user has choosen to explore categories the bot then asks if they want to select a specific one, or to proceed to the contact form.
+
+\bigbreak
+\noindent
+If the user chooses the former option, the bot asks for the selection of one category, this task can be achieved either by selecting one category among the list 
 or by typying the category name in the chat, otherwise, again the contact form will be displayed.
-\\Once a category is choosen, the bot shows the category page, and then again asks the user if *he wants to select a specific service among those that belong to the 
-shown category, or to proceed to the contact form.\\
+
+\bigbreak
+\noindent
+Once a category is choosen, the bot shows the category page, and then again asks the user if they want to select a specific service among those that belong to the 
+shown category, or to proceed to the contact form.
+
+\bigbreak
+\noindent
 If the user chooses the fist option, the bot asks for the selection of one service, this task can be achieved either by selecting one service among the list 
-or by typying the service name in the chat, otherwise, again the contact form will be displayed.\\
-Upon selecting a service, the bot shows the service page and then waits the user input to automatically redirect *he to the contact form. The interaction with the user always ends 
+or by typying the service name in the chat, otherwise, again the contact form will be displayed.
+
+\bigbreak
+\noindent
+Upon selecting a service, the bot shows the service page and then waits the user input to automatically redirect them to the contact form. The interaction with the user always ends 
 when the form page is displayed.
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=\textwidth]{model}
+	\includegraphics[height=0.9\textheight]{model.png}
 	\caption{Model of the conversational agent.}
 	\label{fig:model}
 \end{figure}
@@ -152,7 +168,7 @@ procede to the next activity without waiting any input by the user.
 No change on the GUI.
 \subsection{End Activity}
 This activity is used as exit point of the interaction, implementing the 
-\emph{exit} callback. It is used to thanks the user for the interaction. 
+\emph{exit} callback. It is used to thank the user for the interaction. 
 This activity waits for a new message of the user, in order to re-start the whole 
 interaction from the beginning. No change on the GUI.
 \section{XOR Activities}
@@ -164,12 +180,12 @@ which can be called \emph{generic\_xor}, whose goal is to select the right path 
 \subsection{First XOR}
 This is the first activity that is performed during any interaction with
 the chatbot. The agent simply greets the user with a short introduction,
-after which it asks him if he want to explore the categories of services
-offered or if he wants to contact the company.
+after which it asks them if they want to explore the categories of services
+offered or if they want to contact the company.
 
 \subsection{Category XOR}
-Here, the chatbot asks the user if he want to continue with the exploration 
-of a specific category or if he wants to reach the contact page.
+Here, the chatbot asks the user if they want to continue with the exploration 
+of a specific category or if they want to reach the contact page.
 
 \subsection{Service XOR}
 Like the previous ones, this XOR is also an \emph{emergency exit} towards 
@@ -189,7 +205,7 @@ the description of shown categories.
 
 \subsection{Select Category}
 Categories shown by the previous task allow the user to procede with this step.
-Here, the chatbot asks the user to select the category he want to explore
+Here, the chatbot asks the user to select the category they want to explore
 and awaits his response.
 The user can reply in chat, with the name of the category or directly click on one 
 of the buttons in the GUI, which will fill the chat for the user.
@@ -243,14 +259,14 @@ Note that, for the sake of brevity, the messages between the chatbot and the use
 \end{figure}
 
 \chapter{ChatBot Implementation} 
-To complete the second part of the chat bot optional project, we followed the documentation available at \href{https://gitlab.com/i3lab/mmcc/frontend/mmcc-vue/-/blob/master/README.md}{\texttt{Multi Modal Chatbot Creator}}.
-\\At the beginning, the user is asked whether he wants explore the website or he wants to contact the company.
+To complete the second part of the chatbot optional project, we followed the documentation available at \href{https://gitlab.com/i3lab/mmcc/frontend/mmcc-vue/-/blob/master/README.md}{\texttt{Multi Modal Chatbot Creator}}.
+\\At the beginning, the user is asked whether they want to explore the website or they want to contact the company.
 If the user wants to explore the website, the chatbot first introduce itself, then it shows the home and the about page of the website.
-If the user wants to contact the company, the chatbot asks whether the user want to fulfill a form or go to the contact page.
-In either case, it redirects the user to the correct page. The configuration file used for the integration of the chatbot can be found at \texttt{./chatbot/config/chat-bot.json} and reflect the model provided by the assignment specification.\\\\
-\textbf{N.B.} At the current state of the art of the provided backend of the \texttt{Multi Modal Chatbot Creator}, there is no native way of performing a loop upon reaching the end activity, even if the next\_id field of the 
+If the user wants to contact the company, the chatbot asks whether the user wants to fill in a form or go to the contact information.
+In either case, it redirects the user to the correct section of the \emph{Contacts} page. The configuration file used for the integration of the chatbot can be found in our repository at \texttt{./chatbot/config/chat-bot.json} and reflect the model provided by the assignment specification.\\\\
+\textbf{N.B.} At the current state of the provided backend for the \texttt{Multi Modal Chatbot Creator}, there is no native way of performing a loop upon reaching the end activity, even if the next\_id field of the 
 end task is set to a previous activity. Moreover, upon reaching the terminal state, the user will receive the same terminal answer for each additional message sent. We have already informed developers which 
-will provide in the next versione a reset callbat to support such this behaviour. To follow the exact model provided by specification, we didn't apply any custom patch.
+will provide in the next versions a reset callback to support such behaviour. To follow the exact model provided by specifications, we didn't apply any custom patch.
 
 
 \end{document}
