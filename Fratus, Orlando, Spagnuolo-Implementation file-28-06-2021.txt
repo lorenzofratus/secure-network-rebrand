@@ -1,2 +1,0 @@
-Link to website: https://securenetwork.herokuapp.com
-Github repository: https://github.com/lorenzofratus/SecureNetworkRebrand.git
