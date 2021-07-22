@@ -268,22 +268,22 @@ Finally, we introduced an external plugin to force the communication using _HTTP
 
 ## Team
 
-The team that developed this project is called `FratusOrlandoSpagnuolo` and is composed by:
+The team that developed this project is composed by:
 
 ### [Lorenzo Fratus](https://github.com/lorenzofratus) aka **The Eyes**
 > _I used my previous experience in this field to design and implement website graphics. I also helped my teammates better understand and use HTML and CSS._
 
-Person Code: 10619073 - Email: [lorenzo1.fratus](mailto:lorenzo1.fratus@mail.polimi.it)
+Email: [lorenzo1.fratus](mailto:lorenzo1.fratus@mail.polimi.it)
 
 ### [Simone Orlando](https://github.com/simoneorlando97) aka **The Hacker**
 > _I worked on the creation of some components of the site expanding my knowledge of HTML and CSS and I shared my computer security skills to develop a more secure site._
 
-Person Code: 10530758 - Email: [simone.orlando](mailto:simone.orlando@mail.polimi.it)
+Email: [simone.orlando](mailto:simone.orlando@mail.polimi.it)
 
 ### [Cristian C. Spagnuolo](https://github.com/cris96spa) aka **The Brains**
 > _I worked on the backend implementation, dealing with the database interface and the implementation of API methods. Then I used these endpoints to retrieve and display stored information._
 
-Person Code: 10745353 - Email: [cristiancarmine.spagnuolo](mailto:cristiancarmine.spagnuolo@mail.polimi.it)
+Email: [cristiancarmine.spagnuolo](mailto:cristiancarmine.spagnuolo@mail.polimi.it)
 
 <!-- LICENSE -->
 
