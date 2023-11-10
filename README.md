@@ -7,10 +7,6 @@
     Project developed for the final exam of the course named <em>Hypermedia Applications</em> held by Professor Franca Garzotto at <em>Politecnico di Milano</em>.
     <br />
     <a href="https://github.com/lorenzofratus/SecureNetworkRebrand"><strong>Explore the docs »</strong></a>
-    <br />
-    <br />
-    <a href="https://securenetwork.herokuapp.com/">Visit Website</a>
-    <a href="https://github.com/lorenzofratus/SecureNetworkRebrand/issues">Report Bug</a>
   </p>
 </p>
 
