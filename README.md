@@ -6,7 +6,7 @@
   <p align="center">
     Project developed for the final exam of the course named <em>Hypermedia Applications</em> held by Professor Franca Garzotto at <em>Politecnico di Milano</em>.
     <br />
-    <a href="https://github.com/lorenzofratus/SecureNetworkRebrand"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/lorenzofratus/secure-network-rebrand"><strong>Explore the docs »</strong></a>
   </p>
 </p>
 
